@@ -1,5 +1,5 @@
 # Intro
-My leetcode solutions, with javascript as the major language.
+This is my leetcode solutions, with javascript as the major language.
 
 Analysis and related knowledge will be added in the comment of each solution.
 
