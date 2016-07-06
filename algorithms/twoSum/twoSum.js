@@ -78,8 +78,6 @@ twoSum.hash = function(nums, target) {
 };
 
 
-return twoSum;
-
 
 /************************************************************
  * Lessons:
