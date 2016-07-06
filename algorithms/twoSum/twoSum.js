@@ -52,9 +52,9 @@ twoSum.brutal = function(nums, target) {
  * Sorted list will be efficiently performed operations like binary search, etc.
  * It can be useful for large size collections.
  *
- * "N" is nums.length.
- * Time complexity:  O(?)
- * Space complexity: O(?) depend on browser impl of Array:sort
+ * "N" is nums.length. depend on browser impl of Array:sort
+ * Time complexity:  O([N+NlogN, 2NlogN])
+ * Space complexity: O([1, N])
  */
 twoSum.sortThenSearch = function(nums, target) {
     if (!(Array.isArray(nums) && nums.length > 1) || typeof target !== 'number') {
