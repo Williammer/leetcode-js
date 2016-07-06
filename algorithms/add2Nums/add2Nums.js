@@ -32,7 +32,7 @@ var add2Nums = {};
 /*
  * Solution 1: Intro a stack helper to reversely insert each node into linklist.
  *
- * "N" is the max calcated sum digit length.
+ * "N" is the max calcated sum digit length L in range [max(l1.length,l2.length), max(l1.length,l2.length)+1].
  * Time complexity: O(2N)
  * Space complexity: O(N)
  */
@@ -73,11 +73,10 @@ add2Nums.stackHelper = function(l1, l2) {
 };
 
 /*
- * Solution 2: js reference.
- *  Utilized js object reference change feature.
+ * Solution 2: js reference. Utilized js object reference change feature.
  *
- * m: l1.length, n: l2.length
- * Time complexity: O(m+n)
+ * "N" is the max calcated sum digit length L in range [max(l1.length,l2.length), max(l1.length,l2.length)+1].
+ * Time complexity: O(N)
  * Space complexity: O(1)
  */
 add2Nums.reference = function(l1, l2) {
