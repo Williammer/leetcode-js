@@ -23,6 +23,7 @@ var twoSum = {};
 /*
  * Solution 1: brutal force loop
  *
+ * "N" is nums.length.
  * Time complexity: O(N^2)
  * Space complexity: O(1)
  */
@@ -51,6 +52,7 @@ twoSum.brutal = function(nums, target) {
  * @Key: nums.value
  * @Value: nums.key
  *
+ * "N" is nums.length.
  * Time complexity:  O(N)
  * Space complexity: O(N)
  */
