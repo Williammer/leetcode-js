@@ -56,7 +56,7 @@ twoSum.brutal = function(nums, target) {
  * Time complexity:  O(?)
  * Space complexity: O(?) depend on browser impl of Array:sort
  */
-twoSum.sortedSearch = function(nums, target) {
+twoSum.sortThenSearch = function(nums, target) {
     if (!(Array.isArray(nums) && nums.length > 1) || typeof target !== 'number') {
         return;
     }
