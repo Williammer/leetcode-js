@@ -73,6 +73,11 @@ twoSum.sortThenSearch = function(nums, target) {
         hi = sortedNums.length - 1;
         compensate = target - sortedNums[lo];
 
+        // skip in vain searches
+        if (compensate > sortedNums[hi]) {
+          continue;
+        }
+
         // binary search the compensate target
         while (lo <= hi) {
             // Key is in a[lo..hi] or not present.
