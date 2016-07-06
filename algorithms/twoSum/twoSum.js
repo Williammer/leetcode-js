@@ -48,7 +48,50 @@ twoSum.brutal = function(nums, target) {
 };
 
 /*
- * Solution 2: Hash
+ * Solution 2: Sort then search
+ * Sorted list will be efficiently performed operations like binary search, etc.
+ * It can be useful for large size collections.
+ *
+ * "N" is nums.length.
+ * Time complexity:  O(?)
+ * Space complexity: O(?) depend on browser impl of Array:sort
+ */
+twoSum.sortedSearch = function(nums, target) {
+    if (!(Array.isArray(nums) && nums.length > 1) || typeof target !== 'number') {
+        return;
+    }
+
+    // sort nums for quicker search
+    // js array sort() uses pretty efficient sort algorithms, could have O(N) to O(NlogN) time complexity depend on browser
+    // some browser such as Mozilla uses mergeSort, which will add extra space complexity
+    // (http://stackoverflow.com/questions/234683/javascript-array-sort-implementation)
+    var sortedNums = nums.sort(),
+        i, lo, hi, mid, compensate;
+
+    for (i = 0; i < sortedNums.length; i++) {
+        lo = i;
+        hi = sortedNums.length - 1;
+        compensate = target - sortedNums[lo];
+
+        // binary search the compensate target
+        while (lo <= hi) {
+            // Key is in a[lo..hi] or not present.
+            mid = lo + (hi - lo) / 2;
+
+            if (compensate < sortedNums[mid]) {
+                hi = mid - 1;
+            } else if (compensate > sortedNums[mid]) {
+                lo = mid + 1;
+            } else {
+                return [lo, mid];
+            }
+        }
+    }
+    return;
+};
+
+/*
+ * Solution 3: Hash
  * @Key: nums.value
  * @Value: nums.key
  *
@@ -83,7 +126,9 @@ twoSum.hash = function(nums, target) {
  * Lessons:
    1. Consider introduce appriorate helper data structures to solve problems.
 
-   2. Key, Value are just relative and can be exchanged when needed.
+   2. for list:array based problem, we can consider sort it first and utilize some of its treats like binary search.
+
+   3. Key, Value are just relative and can be exchanged when needed.
    For js, with the ES6 Map/WeakMap that allows all types to be 'key', this trick can be applied easier.
 
 ************************************************************/
