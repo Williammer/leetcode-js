@@ -17,12 +17,20 @@ describe('Problem 1 - Two sum (assume that each input would have exactly one sol
 
 // # Solution 1: brutal loop tests
 	describe('Solution 1: brutal loop tests', function() {
-	    it('return the indices of the two numbers', function() {
+	    it('return expected result for even nums array', function() {
 	    	nums = [2, 7, 11, 15];
 	    	target = 9;
 
 	    	result = twoSum.brutal(nums, target);
 	        expect(result).toEqual([0, 1]);
+	    });
+
+	    it('return expected result for odd nums array', function() {
+	    	nums = [2, 20, 11, 7, 15];
+	    	target = 9;
+
+	    	result = twoSum.brutal(nums, target);
+	        expect(result).toEqual([0, 3]);
 	    });
 
 	    it('return undefined if no desired result', function() {
@@ -79,78 +87,22 @@ describe('Problem 1 - Two sum (assume that each input would have exactly one sol
 	});
 
 
-// # Solution 2: sort then search
-	describe('Solution 2: sort then search', function() {
-	    it('return the indices of the two numbers', function() {
-	    	nums = [2, 7, 11, 15];
-	    	target = 9;
-
-	    	result = twoSum.sortThenSearch(nums, target);
-	        expect(result).toEqual([0, 1]);
-	    });
-
-	    it('return undefined if no desired result', function() {
-	    	nums = [2, 7, 11, 15];
-	    	target = 8;
-
-	    	result = twoSum.sortThenSearch(nums, target);
-	        expect(result).toBeUndefined();
-	    });
-
-	    it('return undefined if nums is not array', function() {
-	    	var foo= 42,
-				bar= 'baz',
-				wow= undefined,
-				much= {},
-				fn= function() {},
-				test= null;
-
-	    	target = 9;
-
-	        expect(twoSum.sortThenSearch(foo, target)).toBeUndefined();
-	        expect(twoSum.sortThenSearch(bar, target)).toBeUndefined();
-	        expect(twoSum.sortThenSearch(wow, target)).toBeUndefined();
-	        expect(twoSum.sortThenSearch(much, target)).toBeUndefined();
-	        expect(twoSum.sortThenSearch(fn, target)).toBeUndefined();
-	        expect(twoSum.sortThenSearch(test, target)).toBeUndefined();
-	    });
-
-	    it('return undefined if nums is an array with less than 2 values', function() {
-	    	nums = [2];
-	    	target = 9;
-
-	    	result = twoSum.sortThenSearch(nums, target);
-	        expect(result).toBeUndefined();
-	    });
-
-	    it('return undefined if target is not a number', function() {
-	    	var foo= [],
-				bar= 'baz',
-				wow= undefined,
-				much= {},
-				fn= function() {},
-				test= null;
-
-			nums = [2, 7, 11, 15];
-
-	        expect(twoSum.sortThenSearch(nums, foo)).toBeUndefined();
-	        expect(twoSum.sortThenSearch(nums, bar)).toBeUndefined();
-	        expect(twoSum.sortThenSearch(nums, wow)).toBeUndefined();
-	        expect(twoSum.sortThenSearch(nums, much)).toBeUndefined();
-	        expect(twoSum.sortThenSearch(nums, fn)).toBeUndefined();
-	        expect(twoSum.sortThenSearch(nums, test)).toBeUndefined();
-	    });
-	});
-
-
-// # Solution 3: hash
+// # Solution 2: hash
 	describe('Solution 2: hash', function() {
-	    it('return the indices of the two numbers', function() {
+	    it('return expected result for even nums array', function() {
 	    	nums = [2, 7, 11, 15];
 	    	target = 9;
 
 	    	result = twoSum.hash(nums, target);
 	        expect(result).toEqual([0, 1]);
+	    });
+
+	    it('return expected result for odd nums array', function() {
+	    	nums = [2, 20, 11, 7, 15];
+	    	target = 9;
+
+	    	result = twoSum.hash(nums, target);
+	        expect(result).toEqual([0, 3]);
 	    });
 
 	    it('return undefined if no desired result', function() {
@@ -205,4 +157,77 @@ describe('Problem 1 - Two sum (assume that each input would have exactly one sol
 	        expect(twoSum.hash(nums, test)).toBeUndefined();
 	    });
 	});
+
+
+	// # Extended idea: sort then search
+	describe('Extended idea: sort then search, note it expects val pairs instead of key pairs to be returned now.', function() {
+	    it('return expected result for even nums array', function() {
+	    	nums = [2, 7, 11, 15];
+	    	target = 9;
+
+	    	result = twoSum.extend.sortThenSearch(nums, target);
+	        expect(result).toEqual([2, 7]);
+	    });
+
+	    it('return expected result for odd nums array', function() {
+	    	nums = [2, 20, 11, 7, 15];
+	    	target = 9;
+
+	    	result = twoSum.extend.sortThenSearch(nums, target);
+	        expect(result).toEqual([2, 7]);
+	    });
+
+	    it('return undefined if no desired result', function() {
+	    	nums = [2, 7, 11, 15];
+	    	target = 8;
+
+	    	result = twoSum.extend.sortThenSearch(nums, target);
+	        expect(result).toBeUndefined();
+	    });
+
+	    it('return undefined if nums is not array', function() {
+	    	var foo= 42,
+				bar= 'baz',
+				wow= undefined,
+				much= {},
+				fn= function() {},
+				test= null;
+
+	    	target = 9;
+
+	        expect(twoSum.extend.sortThenSearch(foo, target)).toBeUndefined();
+	        expect(twoSum.extend.sortThenSearch(bar, target)).toBeUndefined();
+	        expect(twoSum.extend.sortThenSearch(wow, target)).toBeUndefined();
+	        expect(twoSum.extend.sortThenSearch(much, target)).toBeUndefined();
+	        expect(twoSum.extend.sortThenSearch(fn, target)).toBeUndefined();
+	        expect(twoSum.extend.sortThenSearch(test, target)).toBeUndefined();
+	    });
+
+	    it('return undefined if nums is an array with less than 2 values', function() {
+	    	nums = [2];
+	    	target = 9;
+
+	    	result = twoSum.extend.sortThenSearch(nums, target);
+	        expect(result).toBeUndefined();
+	    });
+
+	    it('return undefined if target is not a number', function() {
+	    	var foo= [],
+				bar= 'baz',
+				wow= undefined,
+				much= {},
+				fn= function() {},
+				test= null;
+
+			nums = [2, 7, 11, 15];
+
+	        expect(twoSum.extend.sortThenSearch(nums, foo)).toBeUndefined();
+	        expect(twoSum.extend.sortThenSearch(nums, bar)).toBeUndefined();
+	        expect(twoSum.extend.sortThenSearch(nums, wow)).toBeUndefined();
+	        expect(twoSum.extend.sortThenSearch(nums, much)).toBeUndefined();
+	        expect(twoSum.extend.sortThenSearch(nums, fn)).toBeUndefined();
+	        expect(twoSum.extend.sortThenSearch(nums, test)).toBeUndefined();
+	    });
+	});
+
 });
