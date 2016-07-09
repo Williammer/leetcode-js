@@ -43,7 +43,7 @@ describe('# Problem 2 - Add two non-negative numbers represented by two linked l
     });
 
 
-    // # Solution 1: brutal loop tests
+    // # Solution 1: Intro a stack helper to reversely insert each node into linklist
     describe('Solution 1: Intro a stack helper to reversely insert each node into linklist', function() {
         it('return right sum for 2 nums with same digits num that has not carry num: [2, 4, 3]+[5, 2, 5] => [7, 6, 8]', function() {
             var l1, l2, result;
