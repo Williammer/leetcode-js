@@ -17,7 +17,7 @@ describe('# Problem 1 - Two sum (assume that each input would have exactly one s
 
 // # Solution 1: brutal loop tests
 	describe('Solution 1: brutal loop tests', function() {
-	    it('return expected result for even nums array', function() {
+	    it('return expected result for even nums array:  [2, 7, 11, 15] & 9 => [0, 1]', function() {
 	    	nums = [2, 7, 11, 15];
 	    	target = 9;
 
@@ -25,7 +25,7 @@ describe('# Problem 1 - Two sum (assume that each input would have exactly one s
 	        expect(result).toEqual([0, 1]);
 	    });
 
-	    it('return expected result for odd nums array', function() {
+	    it('return expected result for odd nums array:  [2, 20, 11, 7, 15] & 9 => [0, 3]', function() {
 	    	nums = [2, 20, 11, 7, 15];
 	    	target = 9;
 
@@ -33,7 +33,7 @@ describe('# Problem 1 - Two sum (assume that each input would have exactly one s
 	        expect(result).toEqual([0, 3]);
 	    });
 
-	    it('return undefined if no desired result', function() {
+	    it('return undefined if no desired result:  [2, 7, 11, 15] & 8 => undefined', function() {
 	    	nums = [2, 7, 11, 15];
 	    	target = 8;
 
@@ -59,7 +59,7 @@ describe('# Problem 1 - Two sum (assume that each input would have exactly one s
 	        expect(twoSum.brutal(test, target)).toBeUndefined();
 	    });
 
-	    it('return undefined if nums is an array with less than 2 values', function() {
+	    it('return undefined if nums is an array with less than 2 values:  [2] & 9 => undefined', function() {
 	    	nums = [2];
 	    	target = 9;
 
@@ -89,7 +89,7 @@ describe('# Problem 1 - Two sum (assume that each input would have exactly one s
 
 // # Solution 2: hash
 	describe('Solution 2: hash', function() {
-	    it('return expected result for even nums array', function() {
+	    it('return expected result for even nums array:  [2, 7, 11, 15] & 9 => [0, 1]', function() {
 	    	nums = [2, 7, 11, 15];
 	    	target = 9;
 
@@ -97,7 +97,7 @@ describe('# Problem 1 - Two sum (assume that each input would have exactly one s
 	        expect(result).toEqual([0, 1]);
 	    });
 
-	    it('return expected result for odd nums array', function() {
+	    it('return expected result for odd nums array:  [2, 20, 11, 7, 15] & 9 => [0, 3]', function() {
 	    	nums = [2, 20, 11, 7, 15];
 	    	target = 9;
 
@@ -105,7 +105,7 @@ describe('# Problem 1 - Two sum (assume that each input would have exactly one s
 	        expect(result).toEqual([0, 3]);
 	    });
 
-	    it('return undefined if no desired result', function() {
+	    it('return undefined if no desired result:  [2, 7, 11, 15] & 8 => undefined', function() {
 	    	nums = [2, 7, 11, 15];
 	    	target = 8;
 
@@ -131,7 +131,7 @@ describe('# Problem 1 - Two sum (assume that each input would have exactly one s
 	        expect(twoSum.hash(test, target)).toBeUndefined();
 	    });
 
-	    it('return undefined if nums is an array with less than 2 values', function() {
+	    it('return undefined if nums is an array with less than 2 values:  [2] & 9 => undefined', function() {
 	    	nums = [2];
 	    	target = 9;
 
@@ -161,7 +161,7 @@ describe('# Problem 1 - Two sum (assume that each input would have exactly one s
 
 	// # Extended idea: sort then search
 	describe('Extended idea: sort then search, note it expects val pairs instead of key pairs to be returned now.', function() {
-	    it('return expected result for even nums array', function() {
+	    it('return expected result for even nums array:  [2, 7, 11, 15] & 9 => [2, 7]', function() {
 	    	nums = [2, 7, 11, 15];
 	    	target = 9;
 
@@ -169,7 +169,7 @@ describe('# Problem 1 - Two sum (assume that each input would have exactly one s
 	        expect(result).toEqual([2, 7]);
 	    });
 
-	    it('return expected result for odd nums array', function() {
+	    it('return expected result for odd nums array:  [2, 20, 11, 7, 15] & 9 => [2, 7]', function() {
 	    	nums = [2, 20, 11, 7, 15];
 	    	target = 9;
 
@@ -177,7 +177,7 @@ describe('# Problem 1 - Two sum (assume that each input would have exactly one s
 	        expect(result).toEqual([2, 7]);
 	    });
 
-	    it('return undefined if no desired result', function() {
+	    it('return undefined if no desired result:  [2, 7, 11, 15] & 8 => undefined', function() {
 	    	nums = [2, 7, 11, 15];
 	    	target = 8;
 
@@ -203,7 +203,7 @@ describe('# Problem 1 - Two sum (assume that each input would have exactly one s
 	        expect(twoSum.extend.sortThenSearch(test, target)).toBeUndefined();
 	    });
 
-	    it('return undefined if nums is an array with less than 2 values', function() {
+	    it('return undefined if nums is an array with less than 2 values:  [2] & 9 => undefined', function() {
 	    	nums = [2];
 	    	target = 9;
 
