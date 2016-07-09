@@ -21,8 +21,8 @@
 
  * Analysis: requirement is mainly on getting 'key' from valid 'value',
    which makes Hash to be an efficient data structure to use.
-
 ************************************************************/
+
 function ListNode(val) {
   this.val = val;
   this.next = null;
@@ -128,5 +128,4 @@ add2Nums.recursion = function(l1, l2) {
    1. Consider introduce stack data structure to reversely insert each node into linklist as it's hard to insert from head to tail for linklist.
 
    2. Utitlize mutable object reference feature.
-
 ************************************************************/
