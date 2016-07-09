@@ -15,7 +15,7 @@
     }
 ************************************************************/
 
-describe('Problem 2 - Add two non-negative numbers represented by two linked lists into a number represented by a linked list too', function() {
+describe('# Problem 2 - Add two non-negative numbers represented by two linked lists into a number represented by a linked list too', function() {
     beforeEach(function() {
         var l1, l2, result;
     });

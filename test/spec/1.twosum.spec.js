@@ -10,7 +10,7 @@
    return [0, 1].
 ************************************************************/
 
-describe('Problem 1 - Two sum (assume that each input would have exactly one solution)', function() {
+describe('# Problem 1 - Two sum (assume that each input would have exactly one solution)', function() {
 	beforeEach(function() {
 		var nums, target, result;
     });
