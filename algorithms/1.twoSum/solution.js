@@ -16,7 +16,6 @@
 
  * Analysis: requirement is mainly on getting 'key' from valid 'value',
    which makes Hash to be an efficient data structure to use.
-
 ************************************************************/
 
 var twoSum = {};
@@ -141,9 +140,8 @@ twoSum.extend.sortThenSearch = function(nums, target) {
  * Lessons:
    1. Consider introduce appriorate helper data structures to solve problems.
 
-   2. For list:array based problem, we can consider sort it first and utilize some of its treats like binary search.
-
-   3. Key, Value are just relative and can be exchanged when needed.
+   2. Key, Value are just relative and can be exchanged when needed.
    For js, with the ES6 Map/WeakMap that allows all types to be 'key', this trick can be applied easier.
 
+   3.  For list:array based problem that aims at finding values than keys, we can consider sort it first and utilize some of its treats like binary search.
 ************************************************************/
