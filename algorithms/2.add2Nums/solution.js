@@ -110,11 +110,22 @@ add2Nums.reference = function(l1, l2) {
     return List.next; // skip dummy head
 };
 
+/*
+ * Solution 3: Recursion.
+ *
+ * m: l1.length, n: l2.length
+ * Time complexity: O(m+n)
+ * Space complexity: O(1)
+ */
+add2Nums.recursion = function(l1, l2) {
+    
+};
+
 
 
 /************************************************************
  * Lessons:
-   1. Consider introduce stack data structure to reversely insert each node into linklist as it's hard to insert from tail to head for linklist.
+   1. Consider introduce stack data structure to reversely insert each node into linklist as it's hard to insert from head to tail for linklist.
 
    2. Utitlize mutable object reference feature.
 

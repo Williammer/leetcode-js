@@ -131,7 +131,7 @@ twoSum.hash = function(nums, target) {
  * Lessons:
    1. Consider introduce appriorate helper data structures to solve problems.
 
-   2. for list:array based problem, we can consider sort it first and utilize some of its treats like binary search.
+   2. For list:array based problem, we can consider sort it first and utilize some of its treats like binary search.
 
    3. Key, Value are just relative and can be exchanged when needed.
    For js, with the ES6 Map/WeakMap that allows all types to be 'key', this trick can be applied easier.
