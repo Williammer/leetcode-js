@@ -1,7 +1,7 @@
 # Introduction
-This is my leetcode solutions, with javascript as the major language.
+This is my leetcode solutions, with javascript as the major language and trying to explore different ways to solve it.
 
-Analysis and Lessons will be added in the comment of each js solution.
+Analysis and Lessons of each problem are added in the comment of each solution.js.
 
 
 # Solutions table
