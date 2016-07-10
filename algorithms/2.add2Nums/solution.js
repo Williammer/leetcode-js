@@ -24,8 +24,8 @@
 ************************************************************/
 
 function ListNode(val) {
-  this.val = val;
-  this.next = null;
+    this.val = val;
+    this.next = null;
 }
 
 var add2Nums = {};
@@ -118,7 +118,7 @@ add2Nums.reference = function(l1, l2) {
  * Space complexity: O(1)
  */
 add2Nums.recursion = function(l1, l2) {
-    
+
 };
 
 

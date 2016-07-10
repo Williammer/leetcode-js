@@ -14,7 +14,7 @@ add2Nums.arrToLList = function(arr) {
 
 add2Nums.lListToArr = function(lList) {
     var curNode = lList,
-    	arr = [];
+        arr = [];
 
     while (curNode && typeof curNode.val === "number") {
         arr.push(curNode.val);
