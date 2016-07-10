@@ -1,4 +1,5 @@
 /************************************************************
+
  * Problem: https://leetcode.com/problems/two-sum/
    Given an array of integers, return indices of the two numbers such that they add up to a specific target.
    You may assume that each input would have exactly one solution.
@@ -16,10 +17,11 @@
 
  * Analysis: requirement is mainly on getting 'key' from valid 'value',
    which makes Hash to be an efficient data structure to use.
+
 ************************************************************/
 
 var twoSum = {};
-    twoSum.extend = {}; // extend is for inspired solutions for similar problem, it doesn't solve the problem directly so may move it elsewhere in future.
+twoSum.extend = {}; // extend is for inspired solutions for similar problem, it doesn't solve the problem directly so may move it elsewhere in future.
 /*
  * Solution 1: brutal force loop
  *
@@ -61,7 +63,8 @@ twoSum.hash = function(nums, target) {
         return;
     }
 
-    var i, hash = {}, key,
+    var i, hash = {},
+        key,
         len = nums.length,
         compensate;
 
@@ -99,7 +102,7 @@ twoSum.extend.sortThenSearch = function(nums, target) {
     // some browser such as Mozilla uses mergeSort, which will add extra space complexity
     // (http://stackoverflow.com/questions/234683/javascript-array-sort-implementation)
     // NOTE: Array:sort by default didn't sort nums in ascending order, so need the helper function 'sortNumber' to set the rule.
-    var sortNumber = function(a,b) {
+    var sortNumber = function(a, b) {
             return a - b;
         },
         sortedNums = nums.sort(sortNumber),
@@ -112,7 +115,7 @@ twoSum.extend.sortThenSearch = function(nums, target) {
 
         // skip in vain searches
         if (compensate > sortedNums[hi]) {
-          continue;
+            continue;
         }
 
         // binary search the compensate target
@@ -137,6 +140,7 @@ twoSum.extend.sortThenSearch = function(nums, target) {
 
 
 /************************************************************
+
  * Lessons:
    1. Consider introduce appriorate helper data structures to solve problems.
 
@@ -144,4 +148,5 @@ twoSum.extend.sortThenSearch = function(nums, target) {
    For js, with the ES6 Map/WeakMap that allows all types to be 'key', this trick can be applied easier.
 
    3.  For list:array based problem that aims at finding values than keys, we can consider sort it first and utilize some of its treats like binary search.
+
 ************************************************************/

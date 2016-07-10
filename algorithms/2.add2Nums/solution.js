@@ -1,4 +1,5 @@
 /************************************************************
+
  * Problem: https://leetcode.com/problems/add-two-numbers/
     You are given two linked lists representing two non-negative numbers.
     The digits are stored in reverse order and each of their nodes contain a single digit.
@@ -148,10 +149,12 @@ add2Nums.recursion = function(l1, l2) {
 
 
 /************************************************************
+
  * Lessons:
    1. Consider introduce stack data structure to reversely insert each node into linklist as it's hard to insert from head to tail for linklist.
 
    2. Utilize mutable object reference feature.
 
    3. Multi base case recursion. To recursion well, we need to consider head/tail of child when design parent, so that child-recur can utilize its parent's base case.
+
 ************************************************************/
