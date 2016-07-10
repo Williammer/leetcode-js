@@ -19,8 +19,9 @@
  * @return {ListNode}
 
 
- * Analysis: requirement is mainly on getting 'key' from valid 'value',
-   which makes Hash to be an efficient data structure to use.
+ * Analysis: It's hard to insert nodes by recusively setting its next nodes for linklist, so at first I consider use a stack to cache those sum digits.
+   Later I've learned we can utilize the mutable feature of 2 referenced objects by having one doing the recursive insert work and the other to take the result, which is great.
+
 ************************************************************/
 
 function ListNode(val) {
