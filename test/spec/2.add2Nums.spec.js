@@ -127,4 +127,46 @@ describe('# Problem 2 - Add two non-negative numbers represented by two linked l
     });
 
 
+    // # Solution 3: recursion
+    describe('Solution 3: Recursion', function() {
+        it('return right sum for 2 nums with same digits num that has not carry num: [2, 4, 3]+[5, 2, 5] => [7, 6, 8]', function() {
+            var l1, l2, result;
+            l1 = add2Nums.arrToLList([2, 4, 3]);
+            l2 = add2Nums.arrToLList([5, 2, 5]);
+
+            result = add2Nums.recursion(l1, l2);
+            expect(add2Nums.lListToArr(result)).toEqual([7, 6, 8]);
+
+        });
+
+        it('return right sum for 2 nums with same digits num that has carry num: [2, 4, 3]+[5, 6, 4] => [7, 0, 8]', function() {
+            var l1, l2, result;
+            l1 = add2Nums.arrToLList([2, 4, 3]);
+            l2 = add2Nums.arrToLList([5, 6, 4]);
+
+            result = add2Nums.recursion(l1, l2);
+            expect(add2Nums.lListToArr(result)).toEqual([7, 0, 8]);
+        });
+
+        it('return sum should exceeds max input digit num limit with carry num: [2, 4, 9]+[5, 9] => [7, 3, 0, 1]', function() {
+            var l1, l2, result;
+            l1 = add2Nums.arrToLList([2, 4, 9]);
+            l2 = add2Nums.arrToLList([5, 9]);
+
+            result = add2Nums.recursion(l1, l2);
+            expect(add2Nums.lListToArr(result)).toEqual([7, 3, 0, 1]);
+        });
+
+        it('return right sum for 2 nums with different digits num: [6, 9, 3]+[9] => [5, 0, 4]', function() {
+            var l1, l2, result;
+            l1 = add2Nums.arrToLList([6, 9, 3]);
+            l2 = add2Nums.arrToLList([9]);
+
+            result = add2Nums.recursion(l1, l2);
+            expect(add2Nums.lListToArr(result)).toEqual([5, 0, 4]);
+        });
+
+    });
+
+
 });

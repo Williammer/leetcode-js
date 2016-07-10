@@ -114,11 +114,34 @@ add2Nums.reference = function(l1, l2) {
  * Solution 3: Recursion.
  *
  * m: l1.length, n: l2.length
- * Time complexity: O(m+n)
- * Space complexity: O(1)
+ * Time complexity: O(?)
+ * Space complexity: O(?)
  */
 add2Nums.recursion = function(l1, l2) {
+    var List, val;
+    // Base case
+    if (!(l1 instanceof ListNode)) {
+        return l2;
+    } else if (!(l2 instanceof ListNode)) {
+        return l1;
+    }
 
+    List = new ListNode(0);
+    List.next = add2Nums.recursion(l1.next, l2.next);
+
+    val = l1.val + l2.val;
+
+    if (val < 10) {
+        // case 1: no carry num
+        List.val = val;
+    } else {
+        // case 2: has carry num
+        val = val - 10;
+        List.val = val;
+        List.next = add2Nums.recursion(List.next, new ListNode(1)); // nested recursion!
+    }
+
+    return List;
 };
 
 
@@ -127,5 +150,7 @@ add2Nums.recursion = function(l1, l2) {
  * Lessons:
    1. Consider introduce stack data structure to reversely insert each node into linklist as it's hard to insert from head to tail for linklist.
 
-   2. Utitlize mutable object reference feature.
+   2. Utilize mutable object reference feature.
+
+   3. Multi base case recursion. To recursion well, we need to consider head/tail of child when design parent, so that child-recur can utilize its parent's base case.
 ************************************************************/
