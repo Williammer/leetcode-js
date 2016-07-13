@@ -30,7 +30,7 @@ twoSum.extend = {}; // extend is for inspired solutions for similar problem, it 
  * Space complexity: O(1)
  */
 twoSum.brutal = function(nums, target) {
-    if (!(Array.isArray(nums) && nums.length > 1) || typeof target !== 'number') {
+    if (!(Array.isArray(nums) && nums.length > 1) || typeof target !== "number") {
         return;
     }
 
@@ -59,7 +59,7 @@ twoSum.brutal = function(nums, target) {
  * Space complexity: O(N)
  */
 twoSum.hash = function(nums, target) {
-    if (!(Array.isArray(nums) && nums.length > 1) || typeof target !== 'number') {
+    if (!(Array.isArray(nums) && nums.length > 1) || typeof target !== "number") {
         return;
     }
 
@@ -72,7 +72,7 @@ twoSum.hash = function(nums, target) {
         compensate = target - nums[i];
 
         key = hash[compensate];
-        if (typeof key === 'number' && key !== i) {
+        if (typeof key === "number" && key !== i) {
             return [key, i];
         }
         hash[nums[i]] = i;
@@ -93,7 +93,7 @@ twoSum.hash = function(nums, target) {
  * Space complexity: O([1, N])
  */
 twoSum.extend.sortThenSearch = function(nums, target) {
-    if (!(Array.isArray(nums) && nums.length > 1) || typeof target !== 'number') {
+    if (!(Array.isArray(nums) && nums.length > 1) || typeof target !== "number") {
         return;
     }
 
