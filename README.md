@@ -10,6 +10,21 @@ This is my leetcode solutions in javaScript and trying to explore different ways
 Analysis and Lessons of each problem are added in the comment of each solution.js.
 
 
+## Install
+``` bash
+$ npm install
+```
+
+## Test
+1. Test on node:
+``` bash
+$ babel-node test/specRunner.js
+```
+
+2. Test on browser:
+Open the test/specRunner.html in browser(Chrome recommended as it already supports many es6 features).
+
+
 ## Solutions table
 | # | Title | Solutions | Difficulty |
 |---| ----- | -------- | ---------- |
