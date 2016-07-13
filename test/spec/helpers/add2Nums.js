@@ -1,4 +1,9 @@
-add2Nums.arrToLList = function(arr) {
+export function ListNode(val) {
+    this.val = val;
+    this.next = null;
+};
+
+export function arrToLList(arr) {
     var lastNode, newNode;
     while (arr.length > 0) {
         newNode = new ListNode(arr.pop());
@@ -12,7 +17,7 @@ add2Nums.arrToLList = function(arr) {
     return newNode;
 };
 
-add2Nums.lListToArr = function(lList) {
+export function lListToArr(lList) {
     var curNode = lList,
         arr = [];
 
