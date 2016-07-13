@@ -26,7 +26,7 @@ $ babel-node test/specRunner.js
 Open test/specRunner.html file in browser(Chrome recommended as it already supports many es6 features).
 
 
-## Solutions table
+# Solutions menu
 | # | Title | Solutions | Difficulty |
 |---| ----- | -------- | ---------- |
 |1|[Two Sum](https://oj.leetcode.com/problems/two-sum/)|[js (1.brutalLoop, 2.hash, x.sortThenSearch)](./algorithms/twoSum/twoSum.js)|Easy|

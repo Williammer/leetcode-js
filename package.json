@@ -1,5 +1,5 @@
 {
-  "name": "leetcode",
+  "name": "leetcode-js",
   "version": "0.1.1",
   "description": "my leetcode solutions, mainly focus on javaScript impl.",
   "main": "solution.js",
