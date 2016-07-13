@@ -16,13 +16,14 @@ $ npm install
 ```
 
 ## Test
-1. Test on node:
+- Test on node:
 ``` bash
 $ babel-node test/specRunner.js
 ```
 
-2. Test on browser:
-Open the test/specRunner.html in browser(Chrome recommended as it already supports many es6 features).
+
+- Test on browser:
+Open test/specRunner.html file in browser(Chrome recommended as it already supports many es6 features).
 
 
 ## Solutions table
