@@ -15,15 +15,18 @@ Analysis and Lessons of each problem are added in the comment of each solution.j
 $ npm install
 ```
 
-## Test
+## Testing
 - Test on node:
+``` bash
+$ npm run test
+```
+which will run:
 ``` bash
 $ babel-node test/specRunner.js
 ```
 
-
 - Test on browser:
-Open test/specRunner.html file in browser(Chrome recommended as it already supports many es6 features).
+Run test/specRunner.html in browser (recommended Chrome as it already supports many es6 features).
 
 
 # Solutions menu
