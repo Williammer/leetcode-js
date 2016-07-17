@@ -16,7 +16,7 @@ $ npm install
 ```
 
 ## Testing
-- 1. Test on node:
+### - 1. Test on node:
 ``` bash
 $ npm run test:node
 ```
@@ -25,7 +25,7 @@ which will run:
 $ babel-node test/specRunner.js
 ```
 
-- 2. Test on browser:
+### - 2. Test on browser:
 ``` bash
 $ npm run test:browser
 ```
