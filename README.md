@@ -16,21 +16,25 @@ $ npm install
 ```
 
 ## Testing
-- Test on node:
+- 1. Test on node:
 ``` bash
-$ npm run test
+$ npm run test:node
 ```
 which will run:
 ``` bash
 $ babel-node test/specRunner.js
 ```
 
-- Test on browser:
-Run test/specRunner.html in browser (recommended Chrome as it already supports many es6 features).
+- 2. Test on browser:
+``` bash
+$ npm run test:browser
+```
+which will open test/specRunner.html in Chrome browser (recommended as it already supports many es6 features, works well with the help of rollup).
 
 
 # Solutions menu
 | # | Title | Solutions | Difficulty |
 |---| ----- | -------- | ---------- |
-|1|[Two Sum](https://oj.leetcode.com/problems/two-sum/)|[js (1.brutalLoop, 2.hash, x.sortThenSearch)](./algorithms/twoSum/twoSum.js)|Easy|
-|2|[Add 2 Nums](https://oj.leetcode.com/problems/add-two-numbers/)|[js (1.stackHelper, 2.referencedObjects, 3. Recursion)](./algorithms/add2Nums/add2Nums.js)|Med|
+|1|[Two Sum](https://leetcode.com/problems/two-sum/)|[js (1.brutalLoop, 2.hash, x.sortThenSearch)](./src/1.twoSum/solution.js)|Easy|
+|2|[Add 2 Nums](https://leetcode.com/problems/add-two-numbers/)|[js (1.stackHelper, 2.referencedObjects, 3. Recursion)](./src/2.add2Nums/solution.js)|Med|
+|3|[Longest no-repeat substring](https://leetcode.com/problems/longest-substring-without-repeating-characters/)|[js (1.slideWindow, 2.slideWindowEnhanced, 3. hash, 4. hash+reduce)](./src/3.longestSubstr/solution.js)|Med|
