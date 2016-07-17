@@ -14,7 +14,7 @@
       this.next = null;
     }
 ************************************************************/
-import { ListNode, arrToLList, lListToArr, add2Nums } from "../../algorithms/es6/2.add2Nums/solution";
+import { ListNode, arrToLList, lListToArr, add2Nums } from "../../src/2.add2Nums/solution";
 
 describe('# Problem 2 - Add two non-negative numbers represented by two linked lists into a number represented by a linked list too', function() {
     // # Helper tests

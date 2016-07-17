@@ -9,7 +9,7 @@
    Because nums[0] + nums[1] = 2 + 7 = 9,
    return [0, 1].
 ************************************************************/
-import { brutal, hash, extend } from "../../algorithms/es6/1.twoSum/solution"
+import { twoSum } from "../../src/1.twoSum/solution"
 
 describe('# Problem 1 - Two sum (assume that each input would have exactly one solution)', function() {
 
@@ -19,7 +19,7 @@ describe('# Problem 1 - Two sum (assume that each input would have exactly one s
 	    	var nums = [2, 7, 11, 15];
 	    	var target = 9;
 
-	    	var result = brutal(nums, target);
+	    	var result = twoSum.brutal(nums, target);
 	        expect(result).toEqual([0, 1]);
 	    });
 
@@ -27,7 +27,7 @@ describe('# Problem 1 - Two sum (assume that each input would have exactly one s
 	    	var nums = [2, 20, 11, 7, 15];
 	    	var target = 9;
 
-	    	var result = brutal(nums, target);
+	    	var result = twoSum.brutal(nums, target);
 	        expect(result).toEqual([0, 3]);
 	    });
 
@@ -35,7 +35,7 @@ describe('# Problem 1 - Two sum (assume that each input would have exactly one s
 	    	var nums = [2, 7, 11, 15];
 	    	var target = 8;
 
-	    	var result = brutal(nums, target);
+	    	var result = twoSum.brutal(nums, target);
 	        expect(result).toBeUndefined();
 	    });
 
@@ -49,19 +49,19 @@ describe('# Problem 1 - Two sum (assume that each input would have exactly one s
 
 	    	var target = 9;
 
-	        expect(brutal(foo, target)).toBeUndefined();
-	        expect(brutal(bar, target)).toBeUndefined();
-	        expect(brutal(wow, target)).toBeUndefined();
-	        expect(brutal(much, target)).toBeUndefined();
-	        expect(brutal(fn, target)).toBeUndefined();
-	        expect(brutal(test, target)).toBeUndefined();
+	        expect(twoSum.brutal(foo, target)).toBeUndefined();
+	        expect(twoSum.brutal(bar, target)).toBeUndefined();
+	        expect(twoSum.brutal(wow, target)).toBeUndefined();
+	        expect(twoSum.brutal(much, target)).toBeUndefined();
+	        expect(twoSum.brutal(fn, target)).toBeUndefined();
+	        expect(twoSum.brutal(test, target)).toBeUndefined();
 	    });
 
 	    it('return undefined if nums is an array with less than 2 values:  [2] & 9 => undefined', function() {
 	    	var nums = [2];
 	    	var target = 9;
 
-	    	var result = brutal(nums, target);
+	    	var result = twoSum.brutal(nums, target);
 	        expect(result).toBeUndefined();
 	    });
 
@@ -75,12 +75,12 @@ describe('# Problem 1 - Two sum (assume that each input would have exactly one s
 
 			var nums = [2, 7, 11, 15];
 
-	        expect(brutal(nums, foo)).toBeUndefined();
-	        expect(brutal(nums, bar)).toBeUndefined();
-	        expect(brutal(nums, wow)).toBeUndefined();
-	        expect(brutal(nums, much)).toBeUndefined();
-	        expect(brutal(nums, fn)).toBeUndefined();
-	        expect(brutal(nums, test)).toBeUndefined();
+	        expect(twoSum.brutal(nums, foo)).toBeUndefined();
+	        expect(twoSum.brutal(nums, bar)).toBeUndefined();
+	        expect(twoSum.brutal(nums, wow)).toBeUndefined();
+	        expect(twoSum.brutal(nums, much)).toBeUndefined();
+	        expect(twoSum.brutal(nums, fn)).toBeUndefined();
+	        expect(twoSum.brutal(nums, test)).toBeUndefined();
 	    });
 	});
 
@@ -91,7 +91,7 @@ describe('# Problem 1 - Two sum (assume that each input would have exactly one s
 	    	var nums = [2, 7, 11, 15];
 	    	var target = 9;
 
-	    	var result = hash(nums, target);
+	    	var result = twoSum.hash(nums, target);
 	        expect(result).toEqual([0, 1]);
 	    });
 
@@ -99,7 +99,7 @@ describe('# Problem 1 - Two sum (assume that each input would have exactly one s
 	    	var nums = [2, 20, 11, 7, 15];
 	    	var target = 9;
 
-	    	var result = hash(nums, target);
+	    	var result = twoSum.hash(nums, target);
 	        expect(result).toEqual([0, 3]);
 	    });
 
@@ -107,7 +107,7 @@ describe('# Problem 1 - Two sum (assume that each input would have exactly one s
 	    	var nums = [2, 7, 11, 15];
 	    	var target = 8;
 
-	    	var result = hash(nums, target);
+	    	var result = twoSum.hash(nums, target);
 	        expect(result).toBeUndefined();
 	    });
 
@@ -121,19 +121,19 @@ describe('# Problem 1 - Two sum (assume that each input would have exactly one s
 
 	    	var target = 9;
 
-	        expect(hash(foo, target)).toBeUndefined();
-	        expect(hash(bar, target)).toBeUndefined();
-	        expect(hash(wow, target)).toBeUndefined();
-	        expect(hash(much, target)).toBeUndefined();
-	        expect(hash(fn, target)).toBeUndefined();
-	        expect(hash(test, target)).toBeUndefined();
+	        expect(twoSum.hash(foo, target)).toBeUndefined();
+	        expect(twoSum.hash(bar, target)).toBeUndefined();
+	        expect(twoSum.hash(wow, target)).toBeUndefined();
+	        expect(twoSum.hash(much, target)).toBeUndefined();
+	        expect(twoSum.hash(fn, target)).toBeUndefined();
+	        expect(twoSum.hash(test, target)).toBeUndefined();
 	    });
 
 	    it('return undefined if nums is an array with less than 2 values:  [2] & 9 => undefined', function() {
 	    	var nums = [2];
 	    	var target = 9;
 
-	    	var result = hash(nums, target);
+	    	var result = twoSum.hash(nums, target);
 	        expect(result).toBeUndefined();
 	    });
 
@@ -147,12 +147,12 @@ describe('# Problem 1 - Two sum (assume that each input would have exactly one s
 
 			var nums = [2, 7, 11, 15];
 
-	        expect(hash(nums, foo)).toBeUndefined();
-	        expect(hash(nums, bar)).toBeUndefined();
-	        expect(hash(nums, wow)).toBeUndefined();
-	        expect(hash(nums, much)).toBeUndefined();
-	        expect(hash(nums, fn)).toBeUndefined();
-	        expect(hash(nums, test)).toBeUndefined();
+	        expect(twoSum.hash(nums, foo)).toBeUndefined();
+	        expect(twoSum.hash(nums, bar)).toBeUndefined();
+	        expect(twoSum.hash(nums, wow)).toBeUndefined();
+	        expect(twoSum.hash(nums, much)).toBeUndefined();
+	        expect(twoSum.hash(nums, fn)).toBeUndefined();
+	        expect(twoSum.hash(nums, test)).toBeUndefined();
 	    });
 	});
 
@@ -163,7 +163,7 @@ describe('# Problem 1 - Two sum (assume that each input would have exactly one s
 	    	var nums = [2, 7, 11, 15];
 	    	var target = 9;
 
-	    	var result = extend.sortThenSearch(nums, target);
+	    	var result = twoSum.extend.sortThenSearch(nums, target);
 	        expect(result).toEqual([2, 7]);
 	    });
 
@@ -171,7 +171,7 @@ describe('# Problem 1 - Two sum (assume that each input would have exactly one s
 	    	var nums = [2, 20, 11, 7, 15];
 	    	var target = 9;
 
-	    	var result = extend.sortThenSearch(nums, target);
+	    	var result = twoSum.extend.sortThenSearch(nums, target);
 	        expect(result).toEqual([2, 7]);
 	    });
 
@@ -179,7 +179,7 @@ describe('# Problem 1 - Two sum (assume that each input would have exactly one s
 	    	var nums = [2, 7, 11, 15];
 	    	var target = 8;
 
-	    	var result = extend.sortThenSearch(nums, target);
+	    	var result = twoSum.extend.sortThenSearch(nums, target);
 	        expect(result).toBeUndefined();
 	    });
 
@@ -193,19 +193,19 @@ describe('# Problem 1 - Two sum (assume that each input would have exactly one s
 
 	    	var target = 9;
 
-	        expect(extend.sortThenSearch(foo, target)).toBeUndefined();
-	        expect(extend.sortThenSearch(bar, target)).toBeUndefined();
-	        expect(extend.sortThenSearch(wow, target)).toBeUndefined();
-	        expect(extend.sortThenSearch(much, target)).toBeUndefined();
-	        expect(extend.sortThenSearch(fn, target)).toBeUndefined();
-	        expect(extend.sortThenSearch(test, target)).toBeUndefined();
+	        expect(twoSum.extend.sortThenSearch(foo, target)).toBeUndefined();
+	        expect(twoSum.extend.sortThenSearch(bar, target)).toBeUndefined();
+	        expect(twoSum.extend.sortThenSearch(wow, target)).toBeUndefined();
+	        expect(twoSum.extend.sortThenSearch(much, target)).toBeUndefined();
+	        expect(twoSum.extend.sortThenSearch(fn, target)).toBeUndefined();
+	        expect(twoSum.extend.sortThenSearch(test, target)).toBeUndefined();
 	    });
 
 	    it('return undefined if nums is an array with less than 2 values:  [2] & 9 => undefined', function() {
 	    	var nums = [2];
 	    	var target = 9;
 
-	    	var result = extend.sortThenSearch(nums, target);
+	    	var result = twoSum.extend.sortThenSearch(nums, target);
 	        expect(result).toBeUndefined();
 	    });
 
@@ -219,12 +219,12 @@ describe('# Problem 1 - Two sum (assume that each input would have exactly one s
 
 			var nums = [2, 7, 11, 15];
 
-	        expect(extend.sortThenSearch(nums, foo)).toBeUndefined();
-	        expect(extend.sortThenSearch(nums, bar)).toBeUndefined();
-	        expect(extend.sortThenSearch(nums, wow)).toBeUndefined();
-	        expect(extend.sortThenSearch(nums, much)).toBeUndefined();
-	        expect(extend.sortThenSearch(nums, fn)).toBeUndefined();
-	        expect(extend.sortThenSearch(nums, test)).toBeUndefined();
+	        expect(twoSum.extend.sortThenSearch(nums, foo)).toBeUndefined();
+	        expect(twoSum.extend.sortThenSearch(nums, bar)).toBeUndefined();
+	        expect(twoSum.extend.sortThenSearch(nums, wow)).toBeUndefined();
+	        expect(twoSum.extend.sortThenSearch(nums, much)).toBeUndefined();
+	        expect(twoSum.extend.sortThenSearch(nums, fn)).toBeUndefined();
+	        expect(twoSum.extend.sortThenSearch(nums, test)).toBeUndefined();
 	    });
 	});
 

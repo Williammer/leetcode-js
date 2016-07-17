@@ -16,7 +16,7 @@
 
 ************************************************************/
 
-// import { ListNode, arrToLList, lListToArr, add2Nums } from "../../algorithms/es6/3.longestSubstr/solution";
+import { longestSubstr } from "../../src/3.longestSubstr/solution";
 
 describe('# Problem 3 - Given a string, find the length of the longest substring without repeating characters.', function() {
 
