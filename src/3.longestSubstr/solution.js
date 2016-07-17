@@ -16,7 +16,7 @@
 
 ************************************************************/
 
-var longestSubstr = {};
+export const longestSubstr = {};
 
 /*
  * Solution 1: Slide Window, using substring and lastIndexOf to check if repeated.
@@ -125,9 +125,6 @@ longestSubstr.hashReduce = function(s) {
         return Math.max(max, i - left + 1);
     }, 0);
 };
-
-
-// recursion?
 
 /************************************************************
 

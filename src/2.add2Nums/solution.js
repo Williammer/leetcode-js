@@ -56,7 +56,7 @@ export function lListToArr(lList) {
     return arr;
 };
 
-export var add2Nums = {};
+export const add2Nums = {};
 /*
  * Solution 1: Intro a stack helper to reversely insert each node into linklist.
  *

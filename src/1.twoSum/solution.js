@@ -20,8 +20,7 @@
 
 ************************************************************/
 
-var twoSum = {};
-twoSum.extend = {}; // extend is for inspired solutions for similar problem, it doesn't solve the problem directly so may move it elsewhere in future.
+export const twoSum = {};
 /*
  * Solution 1: brutal force loop
  *
@@ -92,6 +91,7 @@ twoSum.hash = function(nums, target) {
  * Time complexity:  O([N+NlogN, 2NlogN])
  * Space complexity: O([1, N])
  */
+twoSum.extend = {}; // extend is for inspired solutions for similar problem, it doesn't solve the problem directly so may move it elsewhere in future.
 twoSum.extend.sortThenSearch = function(nums, target) {
     if (!(Array.isArray(nums) && nums.length > 1) || typeof target !== "number") {
         return;
@@ -137,7 +137,6 @@ twoSum.extend.sortThenSearch = function(nums, target) {
     }
     return;
 };
-
 
 /************************************************************
 
