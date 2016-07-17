@@ -4,7 +4,8 @@
   "description": "my leetcode solutions, mainly focus on javaScript impl.",
   "main": "solution.js",
   "scripts": {
-    "test": "babel-node test/specRunner.js"
+    "test:browser": "rm -f test/spec/testAll.js && rollup -c && open -a 'Google Chrome' test/SpecRunner.html",
+    "test:node": "babel-node test/specRunner.js"
   },
   "repository": {
     "type": "git",
@@ -23,7 +24,8 @@
   "homepage": "https://github.com/Williammer/leetcode",
   "devDependencies": {
     "jasmine": "^2.4.1",
-    "rollup": "^0.34.1"
+    "rollup": "^0.34.1",
+    "rollup-plugin-multi-entry": "^2.0.0"
   },
   "dependencies": {
     "babel-cli": "^6.10.1",
