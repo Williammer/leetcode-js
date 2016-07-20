@@ -20,7 +20,7 @@ $ npm install
 ``` bash
 $ npm run test
 ```
-or just:
+or:
 ``` bash
 $ npm run test:node
 ```
