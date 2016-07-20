@@ -28,13 +28,13 @@ export const twoSum = {};
  * Time complexity: O(N^2)
  * Space complexity: O(1)
  */
-twoSum.brutal = function(nums, target) {
+twoSum.brutal = (nums, target) => {
     if (!(Array.isArray(nums) && nums.length > 1) || typeof target !== "number") {
         return;
     }
 
-    var i, j, len = nums.length,
-        compensate;
+    const len = nums.length;
+    let i, j, compensate;
 
     for (i = 0; i < len; i++) {
         compensate = target - nums[i];
@@ -57,15 +57,14 @@ twoSum.brutal = function(nums, target) {
  * Time complexity:  O(N)
  * Space complexity: O(N)
  */
-twoSum.hash = function(nums, target) {
+twoSum.hash = (nums, target) => {
     if (!(Array.isArray(nums) && nums.length > 1) || typeof target !== "number") {
         return;
     }
 
-    var i, hash = {},
-        key,
-        len = nums.length,
-        compensate;
+    const len = nums.length;
+    let i, hash = {},
+        key, compensate;
 
     for (i = 0; i < len; i++) {
         compensate = target - nums[i];
@@ -92,7 +91,7 @@ twoSum.hash = function(nums, target) {
  * Space complexity: O([1, N])
  */
 twoSum.extend = {}; // extend is for inspired solutions for similar problem, it doesn't solve the problem directly so may move it elsewhere in future.
-twoSum.extend.sortThenSearch = function(nums, target) {
+twoSum.extend.sortThenSearch = (nums, target) => {
     if (!(Array.isArray(nums) && nums.length > 1) || typeof target !== "number") {
         return;
     }
@@ -102,11 +101,9 @@ twoSum.extend.sortThenSearch = function(nums, target) {
     // some browser such as Mozilla uses mergeSort, which will add extra space complexity
     // (http://stackoverflow.com/questions/234683/javascript-array-sort-implementation)
     // NOTE: Array:sort by default didn't sort nums in ascending order, so need the helper function 'sortNumber' to set the rule.
-    var sortNumber = function(a, b) {
-            return a - b;
-        },
-        sortedNums = nums.sort(sortNumber),
-        i, lo, hi, mid, compensate;
+    const sortNumber = (a, b) => a - b;
+    const sortedNums = nums.sort(sortNumber);
+    let i, lo, hi, mid, compensate;
 
     for (i = 0; i < sortedNums.length; i++) {
         lo = i;

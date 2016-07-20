@@ -25,23 +25,23 @@ export const longestSubstr = {};
  * Time complexity: O(N^2)
  * Space complexity: O(1)
  */
-longestSubstr.slideWin = function(s) {
+longestSubstr.slideWin = (s) => {
     if (!(typeof s === "string" && s.length > 0)) {
         return 0;
     }
 
-    var idx = 0,
+    const strLen = s.length;
+    let idx = 0,
         curLen = 1,
         maxLen = 1,
-        strLen = s.length,
         isRepeat = false;
 
     while (idx < strLen - 1 && maxLen < strLen - idx) {
         if (curLen === 1) {
             isRepeat = (s[idx] === s[idx + 1]);
         } else {
-            isRepeat = s.substring(idx, idx+curLen).lastIndexOf(s[idx + curLen]) > -1;
-            // isRepeat = (s.substring(idx, idx+curLen)).includes(s[idx + curLen]); // ES6 str.includes(), similar perf as indexOf/lastIndexOf
+            // isRepeat = s.substring(idx, idx+curLen).lastIndexOf(s[idx + curLen]) > -1;
+            isRepeat = (s.substring(idx, idx+curLen)).includes(s[idx + curLen]); // ES6 str.includes(), similar perf as indexOf/lastIndexOf
         }
 
         if (isRepeat) {
@@ -65,8 +65,8 @@ longestSubstr.slideWin = function(s) {
  * Time complexity: O(N)
  * Space complexity: O(1)
  */
-longestSubstr.slideWinEnhanced = function(s) {
-    var maxLen, left, right, i;
+longestSubstr.slideWinEnhanced = (s) => {
+    let maxLen, left, right, i;
 
     if (s.length < 2) {
         return s.length;
@@ -92,8 +92,8 @@ longestSubstr.slideWinEnhanced = function(s) {
  * Time complexity: O(N^2)
  * Space complexity: O(N)
  */
-longestSubstr.hash = function(s) {
-    var res = {}, i, left = 0, maxLen = 0;
+longestSubstr.hash = (s) => {
+    let res = {}, i, left = 0, maxLen = 0;
 
     for (i = 0; i < s.length; i++) {
         if (res[s[i]] === undefined) {
@@ -116,8 +116,8 @@ longestSubstr.hash = function(s) {
  * Time complexity: O(N)
  * Space complexity: O(N)
  */
-longestSubstr.hashReduce = function(s) {
-    var map = {}, left = 0;
+longestSubstr.hashReduce = (s) => {
+    let map = {}, left = 0;
 
     return s.split('').reduce((max, v, i) => {
         left = map[v] >= left ? map[v] + 1 : left;

@@ -24,13 +24,17 @@
    Later I've learned we can utilize the mutable feature of 2 referenced objects by having one doing the recursive insert work and the other to take the result, which is great.
 
 ************************************************************/
-export function ListNode(val) {
-    this.val = val;
-    this.next = null;
+
+// Helper functions.
+export class ListNode {
+    constructor(val) {
+        this.val = val;
+        this.next = null;
+    }
 };
 
-export function arrToLList(arr) {
-    var lastNode, newNode;
+export const arrToLList = (arr) => {
+    let lastNode, newNode;
     while (arr.length > 0) {
         newNode = new ListNode(arr.pop());
 
@@ -43,8 +47,8 @@ export function arrToLList(arr) {
     return newNode;
 };
 
-export function lListToArr(lList) {
-    var curNode = lList,
+export const lListToArr = (lList) => {
+    let curNode = lList,
         arr = [];
 
     while (curNode && typeof curNode.val === "number") {
@@ -64,8 +68,8 @@ export const add2Nums = {};
  * Time complexity: O(2N)
  * Space complexity: O(N)
  */
-add2Nums.stackHelper = function(l1, l2) {
-    var sumVal = 0,
+add2Nums.stackHelper = (l1, l2) => {
+    let sumVal = 0,
         overflowedVal = 0,
         tmpStack = [],
         newNode, lastNode, l1Val, l2Val;
@@ -107,8 +111,8 @@ add2Nums.stackHelper = function(l1, l2) {
  * Time complexity: O(N)
  * Space complexity: O(1)
  */
-add2Nums.reference = function(l1, l2) {
-    var List = new ListNode(-1), // dummy head
+add2Nums.reference = (l1, l2) => {
+    let List = new ListNode(-1), // dummy head
         head = List, // referenced List with head
         sum = 0,
         carry = 0;
@@ -145,8 +149,8 @@ add2Nums.reference = function(l1, l2) {
  * Time complexity: O(?)
  * Space complexity: O(?)
  */
-add2Nums.recursion = function(l1, l2) {
-    var List, val;
+add2Nums.recursion = (l1, l2) => {
+    let List, val;
     // Base case
     if (!(l1 instanceof ListNode)) {
         return l2;
