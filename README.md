@@ -18,9 +18,13 @@ $ npm install
 ## Testing
 #### - 1. Test on node:
 ``` bash
+$ npm run test
+```
+``` bash
+or just:
 $ npm run test:node
 ```
-which will run:
+which essentially runs:
 ``` bash
 $ babel-node test/specRunner.js
 ```
