@@ -16,38 +16,38 @@ describe('# Problem 1 - Two sum (assume that each input would have exactly one s
 // # Solution 1: brutal loop tests
 	describe('Solution 1: brutal loop tests', function() {
 	    it('return expected result for even nums array:  [2, 7, 11, 15] & 9 => [0, 1]', function() {
-	    	var nums = [2, 7, 11, 15];
-	    	var target = 9;
+	    	const nums = [2, 7, 11, 15];
+	    	const target = 9;
 
-	    	var result = twoSum.brutal(nums, target);
+	    	const result = twoSum.brutal(nums, target);
 	        expect(result).toEqual([0, 1]);
 	    });
 
 	    it('return expected result for odd nums array:  [2, 20, 11, 7, 15] & 9 => [0, 3]', function() {
-	    	var nums = [2, 20, 11, 7, 15];
-	    	var target = 9;
+	    	const nums = [2, 20, 11, 7, 15];
+	    	const target = 9;
 
-	    	var result = twoSum.brutal(nums, target);
+	    	const result = twoSum.brutal(nums, target);
 	        expect(result).toEqual([0, 3]);
 	    });
 
 	    it('return undefined if no desired result:  [2, 7, 11, 15] & 8 => undefined', function() {
-	    	var nums = [2, 7, 11, 15];
-	    	var target = 8;
+	    	const nums = [2, 7, 11, 15];
+	    	const target = 8;
 
-	    	var result = twoSum.brutal(nums, target);
+	    	const result = twoSum.brutal(nums, target);
 	        expect(result).toBeUndefined();
 	    });
 
 	    it('return undefined if nums is not array', function() {
-	    	var foo= 42,
+	    	const foo= 42,
 				bar= 'baz',
 				wow= undefined,
 				much= {},
 				fn= function() {},
 				test= null;
 
-	    	var target = 9;
+	    	const target = 9;
 
 	        expect(twoSum.brutal(foo, target)).toBeUndefined();
 	        expect(twoSum.brutal(bar, target)).toBeUndefined();
@@ -58,22 +58,22 @@ describe('# Problem 1 - Two sum (assume that each input would have exactly one s
 	    });
 
 	    it('return undefined if nums is an array with less than 2 values:  [2] & 9 => undefined', function() {
-	    	var nums = [2];
-	    	var target = 9;
+	    	const nums = [2];
+	    	const target = 9;
 
-	    	var result = twoSum.brutal(nums, target);
+	    	const result = twoSum.brutal(nums, target);
 	        expect(result).toBeUndefined();
 	    });
 
 	    it('return undefined if target is not a number', function() {
-	    	var foo= [],
+	    	const foo= [],
 				bar= 'baz',
 				wow= undefined,
 				much= {},
 				fn= function() {},
 				test= null;
 
-			var nums = [2, 7, 11, 15];
+			const nums = [2, 7, 11, 15];
 
 	        expect(twoSum.brutal(nums, foo)).toBeUndefined();
 	        expect(twoSum.brutal(nums, bar)).toBeUndefined();
@@ -88,38 +88,38 @@ describe('# Problem 1 - Two sum (assume that each input would have exactly one s
 // # Solution 2: hash
 	describe('Solution 2: hash', function() {
 	    it('return expected result for even nums array:  [2, 7, 11, 15] & 9 => [0, 1]', function() {
-	    	var nums = [2, 7, 11, 15];
-	    	var target = 9;
+	    	const nums = [2, 7, 11, 15];
+	    	const target = 9;
 
-	    	var result = twoSum.hash(nums, target);
+	    	const result = twoSum.hash(nums, target);
 	        expect(result).toEqual([0, 1]);
 	    });
 
 	    it('return expected result for odd nums array:  [2, 20, 11, 7, 15] & 9 => [0, 3]', function() {
-	    	var nums = [2, 20, 11, 7, 15];
-	    	var target = 9;
+	    	const nums = [2, 20, 11, 7, 15];
+	    	const target = 9;
 
-	    	var result = twoSum.hash(nums, target);
+	    	const result = twoSum.hash(nums, target);
 	        expect(result).toEqual([0, 3]);
 	    });
 
 	    it('return undefined if no desired result:  [2, 7, 11, 15] & 8 => undefined', function() {
-	    	var nums = [2, 7, 11, 15];
-	    	var target = 8;
+	    	const nums = [2, 7, 11, 15];
+	    	const target = 8;
 
-	    	var result = twoSum.hash(nums, target);
+	    	const result = twoSum.hash(nums, target);
 	        expect(result).toBeUndefined();
 	    });
 
 	    it('return undefined if nums is not array', function() {
-	    	var foo= 42,
+	    	const foo= 42,
 				bar= 'baz',
 				wow= undefined,
 				much= {},
 				fn= function() {},
 				test= null;
 
-	    	var target = 9;
+	    	const target = 9;
 
 	        expect(twoSum.hash(foo, target)).toBeUndefined();
 	        expect(twoSum.hash(bar, target)).toBeUndefined();
@@ -130,22 +130,22 @@ describe('# Problem 1 - Two sum (assume that each input would have exactly one s
 	    });
 
 	    it('return undefined if nums is an array with less than 2 values:  [2] & 9 => undefined', function() {
-	    	var nums = [2];
-	    	var target = 9;
+	    	const nums = [2];
+	    	const target = 9;
 
-	    	var result = twoSum.hash(nums, target);
+	    	const result = twoSum.hash(nums, target);
 	        expect(result).toBeUndefined();
 	    });
 
 	    it('return undefined if target is not a number', function() {
-	    	var foo= [],
+	    	const foo= [],
 				bar= 'baz',
 				wow= undefined,
 				much= {},
 				fn= function() {},
 				test= null;
 
-			var nums = [2, 7, 11, 15];
+			const nums = [2, 7, 11, 15];
 
 	        expect(twoSum.hash(nums, foo)).toBeUndefined();
 	        expect(twoSum.hash(nums, bar)).toBeUndefined();
@@ -160,38 +160,38 @@ describe('# Problem 1 - Two sum (assume that each input would have exactly one s
 	// # Extended idea: sort then search
 	describe('Extended idea: sort then search, note it expects val pairs instead of key pairs to be returned now.', function() {
 	    it('return expected result for even nums array:  [2, 7, 11, 15] & 9 => [2, 7]', function() {
-	    	var nums = [2, 7, 11, 15];
-	    	var target = 9;
+	    	const nums = [2, 7, 11, 15];
+	    	const target = 9;
 
-	    	var result = twoSum.extend.sortThenSearch(nums, target);
+	    	const result = twoSum.extend.sortThenSearch(nums, target);
 	        expect(result).toEqual([2, 7]);
 	    });
 
 	    it('return expected result for odd nums array:  [2, 20, 11, 7, 15] & 9 => [2, 7]', function() {
-	    	var nums = [2, 20, 11, 7, 15];
-	    	var target = 9;
+	    	const nums = [2, 20, 11, 7, 15];
+	    	const target = 9;
 
-	    	var result = twoSum.extend.sortThenSearch(nums, target);
+	    	const result = twoSum.extend.sortThenSearch(nums, target);
 	        expect(result).toEqual([2, 7]);
 	    });
 
 	    it('return undefined if no desired result:  [2, 7, 11, 15] & 8 => undefined', function() {
-	    	var nums = [2, 7, 11, 15];
-	    	var target = 8;
+	    	const nums = [2, 7, 11, 15];
+	    	const target = 8;
 
-	    	var result = twoSum.extend.sortThenSearch(nums, target);
+	    	const result = twoSum.extend.sortThenSearch(nums, target);
 	        expect(result).toBeUndefined();
 	    });
 
 	    it('return undefined if nums is not array', function() {
-	    	var foo= 42,
+	    	const foo= 42,
 				bar= 'baz',
 				wow= undefined,
 				much= {},
 				fn= function() {},
 				test= null;
 
-	    	var target = 9;
+	    	const target = 9;
 
 	        expect(twoSum.extend.sortThenSearch(foo, target)).toBeUndefined();
 	        expect(twoSum.extend.sortThenSearch(bar, target)).toBeUndefined();
@@ -202,22 +202,22 @@ describe('# Problem 1 - Two sum (assume that each input would have exactly one s
 	    });
 
 	    it('return undefined if nums is an array with less than 2 values:  [2] & 9 => undefined', function() {
-	    	var nums = [2];
-	    	var target = 9;
+	    	const nums = [2];
+	    	const target = 9;
 
-	    	var result = twoSum.extend.sortThenSearch(nums, target);
+	    	const result = twoSum.extend.sortThenSearch(nums, target);
 	        expect(result).toBeUndefined();
 	    });
 
 	    it('return undefined if target is not a number', function() {
-	    	var foo= [],
+	    	const foo= [],
 				bar= 'baz',
 				wow= undefined,
 				much= {},
 				fn= function() {},
 				test= null;
 
-			var nums = [2, 7, 11, 15];
+			const nums = [2, 7, 11, 15];
 
 	        expect(twoSum.extend.sortThenSearch(nums, foo)).toBeUndefined();
 	        expect(twoSum.extend.sortThenSearch(nums, bar)).toBeUndefined();
