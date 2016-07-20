@@ -1,4 +1,4 @@
-## Introduction
+# Introduction
 
 Status:
 [![codecov.io](https://codecov.io/github/Williammer/leetcode/coverage.svg?branch=master)](https://codecov.io/gh/Williammer/leetcode)
