@@ -20,8 +20,8 @@ $ npm install
 ``` bash
 $ npm run test
 ```
-``` bash
 or just:
+``` bash
 $ npm run test:node
 ```
 which essentially runs:
