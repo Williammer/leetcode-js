@@ -4,8 +4,9 @@
   "description": "my leetcode solutions, mainly focus on javaScript impl.",
   "main": "solution.js",
   "scripts": {
+    "test": "babel-node test/specRunner.js",
     "test:browser": "rm -f test/spec/testAll.js && rollup -c && open -a 'Google Chrome' test/SpecRunner.html",
-    "test:node": "babel-node test/specRunner.js"
+    "test:node": "npm run test"
   },
   "repository": {
     "type": "git",
