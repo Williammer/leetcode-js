@@ -22,7 +22,7 @@ export const longestSubstr = {};
  * Solution 1: Slide Window, using substring and lastIndexOf to check if repeated.
  *
  * "N" is string.length.
- * Time complexity: O(N^2)
+ * Time complexity: O(N * ?)  "?": Big O for substring & includes/indexOf
  * Space complexity: O(1)
  */
 longestSubstr.slideWin = (s) => {
@@ -62,7 +62,7 @@ longestSubstr.slideWin = (s) => {
  * Solution 2: Slide Window enhanced, by using lastIndexOf alone, which is super fast!
  *
  * "N" is string.length.
- * Time complexity: O(N)
+ * Time complexity: O(N * ?) "?": Big O for lastIndexOf
  * Space complexity: O(1)
  */
 longestSubstr.slideWinEnhanced = (s) => {
@@ -89,7 +89,7 @@ longestSubstr.slideWinEnhanced = (s) => {
  * Solution 3: slide window with hash
  *
  * "N" is string.length.
- * Time complexity: O(N^2)
+ * Time complexity: O(N)
  * Space complexity: O(N)
  */
 longestSubstr.hash = (s) => {
@@ -112,7 +112,7 @@ longestSubstr.hash = (s) => {
 /*
  * Solution 4: hash+reduce. loop string with array.reduce instead of for/while loop, more elegant.
  *
- * "N" is nums.length.
+ * "N" is string.length.
  * Time complexity: O(N)
  * Space complexity: O(N)
  */
