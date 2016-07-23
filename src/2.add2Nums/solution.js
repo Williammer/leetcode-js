@@ -66,7 +66,7 @@ export const add2Nums = {};
  *
  * "N" is the max calcated sum digit length L in range [max(l1.length,l2.length), max(l1.length,l2.length)+1].
  * Time complexity: O(2N)
- * Space complexity: O(N)
+ * Space complexity: O(2N)
  */
 add2Nums.stackHelper = (l1, l2) => {
     let sumVal = 0,
@@ -109,7 +109,7 @@ add2Nums.stackHelper = (l1, l2) => {
  *
  * "N" is the max calcated sum digit length L in range [max(l1.length,l2.length), max(l1.length,l2.length)+1].
  * Time complexity: O(N)
- * Space complexity: O(1)
+ * Space complexity: O(N)
  */
 add2Nums.reference = (l1, l2) => {
     let List = new ListNode(-1), // dummy head
@@ -145,7 +145,7 @@ add2Nums.reference = (l1, l2) => {
 /*
  * Solution 3: Recursion.
  *
- * m: l1.length, n: l2.length
+ * m: "N" is the max calcated sum digit length L in range [max(l1.length,l2.length), max(l1.length,l2.length)+1].
  * Time complexity: O(?)
  * Space complexity: O(?)
  */
