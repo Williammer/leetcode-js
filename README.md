@@ -24,10 +24,6 @@ or:
 ``` bash
 $ npm run test:node
 ```
-which essentially runs:
-``` bash
-$ babel-node test/specRunner.js
-```
 
 #### - 2. Test on browser:
 ``` bash
