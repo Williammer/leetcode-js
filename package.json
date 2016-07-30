@@ -5,7 +5,7 @@
   "main": "solution.js",
   "scripts": {
     "clean": "rm -f test/spec/testAll.js",
-    "test": "babel-node test/specRunner.js",
+    "test": "babel-node test/SpecRunner.js",
     "test:browser": "npm run clean && rollup -c && open -a 'Google Chrome' test/SpecRunner.html",
     "test:node": "npm run test"
   },
