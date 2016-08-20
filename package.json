@@ -4,6 +4,7 @@
   "description": "my leetcode solutions, mainly focus on javaScript impl.",
   "main": "solution.js",
   "scripts": {
+    "newProblem": "node --harmony solveNewProblem.js",
     "clean": "rm -f test/spec/testAll.js",
     "test": "babel-node test/SpecRunner.js",
     "test:browser": "npm run clean && rollup -c && open -a 'Google Chrome' test/SpecRunner.html",
@@ -25,6 +26,7 @@
   },
   "homepage": "https://github.com/Williammer/leetcode",
   "devDependencies": {
+    "fs-extra": "^0.30.0",
     "istanbul": "^0.4.4",
     "jasmine": "^2.4.1",
     "jasmine-spec-reporter": "^2.5.0"

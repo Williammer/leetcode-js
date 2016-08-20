@@ -15,6 +15,11 @@ Analysis and Lessons of each problem are added in the comment of each solution.j
 $ npm install
 ```
 
+## Start a new problem
+``` bash
+$ npm run newProblem -- <problem number> <problem title>
+```
+
 ## Testing
 #### - 1. Test on node:
 ``` bash
