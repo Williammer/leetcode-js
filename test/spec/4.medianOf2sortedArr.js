@@ -22,14 +22,14 @@
 
 import { medianOf2sortedArr } from "../../src/4.medianOf2sortedArr/solution";
 
-describe('# Problem 4 - Find the median of the two sorted arrays.', () => {
+describe("# Problem 4 - Find the median of the two sorted arrays.", () => {
 
-    describe('Solution 1: ', () => {
-        it('return undefined for invalid inputs: [], []', () => {
+    describe("Solution 1: ", () => {
+        it("return undefined for invalid inputs: [], []", () => {
             const arr1 = [],
                 arr2 = [],
                 foo= 42,
-                bar= 'baz',
+                bar= "baz",
                 wow= undefined,
                 much= {},
                 fn= () => {},
@@ -52,7 +52,7 @@ describe('# Problem 4 - Find the median of the two sorted arrays.', () => {
             expect(medianOf2sortedArr.fn(arr1, arr2)).toBeUndefined();
         });
 
-        it('has 0-element array: [], [1, 3, 5]', () => {
+        it("has 0-element array: [], [1, 3, 5]", () => {
             const arr1 = [];
             const arr2 = [1, 3, 5];
 
@@ -60,7 +60,7 @@ describe('# Problem 4 - Find the median of the two sorted arrays.', () => {
             expect(median).toEqual(3);
         });
 
-        it('has 1-element array: [1], [3, 5]', () => {
+        it("has 1-element array: [1], [3, 5]", () => {
             const arr1 = [1];
             const arr2 = [3, 5];
 
@@ -68,7 +68,7 @@ describe('# Problem 4 - Find the median of the two sorted arrays.', () => {
             expect(median).toEqual(3);
         });
 
-        it('works fine for odd length merged array: [1, 7, 9], [3, 5]', () => {
+        it("works fine for odd length merged array: [1, 7, 9], [3, 5]", () => {
             const arr1 = [1, 7, 9];
             const arr2 = [3, 5];
 
@@ -76,7 +76,7 @@ describe('# Problem 4 - Find the median of the two sorted arrays.', () => {
             expect(median).toEqual(5);
         });
 
-        it('works fine for even length merged array: [1, 6, 7], [3, 5, 8]', () => {
+        it("works fine for even length merged array: [1, 6, 7], [3, 5, 8]", () => {
             const arr1 = [1, 6, 7];
             const arr2 = [3, 5, 8];
 
@@ -84,7 +84,7 @@ describe('# Problem 4 - Find the median of the two sorted arrays.', () => {
             expect(median).toEqual(5.5);
         });
 
-        it('works fine for array contains the other: [1, 5, 7], [5, 7]', () => {
+        it("works fine for array contains the other: [1, 5, 7], [5, 7]", () => {
             const arr1 = [1, 5, 7, 9, 11];
             const arr2 = [5, 7];
 
@@ -92,7 +92,7 @@ describe('# Problem 4 - Find the median of the two sorted arrays.', () => {
             expect(median).toEqual(7);
         });
 
-        it('works fine for arrays with overlapped num: [1, 5, 7], [3, 5, 7, 8]', () => {
+        it("works fine for arrays with overlapped num: [1, 5, 7], [3, 5, 7, 8]", () => {
             const arr1 = [1, 5, 7];
             const arr2 = [3, 5, 7, 8];
 
