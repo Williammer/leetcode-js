@@ -1,19 +1,3 @@
-/************************************************************
-  * Problem: https://leetcode.com/problems/add-two-numbers/
-    You are given two linked lists representing two non-negative numbers.
-    The digits are stored in reverse order and each of their nodes contain a single digit.
-    Add the two numbers and return it as a linked list.
-
- * Example:
-    Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
-    Output: 7 -> 0 -> 8
-
- * Definition for singly-linked list:
-    function ListNode(val) {
-      this.val = val;
-      this.next = null;
-    }
-************************************************************/
 import { ListNode, arrToLList, lListToArr, add2Nums } from "../../src/2.add2Nums/solution";
 
 describe("# Problem 2 - Add two non-negative numbers represented by two linked lists into a number represented by a linked list too", () => {

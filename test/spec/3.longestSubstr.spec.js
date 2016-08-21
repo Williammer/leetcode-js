@@ -1,21 +1,3 @@
-/************************************************************
-
- * Problem: https://leetcode.com/problems/longest-substring-without-repeating-characters/
-    Given a string, find the length of the longest substring without repeating characters.
-
- * Example:
-    Given "abcabcbb", the answer is "abc", which the length is 3.
-    Given "bbbbb", the answer is "b", with the length of 1.
-    Given "pwwkew", the answer is "wke", with the length of 3. Note that the answer must be a substring, "pwke" is a subsequence and not a substring.
-
- * @param {string} s
- * @return {number}
-
- * Analysis: Substring-related problems are classic! In this no-repeated longest substring problem, we can have substr by using sth like "slide window" with (left, right),
-    and to check the repeatness of each char to be extended into current "slide window".
-
-************************************************************/
-
 import { longestSubstr } from "../../src/3.longestSubstr/solution";
 
 describe("# Problem 3 - Given a string, find the length of the longest substring without repeating characters.", () => {
