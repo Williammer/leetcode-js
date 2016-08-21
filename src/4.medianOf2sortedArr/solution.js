@@ -18,7 +18,9 @@
  * @param {number[]} nums2
  * @return {number}
 
- * Analysis: Finding the median of 1 array is easy.
+ * Analysis: Finding the median of 1 array is easy, so merge and sort the 2 arrays then problem solved,
+    but it's far slower than O(log (m+n)).
+    
 
 ************************************************************/
 
