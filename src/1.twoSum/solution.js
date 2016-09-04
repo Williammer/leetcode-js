@@ -21,7 +21,7 @@
 ************************************************************/
 
 export const twoSum = {};
-/*
+/**
  * Solution 1: brutal force loop
  *
  * "N" is nums.length.
@@ -48,7 +48,7 @@ twoSum.brutal = (nums, target) => {
     return;
 };
 
-/*
+/**
  * Solution 2: Hash
  * @Key: nums.value
  * @Value: nums.key
@@ -79,9 +79,11 @@ twoSum.hash = (nums, target) => {
 };
 
 
-/*
+/**
  * Extended idea: Sort then search if the problem aims to find the value pair that add up to the target.
+ *
  * NOTE: here the return value changes to [val1, val2] instead of [idx1, idx2] where val1+val2=target.
+ *  It's inspired solutions for similar problem, it doesn't solve the problem directly but are good for new ideas.
  *
  * Sorted list will be efficiently performed operations like binary search, etc.
  * It can be useful for large size collections.
@@ -90,7 +92,7 @@ twoSum.hash = (nums, target) => {
  * Time complexity:  O(NlogN)
  * Space complexity: Mozilla: O(N), others like Chrome: O(1)
  */
-twoSum.extend = {}; // extend is for inspired solutions for similar problem, it doesn't solve the problem directly so may move it elsewhere in future.
+twoSum.extend = {};
 twoSum.extend.sortThenSearch = (nums, target) => {
     if (!(Array.isArray(nums) && nums.length > 1) || typeof target !== "number") {
         return;

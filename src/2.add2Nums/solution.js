@@ -63,7 +63,7 @@ export const lListToArr = (lList) => {
 
 // Solutions.
 export const add2Nums = {};
-/*
+/**
  * Solution 1: Intro a stack helper to reversely insert each node into linklist.
  *
  * "N" is the max calcated sum digit length L in range [max(l1.length,l2.length), max(l1.length,l2.length)+1].
@@ -106,7 +106,7 @@ add2Nums.stackHelper = (l1, l2) => {
     return newNode;
 };
 
-/*
+/**
  * Solution 2: js reference. Utilized js object reference change feature.
  *
  * "N" is the max calcated sum digit length L in range [max(l1.length,l2.length), max(l1.length,l2.length)+1].
@@ -144,7 +144,7 @@ add2Nums.reference = (l1, l2) => {
     return List.next; // skip dummy head
 };
 
-/*
+/**
  * Solution 3: Recursion.
  *
  * m: "N" is the max calcated sum digit length L in range [max(l1.length,l2.length), max(l1.length,l2.length)+1].

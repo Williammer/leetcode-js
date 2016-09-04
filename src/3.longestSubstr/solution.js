@@ -18,7 +18,7 @@
 
 export const longestSubstr = {};
 
-/*
+/**
  * Solution 1: Slide Window, using substring and lastIndexOf to check if repeated.
  *
  * "N" is string.length.
@@ -58,7 +58,7 @@ longestSubstr.slideWin = (s) => {
     return maxLen;
 };
 
-/*
+/**
  * Solution 2: Slide Window enhanced, by using lastIndexOf alone, which is super fast!
  *
  * "N" is string.length.
@@ -85,7 +85,7 @@ longestSubstr.slideWinEnhanced = (s) => {
 };
 
 
-/*
+/**
  * Solution 3: slide window with hash
  *
  * "N" is string.length.
@@ -109,7 +109,7 @@ longestSubstr.hash = (s) => {
     return Math.max(maxLen, i - left);
 };
 
-/*
+/**
  * Solution 4: hash+reduce. loop string with array.reduce instead of for/while loop, more elegant.
  *
  * "N" is string.length.
