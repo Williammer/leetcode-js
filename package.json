@@ -1,8 +1,8 @@
 {
   "name": "leetcode-js",
   "version": "0.2.3",
-  "description": "my leetcode solutions, mainly focus on javaScript impl.",
-  "main": "solution.js",
+  "description": "my leetcode solutions, focusing on javaScript implementations.",
+  "main": "*/solution.js",
   "scripts": {
     "newProblem": "node --harmony newProblem.js",
     "clean": "rm -f test/spec/testAll.js",
@@ -15,8 +15,8 @@
     "url": "https://github.com/Williammer/leetcode.git"
   },
   "keywords": [
-    "leetcode",
     "algorithm",
+    "leetcode",
     "javaScript"
   ],
   "author": "WilliamHe",
