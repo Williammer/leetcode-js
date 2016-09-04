@@ -98,11 +98,15 @@ twoSum.extend.sortThenSearch = (nums, target) => {
         return;
     }
 
-    // sort nums for quicker search
-    // js array sort() uses pretty efficient sort algorithms, could have O(N) to O(NlogN) time complexity depend on browser
-    // some browser such as Mozilla uses mergeSort, which will add extra space complexity
-    // (http://stackoverflow.com/questions/234683/javascript-array-sort-implementation)
-    // NOTE: Array:sort by default didn't sort nums in ascending order, so need the helper function 'sortNumber' to set the rule.
+    /**
+     * Sort nums for quicker search
+     *
+     * js array sort() uses pretty efficient sort algorithms, could have O(N) to O(NlogN) time complexity depend on browser.
+     *  some browser such as Mozilla uses mergeSort, which will add extra space complexity.
+     *   (http://stackoverflow.com/questions/234683/javascript-array-sort-implementation)
+     *
+     * NOTE: Array:sort by default didn't sort nums in ascending order, so need the helper function 'sortNumber' to set the rule.
+     */
     const sortNumber = (a, b) => a - b;
     const sortedNums = nums.sort(sortNumber);
     let i, lo, hi, mid, compensate;
