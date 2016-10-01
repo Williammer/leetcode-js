@@ -44,3 +44,4 @@ which will open test/specRunner.html in Chrome browser (recommended as it alread
 |2|[Add 2 Nums](https://leetcode.com/problems/add-two-numbers/)|[js (1.stackHelper, 2.referencedObjects, 3. Recursion)](./src/2.add2Nums/solution.js)|Med|
 |3|[Longest no-repeat substring](https://leetcode.com/problems/longest-substring-without-repeating-characters/)|[js (1.slideWindow, 2.slideWindowEnhanced, 3. hash, 4. hash+reduce)](./src/3.longestSubstr/solution.js)|Med|
 |7|[Reverse int digits](https://leetcode.com/problems/reverse-integer/)|[js (1.loop)](./src/7.reverseInt/solution.js)|Easy|
+|8|[Str to Int](https://leetcode.com/problems/string-to-integer-atoi/)|[js (1.traverse)](./src/8.atoi/solution.js)|Easy|
