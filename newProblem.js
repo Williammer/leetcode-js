@@ -10,10 +10,10 @@ if (!num || !title) {
 const createNewProblem = (srcPath, dstPath) => {
     fs.copy(srcPath, dstPath, (err) => {
         if (err) throw err;
+        let filePath = dstPath;
 
         console.log(`${dstPath} - renamed copy complete`);
 
-        let filePath = dstPath;
         if (dstPath.includes("src") && !dstPath.includes("test/spec")) {
             filePath = dstPath + "/solution.js";
         }
@@ -25,7 +25,6 @@ const createNewProblem = (srcPath, dstPath) => {
 
             fs.writeFile(filePath, updatedData, (err) => {
                 if (err) throw err;
-
                 console.log(`updated ${filePath}`);
             });
         });
@@ -35,7 +34,7 @@ const createNewProblem = (srcPath, dstPath) => {
 const solutionSrcPath = `./src/tmpl`,
     solutionDstPath = `./src/${num}.${title}`,
     specSrcPath = `./test/spec/tmpl.js`,
-    specDstPath = `./test/spec/${num}.${title}.js`;
+    specDstPath = `./test/spec/${num}.${title}.spec.js`;
 
-createNewProblem(solutionSrcPath, solutionDstPath);
-createNewProblem(specSrcPath, specDstPath);
+createNewProblem(solutionSrcPath, solutionDstPath); // create solution file
+createNewProblem(specSrcPath, specDstPath); // create spec file
