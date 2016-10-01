@@ -39,8 +39,8 @@ which will open test/specRunner.html in Chrome browser (recommended as it alread
 # Solution menu
 | # | Title | Solutions | Difficulty |
 |---| ----- | -------- | ---------- |
-|1|[Two Sum](https://leetcode.com/problems/two-sum/)|[js (1.brutalLoop, 2.hash, x.sortThenSearch)](./src/1.twoSum/solution.js)|Easy|
-|2|[Add 2 Nums](https://leetcode.com/problems/add-two-numbers/)|[js (1.stackHelper, 2.referencedObjects, 3. Recursion)](./src/2.add2Nums/solution.js)|Med|
-|3|[Longest no-repeat substring](https://leetcode.com/problems/longest-substring-without-repeating-characters/)|[js (1.slideWindow, 2.slideWindowEnhanced, 3. hash, 4. hash+reduce)](./src/3.longestSubstr/solution.js)|Med|
-|7|[Reverse int digits](https://leetcode.com/problems/reverse-integer/)|[js (1.loop)](./src/7.reverseInt/solution.js)|Easy|
-|8|[Str to Int](https://leetcode.com/problems/string-to-integer-atoi/)|[js (1.traverse)](./src/8.atoi/solution.js)|Easy|
+|1|[Two Sum](https://leetcode.com/problems/two-sum/)|[1.brutalLoop, 2.hash, x.sortThenSearch](./src/1.twoSum/solution.js)|Easy|
+|2|[Add 2 Nums](https://leetcode.com/problems/add-two-numbers/)|[1.stackHelper, 2.referencedObjects, 3. Recursion](./src/2.add2Nums/solution.js)|Med|
+|3|[Longest no-repeat substring](https://leetcode.com/problems/longest-substring-without-repeating-characters/)|[1.slideWindow, 2.slideWindowEnhanced, 3. hash, 4. hash+reduce](./src/3.longestSubstr/solution.js)|Med|
+|7|[Reverse int digits](https://leetcode.com/problems/reverse-integer/)|[1.loop](./src/7.reverseInt/solution.js)|Easy|
+|8|[Str to Int](https://leetcode.com/problems/string-to-integer-atoi/)|[1.traverse](./src/8.atoi/solution.js)|Easy|
