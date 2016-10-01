@@ -1,6 +1,6 @@
 {
   "name": "leetcode-js",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "my leetcode solutions, focusing on javaScript implementations.",
   "main": "*/solution.js",
   "scripts": {
