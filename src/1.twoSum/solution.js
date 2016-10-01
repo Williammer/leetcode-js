@@ -20,6 +20,7 @@
 
 ************************************************************/
 
+
 export const twoSum = {};
 /**
  * Solution 1: brutal force loop
@@ -140,6 +141,7 @@ twoSum.extend.sortThenSearch = (nums, target) => {
     }
     return;
 };
+
 
 /************************************************************
 
