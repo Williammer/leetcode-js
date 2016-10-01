@@ -1,6 +1,7 @@
 /************************************************************
 
- * Problem: Reverse digits of an integer.
+ * Problem: https://leetcode.com/problems/reverse-integer/
+    Reverse digits of an integer.
 
  * Example 1:
 	x = 123, return 321
