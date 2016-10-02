@@ -8,8 +8,8 @@
     Please see in spec.js file
 
 
- * @param {} {string} str
- * @return {} {number}
+ * @param {string} str
+ * @return {number}
 
  * Analysis: we can traverse each char and put into result if valid.
 
