@@ -9,6 +9,8 @@ This is my leetcode solutions in javaScript and trying to explore different ways
 Analysis and Lessons of each problem are added in the comment of each solution.js.
 
 
+# Usage
+
 ## 1. Install
 ``` bash
 $ npm install
