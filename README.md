@@ -2,24 +2,24 @@
 [![codecov.io](https://codecov.io/github/Williammer/leetcode/coverage.svg?branch=master)](https://codecov.io/gh/Williammer/leetcode)
 
 
-# Introduction
+## Introduction
 
 This is my leetcode solutions in javaScript and trying to explore different ways to solve it.
 
 Analysis and Lessons of each problem are added in the comment of each solution.js.
 
 
-## Install
+### Install
 ``` bash
 $ npm install
 ```
 
-## Start a new problem
+### Start a new problem
 ``` bash
 $ npm run newProblem -- <problem number> <problem title>
 ```
 
-## Testing
+### Testing
 #### - 1. Test on node:
 ``` bash
 $ npm run test
@@ -36,7 +36,7 @@ $ npm run test:browser
 which will open test/specRunner.html in Chrome browser (recommended as it already supports many es6 features, works well with the help of rollup).
 
 
-# Solution menu
+## Solution menu
 | # | Title | Solutions | Difficulty |
 |---| ----- | -------- | ---------- |
 |1|[Two Sum](https://leetcode.com/problems/two-sum/)|[1.brutalLoop; 2.hash; x.sortThenSearch;](./src/1.twoSum/solution.js)|Easy|
