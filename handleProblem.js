@@ -1,6 +1,5 @@
-const fs = require("fs-extra");
-
-const action = process.argv[2],
+const fs = require("fs-extra"),
+    action = process.argv[2],
     num = process.argv[3],
     title = process.argv[4];
 
@@ -8,6 +7,7 @@ if (!num || !action) {
     throw `invalid input(action / num) provided.`;
     return;
 }
+
 const solutionDstPath = `./src/${num}.${title}`,
     specDstPath = `./test/spec/${num}.${title}.spec.js`;
 
