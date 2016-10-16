@@ -19,11 +19,11 @@ $ npm install
 ## 2. Handle the solution/test files of a certain problem
 ### 2.1 Add a new problem
 ``` bash
-$ npm run action -- add <problem number> <problem title>
+$ npm run task -- add <problem number> <problem title>
 ```
 ### 2.2 Remove an existing problem
 ``` bash
-$ npm run action -- rm <problem number> <problem title>
+$ npm run task -- rm <problem number> <problem title>
 ```
 
 ## 3. Testing
