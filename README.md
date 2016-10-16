@@ -16,9 +16,14 @@ Analysis and Lessons of each problem are added in the comment of each solution.j
 $ npm install
 ```
 
-## 2. Start a new problem
+## 2. Handle the solution/test files of a certain problem
+### 2.1 Add a new problem
 ``` bash
-$ npm run newProblem -- <problem number> <problem title>
+$ npm run action -- add <problem number> <problem title>
+```
+### 2.2 Remove an existing problem
+``` bash
+$ npm run action -- rm <problem number> <problem title>
 ```
 
 ## 3. Testing
