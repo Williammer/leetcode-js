@@ -4,7 +4,7 @@
   "description": "my leetcode solutions, focusing on javaScript implementations.",
   "main": "*/solution.js",
   "scripts": {
-    "newProblem": "node --harmony newProblem.js",
+    "action": "node --harmony handleProblem.js",
     "clean": "rm -f test/spec/testAll.js",
     "test": "babel-node test/SpecRunner.js",
     "test:browser": "npm run clean && rollup -c && open -a 'Google Chrome' test/SpecRunner.html",
