@@ -42,5 +42,6 @@ addBinary.iterate = (a, b) => {
 
  * Lessons:
    1. Good practice of looping and handling of various cases of carry num.
+   2. Mutiple condition while loop is powerful.
 
 ************************************************************/
