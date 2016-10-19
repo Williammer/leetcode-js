@@ -55,7 +55,7 @@ twoIntSum.iterate = (a, b) => {
         tmpA = a ^ b;
         b = (a & b) << 1;
         a = tmpA;
-    };
+    }
 
     result = a ^ b;
 
@@ -109,7 +109,7 @@ twoIntSubstract.iterate = (a, b) => {
         tmpA = a ^ b;
         b = ((~a) & b) << 1;
         a = tmpA;
-    };
+    }
 
     result = a ^ b;
 
