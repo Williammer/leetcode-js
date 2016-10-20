@@ -82,6 +82,7 @@ twoSum.hash = (nums, target) => {
 
 /**
  * Extended idea: Sort then search if the problem aims to find the value pair that add up to the target.
+ * @Related problem 167.twoSumSorted.
  *
  * NOTE: here the return value changes to [val1, val2] instead of [idx1, idx2] where val1+val2=target.
  *  It's inspired solutions for similar problem, it doesn't solve the problem directly but are good for new ideas.
