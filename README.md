@@ -50,12 +50,19 @@ or:
 $ npm run test -- <problem number> <problem title>
 ```
 
-#### - 3.2. Test on browser:
+### - 3.2. Test on browser:
+#### - 3.2.1 Test all spec files:
 ``` bash
-$ npm run test:browser
+$ npm run test:bsr
 ```
 which will open test/specRunner.html in Chrome browser (recommended as it already supports many es6 features, works well with the help of rollup).
 
+#### - 3.2.2 Test single problem spec:
+``` bash
+$ rollup test/spec/<problem number>.<problem title>.spec.js -o test/spec/testAll.js
+$ npm run test:bsrrun
+```
+which is less convenient than on node test 3.1.2, so I'd recommend using 3.1.2.
 
 # Solutions (the new dynamic solution table webPage will replace the weak-ass table below)
 | # | Title | Solutions | Difficulty |

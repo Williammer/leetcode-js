@@ -8,7 +8,8 @@
     "clean": "rm -f test/spec/testAll.js",
     "test": "babel-node test/SpecRunner.js",
     "test:node": "npm run test",
-    "test:browser": "npm run clean && rollup -c && open -a 'Google Chrome' test/SpecRunner.html"
+    "test:bsr": "npm run clean && rollup -c && open -a 'Google Chrome' test/SpecRunner.html",
+    "test:bsrrun": "open -a 'Google Chrome' test/SpecRunner.html"
   },
   "repository": {
     "type": "git",
