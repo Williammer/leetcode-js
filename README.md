@@ -57,7 +57,7 @@ $ npm run test:browser
 which will open test/specRunner.html in Chrome browser (recommended as it already supports many es6 features, works well with the help of rollup).
 
 
-# Solutions (the new dynamic solution table webPage will replace the table below)
+# Solutions (the new dynamic solution table webPage will replace the weak-ass table below)
 | # | Title | Solutions | Difficulty |
 |---| ----- | -------- | ---------- |
 |1|[Two Sum](https://leetcode.com/problems/two-sum/)|[1.brutalLoop; 2.hash; x.sortThenSearch;](./src/1.twoSum/solution.js)|Easy|
