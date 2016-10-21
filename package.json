@@ -6,9 +6,9 @@
   "scripts": {
     "clean": "rm -f test/spec/testSpecs.js",
     "task": "node --harmony task/problemFileTask.js",
-    "test": "babel-node test/SpecRunner.js",
+    "test": "babel-node test/testNode.js",
     "test:node": "npm run test",
-    "test:bsr": "npm run clean && node --harmony task/bsrTestTask.js"
+    "test:bsr": "npm run clean && node --harmony test/testBsr.js"
   },
   "repository": {
     "type": "git",
