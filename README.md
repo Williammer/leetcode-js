@@ -39,9 +39,9 @@ $ npm run test:node
 ```
 #### - 3.1.2 Test single problem spec:
 ``` bash
-$ npm test -- <problem number> <problem title>
+$ npm test -- <problem number>
 or:
-$ npm run test -- <problem number> <problem title>
+$ npm run test -- <problem number>
 ```
 
 ### - 3.2. Test on browser:
@@ -53,7 +53,7 @@ which will open test/specRunner.html in Chrome browser (recommended as it alread
 
 #### - 3.2.2 Test single problem spec:
 ``` bash
-$ npm run test:bsr  -- <problem number> <problem title>
+$ npm run test:bsr  -- <problem number>
 ```
 
 
