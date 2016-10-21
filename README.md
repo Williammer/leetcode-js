@@ -4,7 +4,7 @@
 
 # Overview
 
-This is my leetcode solutions in javaScript and trying to explore different ways to solve it.
+This is my leetcode solutions and test specs in javaScript and trying to explore different ways to solve it.
 
 Analysis and Lessons of each problem are added in the comment of each solution.js.
 
