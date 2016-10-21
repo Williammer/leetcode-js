@@ -75,6 +75,6 @@ twoSumSorted.bSearch = (sortedNums, target) => {
 /************************************************************
 
  * Lessons:
-   1. Some edge cases of binary search needs to be handled.
+   1. Some edge cases of binary search needs to be handled carefully.
 
 ************************************************************/
