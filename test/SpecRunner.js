@@ -5,8 +5,7 @@ import SpecReporter from "jasmine-spec-reporter";
 const noop = function() {},
     num = process.argv[2];
 
-let jrunner = new Jasmine(),
-    targetFilename;
+let jrunner = new Jasmine();
 
 jrunner.configureDefaultReporter({ print: noop });
 jasmine.getEnv().addReporter(new SpecReporter());
@@ -18,7 +17,7 @@ if (num) {
             return;
         }
 
-        targetFilename = files.filter(file => {
+        let targetFilename = files.filter(file => {
             return file.indexOf(`${num}.`) === 0;
         });
 
