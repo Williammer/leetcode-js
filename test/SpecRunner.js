@@ -10,7 +10,7 @@ let jrunner = new Jasmine();
 jrunner.configureDefaultReporter({ print: noop });
 jasmine.getEnv().addReporter(new SpecReporter());
 
-if (num || title) {
+if (num && title) {
     jrunner.execute([`test/spec/${num}.${title}.spec.js`]);
 } else {
     jrunner.loadConfigFile(`test/jasmine.config.json`);
