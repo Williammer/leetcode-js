@@ -63,7 +63,7 @@ $ rollup test/spec/<problem number>.<problem title>.spec.js -o test/spec/testAll
 
 $ npm run test:bsrrun
 ```
-which is less convenient than on node test 3.1.2, so I'd recommend using 3.1.2.
+which is less convenient than 3.1.2 node test, so I'd recommend using 3.1.2.
 
 # Solutions (the new dynamic solution table webPage will replace the weak-ass table below)
 | # | Title | Solutions | Difficulty |
