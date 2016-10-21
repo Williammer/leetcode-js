@@ -27,6 +27,8 @@ twoSumSorted.bSearch = (sortedNums, target) => {
 
     let i, lo, hi, mid, compensate;
 
+    // loop over the anchor num starting from smallest num.
+    anchorEleLoop:
     for (i = 0; i < sortedNums.length - 1; i++) {
         lo = i + 1;
         hi = sortedNums.length - 1;
@@ -38,23 +40,24 @@ twoSumSorted.bSearch = (sortedNums, target) => {
         }
 
         // binary search the compensate target
+    	bSearchLoop:
         while (lo <= hi) {
         	// handle 1 or 2 nums on the binarySearch area's case
-            if (lo === hi) {
-            	if (compensate === sortedNums[hi]) {
-                    return [(i + 1), (hi + 1)];
-                } else {
-                    return;
-                }
-            } else if (lo + 1 === hi) {
-                if (compensate === sortedNums[hi]) {
-                    return [(i + 1), (hi + 1)];
-                } else if (compensate === sortedNums[lo]) {
-                    return [(i + 1), (lo + 1)];
-                } else {
-                    return;
-                }
-            }
+	        if (lo === hi) {
+	            if (compensate === sortedNums[hi]) {
+	                return [(i + 1), (hi + 1)];
+	            } else {
+	                continue anchorEleLoop;
+	            }
+	        } else if (lo + 1 === hi) {
+	            if (compensate === sortedNums[hi]) {
+	                return [(i + 1), (hi + 1)];
+	            } else if (compensate === sortedNums[lo]) {
+	                return [(i + 1), (lo + 1)];
+	            } else {
+	                continue anchorEleLoop;
+	            }
+	        }
 
             // Key is in a[lo..hi] or not present, goes to N/2 if has even nums
             mid = Math.floor((hi + lo) / 2);
@@ -68,6 +71,7 @@ twoSumSorted.bSearch = (sortedNums, target) => {
             }
         }
     }
+
     return;
 };
 
@@ -76,5 +80,6 @@ twoSumSorted.bSearch = (sortedNums, target) => {
 
  * Lessons:
    1. Some edge cases of binary search needs to be handled carefully.
+   2. Nested loop can be continue respectively with label, which was rarely used.
 
 ************************************************************/
