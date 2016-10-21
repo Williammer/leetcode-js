@@ -7,8 +7,8 @@
     "task": "node --harmony taskHandler.js",
     "clean": "rm -f test/spec/testAll.js",
     "test": "babel-node test/SpecRunner.js",
-    "test:browser": "npm run clean && rollup -c && open -a 'Google Chrome' test/SpecRunner.html",
-    "test:node": "npm run test"
+    "test:node": "npm run test",
+    "test:browser": "npm run clean && rollup -c && open -a 'Google Chrome' test/SpecRunner.html"
   },
   "repository": {
     "type": "git",
