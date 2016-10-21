@@ -23,7 +23,7 @@ $ npm run task -- add <problem number> <problem title>
 ```
 ### 2.2 Remove an existing problem
 ``` bash
-$ npm run task -- rm <problem number> <problem title>
+$ npm run task -- rm <problem number>
 ```
 
 ## 3. Testing

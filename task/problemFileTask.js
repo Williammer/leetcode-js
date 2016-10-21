@@ -8,9 +8,6 @@ if (!num || !action) {
     return;
 }
 
-const solutionDstPath = `./src/${num}.${title}`,
-    specDstPath = `./test/spec/${num}.${title}.spec.js`;
-
 if (action == "rm") {
     const removeProblem = (dstPath) => {
         fs.remove(dstPath, function(err) {
@@ -22,10 +19,34 @@ if (action == "rm") {
         })
     };
 
-    removeProblem(solutionDstPath); // remove solution file
-    removeProblem(specDstPath); // remove spec file
+    const getFilePathByNum = (path, num) => {
+        let targetFilename = fs.readdirSync(path).filter(file => {
+            return file.indexOf(`${num}.`) === 0;
+        });
+
+        if (!targetFilename || !(targetFilename.length > 0)) {
+            console.warn(`[readdir] can't find target file to remove.`);
+            return;
+        } else {
+            return `${path}${targetFilename}`;
+        }
+    };
+
+    const specDstPath = getFilePathByNum(`./test/spec/`, num);
+    const solutionDstPath = getFilePathByNum(`./src/`, num);
+
+    if (solutionDstPath && specDstPath) {
+        removeProblem(solutionDstPath); // remove solution file
+        removeProblem(specDstPath); // remove spec file
+    } else {
+        console.warn(`Wrong solutionDstPath, specDstPath.`);
+        return;
+    }
 
 } else if (action == "add") {
+    const solutionDstPath = `./src/${num}.${title}`;
+    const specDstPath = `./test/spec/${num}.${title}.spec.js`;
+
     const createNewProblem = (srcPath, dstPath) => {
         fs.copy(srcPath, dstPath, (err) => {
             if (err) throw err;
@@ -50,8 +71,8 @@ if (action == "rm") {
         });
     };
 
-    const solutionSrcPath = `./src/tmpl`,
-        specSrcPath = `./test/spec/tmpl.js`;
+    const solutionSrcPath = `./src/tmpl`;
+    const specSrcPath = `./test/spec/tmpl.js`;
 
     createNewProblem(solutionSrcPath, solutionDstPath); // create solution file
     createNewProblem(specSrcPath, specDstPath); // create spec file
