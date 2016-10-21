@@ -4,12 +4,11 @@
   "description": "my leetcode solutions, focusing on javaScript implementations.",
   "main": "*/solution.js",
   "scripts": {
-    "task": "node --harmony task/problemFileTask.js",
     "clean": "rm -f test/spec/testAll.js",
+    "task": "node --harmony task/problemFileTask.js",
     "test": "babel-node test/SpecRunner.js",
     "test:node": "npm run test",
-    "test:bsr": "npm run clean && rollup -c && open -a 'Google Chrome' test/SpecRunner.html",
-    "test:bsrrun": "open -a 'Google Chrome' test/SpecRunner.html"
+    "test:bsr": "npm run clean && node --harmony task/bsrTestTask.js"
   },
   "repository": {
     "type": "git",
