@@ -32,21 +32,15 @@ $ npm run task -- rm <problem number> <problem title>
 #### - 3.1.1 Test all spec files:
 ``` bash
 $ npm test
-```
 or:
-``` bash
 $ npm run test
-```
 or:
-``` bash
 $ npm run test:node
 ```
 #### - 3.1.2 Test single problem spec:
 ``` bash
 $ npm test -- <problem number> <problem title>
-```
 or:
-``` bash
 $ npm run test -- <problem number> <problem title>
 ```
 
