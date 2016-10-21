@@ -20,6 +20,13 @@
 
 export const twoSumSorted = {};
 
+/**
+ * Solution 1: one pointer as anchor, the other area with bSearch
+ *
+ * "N" is sortedNums.length.
+ * Time complexity: O(NlgN)
+ * Space complexity: O(1)
+ */
 twoSumSorted.bSearch = (sortedNums, target) => {
     if (!(Array.isArray(sortedNums) && sortedNums.length > 1) || typeof target !== "number") {
         return;
