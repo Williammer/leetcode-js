@@ -5,7 +5,7 @@ const fs = require("fs-extra"),
     istanbul = require("rollup-plugin-istanbul"),
     num = process.argv[2],
     title = process.argv[3],
-    destJs = `test/spec/testAll.js`,
+    destJs = `test/spec/testSpecs.js`,
     destHtml = `test/SpecRunner.html`;
 
 if (!num && !title) {

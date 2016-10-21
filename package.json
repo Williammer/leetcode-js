@@ -4,7 +4,7 @@
   "description": "my leetcode solutions, focusing on javaScript implementations.",
   "main": "*/solution.js",
   "scripts": {
-    "clean": "rm -f test/spec/testAll.js",
+    "clean": "rm -f test/spec/testSpecs.js",
     "task": "node --harmony task/problemFileTask.js",
     "test": "babel-node test/SpecRunner.js",
     "test:node": "npm run test",
