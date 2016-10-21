@@ -16,7 +16,7 @@ Analysis and Lessons of each problem are added in the comment of each solution.j
 $ npm install
 ```
 
-## 2. Handle the solution/test files of a certain problem
+## 2. Handle problem's solution/spec file
 ### 2.1 Add a new problem
 ``` bash
 $ npm run task -- add <problem number> <problem title>
@@ -60,6 +60,7 @@ which will open test/specRunner.html in Chrome browser (recommended as it alread
 #### - 3.2.2 Test single problem spec:
 ``` bash
 $ rollup test/spec/<problem number>.<problem title>.spec.js -o test/spec/testAll.js
+
 $ npm run test:bsrrun
 ```
 which is less convenient than on node test 3.1.2, so I'd recommend using 3.1.2.
