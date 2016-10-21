@@ -53,11 +53,9 @@ which will open test/specRunner.html in Chrome browser (recommended as it alread
 
 #### - 3.2.2 Test single problem spec:
 ``` bash
-$ rollup test/spec/<problem number>.<problem title>.spec.js -o test/spec/testAll.js
-
-$ npm run test:bsrrun
+$ npm run test:bsr  -- <problem number> <problem title>
 ```
-which is less convenient than 3.1.2 node test, so I'd recommend using 3.1.2.
+
 
 # Solutions (the new dynamic solution table webPage will replace the weak-ass table below)
 | # | Title | Solutions | Difficulty |
