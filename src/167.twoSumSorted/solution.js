@@ -82,6 +82,35 @@ twoSumSorted.bSearch = (sortedNums, target) => {
     return;
 };
 
+/**
+ * Solution 2: two pointers, shrink the range.
+ *
+ * "N" is sortedNums.length.
+ * Time complexity: O(N)
+ * Space complexity: O(1)
+ */
+twoSumSorted.twoPointer = (sortedNums, target) => {
+    if (!(Array.isArray(sortedNums) && sortedNums.length > 1) || typeof target !== "number") {
+        return;
+    }
+
+    let lo = 0,
+        hi = sortedNums.length - 1;
+
+    while (lo < hi) {
+        if (sortedNums[lo] + sortedNums[hi] > target) {
+            hi--;
+        } else if (sortedNums[lo] + sortedNums[hi] < target) {
+            lo++;
+        } else {
+            return [lo + 1, hi + 1];
+        }
+    }
+
+    return;
+};
+
+
 
 /************************************************************
 
