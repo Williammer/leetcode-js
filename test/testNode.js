@@ -1,5 +1,5 @@
-import Jasmine from "jasmine";
 import fs from "fs-extra";
+import Jasmine from "jasmine";
 import SpecReporter from "jasmine-spec-reporter";
 
 const noop = function() {},
