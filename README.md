@@ -47,13 +47,13 @@ $ npm run test -- <problem number>
 ### - 3.2. Test on browser:
 #### - 3.2.1 Test all spec files:
 ``` bash
-$ npm run test:bsr
+$ npm run test:browser
 ```
 which will open test/specRunner.html in Chrome browser (recommended as it already supports many es6 features, works well with the help of rollup).
 
 #### - 3.2.2 Test single problem spec:
 ``` bash
-$ npm run test:bsr  -- <problem number>
+$ npm run test:browser  -- <problem number>
 ```
 
 

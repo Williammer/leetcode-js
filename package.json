@@ -8,7 +8,7 @@
     "task": "node --harmony task/problemFileTask.js",
     "test": "babel-node test/testNode.js",
     "test:node": "npm run test",
-    "test:bsr": "npm run clean && node --harmony test/testBsr.js"
+    "test:browser": "npm run clean && node --harmony test/testBrowser.js"
   },
   "repository": {
     "type": "git",
