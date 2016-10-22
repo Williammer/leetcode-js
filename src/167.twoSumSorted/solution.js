@@ -15,6 +15,12 @@
 
  * Analysis: Binary Search is the natural choice for sorted array.
 
+ * A bit background info for js sort in major browsers:
+    js array sort() uses pretty efficient sort algorithms, could have O(N) to O(NlogN) time complexity depend on browser.
+    some browser such as Mozilla uses mergeSort, which will add extra space complexity. (http://stackoverflow.com/questions/234683/javascript-array-sort-implementation)
+
+    NOTE: Array:sort by default didn't sort nums in ascending order, so need the helper function 'sortNumber' to set the rule.
+
 ************************************************************/
 
 
