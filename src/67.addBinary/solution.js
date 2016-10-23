@@ -19,6 +19,13 @@
 
 export const addBinary = {};
 
+/**
+ * Solution 1: Iterate over the 2 str and calc its sum with good care of carry num.
+ *
+ * "N" is the max length between a and b.
+ * Time complexity: O(N)
+ * Space complexity: O(1)
+ */
 addBinary.iterate = (a, b) => {
 	// NOTE: here could hv a input check for int-string;
     let i = a.length - 1,

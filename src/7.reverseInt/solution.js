@@ -19,6 +19,13 @@
 
 export const reverseInt = {};
 
+/**
+ * Solution 1: Use "%" and "/" to slice each digit of the number and reversely add it back.
+ *
+ * "N" is the length of num x.
+ * Time complexity: O(N)
+ * Space complexity: O(1)
+ */
 reverseInt.fn = (x) => {
     const MAX_INT_32 = Math.pow(2, 31) - 1;
 
