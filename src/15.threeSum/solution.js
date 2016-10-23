@@ -22,7 +22,56 @@
 export const threeSum = {};
 
 /**
- * Solution 1: Use two Pointers to loop over and Hash to record and match.
+ * Solution 2: Sort the src array first then use two Pointers(and an anchor point) to shrink, just like 167.twoSumSorted Solution 2.
+ *
+ * "N" is nums.length.
+ * Time complexity: O(N^2) <= O(N^2) + O(N)[Moz] ~ O(NlogN)[Chrome]
+ * Space complexity: O(1)[Chrome] ~ O(N)[Moz]
+ */
+threeSum.sortedtwoPointers = (nums) => {
+    if (!(Array.isArray(nums) && nums.length > 2)) {
+        return [];
+    }
+
+    nums = nums.sort((a, b) => { return a - b });
+
+    let len = nums.length - 1,
+        pLeft,
+        pRight,
+        result = [];
+
+    for (let pAnchor = 0; pAnchor < len - 1; pAnchor++) {
+        if (pAnchor === 0 || nums[pAnchor] !== nums[pAnchor - 1]) {
+            pLeft = pAnchor + 1;
+            pRight = len;
+
+            while (pLeft < pRight) {
+                if (nums[pAnchor] + nums[pLeft] + nums[pRight] > 0) {
+                    pRight--;
+                } else if (nums[pAnchor] + nums[pLeft] + nums[pRight] < 0) {
+                    pLeft++;
+                } else {
+                    // push the match at first time
+                    result.push([nums[pAnchor], nums[pLeft], nums[pRight]]);
+
+                    // avoid duplicated nums - sliding wipe
+                    while (pLeft < pRight && nums[pLeft] === nums[pLeft + 1]) pLeft++;
+                    while (pLeft < pRight && nums[pRight] === nums[pRight - 1]) pRight--;
+
+                    // go on to next compare
+                    pLeft++;
+                    pRight--;
+                }
+            }
+        }
+    }
+
+    return result;
+};
+
+/**
+ * !! Bad sample !!
+ * Solution 1: Use two Pointers to loop over and Hash to record and match. (bad sample of not sorting the array first)
  *
  * "N" is nums.length.
  * Time complexity: O(N^2)
