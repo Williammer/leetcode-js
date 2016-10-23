@@ -14,7 +14,9 @@
  * @param {number[]} nums
  * @return {number[][]}
 
- * Analysis: We can try to find simliarity from 1.twoSum. We can still use Hash for recording and searching purpose and use 2 pointers to loop over.
+ * Analysis: We can try to find simliarity from 1.twoSum. We can still use Hash for recording and searching and use 2 pointers to loop over. But using Hash to record and search may still work, but the workload to avoid duplication is too much;
+    Because this problem has strong requirement on sorting order, we need to sort the source array first; then with a sorted array, we can 2 pointer shrink to find.
+    We may also use binarySearch for the 3rd pointer's search while having 2 anchor points, but it'll have N^2*logN complexity.
 
 ************************************************************/
 
@@ -187,6 +189,6 @@ threeSum.twoPointersHash = (nums) => {
 
  * Lessons:
    1. Handling sorting and duplication edge cases is so hard :(, which needs constant practice to be quicker and sharper.
-   2. Use array-comparsion in js to avoid inserting duplicated inner array result.
+   2. The use of while loop to slide-wipe the duplication is elegant.
 
 ************************************************************/
