@@ -37,7 +37,7 @@ export const bTreeMaxDepth = {};
  */
 bTreeMaxDepth.dfsFat = (root) => {
     const isNode = (node) => {
-        return (node instanceof TreeNode) || (node && node.val === null);
+        return (node instanceof TreeNode) && node.val !== null;
     };
 
     if (!root || !isNode(root)) {
@@ -82,14 +82,14 @@ bTreeMaxDepth.dfsFat = (root) => {
  */
 bTreeMaxDepth.dfs = (root) => {
     const isNode = (node) => {
-        return (node instanceof TreeNode) || (node && node.val === null);
+        return (node instanceof TreeNode) && node.val !== null;
     };
 
     if (!root || !isNode(root)) {
         return 0;
     }
 
-    return Math.max(bTreeMaxDepth.bfs(root.left), bTreeMaxDepth.bfs(root.right)) + 1; // basic recursion pattern.
+    return Math.max(bTreeMaxDepth.bfs(root.left), bTreeMaxDepth.bfs(root.right)) + 1; // basic recursion pattern, this '+1' is the key.
 
 };
 
@@ -102,7 +102,7 @@ bTreeMaxDepth.dfs = (root) => {
  */
 bTreeMaxDepth.bfs = (root) => {
     const isNode = (node) => {
-            return (node instanceof TreeNode) || (node && node.val === null);
+            return (node instanceof TreeNode) && node.val !== null;
         };
 
     if (!root || !isNode(root)) {
