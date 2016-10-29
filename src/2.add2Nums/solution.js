@@ -26,43 +26,8 @@
 ************************************************************/
 
 
-// Helper functions.
-export class ListNode {
-    constructor(val) {
-        this.val = val;
-        this.next = null;
-    }
-};
+import { ListNode } from "../_.util/linkedList";
 
-export const arrToLList = (arr) => {
-    let lastNode, newNode;
-    while (arr.length > 0) {
-        newNode = new ListNode(arr.pop());
-
-        if (lastNode) {
-            newNode.next = lastNode;
-        }
-        lastNode = newNode;
-    }
-
-    return newNode;
-};
-
-export const lListToArr = (lList) => {
-    let curNode = lList,
-        arr = [];
-
-    while (curNode && typeof curNode.val === "number") {
-        arr.push(curNode.val);
-
-        curNode = curNode.next;
-    }
-
-    return arr;
-};
-
-
-// Solutions.
 export const add2Nums = {};
 /**
  * Solution 1: Intro a stack helper to reversely insert each node into linklist.
@@ -184,9 +149,7 @@ add2Nums.recursion = (l1, l2) => {
 
  * Lessons:
    1. Consider introduce stack data structure to reversely insert each node into linklist as it's hard to insert from head to tail for linklist.
-
    2. Utilize mutable object reference feature.
-
    3. Multi base case recursion. To recursion well, we need to consider head/tail of child when design parent, so that child-recur can utilize its parent's base case.
 
 ************************************************************/
