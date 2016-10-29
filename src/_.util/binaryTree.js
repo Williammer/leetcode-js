@@ -17,7 +17,7 @@ export class TreeNode {
 
  * Used in: 104.bTreeMaxDepth
  ***/
-export const generatorBinaryTree = (valArray) => {
+export const getBinaryTreeFromArray = (valArray) => {
     if (!(Array.isArray(valArray) && valArray.length > 0 && valArray[0])) {
         return null;
     }

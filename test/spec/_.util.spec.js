@@ -1,5 +1,5 @@
 import { ListNode, getLinkedlistFromArray, getArrayFromLinkedlist } from "../../src/_.util/linkedList";
-import { TreeNode, generatorBinaryTree } from "../../src/_.util/binaryTree";
+import { TreeNode, getBinaryTreeFromArray } from "../../src/_.util/binaryTree";
 
 // # linkedList
 describe("[Util] linkedList - convert between array and linkedList.", () => {
@@ -28,7 +28,7 @@ describe("[Util] linkedList - convert between array and linkedList.", () => {
 describe("[Util] binaryTree - Generate binary tree base on node values array, the value evaluated as false will be considered null node.", () => {
     it("[1, 2, 3, null, 4, 5]", () => {
         const array = [1, 2, 3, null, 4, 5];
-        const rootNode = generatorBinaryTree(array);
+        const rootNode = getBinaryTreeFromArray(array);
 
         expect(rootNode.val).toEqual(1);
         expect(rootNode.left.val).toEqual(2);
