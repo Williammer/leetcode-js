@@ -11,7 +11,7 @@ export class ListNode {
 /**
  * Convert array to linkedList
  */
-export const arrToLList = (arr) => {
+export const getLinkedlistFromArray = (arr) => {
     let lastNode, newNode;
     while (arr.length > 0) {
         newNode = new ListNode(arr.pop());
@@ -28,7 +28,7 @@ export const arrToLList = (arr) => {
 /**
  * Convert linkedList to array
  */
-export const lListToArr = (lList) => {
+export const getArrayFromLinkedlist = (lList) => {
     let curNode = lList,
         arr = [];
 
