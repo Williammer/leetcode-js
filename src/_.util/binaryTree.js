@@ -29,7 +29,7 @@ export const getBinaryTreeFromArray = (valArray) => {
     // Push root to parentNodes array.
     parentNodes.push(rootNode);
 
-    while (arrAnchorIndex < valArray.length) {
+    while (parentNodes.length > 0 && arrAnchorIndex < valArray.length) {
         let parentNodesIndex = 0,
             curParentNodes = parentNodes;
 

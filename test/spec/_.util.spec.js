@@ -26,6 +26,16 @@ describe("[Util] linkedList - convert between array and linkedList.", () => {
 
 // # binaryTree
 describe("[Util] binaryTree - Generate binary tree base on node values array, the value evaluated as false will be considered null node.", () => {
+    it("[1, null, null, 1, 2, 3, 4]", () => {
+        const array =  [1, null, null, 1, 2, 3, 4];
+        const rootNode = getBinaryTreeFromArray(array);
+
+        expect(rootNode.val).toEqual(1);
+        expect(rootNode.left).toBeNull();
+        expect(rootNode.right).toBeNull();
+
+    });
+
     it("[1, 2, 3, null, 4, 5]", () => {
         const array = [1, 2, 3, null, 4, 5];
         const rootNode = getBinaryTreeFromArray(array);
@@ -38,5 +48,23 @@ describe("[Util] binaryTree - Generate binary tree base on node values array, th
         expect(rootNode.left.right.val).toEqual(4);
         expect(rootNode.right.left.val).toEqual(5);
         expect(rootNode.right.right).toBeNull();
+    });
+
+    it("[1, 2, 3, null, 4, 5, null, 6, 7]", () => {
+        const array = [1, 2, 3, null, 4, 5, null, 6, 7];
+        const rootNode = getBinaryTreeFromArray(array);
+
+        expect(rootNode.val).toEqual(1);
+
+        expect(rootNode.left.val).toEqual(2);
+        expect(rootNode.right.val).toEqual(3);
+
+        expect(rootNode.left.left).toBeNull();
+        expect(rootNode.left.right.val).toEqual(4);
+        expect(rootNode.right.left.val).toEqual(5);
+        expect(rootNode.right.right).toBeNull();
+
+        expect(rootNode.left.right.left.val).toEqual(6);
+        expect(rootNode.left.right.right.val).toEqual(7);
     });
 });
