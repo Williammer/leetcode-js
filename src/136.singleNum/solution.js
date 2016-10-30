@@ -81,5 +81,6 @@ singleNum.bit = (nums) => {
  * Lessons:
    1. XOR is powerful for its self organizing ability. eg. (2^1^4^5^2^4^1) => ((2^2)^(1^1)^(4^4)^(5)) => (0^0^0^5) => 5.
    2. hash is useful for searching, this problem included.
+   3. ES6 Map is pretty handy for collection update tasks like getting size, getting keys and delete entry.
 
 ************************************************************/
