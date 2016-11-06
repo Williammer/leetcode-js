@@ -80,7 +80,7 @@ bTreeMaxDepth.dfsFat = (root) => {
  *
  * "N" is node count
  * Time complexity: O(N)
- * Space complexity: O(1) ?
+ * Space complexity: O(1)
  */
 bTreeMaxDepth.dfs = (root) => {
     const isNode = (node) => {
