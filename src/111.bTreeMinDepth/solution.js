@@ -71,6 +71,29 @@ bTreeMinDepth.bfs = (root) => {
     return minDepth;
 };
 
+/**
+ * Solution 2: Use dfs/pre-order traveral to find
+ *
+ * "N" is Node count
+ * Time complexity: O(N)
+ * Space complexity: O(1)
+ */
+bTreeMinDepth.dfs = (root) => {
+    const isNode = (node) => {
+        return (node instanceof TreeNode) && node.val !== null;
+    };
+
+    if (!root || !isNode(root)) {
+        return 0;
+    }
+
+    if (root.left && isNode(root.left) && root.right && isNode(root.right)) {
+    	return Math.min(bTreeMinDepth.dfs(root.left), bTreeMinDepth.dfs(root.right)) + 1;
+    } else {
+    	return Math.max(bTreeMinDepth.dfs(root.left), bTreeMinDepth.dfs(root.right)) + 1;
+    }
+};
+
 
 /************************************************************
 
