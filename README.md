@@ -4,9 +4,8 @@
 
 # Overview
 
-This is my leetcode solutions and test specs in javaScript and trying to explore different ways to solve it.
-
-Analysis and Lessons of each problem are added in the comment of each solution.js.
+This is my leetcode javaScript solutions and corresponding tests.
+Each problem contains my analysis and lessons learned, available in the problem's solution.js.
 
 
 # Usage
