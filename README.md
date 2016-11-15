@@ -2,9 +2,7 @@
 [![codecov.io](https://codecov.io/github/Williammer/leetcode/coverage.svg?branch=master)](https://codecov.io/gh/Williammer/leetcode)
 
 
-This is my leetcode javaScript solutions and corresponding tests.
-
-Each problem contains my analysis and lessons learned, available in the problem's solution.js.
+This is my leetcode javaScript solutions(and tests), each solution.js contains my personal analysis and learned lessons.
 
 
 # Usage
