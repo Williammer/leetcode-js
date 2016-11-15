@@ -4,53 +4,43 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Leetcode-js by Williammer</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-dark.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/main.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <title>Leetcode-js</title>
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/leetcode-table.css">
+    <script src="js/fetch.js"></script>
+    <script src="https://unpkg.com/vue@2.0.5/dist/vue.min.js"></script>
+    <!-- <script src="https://unpkg.com/vue@2.0.5/dist/vue.js"></script> -->
+    <script src="js/leetcode-table.js"></script>
 </head>
 
 <body>
+    <a target="_blank" href="https://github.com/Williammer/leetcode-js"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 100" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
     <header>
         <h1>Leetcode-js</h1>
-        <p>My leetcode solutions in javaScript.</p>
+        <p>My leetcode solutions in javaScript</p>
     </header>
-    <div id="banner">
-        <span id="logo"></span>
-        <a href="https://github.com/Williammer/leetcode-js" class="button fork"><strong>View On GitHub</strong></a>
-        <div class="downloads">
-            <span>Downloads:</span>
-            <ul>
-                <li><a href="https://github.com/Williammer/leetcode-js/zipball/master" class="button">ZIP</a></li>
-                <li><a href="https://github.com/Williammer/leetcode-js/tarball/master" class="button">TAR</a></li>
-            </ul>
-        </div>
-    </div>
-    <!-- end banner -->
     <div class="wrapper">
-        <nav>
-            <ul></ul>
-        </nav>
         <section>
-            <h3>
-<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Overview</h3>
-            <p>This is my leetcode javaScript solutions and corresponding tests. <br/>
-Each problem contains my analysis and lessons learned, available in the problem's solution.js.</p>
-            <h3>
-<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Solutions</h3>
-            <p>The new dynamic solution table will be coming soon...</p>
+            <h2 class="head-title">Solution Table</h2>
+            <p>This is my leetcode javaScript solutions table, each solution.js file contains my analysis and lessons learned.</p>
+            <!-- vue: table html -->
+            <div id="leetcode-table">
+                <div class="search">
+                    <label class="search-label" for="query">Search: </label>
+                    <input class="search-input" name="query" v-model="searchQuery">
+                    <i class="search-icon"></i>
+                </div>
+                <v-table :data="tbData" :columns="tbColumns" :filter-key="searchQuery">
+                </v-table>
+            </div>
         </section>
         <footer>
             <p>Project maintained by <a href="https://github.com/Williammer">Williammer</a></p>
             <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
         </footer>
     </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
 </body>
 
 </html>
