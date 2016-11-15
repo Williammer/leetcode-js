@@ -17,32 +17,35 @@ $ npm install
 ```
 
 ## 2. Handle problem's solution/spec file
-Add a new problem
+Add a problem:
 ``` bash
 $ npm run task -- add <problem number> <problem title>
 ```
-Remove an existing problem
+Remove a problem:
 ``` bash
 $ npm run task -- rm <problem number>
 ```
 
 ## 3. Testing
-Test all spec files:
+Test all problems:
 ``` bash
 $ npm test
-or:
+```
+``` bash
 $ npm run test
-or:
+```
+``` bash
 $ npm run test:node
 ```
 ``` bash
 $ npm run test:browser
 ```
 
-Test single problem spec:
+Test one problem:
 ``` bash
 $ npm test -- <problem number>
-or:
+```
+``` bash
 $ npm run test -- <problem number>
 ```
 ``` bash
