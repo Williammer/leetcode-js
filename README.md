@@ -27,7 +27,7 @@ $ npm run task -- rm <problem number>
 ```
 
 ## 3. Testing
-Test all problems:
+Test all problems (use any one below):
 ``` bash
 $ npm test
 ```
@@ -41,7 +41,7 @@ $ npm run test:node
 $ npm run test:browser
 ```
 
-Test one problem:
+Test one problem (use any one below):
 ``` bash
 $ npm test -- <problem number>
 ```
