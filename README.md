@@ -5,6 +5,10 @@
 This is my leetcode javaScript solutions(and tests), each solution.js contains my personal analysis and learned lessons.
 
 
+# Solutions
+check out: [http://williammer.github.io/leetcode-js/](http://williammer.github.io/leetcode-js/)
+
+
 # Usage
 
 ## 1. Install
@@ -47,7 +51,3 @@ $ npm run test -- <problem number>
 ``` bash
 $ npm run test:browser  -- <problem number>
 ```
-
-
-# Solutions
-check out: [http://williammer.github.io/leetcode-js/](http://williammer.github.io/leetcode-js/)
