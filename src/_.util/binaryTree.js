@@ -70,3 +70,22 @@ export const getBinaryTreeFromArray = (valArray) => {
 
     return rootNode;
 };
+
+/****
+ * Convert binary tree to array.
+ * Basic idea:
+    1. loop each depth of the tree in bfs style
+
+ * Used in: [226]
+ ***/
+export const getArrayFromBinaryTree = (root) => {
+    if (!(root && (root instanceof TreeNode) && root.val !== null)) {
+        return [];
+    }
+
+    let bTreeArray = [];
+
+    
+
+    return bTreeArray;
+};
