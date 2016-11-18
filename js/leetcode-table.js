@@ -15,18 +15,27 @@
                     </th>\
                 </tr>\
             </thead>\
-            <tbody>\
-                <tr v-for="entry in filteredData">\
-                    <template v-for="key in columns">\
-                        <td v-if="isLinkEntry(key)">\
-                            <v-link :link="entry[key]"></v-link>\
-                        </td>\
-                        <td v-else>\
-                            {{entry[key]}}\
-                        </td>\
-                    </template>\
-                </tr>\
-            </tbody>\
+                <tbody name="leetcode-tb-tr"\
+                    is="transition-group"\
+                    v-bind:css="false"\
+                    v-on:before-enter="beforeEnter"\
+                    v-on:enter="enter"\
+                    v-on:leave="leave"\
+                >\
+                    <tr v-for="(entry, index) in filteredData"\
+                        :key="entry.num"\
+                        :data-index="index"\
+                    >\
+                        <template v-for="key in columns">\
+                            <td v-if="isLinkEntry(key)">\
+                                <v-link :link="entry[key]"></v-link>\
+                            </td>\
+                            <td v-else>\
+                                {{entry[key]}}\
+                            </td>\
+                        </template>\
+                    </tr>\
+                </transition-group>\
         </table>',
 
         components: {
@@ -91,6 +100,19 @@
                     this.sortOrders[key] = 1
                 }
                 this.sortOrders[key] = this.sortOrders[key] * -1
+            },
+            beforeEnter: function(el) {
+                el.style.opacity = 0
+            },
+            enter: function(el, done) {
+                Velocity(
+                    el, { opacity: 1 }, { complete: done }
+                )
+            },
+            leave: function(el, done) {
+                Velocity(
+                    el, { opacity: 0 }, { complete: done }
+                )
             }
         }
     }
