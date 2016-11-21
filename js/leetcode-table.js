@@ -41,7 +41,52 @@
         components: {
             'v-link': {
                 props: { link: { type: String, required: true } },
-                template: '<a :href="link" target="_blank" id="v-link">solution</a>'
+                template: '<a @click="showSourceCode(link)" id="v-link">solution</a>',
+                methods: {
+                    setModalContent: function(data) {
+                        var vModal = document.getElementById('v-modal'),
+                            preElement = document.createElement('pre'),
+                            codeElement = document.createElement('code');
+
+                        // clear #v-modal element
+                        vModal.innerHTML = "";
+
+                        // append sourceCode
+                        codeElement.innerHTML = data;
+                        codeElement.className = 'language-javascript';
+                        preElement.appendChild(codeElement);
+                        vModal.appendChild(preElement);
+
+                        $.Prism.highlightAll();
+
+                        return vModal;
+                    },
+                    showModal: function(data) {
+                        var vModalContent = this.setModalContent(data);
+
+                        new $.Modal({
+                            content: vModalContent,
+                            className: 'zoom'
+                        }).open();
+                    },
+                    showSourceCode: function(url) {
+                        if (!(typeof url === 'string' && url.length > 0)) {
+                            console.warn('[showSourceCode] invalid url.');
+                            return;
+                        }
+
+                        $.fetch(url)
+                            .then(function(response) {
+                                return response.text();
+                            })
+                            .then(function(data) {
+                                this.showModal(data);
+                            }.bind(this))
+                            .catch(function(ex) {
+                                console.warn('get solution.js failed', ex);
+                            });
+                    }
+                }
             }
         },
         replace: true,

@@ -141,3 +141,10 @@ th.active .arrow {
     right: 6px;
     border-radius: 4px;
 }
+
+#v-link:hover {
+    border-bottom: 1px solid;
+}
+#v-link {
+    cursor: pointer;
+}
