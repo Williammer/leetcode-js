@@ -52,67 +52,69 @@
         },
         /* derived data state model */
         data: function() {
-            var sortOrders = {}
+            var sortOrders = {};
             this.columns.forEach(function(key) {
                 sortOrders[key] = 1
-            })
+            });
 
             return {
                 sortKey: 'num',
                 sortOrders: sortOrders
-            }
+            };
         },
         computed: {
             filteredData: function() {
-                var sortKey = this.sortKey
-                var filterKey = this.filterKey && this.filterKey.toLowerCase()
-                var order = this.sortOrders[sortKey] || 1
-                var data = this.data
+                var sortKey = this.sortKey,
+                    filterKey = this.filterKey && this.filterKey.toLowerCase(),
+                    order = this.sortOrders[sortKey] || 1,
+                    data = this.data;
+
                 if (filterKey) {
                     data = data.filter(function(row) {
                         return Object.keys(row).some(function(key) {
-                            return String(row[key]).toLowerCase().indexOf(filterKey) > -1
-                        })
-                    })
+                            return String(row[key]).toLowerCase().indexOf(filterKey) > -1;
+                        });
+                    });
                 }
                 if (sortKey) {
                     data = data.slice().sort(function(a, b) {
-                        a = a[sortKey]
-                        b = b[sortKey]
-                        return (a === b ? 0 : a > b ? 1 : -1) * order
-                    })
+                        a = a[sortKey];
+                        b = b[sortKey];
+                        return (a === b ? 0 : a > b ? 1 : -1) * order;
+                    });
                 }
-                return data
+
+                return data;
             }
         },
         filters: {
             capitalize: function(str) {
-                return str.charAt(0).toUpperCase() + str.slice(1)
+                return str.charAt(0).toUpperCase() + str.slice(1);
             }
         },
         methods: {
             isLinkEntry: function(key) {
-                return key === 'solution.js'
+                return key === 'solution.js';
             },
             sortBy: function(key) {
-                this.sortKey = key
+                this.sortKey = key;
                 if (!this.sortOrders[key]) {
-                    this.sortOrders[key] = 1
+                    this.sortOrders[key] = 1;
                 }
-                this.sortOrders[key] = this.sortOrders[key] * -1
+                this.sortOrders[key] = this.sortOrders[key] * -1;
             },
             beforeEnter: function(el) {
-                el.style.opacity = 0
+                el.style.opacity = 0;
             },
             enter: function(el, done) {
                 Velocity(
                     el, { opacity: 1 }, { complete: done }
-                )
+                );
             },
             leave: function(el, done) {
                 Velocity(
                     el, { opacity: 0 }, { complete: done }
-                )
+                );
             }
         }
     }
@@ -122,7 +124,7 @@
      */
     $.fetch('leetcode-data.json')
         .then(function(response) {
-            return response.json()
+            return response.json();
         })
         .then(function(tbData) {
             // console.debug('parsed json', tbData)
@@ -136,9 +138,10 @@
                     tbColumns: ['num', 'title', 'tags', 'level', 'solution.js'],
                     tbData: tbData
                 }
-            })
+            });
         })
         .catch(function(ex) {
-            console.warn('parsing failed', ex)
-        })
+            console.warn('parsing failed', ex);
+        });
+
 })(window)
