@@ -167,7 +167,7 @@
     /**
      * init
      */
-    $.fetch('leetcode-data.json')
+    $.fetch('https://raw.githubusercontent.com/Williammer/leetcode-js/master/leetcode-data.json')
         .then(function(response) {
             return response.json();
         })
