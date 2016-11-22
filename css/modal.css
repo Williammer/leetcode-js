@@ -17,15 +17,15 @@
 }
 
 .scotch-modal {
-    position: absolute;
+    position: fixed;
     z-index: 9999;
-    top: 100%;
+    top: 50%;
     left: 50%;
     opacity: 0;
     margin-bottom: 40px;
     padding: 24px 20px;
     width: 90%;
-    max-height: 1800px;
+    max-height: 86%;
     overflow: scroll;
     -webkit-transition: 1ms opacity ease;
     -moz-transition: 1ms opacity ease;
@@ -144,6 +144,7 @@
 
 
 /* Demo Styles */
+
 #v-modal {
     display: none;
 }
