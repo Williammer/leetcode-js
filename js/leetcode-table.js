@@ -162,10 +162,10 @@
                 );
             }
         }
-    }
+    };
 
     /**
-     * init
+     * Init - get leetcode data from remote then display in v-table.
      */
     $.fetch('https://raw.githubusercontent.com/Williammer/leetcode-js/master/leetcode-data.json')
         .then(function(response) {
@@ -189,4 +189,4 @@
             console.warn('parsing failed', ex);
         });
 
-})(window)
+})(window);
