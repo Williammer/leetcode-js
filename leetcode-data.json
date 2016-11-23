@@ -7,7 +7,7 @@
 }, {
     "num": 2,
     "title": "Add 2 Nums",
-    "tags": "Linklist, Recusion",
+    "tags": "Linkedlist, Recusion",
     "level": "mid",
     "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/2.add2Nums/solution.js"
 }, {
