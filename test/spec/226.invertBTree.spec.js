@@ -4,7 +4,7 @@ import { invertBTree } from "../../src/226.invertBTree/solution";
 describe("# Problem 226 - .", () => {
 
     describe("Solution 1: ", () => {
-        it("[] ----> [] ", () => {
+        /*it("[] ----> [] ", () => {
             const array = [];
             const tree = getBinaryTreeFromArray(array);
 
@@ -42,7 +42,7 @@ describe("# Problem 226 - .", () => {
 
             const result = invertBTree.recursion(tree);
             expect(result).toEqual(4);
-        });
+        });*/
     });
 
 });
