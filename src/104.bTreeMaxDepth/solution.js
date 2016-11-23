@@ -137,7 +137,6 @@ bTreeMaxDepth.bfs = (root) => {
         }
     }
 
-
     return maxDepth;
 };
 
