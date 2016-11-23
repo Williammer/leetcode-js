@@ -15,7 +15,7 @@ export class TreeNode {
     2. Search for needed num of child in valArray for each node in parentNodes;
     3. Loop until beyond length of valArray.
 
- * Used in: 104.bTreeMaxDepth
+ * Used in: [102, 104, 111, 226]
  ***/
 export const getBinaryTreeFromArray = (valArray) => {
     if (!(Array.isArray(valArray) && valArray.length > 0 && valArray[0])) {
@@ -24,20 +24,15 @@ export const getBinaryTreeFromArray = (valArray) => {
 
     let rootNode = new TreeNode(valArray[0]),
         arrAnchorIndex = 1,
-        parentNodes = [];
-
-    // Push root to parentNodes array.
-    parentNodes.push(rootNode);
+        parentNodes = [rootNode];
 
     while (parentNodes.length > 0 && arrAnchorIndex < valArray.length) {
         let parentNodesIndex = 0,
-            curParentNodes = parentNodes;
-
-        parentNodes = []; // reset parentNodes to be used for current loop
+            curDepthLength = parentNodes.length;
 
         // assign children for parentNodes
-        while (parentNodesIndex < curParentNodes.length) {
-            let curParentNode = curParentNodes[parentNodesIndex],
+        while (parentNodesIndex < curDepthLength) {
+            let curParentNode = parentNodes.shift(),
                 childNodesIndex = 0;
 
             while (childNodesIndex < 2) {
