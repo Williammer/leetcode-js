@@ -59,6 +59,12 @@
     "level": "low",
     "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/111.bTreeMinDepth/solution.js"
 }, {
+    "num": 226,
+    "title": "Invert BinaryTree",
+    "tags": "Tree, BFS, Recusion",
+    "level": "low",
+    "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/226.invertBTree/solution.js"
+}, {
     "num": 136,
     "title": "Find single num",
     "tags": "Array, Bit",
