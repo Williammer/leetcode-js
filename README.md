@@ -5,11 +5,11 @@
 This is my leetcode javaScript solutions(and tests), each solution.js contains my personal analysis and learned lessons.
 
 
-# Solutions
+# - Solutions
 check out: [http://williammer.github.io/leetcode-js/](http://williammer.github.io/leetcode-js/)
 
 
-# Usages
+# - Usages
 
 ## 1. Install
 ``` bash
