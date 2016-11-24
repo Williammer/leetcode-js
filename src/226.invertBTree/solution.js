@@ -47,31 +47,23 @@ invertBTree.bfs = (root) => {
     let _queue = [root];
 
     while (_queue.length > 0) {
-        let curLengthThisDepth = _queue.length,
-            i = 0;
+        let curNode = _queue.shift(),
+            tmp;
 
-        while (i < curLengthThisDepth) {
-            let curNode = _queue.shift(),
-                tmp;
+        if (isNode(curNode.left) || isNode(curNode.right)) {
+            // invert left, right child of each Node
+            tmp = curNode.left;
+            curNode.left = curNode.right;
+            curNode.right = tmp;
 
-            if (isNode(curNode.left) || isNode(curNode.right)) {
-                // invert left, right child of each Node
-                tmp = curNode.left;
-                curNode.left = curNode.right;
-                curNode.right = tmp;
-
-                if (isNode(curNode.left)) {
-                    _queue.push(curNode.left);
-                }
-                if (isNode(curNode.right)) {
-                    _queue.push(curNode.right);
-                }
+            if (isNode(curNode.left)) {
+                _queue.push(curNode.left);
             }
-
-            i++;
+            if (isNode(curNode.right)) {
+                _queue.push(curNode.right);
+            }
         }
     }
-
 
     return root;
 };
