@@ -73,7 +73,10 @@ invertBTree.bfs = (root) => {
  *
  * "N" is node count
  * Time complexity: O(N)
- * Space complexity: O(1) ?
+ * Space complexity: O(N)
+ *
+ * Because of recursion, O(h) function calls will be placed on the stack in the worst case, where h is the height of the tree.
+ *  And because h ∈ O(n), the space complexity is O(n).
  */
 invertBTree.recursion = (root) => {
     const isNode = (node) => {
