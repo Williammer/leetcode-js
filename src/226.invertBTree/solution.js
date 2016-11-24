@@ -76,6 +76,39 @@ invertBTree.bfs = (root) => {
     return root;
 };
 
+/**
+ * Solution 2: recursively invert each sub-tree.
+ *
+ * "N" is node count
+ * Time complexity: O(N)
+ * Space complexity: O(1) ?
+ */
+invertBTree.recursion = (root) => {
+    const isNode = (node) => {
+        return (node instanceof TreeNode) && node.val !== null;
+    };
+
+    if (!isNode(root)) {
+        return [];
+    }
+
+    if (isNode(root.left) || isNode(root.right)) {
+        // invert left, right child of each Node
+        let tmp = root.left;
+        root.left = root.right;
+        root.right = tmp;
+    }
+
+    if (isNode(root.left)) {
+        invertBTree.recursion(root.left);
+    }
+    if (isNode(root.right)) {
+        invertBTree.recursion(root.right);
+    }
+
+    return root;
+};
+
 
 /************************************************************************************************************************
 
