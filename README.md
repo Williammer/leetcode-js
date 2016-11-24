@@ -9,7 +9,7 @@ This is my leetcode javaScript solutions(and tests), each solution.js contains m
 check out: [http://williammer.github.io/leetcode-js/](http://williammer.github.io/leetcode-js/)
 
 
-# Usage
+# Usages
 
 ## 1. Install
 ``` bash
