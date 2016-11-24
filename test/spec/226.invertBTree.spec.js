@@ -3,7 +3,7 @@ import { invertBTree } from "../../src/226.invertBTree/solution";
 
 describe("# Problem 226 - Invert a binary tree.", () => {
 
-    describe("Solution 1: recursively invert each sub-tree.", () => {
+    describe("Solution 1: invert from top to bottom by bfs.", () => {
         it("[] --> []", () => {
             const array = [];
             const tree = getBinaryTreeFromArray(array);

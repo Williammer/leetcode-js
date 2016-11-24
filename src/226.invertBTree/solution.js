@@ -36,7 +36,7 @@ export const invertBTree = {};
  * Space complexity: O(N)
  */
 invertBTree.bfs = (root) => {
-	const isNode = (node) => {
+    const isNode = (node) => {
         return (node instanceof TreeNode) && node.val !== null;
     };
 
@@ -46,40 +46,40 @@ invertBTree.bfs = (root) => {
 
     let _queue = [root];
 
-    while(_queue.length > 0){
-    	let curLengthThisDepth = _queue.length,
-    		i = 0;
+    while (_queue.length > 0) {
+        let curLengthThisDepth = _queue.length,
+            i = 0;
 
-    	while(i < curLengthThisDepth){
-    		let curNode = _queue.shift(),
-    			tmp;
+        while (i < curLengthThisDepth) {
+            let curNode = _queue.shift(),
+                tmp;
 
-    		if (isNode(curNode.left) || isNode(curNode.right)) {
-    			// invert left, right child of each Node
-    			tmp = curNode.left;
-    			curNode.left = curNode.right;
-    			curNode.right = tmp;
+            if (isNode(curNode.left) || isNode(curNode.right)) {
+                // invert left, right child of each Node
+                tmp = curNode.left;
+                curNode.left = curNode.right;
+                curNode.right = tmp;
 
-    			if (isNode(curNode.left)) {
-    				_queue.push(curNode.left);
-    			}
-    			if (isNode(curNode.right)) {
-    				_queue.push(curNode.right);
-    			}
-    		}
+                if (isNode(curNode.left)) {
+                    _queue.push(curNode.left);
+                }
+                if (isNode(curNode.right)) {
+                    _queue.push(curNode.right);
+                }
+            }
 
-    		i++;
-    	}
+            i++;
+        }
     }
 
 
-	return root;
+    return root;
 };
 
 
 /************************************************************************************************************************
 
  * Lessons:
-   1. Observe the pattern then choose the proper way to solve.
+   1. Observe the pattern then choose the proper way to solve, and always have the problem picture in mind.
 
 ************************************************************************************************************************/
