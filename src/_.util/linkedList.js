@@ -10,6 +10,12 @@ export class ListNode {
 
 /**
  * Convert array to linkedList
+ *
+ * "N" is item count
+ * Time complexity: O(N)
+ * Space complexity: O(N)
+ *
+ * Used in: [2]
  */
 export const arrayToLinkedlist = (arr) => {
     let lastNode, newNode;
@@ -27,6 +33,12 @@ export const arrayToLinkedlist = (arr) => {
 
 /**
  * Convert linkedList to array
+ *
+ * "N" is item count
+ * Time complexity: O(N)
+ * Space complexity: O(N)
+ *
+ * Used in: [2]
  */
 export const linkedlistToArray = (lList) => {
     let curNode = lList,
