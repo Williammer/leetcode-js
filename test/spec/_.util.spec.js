@@ -1,24 +1,24 @@
-import { ListNode, getLinkedlistFromArray, getArrayFromLinkedlist } from "../../src/_.util/linkedList";
-import { TreeNode, getBinaryTreeFromArray, getArrayFromBinaryTree } from "../../src/_.util/binaryTree";
+import { ListNode, arrayToLinkedlist, linkedlistToArray } from "../../src/_.util/linkedList";
+import { TreeNode, arrayToBinaryTree, binaryTreeToArray } from "../../src/_.util/binaryTree";
 
 // # linkedList
 describe("[Util] linkedList - convert between array and linkedList.", () => {
-    it("getLinkedlistFromArray return (2 -> 4 -> 3) for [2,4,3]", () => {
+    it("arrayToLinkedlist return (2 -> 4 -> 3) for [2,4,3]", () => {
         const testArr = [2, 4, 3];
 
-        const result = getLinkedlistFromArray(testArr);
+        const result = arrayToLinkedlist(testArr);
         expect(result instanceof ListNode).toBeTruthy();
         expect(result.val).toEqual(2);
         expect(result.next.val).toEqual(4);
         expect(result.next.next.val).toEqual(3);
     });
 
-    it("getArrayFromLinkedlist return [2,4,3] for (2 -> 4 -> 3)", () => {
+    it("linkedlistToArray return [2,4,3] for (2 -> 4 -> 3)", () => {
         const testlList = new ListNode(2);
         testlList.next = new ListNode(4);
         testlList.next.next = new ListNode(3);
 
-        const result = getArrayFromLinkedlist(testlList);
+        const result = linkedlistToArray(testlList);
         expect(result).toEqual([2, 4, 3]);
     });
 });
@@ -28,7 +28,7 @@ describe("[Util] linkedList - convert between array and linkedList.", () => {
 describe("[Util] binaryTree - Generate binary tree base on node values array, the value evaluated as false will be considered null node.", () => {
     it("[1, null, null, 1, 2, 3, 4]", () => {
         const array =  [1, null, null, 1, 2, 3, 4];
-        const rootNode = getBinaryTreeFromArray(array);
+        const rootNode = arrayToBinaryTree(array);
 
         expect(rootNode.val).toEqual(1);
         expect(rootNode.left).toBeNull();
@@ -38,7 +38,7 @@ describe("[Util] binaryTree - Generate binary tree base on node values array, th
 
     it("[1, 2, 3, null, 4, 5]", () => {
         const array = [1, 2, 3, null, 4, 5];
-        const rootNode = getBinaryTreeFromArray(array);
+        const rootNode = arrayToBinaryTree(array);
 
         expect(rootNode.val).toEqual(1);
         expect(rootNode.left.val).toEqual(2);
@@ -52,7 +52,7 @@ describe("[Util] binaryTree - Generate binary tree base on node values array, th
 
     it("[1, 2, 3, null, 4, 5, null, 6, 7]", () => {
         const array = [1, 2, 3, null, 4, 5, null, 6, 7];
-        const rootNode = getBinaryTreeFromArray(array);
+        const rootNode = arrayToBinaryTree(array);
 
         expect(rootNode.val).toEqual(1);
 
@@ -70,7 +70,7 @@ describe("[Util] binaryTree - Generate binary tree base on node values array, th
 
     it("[1, 2, 3, 4, null, null, 5, null, null, null, 6]", () => {
         const array = [1, 2, 3, 4, null, null, 5, null, null, null, 6];
-        const rootNode = getBinaryTreeFromArray(array);
+        const rootNode = arrayToBinaryTree(array);
 
         expect(rootNode.val).toEqual(1);
 
@@ -93,32 +93,32 @@ describe("[Util] binaryTree - Generate binary tree base on node values array, th
 describe("[Util] binaryTree - Generate node values array base on binary tree.", () => {
     it("[1, null, null]", () => {
         const array =  [1, null, null];
-        const rootNode = getBinaryTreeFromArray(array);
-        const convertedArray = getArrayFromBinaryTree(rootNode);
+        const rootNode = arrayToBinaryTree(array);
+        const convertedArray = binaryTreeToArray(rootNode);
 
         expect(convertedArray).toEqual([1]);
     });
 
     it("[1, 2, 3, null, 4, 5]", () => {
         const array = [1, 2, 3, null, 4, 5];
-        const rootNode = getBinaryTreeFromArray(array);
-        const convertedArray = getArrayFromBinaryTree(rootNode);
+        const rootNode = arrayToBinaryTree(array);
+        const convertedArray = binaryTreeToArray(rootNode);
 
         expect(convertedArray).toEqual(array);
     });
 
     it("[1, 2, 3, null, 4, 5, null, 6, 7]", () => {
         const array = [1, 2, 3, null, 4, 5, null, 6, 7];
-        const rootNode = getBinaryTreeFromArray(array);
-        const convertedArray = getArrayFromBinaryTree(rootNode);
+        const rootNode = arrayToBinaryTree(array);
+        const convertedArray = binaryTreeToArray(rootNode);
 
         expect(convertedArray).toEqual(array);
     });
 
     it("[1, 2, 3, 4, null, null, 5, null, null, null, 6]", () => {
         const array = [1, 2, 3, 4, null, null, 5, null, null, null, 6];
-        const rootNode = getBinaryTreeFromArray(array);
-        const convertedArray = getArrayFromBinaryTree(rootNode);
+        const rootNode = arrayToBinaryTree(array);
+        const convertedArray = binaryTreeToArray(rootNode);
 
         expect(convertedArray).toEqual(array);
     });

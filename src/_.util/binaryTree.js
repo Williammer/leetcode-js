@@ -21,7 +21,7 @@ export class TreeNode {
  *
  * Used in: [102, 104, 111, 226]
  ***/
-export const getBinaryTreeFromArray = (valArray) => {
+export const arrayToBinaryTree = (valArray) => {
     if (!(Array.isArray(valArray) && valArray.length > 0 && valArray[0])) {
         return null;
     }
@@ -82,7 +82,7 @@ export const getBinaryTreeFromArray = (valArray) => {
  *
  * Used in: [226]
  ***/
-export const getArrayFromBinaryTree = (root) => {
+export const binaryTreeToArray = (root) => {
     const isNode = (node) => {
         return (node instanceof TreeNode) && node.val !== null;
     };
