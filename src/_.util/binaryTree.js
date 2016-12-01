@@ -14,7 +14,11 @@ export class TreeNode {
     1. Use parentNodes[node] to keep record;
     2. Search for needed num of child in valArray for each node in parentNodes;
     3. Loop until beyond length of valArray.
-
+ *
+ * "N" is node count
+ * Time complexity: O(N)
+ * Space complexity: O(N)
+ *
  * Used in: [102, 104, 111, 226]
  ***/
 export const getBinaryTreeFromArray = (valArray) => {
@@ -71,7 +75,11 @@ export const getBinaryTreeFromArray = (valArray) => {
  * Basic idea:
     1. loop each depth of the tree in bfs style
     2. check each child node of nodes in queue, only care each node's next generations.
-
+ *
+ * "N" is node count
+ * Time complexity: O(2N)
+ * Space complexity: O(2N)
+ *
  * Used in: [226]
  ***/
 export const getArrayFromBinaryTree = (root) => {
@@ -113,7 +121,7 @@ export const getArrayFromBinaryTree = (root) => {
     }
 
     if (nullChainCount > 0) {
-        bTreeArray = bTreeArray.slice(0, -nullChainCount);
+        bTreeArray = bTreeArray.slice(0, -nullChainCount); // any ways to optimize this? O(n) time complexity here
     }
 
     return bTreeArray;
