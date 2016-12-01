@@ -87,34 +87,28 @@ export const getArrayFromBinaryTree = (root) => {
         bTreeArray = [root.val],
         nullChainCount = 0;
 
-    while(_queue.length > 0){
+    while (_queue.length > 0) {
         let curDepthLength = _queue.length,
-            i = 0;
+            curNode = _queue.shift();
 
-        while(i < curDepthLength){
-            let curNode = _queue.shift();
+        if (isNode(curNode.left)) {
+            bTreeArray.push(curNode.left.val);
+            _queue.push(curNode.left);
 
-            if (isNode(curNode.left)) {
-                bTreeArray.push(curNode.left.val);
-                _queue.push(curNode.left);
+            nullChainCount = 0;
+        } else {
+            bTreeArray.push(null);
+            nullChainCount++;
+        }
 
-                nullChainCount = 0;
-            } else {
-                bTreeArray.push(null);
-                nullChainCount++;
-            }
+        if (isNode(curNode.right)) {
+            bTreeArray.push(curNode.right.val);
+            _queue.push(curNode.right);
 
-            if (isNode(curNode.right)) {
-                bTreeArray.push(curNode.right.val);
-                _queue.push(curNode.right);
-
-                nullChainCount = 0;
-            } else {
-                bTreeArray.push(null);
-                nullChainCount++;
-            }
-
-            i++;
+            nullChainCount = 0;
+        } else {
+            bTreeArray.push(null);
+            nullChainCount++;
         }
     }
 
