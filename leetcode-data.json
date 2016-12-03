@@ -77,6 +77,12 @@
     "level": "low",
     "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/144.bTreePreOrderTraversal/solution.js"
 }, {
+    "num": 145,
+    "title": "BinaryTree post-order Traverse",
+    "tags": "Tree, DFS",
+    "level": "low",
+    "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/145.bTreePostOrderTraversal/solution.js"
+}, {
     "num": 226,
     "title": "Invert BinaryTree",
     "tags": "Tree, BFS, Recusion",
