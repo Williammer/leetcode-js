@@ -41,6 +41,18 @@
     "level": "low",
     "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/67.addBinary/solution.js"
 }, {
+    "num": 94,
+    "title": "BinaryTree in-order Traverse",
+    "tags": "Tree, DFS",
+    "level": "low",
+    "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/94.bTreeInOrderTraversal/solution.js"
+}, {
+    "num": 100,
+    "title": "2 Same BinaryTrees",
+    "tags": "Tree, DFS",
+    "level": "low",
+    "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/100.sameTree/solution.js"
+}, {
     "num": 102,
     "title": "BinaryTree level-order Traverse",
     "tags": "Tree, BFS, DFS",
@@ -58,6 +70,12 @@
     "tags": "Tree, BFS, DFS",
     "level": "low",
     "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/111.bTreeMinDepth/solution.js"
+}, {
+    "num": 144,
+    "title": "BinaryTree pre-order Traverse",
+    "tags": "Tree, DFS",
+    "level": "low",
+    "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/144.bTreePreOrderTraversal/solution.js"
 }, {
     "num": 226,
     "title": "Invert BinaryTree",
