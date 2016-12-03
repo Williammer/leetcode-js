@@ -1,14 +1,33 @@
 const fs = require("fs-extra"),
     action = process.argv[2],
     num = process.argv[3],
-    title = process.argv[4];
+    title = process.argv[4],
+    copyNum = process.argv[5];
 
 if (!num || !action) {
     throw `invalid input(action / num) provided.`;
     return;
 }
 
+
+// public functions
+function getFilePathByNum(path, num) {
+    let targetFilename = fs.readdirSync(path).filter(file => {
+        return file.indexOf(`${num}.`) === 0;
+    });
+
+    if (!targetFilename || !(targetFilename.length > 0)) {
+        console.warn(`[readdir] can't find target file to remove.`);
+        return;
+    } else {
+        return `${path}${targetFilename}`;
+    }
+}
+
+
+// [action] - rm
 if (action == "rm") {
+
     const removeProblem = (dstPath) => {
         fs.remove(dstPath, function(err) {
             if (err) {
@@ -17,19 +36,6 @@ if (action == "rm") {
 
             console.log(`remove '${dstPath}'' success!`)
         })
-    };
-
-    const getFilePathByNum = (path, num) => {
-        let targetFilename = fs.readdirSync(path).filter(file => {
-            return file.indexOf(`${num}.`) === 0;
-        });
-
-        if (!targetFilename || !(targetFilename.length > 0)) {
-            console.warn(`[readdir] can't find target file to remove.`);
-            return;
-        } else {
-            return `${path}${targetFilename}`;
-        }
     };
 
     const specDstPath = getFilePathByNum(`./test/spec/`, num);
@@ -43,13 +49,47 @@ if (action == "rm") {
         return;
     }
 
-} else if (action == "add") {
+    // [action] - copy
+} else if (action == "copy") {
+
+    if (!copyNum) {
+        throw `invalid input(copyNum) provided.`;
+        return;
+    }
+
     const solutionDstPath = `./src/${num}.${title}`;
+    const specDstPath = `./test/spec/${num}.${title}.spec.js`;
+    const solutionSrcPath = getFilePathByNum(`./src/`, copyNum);
+    const specSrcPath = getFilePathByNum(`./test/spec/`, copyNum);
+
+    const copyProblemFrom = (srcPath, dstPath) => {
+        fs.copy(srcPath, dstPath, (err) => {
+            if (err) throw err;
+
+            console.log(`${dstPath} - renamed copy complete.`);
+        });
+    };
+
+    copyProblemFrom(solutionSrcPath, solutionDstPath); // create solution file
+    copyProblemFrom(specSrcPath, specDstPath); // create spec file
+
+    // [action] - add
+} else if (action == "add") {
+
+    if (!title) {
+        throw `invalid input(title) provided.`;
+        return;
+    }
+
+    const solutionSrcPath = `./src/tmpl`;
+    const solutionDstPath = `./src/${num}.${title}`;
+    const specSrcPath = `./test/spec/tmpl.js`;
     const specDstPath = `./test/spec/${num}.${title}.spec.js`;
 
     const createNewProblem = (srcPath, dstPath) => {
         fs.copy(srcPath, dstPath, (err) => {
             if (err) throw err;
+
             let filePath = dstPath;
 
             console.log(`${dstPath} - renamed copy complete.`);
@@ -70,9 +110,6 @@ if (action == "rm") {
             });
         });
     };
-
-    const solutionSrcPath = `./src/tmpl`;
-    const specSrcPath = `./test/spec/tmpl.js`;
 
     createNewProblem(solutionSrcPath, solutionDstPath); // create solution file
     createNewProblem(specSrcPath, specDstPath); // create spec file
