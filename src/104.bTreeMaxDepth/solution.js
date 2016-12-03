@@ -91,7 +91,7 @@ bTreeMaxDepth.dfs = (root) => {
         return 0;
     }
 
-    return Math.max(bTreeMaxDepth.bfs(root.left), bTreeMaxDepth.bfs(root.right)) + 1; // basic recursion pattern, this '+1' is the key.
+    return Math.max(bTreeMaxDepth.dfs(root.left), bTreeMaxDepth.dfs(root.right)) + 1; // basic recursion pattern, this '+1' is the key.
 
 };
 
