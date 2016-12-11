@@ -58,5 +58,6 @@ bTreeInOrderTraversal.dfs = (root) => {
 
  * Lessons:
    1. In-order is basically dfs, and dfs is recursion.
+   2. One thing to note is that in-order for BST will traverse the tree in sorted order.
 
 ************************************************************/
