@@ -42,7 +42,7 @@ bTreeLvOrderTraversal.bfs = (root) => {
         return (node instanceof TreeNode) && node.val !== null;
     };
 
-    if (!root || !isNode(root)) {
+    if (!isNode(root)) {
         return [];
     }
 
@@ -88,7 +88,7 @@ bTreeLvOrderTraversal.dfs = (root) => {
         return (node instanceof TreeNode) && node.val !== null;
     };
 
-    if (!root || !isNode(root)) {
+    if (!isNode(root)) {
         return [];
     }
 

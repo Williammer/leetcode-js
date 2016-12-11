@@ -34,7 +34,7 @@ bTreeMinDepth.bfs = (root) => {
         return (node instanceof TreeNode) && node.val !== null;
     };
 
-    if (!root || !isNode(root)) {
+    if (!isNode(root)) {
         return 0;
     }
 
@@ -83,7 +83,7 @@ bTreeMinDepth.dfs = (root) => {
         return (node instanceof TreeNode) && node.val !== null;
     };
 
-    if (!root || !isNode(root)) {
+    if (!isNode(root)) {
         return 0;
     }
 
