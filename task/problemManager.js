@@ -11,6 +11,19 @@ if (!num || !action) {
 
 
 // public functions
+function getTitleByNum(num) {
+    let targetFilename = fs.readdirSync(`./src/`).filter(file => {
+        return file.indexOf(`${num}.`) === 0;
+    });
+
+    if (!targetFilename) {
+        console.warn(`[readdir] can't find target file to remove.`);
+        return '';
+    } else {
+        return targetFilename[0].split('.')[1];
+    }
+}
+
 function getFilePathByNum(path, num) {
     let targetFilename = fs.readdirSync(path).filter(file => {
         return file.indexOf(`${num}.`) === 0;
@@ -61,12 +74,33 @@ if (action == "rm") {
     const specDstPath = `./test/spec/${num}.${title}.spec.js`;
     const solutionSrcPath = getFilePathByNum(`./src/`, copyNum);
     const specSrcPath = getFilePathByNum(`./test/spec/`, copyNum);
+    const copyTitle = getTitleByNum(copyNum);
 
     const copyProblemFrom = (srcPath, dstPath) => {
         fs.copy(srcPath, dstPath, (err) => {
             if (err) throw err;
 
             console.log(`${dstPath} - renamed copy complete.`);
+
+            let filePath = dstPath;
+
+            if (dstPath.includes("src") && !dstPath.includes("test/spec")) {
+                filePath = dstPath + "/solution.js";
+            }
+
+            fs.readFile(filePath, "utf8", (err, data) => {
+                if (err) throw err;
+
+                const titleRegExp = new RegExp(copyTitle, "g");
+                let updatedData = data.replace(titleRegExp, title)
+                    .replace(`Problem ${copyNum}`, `Problem ${num}`)
+                    .replace(`${copyNum}.`, `${num}.`);
+
+                fs.writeFile(filePath, updatedData, (err) => {
+                    if (err) throw err;
+                    console.log(`updated ${filePath}`);
+                });
+            });
         });
     };
 
