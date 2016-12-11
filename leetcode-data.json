@@ -106,4 +106,10 @@
     "tags": "Bit",
     "level": "low",
     "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/371.twoIntSum/solution.js"
+}, {
+    "num": 404,
+    "title": "Sum of left leaves",
+    "tags": "Tree, BFS, DFS",
+    "level": "low",
+    "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/404.sumLeftLeaves/solution.js"
 } ]
