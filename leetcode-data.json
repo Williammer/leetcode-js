@@ -71,6 +71,12 @@
     "level": "low",
     "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/111.bTreeMinDepth/solution.js"
 }, {
+    "num": 136,
+    "title": "Find single num",
+    "tags": "Array, Bit",
+    "level": "low",
+    "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/136.singleNum/solution.js"
+}, {
     "num": 144,
     "title": "BinaryTree pre-order Traverse",
     "tags": "Tree, DFS",
@@ -83,23 +89,23 @@
     "level": "low",
     "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/145.bTreePostOrderTraversal/solution.js"
 }, {
+    "num": 167,
+    "title": "Two Sum sorted",
+    "tags": "Array, 2pointer, binarySearch",
+    "level": "low",
+    "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/167.twoSumSorted/solution.js"
+}, {
     "num": 226,
     "title": "Invert BinaryTree",
     "tags": "Tree, BFS, Recusion",
     "level": "low",
     "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/226.invertBTree/solution.js"
 }, {
-    "num": 136,
-    "title": "Find single num",
-    "tags": "Array, Bit",
-    "level": "low",
-    "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/136.singleNum/solution.js"
-}, {
-    "num": 167,
-    "title": "Two Sum sorted",
-    "tags": "Array, 2pointer, binarySearch",
-    "level": "low",
-    "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/167.twoSumSorted/solution.js"
+    "num": 230,
+    "title": "kth Small in BST",
+    "tags": "Tree, DFS, BST, binarySearch",
+    "level": "mid",
+    "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/230.kthSmallInBST/solution.js"
 }, {
     "num": 371,
     "title": "Add 2 Int",
