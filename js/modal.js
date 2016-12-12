@@ -44,6 +44,8 @@
                 if (_.overlay.parentNode) _.overlay.parentNode.removeChild(_.overlay);
             });
         }
+
+        document.body.className = "";
     }
 
     Modal.prototype.open = function() {
@@ -57,6 +59,9 @@
         if (this.overlay) {
             this.overlay.className = this.overlay.className + " scotch-open";
         }
+
+        window.scrollTo(0, document.body.scrollHeight / 4.8);
+        document.body.className = "noscroll";
     }
 
     // Private Methods

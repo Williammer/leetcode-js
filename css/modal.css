@@ -1,4 +1,7 @@
 /* Modal Base CSS */
+.noscroll {
+    overflow-y: hidden;
+}
 
 .scotch-overlay {
     position: fixed;
@@ -144,7 +147,6 @@
 
 
 /* Demo Styles */
-
 #v-modal {
     display: none;
 }
