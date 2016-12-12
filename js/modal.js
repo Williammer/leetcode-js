@@ -18,7 +18,7 @@
             content: "",
             // maxWidth: 600,
             minWidth: 280,
-            overlay: false
+            overlay: true
         }
 
         // Create options by extending defaults with the passed in arugments
