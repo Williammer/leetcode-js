@@ -21,6 +21,10 @@ Add a problem:
 ``` bash
 $ npm run task -- add <problem number> <problem title>
 ```
+Copy a problem:
+``` bash
+$ npm run task -- copy <problem number> <problem title> <to be copied problem number>
+```
 Remove a problem:
 ``` bash
 $ npm run task -- rm <problem number>
