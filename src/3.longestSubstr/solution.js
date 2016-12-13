@@ -1,4 +1,4 @@
-/************************************************************
+/************************************************************************************************************************
 
  * Problem: https://leetcode.com/problems/longest-substring-without-repeating-characters/
     Given a string, find the length of the longest substring without repeating characters.
@@ -14,7 +14,7 @@
  * Analysis: Substring-related problems are classic! In this no-repeated longest substring problem, we can have substr by using sth like 'slide window' with (left, right),
     and to check the repeatness of each char to be extended into current 'slide window'.
 
-************************************************************/
+************************************************************************************************************************/
 
 
 export const longestSubstr = {};
@@ -128,7 +128,7 @@ longestSubstr.hashReduce = (s) => {
 };
 
 
-/************************************************************
+/************************************************************************************************************************
 
  * Lessons:
    1. 'Slide window' is a good perspective for handling sub array/string problems.
@@ -137,4 +137,4 @@ longestSubstr.hashReduce = (s) => {
 
    3. ES6's array reduce can loop array elegantly.
 
-************************************************************/
+************************************************************************************************************************/

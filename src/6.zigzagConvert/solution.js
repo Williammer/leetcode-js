@@ -1,4 +1,4 @@
-/************************************************************
+/************************************************************************************************************************
 
  * Problem: The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this:
     (you may want to display this pattern in a fixed font for better legibility)
@@ -18,7 +18,7 @@
 
  * Analysis: An obvious idea is to use a 2d array that keeps track of it's x/y indexes. But it'll be a bit different for Odd/Even numRows.
 
-************************************************************/
+************************************************************************************************************************/
 
 export const zigzagConvert = {};
 
@@ -59,17 +59,17 @@ zigzagConvert.array2D = (s, numRows) => {
 
 
 
-/************************************************************
+/************************************************************************************************************************
 
  * Lessons:
    1. 
 
-************************************************************/
+************************************************************************************************************************/
 
 
 
 
-/************************************************************
+/************************************************************************************************************************
 
  * Extended idea: What if we lay it out horizontally and veritically re-construct to another string instead:
     let's regard each char+space as a unit for 1st row, suppose we have n units in 1st row, which is n chars, including the last single char;
@@ -84,4 +84,4 @@ zigzagConvert.array2D = (s, numRows) => {
             n * numRows/2 + (2n-1) * numRows/2 >= s.length;
     After divided the string into ZigZag pattern, we can re-construct it based on the index of each rows that has chars.
 
-************************************************************/
+************************************************************************************************************************/

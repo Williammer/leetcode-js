@@ -1,4 +1,4 @@
-/************************************************************
+/************************************************************************************************************************
 
  * Problem: https://leetcode.com/problems/minimum-depth-of-binary-tree/
     Given a binary tree, find its minimum depth. The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.
@@ -15,7 +15,7 @@
 
  * Analysis: we need to traverse tree until a leaf node that has shortest path from root is found, which is essentially a shortest-path problem. So apparently bfs is more suitable and efficient to handle it.
 
-************************************************************/
+************************************************************************************************************************/
 
 
 import { TreeNode } from "../_.util/binaryTree";
@@ -95,9 +95,9 @@ bTreeMinDepth.dfs = (root) => {
 };
 
 
-/************************************************************
+/************************************************************************************************************************
 
  * Lessons:
    1. bfs is useful in shortest-path problems, it's beneficial to master it.
 
-************************************************************/
+************************************************************************************************************************/

@@ -1,4 +1,4 @@
-/************************************************************
+/************************************************************************************************************************
 
  * Problem: https://leetcode.com/problems/add-two-numbers/
     You are given two linked lists representing two non-negative numbers.
@@ -23,7 +23,7 @@
  * Analysis: It's hard to insert nodes by recusively setting its next nodes for linklist, so at first I consider use a stack to cache those sum digits.
    Later I've learned we can utilize the mutable feature of 2 referenced objects by having one doing the recursive insert work and the other to take the result, which is great.
 
-************************************************************/
+************************************************************************************************************************/
 
 
 import { ListNode } from "../_.util/linkedList";
@@ -145,11 +145,11 @@ add2Nums.recursion = (l1, l2) => {
 };
 
 
-/************************************************************
+/************************************************************************************************************************
 
  * Lessons:
    1. Consider introduce stack data structure to reversely insert each node into linklist as it's hard to insert from head to tail for linklist.
    2. Utilize mutable object reference feature.
    3. Multi base case recursion. To recursion well, we need to consider head/tail of child when design parent, so that child-recur can utilize its parent's base case.
 
-************************************************************/
+************************************************************************************************************************/

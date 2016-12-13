@@ -1,4 +1,4 @@
-/************************************************************
+/************************************************************************************************************************
 
  * Problem: https://leetcode.com/problems/two-sum/
    Given an array of integers, return indices of the two numbers such that they add up to a specific target.
@@ -18,7 +18,7 @@
  * Analysis: requirement is mainly on getting 'key' from valid 'value',
    which makes Hash to be an efficient data structure to use.
 
-************************************************************/
+************************************************************************************************************************/
 
 
 export const twoSum = {};
@@ -80,7 +80,7 @@ twoSum.hash = (nums, target) => {
 };
 
 
-/************************************************************
+/************************************************************************************************************************
 
  * Lessons:
    1. Consider introduce appriorate helper data structures to solve problems.
@@ -90,4 +90,4 @@ twoSum.hash = (nums, target) => {
 
    3.  For list:array based problem that aims at finding values than keys, we can consider sort it first and utilize some of its treats like binary search.
 
-************************************************************/
+************************************************************************************************************************/

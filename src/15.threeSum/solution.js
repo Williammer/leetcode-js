@@ -1,4 +1,4 @@
-/************************************************************
+/************************************************************************************************************************
 
  * Problem: https://leetcode.com/problems/3sum/
     Given an array S of n integers, are there elements a, b, c in S such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.
@@ -18,7 +18,7 @@
     Because this problem has strong requirement on sorting order, we need to sort the source array first; then with a sorted array, we can 2 pointer shrink to find.
     We may also use binarySearch for the 3rd pointer's search while having 2 anchor points, but it'll have N^2*logN complexity.
 
-************************************************************/
+************************************************************************************************************************/
 
 
 export const threeSum = {};
@@ -185,10 +185,10 @@ threeSum.twoPointersHash = (nums) => {
 };
 
 
-/************************************************************
+/************************************************************************************************************************
 
  * Lessons:
    1. Handling sorting and duplication edge cases is so hard :(, which needs constant practice to be quicker and sharper.
    2. The use of while loop to slide-wipe the duplication is elegant.
 
-************************************************************/
+************************************************************************************************************************/

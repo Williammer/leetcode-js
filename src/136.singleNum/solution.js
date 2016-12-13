@@ -1,4 +1,4 @@
-/************************************************************
+/************************************************************************************************************************
 
  * Problem: https://leetcode.com/problems/single-number/
     Given an array of integers, every element appears twice except for one. Find that single one.
@@ -16,7 +16,7 @@
     The other idea is to use the hash to keep records while looping over the array, which is similar to 1.twoSum, 15.threeSum, it can hv linear time, but the hash will cost mem complexity.
     Another idea is use the magical bit manipulation, XOR is the trick.
 
-************************************************************/
+************************************************************************************************************************/
 
 
 export const singleNum = {};
@@ -76,11 +76,11 @@ singleNum.bit = (nums) => {
 };
 
 
-/************************************************************
+/************************************************************************************************************************
 
  * Lessons:
    1. XOR is powerful for its self organizing ability. eg. (2^1^4^5^2^4^1) => ((2^2)^(1^1)^(4^4)^(5)) => (0^0^0^5) => 5.
    2. hash is useful for searching, this problem included.
    3. ES6 Map is pretty handy for collection update tasks like getting size, getting keys and delete entry.
 
-************************************************************/
+************************************************************************************************************************/

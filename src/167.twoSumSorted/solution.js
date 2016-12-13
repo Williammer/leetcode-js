@@ -1,4 +1,4 @@
-/************************************************************
+/************************************************************************************************************************
 
  * Problem: https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
     Given an array of integers that is already sorted in ascending order, find two numbers such that they add up to a specific target number.
@@ -21,7 +21,7 @@
 
     NOTE: Array:sort by default didn't sort nums in ascending order, so need the helper function 'sortNumber' to set the rule.
 
-************************************************************/
+************************************************************************************************************************/
 
 
 export const twoSumSorted = {};
@@ -118,11 +118,11 @@ twoSumSorted.twoPointer = (sortedNums, target) => {
 
 
 
-/************************************************************
+/************************************************************************************************************************
 
  * Lessons:
    1. Some edge cases of binary search needs to be handled carefully.
    2. Nested loop can be continue respectively with label, which was rarely used.
    3. two pointer solution is an efficient yet easy to understand solution, sometimes we efficiency and concise can be achieved together.
 
-************************************************************/
+************************************************************************************************************************/

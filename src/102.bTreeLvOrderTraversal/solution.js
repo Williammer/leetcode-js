@@ -1,4 +1,4 @@
-/************************************************************
+/************************************************************************************************************************
 
  * Problem: https://leetcode.com/problems/binary-tree-level-order-traversal/
     Given a binary tree, return the level order traversal of its nodes' values. (ie, from left to right, level by level).
@@ -23,7 +23,7 @@
 
  * Analysis: This is similar to the bfs solution in 104.maxDepth problem.
 
-************************************************************/
+************************************************************************************************************************/
 
 
 import { TreeNode } from "../_.util/binaryTree";
@@ -116,10 +116,10 @@ bTreeLvOrderTraversal.dfs = (root) => {
 };
 
 
-/************************************************************
+/************************************************************************************************************************
 
  * Lessons:
 	1. level-order traversal is in many ways similar to bfs. One key for bfs is to use a reusable queue to loop over nodes of each depth.
 	2. dfs can also achieve it, just need to keep track of depth state, which corresponds to each result array index - 1.
 
-************************************************************/
+************************************************************************************************************************/
