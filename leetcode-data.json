@@ -1,11 +1,11 @@
 [{
-    "num": "_.1",
+    "num": 0.1,
     "title": "Linkedlist",
     "tags": "Linkedlist",
     "level": "_",
     "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/_.util/linkedlist.js"
 }, {
-    "num": "_.2",
+    "num": 0.2,
     "title": "BinaryTree",
     "tags": "BinaryTree",
     "level": "_",
