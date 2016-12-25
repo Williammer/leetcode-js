@@ -18,7 +18,7 @@
 ************************************************************************************************************************/
 
 
-import { TreeNode } from "../_.util/binaryTree";
+import { TreeNode, bTreeMinDepthFn } from "../_.util/binaryTree";
 
 export const bTreeMinDepth = {};
 
@@ -29,54 +29,14 @@ export const bTreeMinDepth = {};
  * Time complexity: O(1 ~ N)
  * Space complexity: O(1 ~ N)
  */
-bTreeMinDepth.bfs = (root) => {
-    const isNode = (node) => {
-        return (node instanceof TreeNode) && node.val !== null;
-    };
-
-    if (!isNode(root)) {
-        return 0;
-    }
-
-    let _queue = [root],
-        minDepth = 1;
-
-    while (_queue.length > 0) {
-        const lengthThisDepth = _queue.length;
-        let i = 0;
-
-        while (i < lengthThisDepth) {
-            const curNode = _queue.shift();
-
-            if (!isNode(curNode.left) && !isNode(curNode.right)) {
-                return minDepth;
-            } else {
-                if (isNode(curNode.left)) {
-                    _queue.push(curNode.left);
-                }
-                if (isNode(curNode.right)) {
-                    _queue.push(curNode.right);
-                }
-            }
-
-            i++;
-
-            // increase min depth at the end of bfs for this depth
-            if (i === lengthThisDepth) {
-                minDepth++;
-            }
-        }
-    }
-
-    return minDepth;
-};
+bTreeMinDepth.bfs = bTreeMinDepthFn;
 
 /**
  * Solution 2: Use dfs/pre-order traveral to find
  *
  * "N" is Node count
  * Time complexity: O(N)
- * Space complexity: O(1)
+ * Space complexity: O(N)
  */
 bTreeMinDepth.dfs = (root) => {
     const isNode = (node) => {
@@ -88,9 +48,9 @@ bTreeMinDepth.dfs = (root) => {
     }
 
     if (root.left && isNode(root.left) && root.right && isNode(root.right)) {
-    	return Math.min(bTreeMinDepth.dfs(root.left), bTreeMinDepth.dfs(root.right)) + 1;
+        return Math.min(bTreeMinDepth.dfs(root.left), bTreeMinDepth.dfs(root.right)) + 1;
     } else {
-    	return Math.max(bTreeMinDepth.dfs(root.left), bTreeMinDepth.dfs(root.right)) + 1;
+        return Math.max(bTreeMinDepth.dfs(root.left), bTreeMinDepth.dfs(root.right)) + 1;
     }
 };
 

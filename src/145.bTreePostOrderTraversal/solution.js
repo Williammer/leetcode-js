@@ -18,7 +18,7 @@
 
 ************************************************************************************************************************/
 
-import { TreeNode } from "../_.util/binaryTree";
+import { TreeNode, bTreePostOrderTraversalFn } from "../_.util/binaryTree";
 
 export const bTreePostOrderTraversal = {};
 
@@ -29,28 +29,7 @@ export const bTreePostOrderTraversal = {};
  * Time complexity: O(N)
  * Space complexity: O(N)
  */
-bTreePostOrderTraversal.dfs = (root) => {
-    const isNode = (node) => {
-            return (node instanceof TreeNode) && node.val !== null;
-        },
-        result = [],
-        dfsVal = (node) => {
-            if (isNode(node)) {
-                if (isNode(node.left)) {
-                    dfsVal(node.left);
-                }
-                if (isNode(node.right)) {
-                    dfsVal(node.right);
-                }
-
-                result.push(node.val);
-            }
-        };
-
-    dfsVal(root);
-
-    return result;
-};
+bTreePostOrderTraversal.dfs = bTreePostOrderTraversalFn;
 
 
 /************************************************************************************************************************

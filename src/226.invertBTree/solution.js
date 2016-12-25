@@ -4,17 +4,17 @@
 
  * Example 1:
     Invert a binary tree:
-		     4
-		   /   \
-		  2     7
-		 / \   / \
-		1   3 6   9
-	to be:
-			 4
-		   /   \
-		  7     2
-		 / \   / \
-		9   6 3   1
+             4
+           /   \
+          2     7
+         / \   / \
+        1   3 6   9
+    to be:
+             4
+           /   \
+          7     2
+         / \   / \
+        9   6 3   1
 
 
  * @param {TreeNode} root
@@ -24,7 +24,7 @@
 
 ************************************************************************************************************************/
 
-import { TreeNode } from "../_.util/binaryTree";
+import { TreeNode, invertBTreeFn } from "../_.util/binaryTree";
 
 export const invertBTree = {};
 
@@ -35,38 +35,7 @@ export const invertBTree = {};
  * Time complexity: O(N)
  * Space complexity: O(N)
  */
-invertBTree.bfs = (root) => {
-    const isNode = (node) => {
-        return (node instanceof TreeNode) && node.val !== null;
-    };
-
-    if (!isNode(root)) {
-        return [];
-    }
-
-    let _queue = [root];
-
-    while (_queue.length > 0) {
-        let curNode = _queue.shift(),
-            tmp;
-
-        if (isNode(curNode.left) || isNode(curNode.right)) {
-            // invert left, right child of each Node
-            tmp = curNode.left;
-            curNode.left = curNode.right;
-            curNode.right = tmp;
-
-            if (isNode(curNode.left)) {
-                _queue.push(curNode.left);
-            }
-            if (isNode(curNode.right)) {
-                _queue.push(curNode.right);
-            }
-        }
-    }
-
-    return root;
-};
+invertBTree.bfs = invertBTreeFn;
 
 /**
  * Solution 2: recursively invert each sub-tree.

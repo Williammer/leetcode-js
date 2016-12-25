@@ -11,7 +11,7 @@
 
 ************************************************************************************************************************/
 
-import { TreeNode } from "../_.util/binaryTree";
+import { TreeNode, sortedArrayToBSTFn } from "../_.util/binaryTree";
 
 export const sortedArrayToBST = {};
 
@@ -22,44 +22,7 @@ export const sortedArrayToBST = {};
  * Time complexity: O(N)
  * Space complexity: O(N)
  */
-sortedArrayToBST.dfs = (nums) => {
-    const createNode = (val) => {
-            return typeof val === "number" ? new TreeNode(val) : null;
-        },
-        splitArray = (array) => {
-            if (!(array && array.length > 0)) {
-                return null;
-            }
-
-            const arrLen = array.length,
-                lastIdx = arrLen - 1,
-                midIdx = Math.floor(lastIdx / 2),
-                leftArr = arrLen > 2 ? array.slice(0, midIdx) : null,
-                rightArr = arrLen > 1 ? array.slice(midIdx + 1, lastIdx + 1) : null;
-
-            return {
-                midVal: array[midIdx],
-                leftArr: leftArr,
-                rightArr: rightArr
-            };
-        };
-
-    const splittedArrObject = splitArray(nums);
-    if (!splittedArrObject) {
-        return null;
-    }
-
-    let rootNode = createNode(splittedArrObject.midVal);
-
-    if (splittedArrObject.leftArr) {
-        rootNode.left = sortedArrayToBST.dfs(splittedArrObject.leftArr);
-    }
-    if (splittedArrObject.rightArr) {
-        rootNode.right = sortedArrayToBST.dfs(splittedArrObject.rightArr);
-    }
-
-    return rootNode;
-};
+sortedArrayToBST.dfs = sortedArrayToBSTFn;
 
 
 /************************************************************************************************************************

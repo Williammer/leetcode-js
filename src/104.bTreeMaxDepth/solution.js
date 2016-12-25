@@ -26,7 +26,7 @@
 ************************************************************************************************************************/
 
 
-import { TreeNode } from "../_.util/binaryTree";
+import { TreeNode, bTreeMaxDepthFn } from "../_.util/binaryTree";
 
 export const bTreeMaxDepth = {};
 
@@ -80,20 +80,9 @@ bTreeMaxDepth.dfsFat = (root) => {
  *
  * "N" is node count
  * Time complexity: O(N)
- * Space complexity: O(1)
+ * Space complexity: O(N)
  */
-bTreeMaxDepth.dfs = (root) => {
-    const isNode = (node) => {
-        return (node instanceof TreeNode) && node.val !== null;
-    };
-
-    if (!isNode(root)) {
-        return 0;
-    }
-
-    return Math.max(bTreeMaxDepth.dfs(root.left), bTreeMaxDepth.dfs(root.right)) + 1; // basic recursion pattern, this '+1' is the key.
-
-};
+bTreeMaxDepth.dfs = bTreeMaxDepthFn;
 
 /**
  * Solution 3: Use bfs/level-order traversal
@@ -104,8 +93,8 @@ bTreeMaxDepth.dfs = (root) => {
  */
 bTreeMaxDepth.bfs = (root) => {
     const isNode = (node) => {
-            return (node instanceof TreeNode) && node.val !== null;
-        };
+        return (node instanceof TreeNode) && node.val !== null;
+    };
 
     if (!isNode(root)) {
         return 0;

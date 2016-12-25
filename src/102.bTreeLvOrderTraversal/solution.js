@@ -26,7 +26,7 @@
 ************************************************************************************************************************/
 
 
-import { TreeNode } from "../_.util/binaryTree";
+import { TreeNode, bTreeLvOrderTraversalFn } from "../_.util/binaryTree";
 
 export const bTreeLvOrderTraversal = {};
 
@@ -37,44 +37,7 @@ export const bTreeLvOrderTraversal = {};
  * Time complexity: O(N)
  * Space complexity: O(N)
  */
-bTreeLvOrderTraversal.bfs = (root) => {
-    const isNode = (node) => {
-        return (node instanceof TreeNode) && node.val !== null;
-    };
-
-    if (!isNode(root)) {
-        return [];
-    }
-
-    let result = [],
-        _queue = [];
-
-    _queue.push(root);
-
-    while (_queue.length > 0) {
-        let i = 0,
-            lengthThisDepth = _queue.length,
-            arrayThisDepth = [];
-
-        while (i < lengthThisDepth) {
-            let curNode = _queue.shift();
-            arrayThisDepth.push(curNode.val);
-
-            if (isNode(curNode.left)) {
-                _queue.push(curNode.left);
-            }
-            if (isNode(curNode.right)) {
-                _queue.push(curNode.right);
-            }
-
-            i++;
-        }
-
-        result.push(arrayThisDepth);
-    }
-
-    return result;
-};
+bTreeLvOrderTraversal.bfs = bTreeLvOrderTraversalFn;
 
 /**
  * Solution 2: Use dfs while keeping the depth state.

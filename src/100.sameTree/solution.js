@@ -14,7 +14,7 @@
 
 ************************************************************************************************************************/
 
-import { TreeNode, binaryTreeToArray } from "../_.util/binaryTree";
+import { TreeNode, binaryTreeToArray, sameTreeFn } from "../_.util/binaryTree";
 
 export const sameTree = {};
 
@@ -64,17 +64,7 @@ sameTree.toArray = (p, q) => {
  * Time complexity: O(N)
  * Space complexity: O(N)
  */
-sameTree.recursion = (p, q) => {
-    const isNode = (node) => {
-        return (node instanceof TreeNode) && node.val !== null;
-    };
-
-    if (isNode(p) && isNode(q)) {
-        return p.val === q.val ? (sameTree.recursion(p.left, q.left) && sameTree.recursion(p.right, q.right)) : false;
-    } else {
-        return (!isNode(p) && !isNode(q)) ? true : false;
-    }
-};
+sameTree.recursion = sameTreeFn;
 
 
 /************************************************************************************************************************
