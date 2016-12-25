@@ -63,7 +63,7 @@ kthSmallInBST.inOrder = (root, k) => {
 };
 
 /**
- * Solution 2: use inOrder iterative
+ * Solution 2: use inOrder iterative - stack can prevent the stackoverflow of recursion.
  *
  * "N" is node count
  * Time complexity: O(N)
