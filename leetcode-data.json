@@ -1,4 +1,16 @@
 [{
+    "num": "_.1",
+    "title": "Linkedlist",
+    "tags": "Linkedlist",
+    "level": "_",
+    "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/_.util/linkedlist.js"
+}, {
+    "num": "_.2",
+    "title": "BinaryTree",
+    "tags": "BinaryTree",
+    "level": "_",
+    "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/_.util/binaryTree.js"
+}, {
     "num": 1,
     "title": "Two Sum",
     "tags": "Array, Hash",
@@ -124,4 +136,4 @@
     "tags": "Tree, BFS, DFS",
     "level": "low",
     "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/404.sumLeftLeaves/solution.js"
-} ]
+}]
