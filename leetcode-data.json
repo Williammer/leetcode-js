@@ -3,7 +3,7 @@
     "title": "Linkedlist",
     "tags": "Linkedlist",
     "level": "_",
-    "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/_.util/linkedlist.js"
+    "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/_.util/linkedList.js"
 }, {
     "num": 0.2,
     "title": "BinaryTree",
