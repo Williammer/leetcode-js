@@ -109,7 +109,7 @@
 }, {
     "num": 167,
     "title": "Two Sum sorted",
-    "tags": "Array, 2pointer, binarySearch",
+    "tags": "Array, 2pointer, BinarySearch",
     "level": "low",
     "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/167.twoSumSorted/solution.js"
 }, {
@@ -121,9 +121,15 @@
 }, {
     "num": 230,
     "title": "kth Small in BST",
-    "tags": "Tree, DFS, BST, binarySearch",
+    "tags": "Tree, DFS, BST, BinarySearch",
     "level": "mid",
     "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/230.kthSmallInBST/solution.js"
+}, {
+    "num": 349,
+    "title": "2 Array intersection",
+    "tags": "Array, Sort, 2pointer, Hash, BinarySearch",
+    "level": "low",
+    "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/349.intersectOf2Arr/solution.js"
 }, {
     "num": 371,
     "title": "Add 2 Int",
