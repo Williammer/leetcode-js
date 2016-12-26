@@ -110,7 +110,7 @@ intersectOf2Arr.sortedBSearch = (nums1, nums2) => {
  *
  * "N" is nums.length.
  * Time complexity: O(NlgN)
- * Space complexity: O(1)
+ * Space complexity: O(N)
  */
 intersectOf2Arr.sorted2Pointer = (nums1, nums2) => {
     if (!(nums1 && nums2 && typeof nums1 === "object" && typeof nums2 === "object" && nums1.length > 0 && nums2.length > 0)) {
