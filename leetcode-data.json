@@ -119,6 +119,12 @@
     "level": "low",
     "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/226.invertBTree/solution.js"
 }, {
+    "num": 242,
+    "title": "Valid anagram",
+    "tags": "Array, Sort, Hash",
+    "level": "low",
+    "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/242.validAnagram/solution.js"
+}, {
     "num": 230,
     "title": "kth Small in BST",
     "tags": "Tree, DFS, BST, BinarySearch",
