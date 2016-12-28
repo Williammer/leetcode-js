@@ -42,7 +42,7 @@ export const arrayToBinaryTree = (valArray) => {
                 let val = valArray[arrAnchorIndex],
                     curNode = null;
 
-                if (val) {
+                if (val !== null) {
                     curNode = new TreeNode(val);
                     parentNodes.push(curNode); // push non-null nodes to parentNode for next loop
                 }
@@ -76,8 +76,8 @@ export const arrayToBinaryTree = (valArray) => {
     2. check each child node of nodes in queue, only care each node's next generations.
  *
  * "N" is node count
- * Time complexity: O(2N)
- * Space complexity: O(2N)
+ * Time complexity: O(N)
+ * Space complexity: O(N)
  *
  ***/
 export const binaryTreeToArray = (root) => {
