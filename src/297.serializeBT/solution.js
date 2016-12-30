@@ -18,29 +18,31 @@
 
 ************************************************************************************************************************/
 
-import { TreeNode, binaryTreeToArray, arrayToBinaryTree } from "../_.util/binaryTree";
+import { TreeNode, binaryTreeToString, arrayToBinaryTree } from "../_.util/binaryTree";
 
 export const serializeBT = {};
 
 /**
- * Solution 1: Just convert it to array
+ * Solution 1: Just bfs it and convert it to string
  *
  * "N" is node count
  * Time complexity: O(N)
  * Space complexity: O(N)
  */
-serializeBT.serialize = (root) => {
-    return binaryTreeToArray(root);
-};
+serializeBT.serialize = binaryTreeToString;
 
 serializeBT.deserialize = (data) => {
-    return arrayToBinaryTree(data);
+    const inputArray = data.split(",").map((val) => {
+        return val === "" ? null : Number(val);
+    });
+
+    return arrayToBinaryTree(inputArray);
 };
 
 
 /************************************************************************************************************************
 
  * Lessons:
-   1. 
+   1. Compression is about converting the form of the data (structure), which is deep.
 
 ************************************************************************************************************************/

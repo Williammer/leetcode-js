@@ -8,8 +8,10 @@ describe("# Problem 297 - serialize/deserialize BinaryTree.", () => {
             const array = [];
             const tree = arrayToBinaryTree(array);
 
-            const result = serializeBT.deserialize(serializeBT.serialize(tree));
+            const serializedTree = serializeBT.serialize(tree);
+            expect(serializedTree).toEqual(jasmine.any(String));
 
+            const result = serializeBT.deserialize(serializedTree);
             expect(binaryTreeToArray(result)).toEqual(array);
         });
 
@@ -17,8 +19,21 @@ describe("# Problem 297 - serialize/deserialize BinaryTree.", () => {
             const array = [1];
             const tree = arrayToBinaryTree(array);
 
-            const result = serializeBT.deserialize(serializeBT.serialize(tree));
+            const serializedTree = serializeBT.serialize(tree);
+            expect(serializedTree).toEqual(jasmine.any(String));
 
+            const result = serializeBT.deserialize(serializedTree);
+            expect(binaryTreeToArray(result)).toEqual(array);
+        });
+
+        it("[1, 2, null, 3]", () => {
+            const array = [1, 2, null, 3];
+            const tree = arrayToBinaryTree(array);
+
+            const serializedTree = serializeBT.serialize(tree);
+            expect(serializedTree).toEqual(jasmine.any(String));
+
+            const result = serializeBT.deserialize(serializedTree);
             expect(binaryTreeToArray(result)).toEqual(array);
         });
 
@@ -26,8 +41,10 @@ describe("# Problem 297 - serialize/deserialize BinaryTree.", () => {
             const array = [3, null, 5, 4];
             const tree = arrayToBinaryTree(array);
 
-            const result = serializeBT.deserialize(serializeBT.serialize(tree));
+            const serializedTree = serializeBT.serialize(tree);
+            expect(serializedTree).toEqual(jasmine.any(String));
 
+            const result = serializeBT.deserialize(serializedTree);
             expect(binaryTreeToArray(result)).toEqual(array);
         });
 
@@ -35,8 +52,10 @@ describe("# Problem 297 - serialize/deserialize BinaryTree.", () => {
             const array = [6, null, 8, 7, 9];
             const tree = arrayToBinaryTree(array);
 
-            const result = serializeBT.deserialize(serializeBT.serialize(tree));
+            const serializedTree = serializeBT.serialize(tree);
+            expect(serializedTree).toEqual(jasmine.any(String));
 
+            const result = serializeBT.deserialize(serializedTree);
             expect(binaryTreeToArray(result)).toEqual(array);
         });
 
@@ -44,8 +63,10 @@ describe("# Problem 297 - serialize/deserialize BinaryTree.", () => {
             const array = [6, 2, 9, null, 4, 7, 10, 3];
             const tree = arrayToBinaryTree(array);
 
-            const result = serializeBT.deserialize(serializeBT.serialize(tree));
+            const serializedTree = serializeBT.serialize(tree);
+            expect(serializedTree).toEqual(jasmine.any(String));
 
+            const result = serializeBT.deserialize(serializedTree);
             expect(binaryTreeToArray(result)).toEqual(array);
         });
     });
