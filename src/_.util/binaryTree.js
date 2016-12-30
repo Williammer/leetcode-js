@@ -126,6 +126,61 @@ export const binaryTreeToArray = (root) => {
 };
 
 /****
+ * Convert binaryTree to string.
+ *
+ * "N" is node count
+ * Time complexity: O(N)
+ * Space complexity: O(N)
+ *
+ * More on: 297.serializeBT
+ *
+ ***/
+export const binaryTreeToString = (root) => {
+    const isNode = (node) => {
+        return (node instanceof TreeNode) && node.val !== null;
+    };
+
+    if (!isNode(root)) {
+        return "";
+    }
+
+    let _queue = [root],
+        bTreeStr = `${root.val}`,
+        nullChainCount = 0;
+
+    while (_queue.length > 0) {
+        let curDepthLength = _queue.length,
+            curNode = _queue.shift();
+
+        if (isNode(curNode.left)) {
+            bTreeStr += `,${curNode.left.val}`;
+            _queue.push(curNode.left);
+
+            nullChainCount = 0;
+        } else {
+            bTreeStr += `,`;
+            nullChainCount++;
+        }
+
+        if (isNode(curNode.right)) {
+            bTreeStr += `,${curNode.right.val}`;
+            _queue.push(curNode.right);
+
+            nullChainCount = 0;
+        } else {
+            bTreeStr += `,`;
+            nullChainCount++;
+        }
+    }
+
+    if (nullChainCount > 0) {
+        bTreeStr = bTreeStr.slice(0, -nullChainCount);
+    }
+
+    return bTreeStr;
+};
+
+/****
  * Check if two binaryTrees are equal or not
  *
  * "N" is min node count of 2 trees
