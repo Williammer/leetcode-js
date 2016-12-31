@@ -18,7 +18,7 @@
 
 ************************************************************************************************************************/
 
-import { TreeNode, binaryTreeToArray, arrayToBinaryTree } from "../_.util/binaryTree";
+import { TreeNode, binaryTreeToString, arrayToBinaryTree } from "../_.util/binaryTree";
 
 export const serializeBST = {};
 
@@ -29,18 +29,20 @@ export const serializeBST = {};
  * Time complexity: O(N)
  * Space complexity: O(N)
  */
-serializeBST.serialize = (root) => {
-    return binaryTreeToArray(root);
-};
+serializeBST.serialize = binaryTreeToString;
 
 serializeBST.deserialize = (data) => {
-    return arrayToBinaryTree(data);
+    const inputArray = data.split(",").map((val) => {
+        return val === "" ? null : Number(val);
+    });
+
+    return arrayToBinaryTree(inputArray);
 };
 
 
 /************************************************************************************************************************
 
  * Lessons:
-   1. 
+   1. What applies to BT also applies to BST.
 
 ************************************************************************************************************************/

@@ -3,7 +3,7 @@ import { serializeBT } from "../../src/297.serializeBT/solution";
 
 describe("# Problem 297 - serialize/deserialize BinaryTree.", () => {
 
-    describe("Solution 1: Just convert it to array", () => {
+    describe("Solution 1: Just convert it to string", () => {
         it("[]", () => {
             const array = [];
             const tree = arrayToBinaryTree(array);
