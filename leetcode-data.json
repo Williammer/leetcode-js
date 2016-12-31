@@ -113,6 +113,12 @@
     "level": "low",
     "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/167.twoSumSorted/solution.js"
 }, {
+    "num": 206,
+    "title": "Reverse Linkedlist",
+    "tags": "Linkedlist",
+    "level": "low",
+    "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/206.reverseLinkedList/solution.js"
+}, {
     "num": 226,
     "title": "Invert BinaryTree",
     "tags": "Tree, BFS, Recusion",
