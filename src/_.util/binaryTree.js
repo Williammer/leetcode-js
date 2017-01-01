@@ -453,9 +453,7 @@ export const invertBTreeFn = (root) => {
 
         if (isNode(curNode.left) || isNode(curNode.right)) {
             // invert left, right child of each Node
-            tmp = curNode.left;
-            curNode.left = curNode.right;
-            curNode.right = tmp;
+            [curNode.left, curNode.right] = [curNode.right, curNode.left];
 
             if (isNode(curNode.left)) {
                 _queue.push(curNode.left);
