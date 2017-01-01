@@ -143,6 +143,12 @@
     "level": "mid",
     "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/297.serializeBT/solution.js"
 }, {
+    "num": 328,
+    "title": "Group odd/even linkedList",
+    "tags": "Linkedlist",
+    "level": "mid",
+    "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/328.oddEvenLinkedlist/solution.js"
+}, {
     "num": 349,
     "title": "2 Array intersection",
     "tags": "Array, Sort, 2pointer, Hash, BinarySearch",
