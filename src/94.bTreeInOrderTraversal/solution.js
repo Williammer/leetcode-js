@@ -31,6 +31,38 @@ export const bTreeInOrderTraversal = {};
  */
 bTreeInOrderTraversal.dfs = bTreeInOrderTraversalFn;
 
+/**
+ * Solution 2: use iterative
+ *
+ * "N" is node count
+ * Time complexity: O(N)
+ * Space complexity: O(N)
+ */
+bTreeInOrderTraversal.iterative = (root) => {
+    const isNode = (node) => {
+        return (node instanceof TreeNode) && node.val !== null;
+    };
+
+    let result = [],
+        _stack = [],
+        curNode = root,
+        newNode;
+
+    while (isNode(curNode) || _stack.length > 0) {
+        if (isNode(curNode)) {
+            _stack.push(curNode);
+            curNode = curNode.left;
+        } else {
+            // process a node in stack
+            newNode = _stack.pop();
+            result.push(newNode.val);
+            curNode = newNode.right;
+        }
+    }
+
+    return result;
+};
+
 
 /************************************************************************************************************************
 
