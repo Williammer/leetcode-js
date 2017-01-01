@@ -94,7 +94,7 @@ houseRobberIII.recursion = (root) => {
             return result;
         };
 
-    let result = dpRob(root);
+    const result = dpRob(root);
     return Math.max(result[0], result[1]);
 };
 
