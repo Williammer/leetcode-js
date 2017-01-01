@@ -149,6 +149,12 @@
     "level": "mid",
     "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/328.oddEvenLinkedlist/solution.js"
 }, {
+    "num": 337,
+    "title": "MaxSum of unlinked BT node value",
+    "tags": "BinaryTree, dfs, DP",
+    "level": "mid",
+    "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/337.houseRobberIII/solution.js"
+}, {
     "num": 349,
     "title": "2 Array intersection",
     "tags": "Array, Sort, 2pointer, Hash, BinarySearch",
