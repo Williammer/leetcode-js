@@ -89,6 +89,12 @@
     "level": "low",
     "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/111.bTreeMinDepth/solution.js"
 }, {
+    "num": 112,
+    "title": "BinaryTree root2leaf path sum",
+    "tags": "Tree, BinaryTree, DFS",
+    "level": "low",
+    "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/112.pathSum/solution.js"
+}, {
     "num": 136,
     "title": "Find single num",
     "tags": "Array, Bit",
