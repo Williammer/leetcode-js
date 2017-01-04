@@ -53,6 +53,12 @@
     "level": "low",
     "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/67.addBinary/solution.js"
 }, {
+    "num": 83,
+    "title": "Remove Duplicates in sorted Linkedlist",
+    "tags": "Linkedlist",
+    "level": "low",
+    "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/83.rmDuplicateInLinkedList/solution.js"
+}, {
     "num": 94,
     "title": "BinaryTree in-order Traverse",
     "tags": "Tree, DFS",
