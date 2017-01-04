@@ -3,7 +3,7 @@ import { rmDuplicateInLinkedList } from "../../src/83.rmDuplicateInLinkedList/so
 
 describe("# Problem 83 - remove duplicates in sorted linkedlist", () => {
 
-    describe("Solution 1: concise - not use Var", () => {
+    describe("Solution 1: concise", () => {
         it("[] => []", () => {
             const l1 = arrayToLinkedlist([]);
 

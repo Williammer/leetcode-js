@@ -11,7 +11,7 @@
  * @param {ListNode} head
  * @return {ListNode}
 
- * Analysis: Remove duplicates in sorted (linked)list can easily achieved with a value variable;
+ * Analysis: Remove duplicates in sorted (linked)list can easily achieved with iterative or recursion;
     use Set to remove duplicates in even the unsorted (linked)list.
 
 ************************************************************************************************************************/
