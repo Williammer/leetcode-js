@@ -1,7 +1,7 @@
 [{
     "num": 0.1,
-    "title": "Linkedlist",
-    "tags": "Linkedlist",
+    "title": "LinkedList",
+    "tags": "LinkedList",
     "level": "_",
     "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/_.util/linkedList.js"
 }, {
@@ -19,7 +19,7 @@
 }, {
     "num": 2,
     "title": "Add 2 Nums",
-    "tags": "Linkedlist, Recusion",
+    "tags": "LinkedList, Recusion",
     "level": "mid",
     "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/2.add2Nums/solution.js"
 }, {
@@ -60,8 +60,8 @@
     "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/67.addBinary/solution.js"
 }, {
     "num": 83,
-    "title": "Remove Duplicates in sorted Linkedlist",
-    "tags": "Linkedlist",
+    "title": "Remove Duplicates in sorted LinkedList",
+    "tags": "LinkedList",
     "level": "low",
     "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/83.rmDuplicateInLinkedList/solution.js"
 }, {
@@ -132,8 +132,8 @@
     "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/167.twoSumSorted/solution.js"
 }, {
     "num": 206,
-    "title": "Reverse Linkedlist",
-    "tags": "Linkedlist",
+    "title": "Reverse LinkedList",
+    "tags": "LinkedList",
     "level": "low",
     "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/206.reverseLinkedList/solution.js"
 }, {
@@ -163,7 +163,7 @@
 }, {
     "num": 328,
     "title": "Group odd/even linkedList",
-    "tags": "Linkedlist",
+    "tags": "LinkedList",
     "level": "mid",
     "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/328.oddEvenLinkedlist/solution.js"
 }, {
