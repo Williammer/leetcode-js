@@ -104,7 +104,6 @@ add2Nums.reference = (l1, l2) => {
 
         sum = carry;
         carry = 0;
-
     }
 
     return List.next; // skip dummy head
