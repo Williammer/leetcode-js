@@ -109,3 +109,8 @@ export const makeCycle = (head, cycleHeadIndex, cycleTailIndex) => {
             break;
         }
         head = head.next;
+        index++;
+    }
+
+    return newHead;
+};
