@@ -79,6 +79,35 @@ export const reverseLinkedListFn = function(head) {
 };
 
 /**
+ * Has cycle
+ *
+ * "N" is item count
+ * Time complexity: O(N)
+ * Space complexity: O(1)
+ *
+ * @param {ListNode} head
+ * @return {boolean}
+ *
+ * More on 141.linkedListHasCycle
+ *
+ */
+export const linkedListHasCycleFn = function(head) {
+    let walk = head,
+        run = head;
+
+    while (walk && run && run.next) {
+        walk = walk.next;
+        run = run.next.next;
+
+        if (walk === run) {
+            return true;
+        }
+    }
+
+    return false;
+};
+
+/**
  * Cycle a linkedList
  *
  * "N" is item count

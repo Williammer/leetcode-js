@@ -113,6 +113,12 @@
     "level": "low",
     "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/136.singleNum/solution.js"
 }, {
+    "num": 141,
+    "title": "If LinkedList has cycle",
+    "tags": "LinkedList",
+    "level": "low",
+    "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/141.linkedListHasCycle/solution.js"
+}, {
     "num": 144,
     "title": "BinaryTree pre-order Traverse",
     "tags": "Tree, DFS",
