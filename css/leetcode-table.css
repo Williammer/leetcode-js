@@ -1,7 +1,7 @@
 body {
     font-family: Lato, Copse, elvetica Neue, Arial, sans-serif;
     font-size: 14px;
-    color: #555;
+    color: #444;
     font-weight: normal;
 }
 
@@ -23,7 +23,7 @@ th {
 }
 
 td {
-    color: #555;
+    color: #333;
 }
 
 tr:nth-child(even) {
@@ -114,7 +114,7 @@ th.active .arrow {
     background-color: #E8E8E8;
     background-image: none;
     padding: 11px 8px 9px 16px;
-    color: rgba(0, 0, 0, .6);
+    color: rgba(0, 0, 0, .8);
     text-transform: none;
     font-weight: 700;
     border: 0 solid transparent;
