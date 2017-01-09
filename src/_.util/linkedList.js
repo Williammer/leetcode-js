@@ -15,7 +15,6 @@ export class ListNode {
  * Time complexity: O(N)
  * Space complexity: O(N)
  *
- * Used in: [2]
  */
 export const arrayToLinkedlist = (arr) => {
     let lastNode, newNode;
@@ -38,7 +37,6 @@ export const arrayToLinkedlist = (arr) => {
  * Time complexity: O(N)
  * Space complexity: O(N)
  *
- * Used in: [2]
  */
 export const linkedlistToArray = (lList) => {
     let curNode = lList,
@@ -59,6 +57,9 @@ export const linkedlistToArray = (lList) => {
  * "N" is item count
  * Time complexity: O(N)
  * Space complexity: O(N)
+ *
+ * @param {ListNode} head
+ * @return {ListNode}
  *
  * More on 206.reverseLinkedList
  *
