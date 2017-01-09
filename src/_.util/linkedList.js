@@ -76,3 +76,36 @@ export const reverseLinkedListFn = function(head) {
 
     return newHead;
 };
+
+/**
+ * Cycle a linkedList
+ *
+ * "N" is item count
+ * Time complexity: O(N)
+ * Space complexity: O(1)
+ *
+ * @param {ListNode} head
+ * @param {number} cycleHeadIndex the index of node to be the cycle head
+ * @param {number} cycleTailIndex the index of node to be the cycle tail
+ * @return {ListNode}
+ *
+ */
+export const makeCycle = (head, cycleHeadIndex, cycleTailIndex) => {
+    let newHead = head,
+        index = 0,
+        cycleHead;
+
+    cycleHeadIndex = cycleHeadIndex || 0;
+    cycleTailIndex = cycleTailIndex >= cycleHeadIndex ? cycleTailIndex : cycleHeadIndex;
+
+    while (head) {
+        if (cycleHeadIndex === index) {
+            cycleHead = head;
+        }
+
+        // create cycle by connecting cycleTail to cycleHead
+        if (!head.next || cycleTailIndex === index) {
+            head.next = cycleHead;
+            break;
+        }
+        head = head.next;
