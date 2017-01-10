@@ -25,7 +25,7 @@ export const reverseLinkedList = {};
  *
  * "N" is linkedList length
  * Time complexity: O(N)
- * Space complexity: O(N)
+ * Space complexity: O(1)
  */
 reverseLinkedList.iterate = reverseLinkedListFn;
 

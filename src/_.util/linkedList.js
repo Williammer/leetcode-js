@@ -56,7 +56,7 @@ export const linkedlistToArray = (lList) => {
  *
  * "N" is item count
  * Time complexity: O(N)
- * Space complexity: O(N)
+ * Space complexity: O(1)
  *
  * @param {ListNode} head
  * @return {ListNode}
