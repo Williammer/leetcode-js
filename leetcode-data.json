@@ -47,6 +47,12 @@
     "level": "mid",
     "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/15.threeSum/solution.js"
 }, {
+    "num": 19,
+    "title": "rm nth node from list end",
+    "tags": "LinkedList",
+    "level": "low",
+    "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/19.rmNthNodeFromEnd/solution.js"
+}, {
     "num": 24,
     "title": "Swap LinkedList nodes in pair",
     "tags": "LinkedList",
