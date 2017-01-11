@@ -37,31 +37,29 @@ rmNthNodeFromEnd.touchTail = (head, n) => {
         return head;
     }
 
-    let refParent = new ListNode(-1),
-        nthHeadParent,
-        resultParent;
+    let resultParent = new ListNode(-1),
+        tailToucher,
+        tracker;
 
-    refParent.next = head;
-    resultParent = refParent;
+    resultParent.next = head;
+    tracker = resultParent;
+    tailToucher = resultParent;
 
-    while (refParent) {
+    while (tailToucher) {
         if (--n === 0) {
-            nthHeadParent = refParent;
             break;
         }
-
-        refParent = refParent.next;
+        tailToucher = tailToucher.next;
     }
 
-    refParent = resultParent; // reuse refParent
     if (n === 0) {
-        while (nthHeadParent.next && nthHeadParent.next.next) {
-            nthHeadParent = nthHeadParent.next;
-            refParent = refParent.next;
+        while (tailToucher.next && tailToucher.next.next) {
+            tailToucher = tailToucher.next;
+            tracker = tracker.next;
         }
     }
 
-    refParent.next = refParent.next.next;
+    tracker.next = tracker.next.next;
 
     return resultParent.next;
 };
