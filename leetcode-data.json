@@ -113,6 +113,12 @@
     "level": "low",
     "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/112.pathSum/solution.js"
 }, {
+    "num": 125,
+    "title": "Whether the str is palindrome",
+    "tags": "String, 2pointer",
+    "level": "low",
+    "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/125.strPalindrome/solution.js"
+}, {
     "num": 136,
     "title": "Find single num",
     "tags": "Array, Bit",
