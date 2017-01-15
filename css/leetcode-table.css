@@ -87,7 +87,7 @@ th.active .arrow {
 .search-input {
     position: relative;
     display: inline-block;
-    margin: 0;
+    height: 16px;
     width: 166px;
     font-size: 16px;
     text-align: left;
@@ -109,6 +109,7 @@ th.active .arrow {
 
 .search-label {
     width: 47px;
+    height: 14px;
     display: inline-block;
     margin-right: -3px;
     padding: 10px 12px 10px 12px;
@@ -122,9 +123,9 @@ th.active .arrow {
 
 .search-icon {
     cursor: default;
-    height: 100%;
-    width: 2.67142857em;
-    opacity: .5;
+    width: 37px;
+    height: 34px;
+    opacity: 0.5;
     -webkit-transition: opacity .3s ease;
     transition: opacity .3s ease;
     font-smoothing: antialiased;
