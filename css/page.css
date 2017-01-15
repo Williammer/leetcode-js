@@ -440,7 +440,7 @@ fieldset {
 
 /*
  * 1. Corrects color not being inherited in IE6/7/8/9
- * 2. Corrects text not wrapping in FF3 
+ * 2. Corrects text not wrapping in FF3
  * 3. Corrects alignment displayed oddly in IE6/7
  */
 
@@ -765,6 +765,7 @@ dt {
 }
 
 header {
+    min-width: 900px;
     padding: 30px 0 25px;
     margin: 0;
     position: absolute;
@@ -780,6 +781,14 @@ header {
     box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.75);
     z-index: 99;
     -webkit-font-smoothing: antialiased;
+}
+
+.fork-github {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 0;
+    z-index: 100;
 }
 
 header h1 {
@@ -802,10 +811,9 @@ header p {
 }
 
 section {
-    width: 870px;
+    width: 840px;
     padding: 30px 30px 50px 30px;
-    margin: 20px 0;
-    margin-top: 150px;
+    margin: 150px auto 20px;
     position: relative;
     background: #fbfbfb;
     -moz-border-radius: 3px;
@@ -838,49 +846,12 @@ footer {
 }
 
 @media print,
-screen and (max-width: 1060px) {
-    div.wrapper {
-        width: auto;
-        margin: 0;
-    }
-    nav {
-        display: none;
-    }
-    header,
-    section,
-    footer {
-        float: none;
-    }
-    header h1,
-    section h1,
-    footer h1 {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        -o-text-overflow: ellipsis;
-        -ms-text-overflow: ellipsis;
-    }
-    section {
-        border: 1px solid #e5e5e5;
-        border-width: 1px 0;
-    }
-    footer {
-        text-align: center;
-        margin: 20px auto;
-        position: relative;
-        left: auto;
-        bottom: auto;
-        width: auto;
-    }
-}
-
-@media print,
-screen and (max-width: 720px) {
+screen and (max-width: 870px) {
     body {
         word-wrap: break-word;
     }
     header {
-        padding: 20px 20px;
+        padding: 20px 0;
         margin: 0;
     }
     header h1 {
@@ -902,29 +873,8 @@ screen and (max-width: 720px) {
     header p.view {
         position: static;
     }
-}
-
-@media print,
-screen and (max-width: 480px) {
-    header {
-        position: relative;
-        padding: 5px 0px;
-        min-height: 0px;
-    }
-    header h1 {
-        font-size: 24px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        -o-text-overflow: ellipsis;
-        -ms-text-overflow: ellipsis;
-    }
-    section {
-        margin-top: 10px;
-        margin-bottom: 0px;
-    }
-    header ul {
-        display: none;
+    .fork-github {
+        width: 110px;
     }
 }
 
@@ -933,32 +883,5 @@ screen and (max-width: 480px) {
         padding: 0.4in;
         font-size: 12pt;
         color: #555;
-    }
-}
-
-@media print,
-screen and (max-height: 680px) {
-    footer {
-        text-align: center;
-        margin: 20px auto;
-        position: relative;
-        left: auto;
-        bottom: auto;
-        width: auto;
-    }
-}
-
-@media print,
-screen and (max-height: 480px) {
-    nav {
-        display: none;
-    }
-    footer {
-        text-align: center;
-        margin: 20px auto;
-        position: relative;
-        left: auto;
-        bottom: auto;
-        width: auto;
     }
 }
