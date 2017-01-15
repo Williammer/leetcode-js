@@ -41,6 +41,12 @@
     "level": "low",
     "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/8.atoi/solution.js"
 }, {
+    "num": 9,
+    "title": "Whether the Int is palindrome",
+    "tags": "Math, 2pointer",
+    "level": "low",
+    "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/9.intPalindrome/solution.js"
+}, {
     "num": 15,
     "title": "Three Sum",
     "tags": "Array, 2pointer, Hash",
