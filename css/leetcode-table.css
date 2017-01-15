@@ -86,20 +86,21 @@ th.active .arrow {
 
 .search-input {
     position: relative;
+    display: inline-block;
     margin: 0;
-    max-width: 100%;
+    width: 166px;
     font-size: 16px;
-    outline: 0;
-    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
     text-align: left;
     line-height: 1;
     padding: 8px 24px 8px 8px;
     background: #FFF;
     border: 1px solid rgba(34, 36, 38, .15);
     border-radius: 0 4px 4px 0;
+    box-shadow: none;
+    outline: 0;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
     -webkit-transition: box-shadow .1s ease, border-color .1s ease;
     transition: box-shadow .1s ease, border-color .1s ease;
-    box-shadow: none;
 }
 
 .search-input:focus {
@@ -107,20 +108,16 @@ th.active .arrow {
 }
 
 .search-label {
+    width: 47px;
     display: inline-block;
-    line-height: 1;
-    vertical-align: baseline;
     margin-right: -3px;
+    padding: 10px 12px 10px 12px;
+    line-height: 1;
+    vertical-align: top;
     background-color: #E8E8E8;
-    background-image: none;
-    padding: 11px 8px 9px 16px;
-    color: rgba(0, 0, 0, .8);
-    text-transform: none;
-    font-weight: 700;
-    border: 0 solid transparent;
+    color: #444;
+    font-weight: bold;
     border-radius: 4px 0 0 4px;
-    -webkit-transition: background .1s ease;
-    transition: background .1s ease;
 }
 
 .search-icon {
