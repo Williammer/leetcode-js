@@ -167,6 +167,12 @@
     "level": "low",
     "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/226.invertBTree/solution.js"
 }, {
+    "num": 234,
+    "title": "Whether the LinkedList is palindrome",
+    "tags": "LinkedList",
+    "level": "mid",
+    "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/234.linkedListPalindrome/solution.js"
+}, {
     "num": 242,
     "title": "Valid anagram",
     "tags": "Array, Sort, Hash",
