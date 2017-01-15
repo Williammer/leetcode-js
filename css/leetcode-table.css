@@ -111,14 +111,15 @@ th.active .arrow {
     width: 47px;
     height: 14px;
     display: inline-block;
+    background-color: #E8E8E8;
     margin-right: -3px;
     padding: 10px 12px 10px 12px;
     line-height: 1;
     vertical-align: top;
-    background-color: #E8E8E8;
+    border-radius: 4px 0 0 4px;
     color: #444;
     font-weight: bold;
-    border-radius: 4px 0 0 4px;
+    white-space: nowrap;
 }
 
 .search-icon {
@@ -143,6 +144,7 @@ th.active .arrow {
 #v-link:hover {
     border-bottom: 1px solid;
 }
+
 #v-link {
     cursor: pointer;
 }
