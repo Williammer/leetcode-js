@@ -42,7 +42,7 @@
     "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/8.atoi/solution.js"
 }, {
     "num": 9,
-    "title": "Whether Int is palindrome",
+    "title": "If Int is palindrome",
     "tags": "Math, 2pointer",
     "level": "low",
     "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/9.intPalindrome/solution.js"
@@ -120,7 +120,7 @@
     "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/112.pathSum/solution.js"
 }, {
     "num": 125,
-    "title": "Whether str is palindrome",
+    "title": "If str is palindrome",
     "tags": "String, 2pointer",
     "level": "low",
     "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/125.strPalindrome/solution.js"
@@ -168,7 +168,7 @@
     "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/226.invertBTree/solution.js"
 }, {
     "num": 234,
-    "title": "Whether LinkedList is palindrome",
+    "title": "If LinkedList is palindrome",
     "tags": "LinkedList",
     "level": "mid",
     "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/234.linkedListPalindrome/solution.js"
