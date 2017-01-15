@@ -1,8 +1,26 @@
-import { ListNode, arrayToLinkedlist, linkedlistToArray } from "../../src/_.util/linkedList";
+import { ListNode, arrayToLinkedlist, linkedlistToArray, cloneLinkedlist } from "../../src/_.util/linkedList";
 import { TreeNode, arrayToBinaryTree, binaryTreeToArray } from "../../src/_.util/binaryTree";
 
 // # linkedList
 describe("[Util] linkedList - convert between array and linkedList.", () => {
+    it("arrayToLinkedlist return (0 -> 0) for [0,0]", () => {
+        const testArr = [0, 0];
+
+        const result = arrayToLinkedlist(testArr);
+        expect(result instanceof ListNode).toBeTruthy();
+        expect(result.val).toEqual(0);
+        expect(result.next.val).toEqual(0);
+        expect(result.next.next).toBeNull();
+    });
+
+    it("linkedlistToArray return [0,0] for (0 -> 0)", () => {
+        const testlList = new ListNode(0);
+        testlList.next = new ListNode(0);
+
+        const result = linkedlistToArray(testlList);
+        expect(result).toEqual([0, 0]);
+    });
+
     it("arrayToLinkedlist return (2 -> 4 -> 3) for [2,4,3]", () => {
         const testArr = [2, 4, 3];
 
@@ -11,6 +29,7 @@ describe("[Util] linkedList - convert between array and linkedList.", () => {
         expect(result.val).toEqual(2);
         expect(result.next.val).toEqual(4);
         expect(result.next.next.val).toEqual(3);
+        expect(result.next.next.next).toBeNull();
     });
 
     it("linkedlistToArray return [2,4,3] for (2 -> 4 -> 3)", () => {
@@ -23,11 +42,29 @@ describe("[Util] linkedList - convert between array and linkedList.", () => {
     });
 });
 
+describe("[Util] linkedList - clone Linkedlist.", () => {
+    it("(0 -> 0)", () => {
+        const testlList = arrayToLinkedlist([0, 0]);
+
+        const result = cloneLinkedlist(testlList);
+        expect(linkedlistToArray(testlList)).toEqual([0, 0]);
+        expect(linkedlistToArray(result)).toEqual([0, 0]);
+    });
+
+    it("(2 -> 4 -> 3)", () => {
+        const testlList = arrayToLinkedlist([2, 4, 3]);
+
+        const result = cloneLinkedlist(testlList);
+        expect(linkedlistToArray(testlList)).toEqual([2, 4, 3]);
+        expect(linkedlistToArray(result)).toEqual([2, 4, 3]);
+    });
+});
+
 
 // # binaryTree
 describe("[Util] binaryTree - Generate binary tree base on node values array, the value evaluated as false will be considered null node.", () => {
     it("[1, null, null, 1, 2, 3, 4]", () => {
-        const array =  [1, null, null, 1, 2, 3, 4];
+        const array = [1, null, null, 1, 2, 3, 4];
         const rootNode = arrayToBinaryTree(array);
 
         expect(rootNode.val).toEqual(1);
@@ -92,7 +129,7 @@ describe("[Util] binaryTree - Generate binary tree base on node values array, th
 
 describe("[Util] binaryTree - Generate node values array base on binary tree.", () => {
     it("[1, null, null]", () => {
-        const array =  [1, null, null];
+        const array = [1, null, null];
         const rootNode = arrayToBinaryTree(array);
         const convertedArray = binaryTreeToArray(rootNode);
 

@@ -52,6 +52,28 @@ export const linkedlistToArray = (lList) => {
 };
 
 /**
+ * Clone linkedList
+ *
+ * "N" is item count
+ * Time complexity: O(N)
+ * Space complexity: O(N)
+ *
+ */
+export const cloneLinkedlist = (lList) => {
+    let newList = new ListNode(-1),
+        curNode = newList;
+
+    while (lList) {
+        curNode.next = new ListNode(lList.val);
+
+        lList = lList.next;
+        curNode = curNode.next;
+    }
+
+    return newList.next;
+};
+
+/**
  * Reverse linkedList
  *
  * "N" is item count
