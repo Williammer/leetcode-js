@@ -19,6 +19,9 @@ export class TreeNode {
  * Time complexity: O(N)
  * Space complexity: O(N)
  *
+ * @param {Array} valArray
+ * @return {TreeNode}
+ *
  */
 export const arrayToBinaryTree = (valArray) => {
     if (!(Array.isArray(valArray) && valArray.length > 0 && valArray[0])) {
@@ -79,6 +82,9 @@ export const arrayToBinaryTree = (valArray) => {
  * Time complexity: O(N)
  * Space complexity: O(N)
  *
+ * @param {TreeNode} root
+ * @return {Array}
+ *
  */
 export const binaryTreeToArray = (root) => {
     const isNode = (node) => {
@@ -131,6 +137,9 @@ export const binaryTreeToArray = (root) => {
  * "N" is node count
  * Time complexity: O(N)
  * Space complexity: O(N)
+ *
+ * @param {TreeNode} root
+ * @return {String}
  *
  * More on: 297.serializeBT
  *
@@ -187,6 +196,9 @@ export const binaryTreeToString = (root) => {
  * Time complexity: O(N)
  * Space complexity: O(N)
  *
+ * @param {TreeNode} p, q
+ * @return {Boolean}
+ *
  * More on: 100.sameTree
  *
  */
@@ -208,6 +220,9 @@ export const sameTreeFn = (p, q) => {
  * "N" is node count
  * Time complexity: O(N)
  * Space complexity: O(N)
+ *
+ * @param {TreeNode} root
+ * @return {Array}
  *
  * More on: 102.bTreeLvOrderTraversal
  *
@@ -258,6 +273,9 @@ export const bTreeLvOrderTraversalFn = (root) => {
  * Time complexity: O(N)
  * Space complexity: O(N)
  *
+ * @param {TreeNode} root
+ * @return {Array}
+ *
  * More on: 144.bTreePreOrderTraversal
  *
  */
@@ -291,6 +309,9 @@ export const bTreePreOrderTraversalFn = (root) => {
  * Time complexity: O(N)
  * Space complexity: O(N)
  *
+ * @param {TreeNode} root
+ * @return {Array}
+ *
  * More on: 145.bTreePostOrderTraversal
  *
  */
@@ -323,6 +344,9 @@ export const bTreePostOrderTraversalFn = (root) => {
  * "N" is node count
  * Time complexity: O(N)
  * Space complexity: O(N)
+ *
+ * @param {TreeNode} root
+ * @return {Array}
  *
  * More on: 94.bTreeInOrderTraversal
  *
@@ -358,6 +382,9 @@ export const bTreeInOrderTraversalFn = (root) => {
  * Time complexity: O(N)
  * Space complexity: O(N)
  *
+ * @param {TreeNode} root
+ * @return {Number}
+ *
  * More on: 104.bTreeMaxDepth
  *
  */
@@ -380,6 +407,9 @@ export const bTreeMaxDepthFn = (root) => {
  * "N" is node count
  * Time complexity: O(N)
  * Space complexity: O(N)
+ *
+ * @param {TreeNode} root
+ * @return {Number}
  *
  * More on: 111.bTreeMinDepth
  *
@@ -433,6 +463,9 @@ export const bTreeMinDepthFn = (root) => {
  * Time complexity: O(N)
  * Space complexity: O(N)
  *
+ * @param {TreeNode} root
+ * @return {TreeNode}
+ *
  * More on: 226.invertBTree
  *
  */
@@ -473,6 +506,9 @@ export const invertBTreeFn = (root) => {
  * "N" is nums.length
  * Time complexity: O(N)
  * Space complexity: O(N)
+ *
+ * @param {Array} nums
+ * @return {TreeNode}
  *
  * More on: 108.sortedArrayToBST
  *
