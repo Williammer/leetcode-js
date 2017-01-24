@@ -8,7 +8,7 @@ export class TreeNode {
     }
 }
 
-/****
+/**
  * Generate binaryTree base on node values array.
  * Basic idea:
     1. Use parentNodes[node] to keep record;
@@ -19,7 +19,7 @@ export class TreeNode {
  * Time complexity: O(N)
  * Space complexity: O(N)
  *
- ***/
+ */
 export const arrayToBinaryTree = (valArray) => {
     if (!(Array.isArray(valArray) && valArray.length > 0 && valArray[0])) {
         return null;
@@ -69,7 +69,7 @@ export const arrayToBinaryTree = (valArray) => {
     return rootNode;
 };
 
-/****
+/**
  * Convert binaryTree to array.
  * Basic idea:
     1. loop each depth of the tree in bfs style
@@ -79,7 +79,7 @@ export const arrayToBinaryTree = (valArray) => {
  * Time complexity: O(N)
  * Space complexity: O(N)
  *
- ***/
+ */
 export const binaryTreeToArray = (root) => {
     const isNode = (node) => {
         return (node instanceof TreeNode) && node.val !== null;
@@ -125,7 +125,7 @@ export const binaryTreeToArray = (root) => {
     return bTreeArray;
 };
 
-/****
+/**
  * Convert binaryTree to string.
  *
  * "N" is node count
@@ -134,7 +134,7 @@ export const binaryTreeToArray = (root) => {
  *
  * More on: 297.serializeBT
  *
- ***/
+ */
 export const binaryTreeToString = (root) => {
     const isNode = (node) => {
         return (node instanceof TreeNode) && node.val !== null;
@@ -180,7 +180,7 @@ export const binaryTreeToString = (root) => {
     return bTreeStr;
 };
 
-/****
+/**
  * Check if two binaryTrees are equal or not
  *
  * "N" is min node count of 2 trees
@@ -189,7 +189,7 @@ export const binaryTreeToString = (root) => {
  *
  * More on: 100.sameTree
  *
- ***/
+ */
 export const sameTreeFn = (p, q) => {
     const isNode = (node) => {
         return (node instanceof TreeNode) && node.val !== null;
@@ -202,7 +202,7 @@ export const sameTreeFn = (p, q) => {
     }
 };
 
-/****
+/**
  * traversal - level order
  *
  * "N" is node count
@@ -211,7 +211,7 @@ export const sameTreeFn = (p, q) => {
  *
  * More on: 102.bTreeLvOrderTraversal
  *
- ***/
+ */
 export const bTreeLvOrderTraversalFn = (root) => {
     const isNode = (node) => {
         return (node instanceof TreeNode) && node.val !== null;
@@ -251,7 +251,7 @@ export const bTreeLvOrderTraversalFn = (root) => {
     return result;
 };
 
-/****
+/**
  * traversal - pre order
  *
  * "N" is node count
@@ -260,7 +260,7 @@ export const bTreeLvOrderTraversalFn = (root) => {
  *
  * More on: 144.bTreePreOrderTraversal
  *
- ***/
+ */
 export const bTreePreOrderTraversalFn = (root) => {
     const isNode = (node) => {
             return (node instanceof TreeNode) && node.val !== null;
@@ -284,7 +284,7 @@ export const bTreePreOrderTraversalFn = (root) => {
     return result;
 };
 
-/****
+/**
  * traversal - post order
  *
  * "N" is node count
@@ -293,7 +293,7 @@ export const bTreePreOrderTraversalFn = (root) => {
  *
  * More on: 145.bTreePostOrderTraversal
  *
- ***/
+ */
 export const bTreePostOrderTraversalFn = (root) => {
     const isNode = (node) => {
             return (node instanceof TreeNode) && node.val !== null;
@@ -317,7 +317,7 @@ export const bTreePostOrderTraversalFn = (root) => {
     return result;
 };
 
-/****
+/**
  * traversal - in order
  *
  * "N" is node count
@@ -326,7 +326,7 @@ export const bTreePostOrderTraversalFn = (root) => {
  *
  * More on: 94.bTreeInOrderTraversal
  *
- ***/
+ */
 export const bTreeInOrderTraversalFn = (root) => {
     const isNode = (node) => {
             return (node instanceof TreeNode) && node.val !== null;
@@ -351,7 +351,7 @@ export const bTreeInOrderTraversalFn = (root) => {
     return result;
 };
 
-/****
+/**
  * binaryTree get max depth
  *
  * "N" is node count
@@ -360,7 +360,7 @@ export const bTreeInOrderTraversalFn = (root) => {
  *
  * More on: 104.bTreeMaxDepth
  *
- ***/
+ */
 export const bTreeMaxDepthFn = (root) => {
     const isNode = (node) => {
         return (node instanceof TreeNode) && node.val !== null;
@@ -374,7 +374,7 @@ export const bTreeMaxDepthFn = (root) => {
 
 };
 
-/****
+/**
  * binaryTree get min depth
  *
  * "N" is node count
@@ -383,7 +383,7 @@ export const bTreeMaxDepthFn = (root) => {
  *
  * More on: 111.bTreeMinDepth
  *
- ***/
+ */
 export const bTreeMinDepthFn = (root) => {
     const isNode = (node) => {
         return (node instanceof TreeNode) && node.val !== null;
@@ -426,7 +426,7 @@ export const bTreeMinDepthFn = (root) => {
     return minDepth;
 };
 
-/****
+/**
  * Invert a binaryTree
  *
  * "N" is node count
@@ -435,7 +435,7 @@ export const bTreeMinDepthFn = (root) => {
  *
  * More on: 226.invertBTree
  *
- ***/
+ */
 export const invertBTreeFn = (root) => {
     const isNode = (node) => {
         return (node instanceof TreeNode) && node.val !== null;
@@ -467,7 +467,7 @@ export const invertBTreeFn = (root) => {
     return root;
 };
 
-/****
+/**
  * Build a BST with sorted array
  *
  * "N" is nums.length
@@ -476,7 +476,7 @@ export const invertBTreeFn = (root) => {
  *
  * More on: 108.sortedArrayToBST
  *
- ***/
+ */
 export const sortedArrayToBSTFn = (nums) => {
     const createNode = (val) => {
             return typeof val === "number" ? new TreeNode(val) : null;
