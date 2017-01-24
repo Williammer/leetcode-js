@@ -1,5 +1,5 @@
 /**
- * Definition for a binaryTree node:
+ * Definition for binaryTree node
  */
 export class TreeNode {
     constructor(val) {
@@ -378,8 +378,8 @@ export const bTreeMaxDepthFn = (root) => {
  * binaryTree get min depth
  *
  * "N" is node count
- * Time complexity: O(1 ~ N)
- * Space complexity: O(1 ~ N)
+ * Time complexity: O(N)
+ * Space complexity: O(N)
  *
  * More on: 111.bTreeMinDepth
  *
