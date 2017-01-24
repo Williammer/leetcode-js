@@ -15,6 +15,9 @@ export class ListNode {
  * Time complexity: O(N)
  * Space complexity: O(N)
  *
+ * @param {Array} array
+ * @return {ListNode}
+ *
  */
 export const arrayToLinkedlist = (arr) => {
     let lastNode, newNode;
@@ -37,6 +40,9 @@ export const arrayToLinkedlist = (arr) => {
  * Time complexity: O(N)
  * Space complexity: O(N)
  *
+ * @param {ListNode} head
+ * @return {Array}
+ *
  */
 export const linkedlistToArray = (lList) => {
     let curNode = lList,
@@ -57,6 +63,9 @@ export const linkedlistToArray = (lList) => {
  * "N" is item count
  * Time complexity: O(N)
  * Space complexity: O(N)
+ *
+ * @param {ListNode} head
+ * @return {ListNode}
  *
  */
 export const cloneLinkedlist = (lList) => {
