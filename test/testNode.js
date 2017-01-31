@@ -11,6 +11,7 @@ jrunner.configureDefaultReporter({ print: noop });
 jasmine.getEnv().addReporter(new SpecReporter());
 
 if (num) {
+    // single problem test
     fs.readdir(`./test/spec/`, (err, files) => {
         if (err) {
             console.warn(`[readdir] err: ${err}`);
@@ -30,6 +31,7 @@ if (num) {
     });
 
 } else {
+    // all problem test
     jrunner.loadConfigFile(`test/jasmine.config.json`);
     jrunner.execute();
 }
