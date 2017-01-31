@@ -25,7 +25,7 @@
 }, {
     "num": 3,
     "title": "Longest non-repeat substr",
-    "tags": "Hash, SlideWindow",
+    "tags": "Hash, 2pointer",
     "level": "mid",
     "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/3.longestSubstr/solution.js"
 }, {
@@ -187,7 +187,7 @@
 }, {
     "num": 297,
     "title": "De/Serialize BinaryTree",
-    "tags": "Tree, compress",
+    "tags": "Tree, Compression",
     "level": "mid",
     "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/297.serializeBT/solution.js"
 }, {
@@ -199,7 +199,7 @@
 }, {
     "num": 337,
     "title": "MaxSum of unlinked BT node value",
-    "tags": "BinaryTree, dfs, DP",
+    "tags": "BinaryTree, DFS, DP",
     "level": "mid",
     "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/337.houseRobberIII/solution.js"
 }, {
@@ -223,7 +223,7 @@
 }, {
     "num": 449,
     "title": "De/Serialize BST",
-    "tags": "Tree, BST, compress",
+    "tags": "Tree, BST, Compression",
     "level": "mid",
     "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/449.serializeBST/solution.js"
 }]
