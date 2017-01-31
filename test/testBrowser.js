@@ -7,23 +7,7 @@ const fs = require("fs-extra"),
     destJs = `test/spec/testSpecs.js`,
     destHtml = `test/SpecRunner.html`;
 
-if (!num) {
-    // all problem test
-    rollup.rollup({
-        entry: `test/spec/*.spec.js`,
-        plugins: [
-            multiEntry()
-        ]
-    }).then(function(bundle) {
-        bundle.write({
-            format: `es`,
-            dest: destJs
-        }).then(function() {
-            open(destHtml, `Google Chrome`);
-        });
-    });
-
-} else {
+if (num) {
     // single problem test
     fs.readdir(`./test/spec/`, (err, files) => {
         if (err) {
@@ -52,5 +36,21 @@ if (!num) {
                 });
             });
         }
+    });
+    
+} else {
+    // all problem test
+    rollup.rollup({
+        entry: `test/spec/*.spec.js`,
+        plugins: [
+            multiEntry()
+        ]
+    }).then(function(bundle) {
+        bundle.write({
+            format: `es`,
+            dest: destJs
+        }).then(function() {
+            open(destHtml, `Google Chrome`);
+        });
     });
 }
