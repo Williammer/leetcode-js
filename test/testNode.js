@@ -1,6 +1,6 @@
 import fs from "fs-extra";
 import Jasmine from "jasmine";
-import SpecReporter from "jasmine-spec-reporter";
+import { SpecReporter } from "jasmine-spec-reporter";
 
 const noop = function() {},
     num = process.argv[2];
