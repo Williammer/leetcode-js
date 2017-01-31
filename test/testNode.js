@@ -7,8 +7,13 @@ const noop = function() {},
 
 let jrunner = new Jasmine();
 
+jasmine.getEnv().clearReporters();
 jrunner.configureDefaultReporter({ print: noop });
-jasmine.getEnv().addReporter(new SpecReporter());
+jasmine.getEnv().addReporter(new SpecReporter({ // add jasmine-spec-reporter
+    spec: {
+        displayPending: true
+    }
+}));
 
 if (num) {
     // single problem test
