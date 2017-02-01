@@ -35,7 +35,7 @@ $ npm test <problem number> <'browser'>
 ```
 
 
-## 3. Add/Remove problem's solution/spec file
+## 3. Handle solution/spec
 Add:
 ``` bash
 $ npm start add <problem number> <problem title>
