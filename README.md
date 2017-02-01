@@ -13,36 +13,38 @@ check out: [http://williammer.github.io/leetcode-js/](http://williammer.github.i
 
 ## 1. Install
 ``` bash
-$ npm/yarn install
+$ npm install
 ```
 
-## 2. Handle problem's solution/spec file
-Add a problem:
-``` bash
-$ npm/yarn run task add <problem number> <problem title>
-```
-Copy a problem:
-``` bash
-$ npm/yarn run task copy <problem number> <problem title> <to be copied problem number>
-```
-Remove a problem:
-``` bash
-$ npm/yarn run task rm <problem number>
-```
 
-## 3. Testing
+## 2. Testing
 Test all problems (use any one below):
 ``` bash
-$ npm/yarn test
+$ npm test
 ```
 ``` bash
-$ npm/yarn test <'browser'>
+$ npm test <'browser'>
 ```
 
 Test one problem (use any one below):
 ``` bash
-$ npm/yarn test <problem number>
+$ npm test <problem number>
 ```
 ``` bash
-$ npm/yarn test <problem number> <'browser'>
+$ npm test <problem number> <'browser'>
+```
+
+
+## 3. Add/Remove problem's solution/spec file
+Add:
+``` bash
+$ npm start add <problem number> <problem title>
+```
+Copy:
+``` bash
+$ npm start copy <problem number> <problem title> <to be copied problem number>
+```
+Remove:
+``` bash
+$ npm start rm <problem number>
 ```
