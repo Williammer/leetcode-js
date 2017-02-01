@@ -17,8 +17,8 @@ $ npm install
 ```
 
 
-## 2. Testing
-Test all problems (use any one below):
+## 2. Testing(node/browser)
+All problems:
 ``` bash
 $ npm test
 ```
@@ -26,7 +26,7 @@ $ npm test
 $ npm test <'browser'>
 ```
 
-Test one problem (use any one below):
+One problem:
 ``` bash
 $ npm test <problem number>
 ```
