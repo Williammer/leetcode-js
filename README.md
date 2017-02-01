@@ -10,7 +10,6 @@ check out: [http://williammer.github.io/leetcode-js/](http://williammer.github.i
 
 
 # * Usages
-(Could use yarn rather than npm)
 
 ## 1. Install
 ``` bash
@@ -49,3 +48,6 @@ Remove:
 ``` bash
 $ npm start rm <problem number>
 ```
+
+----
+Could also use`yarn` instead of `npm`.
