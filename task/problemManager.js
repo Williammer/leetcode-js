@@ -1,155 +1,155 @@
 const fs = require("fs-extra"),
-    action = process.argv[2],
-    num = process.argv[3],
-    title = process.argv[4],
-    copyNum = process.argv[5];
+  action = process.argv[2],
+  num = process.argv[3],
+  title = process.argv[4],
+  copyNum = process.argv[5];
 
 // Check required arguments
 if (!action || Number(action) > 0) {
-    throw `Invalid action provided, please use 'add', 'copy' or 'rm'.`;
-    return;
-} else if(!num || !(Number(num) > 0)){
-    throw `Invalid num provided.`;
-    return;
+  throw `Invalid action provided, please use 'add', 'copy' or 'rm'.`;
+  return;
+} else if (!num || !(Number(num) > 0)) {
+  throw `Invalid num provided.`;
+  return;
 }
 
 
 // public helper functions
 function getTitleByNum(num) {
-    let targetFilename = fs.readdirSync(`./src/`).filter(file => {
-        return file.indexOf(`${num}.`) === 0;
-    });
+  let targetFilename = fs.readdirSync(`./src/`).filter(file => {
+    return file.indexOf(`${num}.`) === 0;
+  });
 
-    if (!targetFilename) {
-        console.warn(`[readdir] can't find target file to remove.`);
-        return '';
-    } else {
-        return targetFilename[0].split('.')[1];
-    }
+  if (!targetFilename) {
+    console.warn(`[readdir] can't find target file to remove.`);
+    return '';
+  } else {
+    return targetFilename[0].split('.')[1];
+  }
 }
 
 function getFilePathByNum(path, num) {
-    let targetFilename = fs.readdirSync(path).filter(file => {
-        return file.indexOf(`${num}.`) === 0;
-    });
+  let targetFilename = fs.readdirSync(path).filter(file => {
+    return file.indexOf(`${num}.`) === 0;
+  });
 
-    if (!targetFilename || !(targetFilename.length > 0)) {
-        console.warn(`[readdir] can't find target file to remove.`);
-        return;
-    } else {
-        return `${path}${targetFilename}`;
-    }
+  if (!targetFilename || !(targetFilename.length > 0)) {
+    console.warn(`[readdir] can't find target file to remove.`);
+    return;
+  } else {
+    return `${path}${targetFilename}`;
+  }
 }
 
 
 // [action] - rm
 if (action == "rm") {
-    const removeProblem = (dstPath) => {
-        fs.remove(dstPath, function(err) {
-            if (err) {
-                return console.error(err);
-            }
+  const removeProblem = (dstPath) => {
+    fs.remove(dstPath, function(err) {
+      if (err) {
+        return console.error(err);
+      }
 
-            console.log(`remove '${dstPath}'' success!`)
-        })
-    };
+      console.log(`remove '${dstPath}'' success!`)
+    })
+  };
 
-    const specDstPath = getFilePathByNum(`./test/spec/`, num);
-    const solutionDstPath = getFilePathByNum(`./src/`, num);
+  const specDstPath = getFilePathByNum(`./test/spec/`, num);
+  const solutionDstPath = getFilePathByNum(`./src/`, num);
 
-    if (solutionDstPath && specDstPath) {
-        removeProblem(solutionDstPath); // remove solution file
-        removeProblem(specDstPath); // remove spec file
-    } else {
-        console.warn(`Wrong solutionDstPath, specDstPath.`);
-        return;
-    }
+  if (solutionDstPath && specDstPath) {
+    removeProblem(solutionDstPath); // remove solution file
+    removeProblem(specDstPath); // remove spec file
+  } else {
+    console.warn(`Wrong solutionDstPath, specDstPath.`);
+    return;
+  }
 
-    // [action] - copy
+  // [action] - copy
 } else if (action == "copy") {
-    if (!copyNum || !(Number(copyNum) > 0)) {
-        throw `Invalid copyNum provided.`;
-        return;
-    }
+  if (!copyNum || !(Number(copyNum) > 0)) {
+    throw `Invalid copyNum provided.`;
+    return;
+  }
 
-    const solutionDstPath = `./src/${num}.${title}`;
-    const specDstPath = `./test/spec/${num}.${title}.spec.js`;
-    const solutionSrcPath = getFilePathByNum(`./src/`, copyNum);
-    const specSrcPath = getFilePathByNum(`./test/spec/`, copyNum);
-    const copyTitle = getTitleByNum(copyNum);
+  const solutionDstPath = `./src/${num}.${title}`;
+  const specDstPath = `./test/spec/${num}.${title}.spec.js`;
+  const solutionSrcPath = getFilePathByNum(`./src/`, copyNum);
+  const specSrcPath = getFilePathByNum(`./test/spec/`, copyNum);
+  const copyTitle = getTitleByNum(copyNum);
 
-    const copyProblemFrom = (srcPath, dstPath) => {
-        fs.copy(srcPath, dstPath, (err) => {
-            if (err) throw err;
+  const copyProblemFrom = (srcPath, dstPath) => {
+    fs.copy(srcPath, dstPath, (err) => {
+      if (err) throw err;
 
-            console.log(`${dstPath} - renamed copy complete.`);
+      console.log(`${dstPath} - renamed copy complete.`);
 
-            let filePath = dstPath;
+      let filePath = dstPath;
 
-            if (dstPath.includes("src") && !dstPath.includes("test/spec")) {
-                filePath = dstPath + "/solution.js";
-            }
+      if (dstPath.includes("src") && !dstPath.includes("test/spec")) {
+        filePath = dstPath + "/solution.js";
+      }
 
-            fs.readFile(filePath, "utf8", (err, data) => {
-                if (err) throw err;
+      fs.readFile(filePath, "utf8", (err, data) => {
+        if (err) throw err;
 
-                const titleRegExp = new RegExp(copyTitle, "g");
-                let updatedData = data.replace(titleRegExp, title)
-                    .replace(`Problem ${copyNum}`, `Problem ${num}`)
-                    .replace(`${copyNum}.`, `${num}.`);
+        const titleRegExp = new RegExp(copyTitle, "g");
+        let updatedData = data.replace(titleRegExp, title)
+          .replace(`Problem ${copyNum}`, `Problem ${num}`)
+          .replace(`${copyNum}.`, `${num}.`);
 
-                fs.writeFile(filePath, updatedData, (err) => {
-                    if (err) throw err;
-                    console.log(`updated ${filePath}`);
-                });
-            });
+        fs.writeFile(filePath, updatedData, (err) => {
+          if (err) throw err;
+          console.log(`updated ${filePath}`);
         });
-    };
+      });
+    });
+  };
 
-    copyProblemFrom(solutionSrcPath, solutionDstPath); // create solution file
-    copyProblemFrom(specSrcPath, specDstPath); // create spec file
+  copyProblemFrom(solutionSrcPath, solutionDstPath); // create solution file
+  copyProblemFrom(specSrcPath, specDstPath); // create spec file
 
-    // [action] - add
+  // [action] - add
 } else if (action == "add") {
-    if (!title || Number(title) > 0) {
-        throw `Invalid title provided, use proper char string as title.`;
-        return;
-    }
+  if (!title || Number(title) > 0) {
+    throw `Invalid title provided, use proper char string as title.`;
+    return;
+  }
 
-    const solutionSrcPath = `./src/tmpl`;
-    const solutionDstPath = `./src/${num}.${title}`;
-    const specSrcPath = `./test/spec/tmpl.js`;
-    const specDstPath = `./test/spec/${num}.${title}.spec.js`;
+  const solutionSrcPath = `./src/tmpl`;
+  const solutionDstPath = `./src/${num}.${title}`;
+  const specSrcPath = `./test/spec/tmpl.js`;
+  const specDstPath = `./test/spec/${num}.${title}.spec.js`;
 
-    const createNewProblem = (srcPath, dstPath) => {
-        fs.copy(srcPath, dstPath, (err) => {
-            if (err) throw err;
+  const createNewProblem = (srcPath, dstPath) => {
+    fs.copy(srcPath, dstPath, (err) => {
+      if (err) throw err;
 
-            let filePath = dstPath;
+      let filePath = dstPath;
 
-            console.log(`${dstPath} - renamed copy complete.`);
+      console.log(`${dstPath} - renamed copy complete.`);
 
-            if (dstPath.includes("src") && !dstPath.includes("test/spec")) {
-                filePath = dstPath + "/solution.js";
-            }
+      if (dstPath.includes("src") && !dstPath.includes("test/spec")) {
+        filePath = dstPath + "/solution.js";
+      }
 
-            fs.readFile(filePath, "utf8", (err, data) => {
-                if (err) throw err;
+      fs.readFile(filePath, "utf8", (err, data) => {
+        if (err) throw err;
 
-                let updatedData = data.replace(/\$\$\_title/g, title).replace(/\$\$\_num/g, num);
+        let updatedData = data.replace(/\$\$\_title/g, title).replace(/\$\$\_num/g, num);
 
-                fs.writeFile(filePath, updatedData, (err) => {
-                    if (err) throw err;
-                    console.log(`updated ${filePath}`);
-                });
-            });
+        fs.writeFile(filePath, updatedData, (err) => {
+          if (err) throw err;
+          console.log(`updated ${filePath}`);
         });
-    };
+      });
+    });
+  };
 
-    createNewProblem(solutionSrcPath, solutionDstPath); // create solution file
-    createNewProblem(specSrcPath, specDstPath); // create spec file
+  createNewProblem(solutionSrcPath, solutionDstPath); // create solution file
+  createNewProblem(specSrcPath, specDstPath); // create spec file
 
 } else {
-    throw `unknown action, please use 'add', 'copy' or 'rm'.`;
-    return;
+  throw `unknown action, please use 'add', 'copy' or 'rm'.`;
+  return;
 }
