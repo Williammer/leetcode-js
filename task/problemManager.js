@@ -40,7 +40,6 @@ function getFilePathByNum(path, num) {
 
 // [action] - rm
 if (action == "rm") {
-
     const removeProblem = (dstPath) => {
         fs.remove(dstPath, function(err) {
             if (err) {
@@ -64,7 +63,6 @@ if (action == "rm") {
 
     // [action] - copy
 } else if (action == "copy") {
-
     if (!copyNum) {
         throw `invalid input(copyNum) provided.`;
         return;
@@ -109,7 +107,6 @@ if (action == "rm") {
 
     // [action] - add
 } else if (action == "add") {
-
     if (!title) {
         throw `invalid input(title) provided.`;
         return;
