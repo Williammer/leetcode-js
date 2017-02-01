@@ -17,7 +17,7 @@ $ npm install
 ```
 
 
-## 2. Testing(node/browser)
+## 2. Testing (node/browser)
 All problems:
 ``` bash
 $ npm test
