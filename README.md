@@ -49,5 +49,5 @@ Remove:
 $ npm start rm <problem number>
 ```
 
-----
+--
 Could also use`yarn` instead of `npm`.
