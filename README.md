@@ -10,6 +10,7 @@ check out: [http://williammer.github.io/leetcode-js/](http://williammer.github.i
 
 
 # * Usages
+(Could use yarn rather than npm)
 
 ## 1. Install
 ``` bash
