@@ -31,7 +31,7 @@ if (arg2) {
   }
 }
 
-// Preparation for Node/Browser testing.
+// Preparation for Node/Browser testing
 if (testEnv === 'browser') {
   // test Env is Browser
   const open = require('open'),
@@ -40,7 +40,7 @@ if (testEnv === 'browser') {
   finalAction = () => open(destHtml, 'Google Chrome');;
 
 } else {
-  // test Env is Node (by default)
+  // test Env is Node (default)
   const Jasmine = require('jasmine'),
     SpecReporter = require('jasmine-spec-reporter').SpecReporter;
 
@@ -57,6 +57,7 @@ if (testEnv === 'browser') {
   finalAction = () => jrunner.execute([destJs]);
 }
 
+// Run spec file/files
 if (num && num > 0) {
   // single problem test
   fs.readdir('./test/spec/', (err, files) => {
@@ -86,7 +87,7 @@ if (num && num > 0) {
   });
 
 } else {
-  // all problem test
+  // all problem test (default)
   rollup.rollup({
     entry: 'test/spec/*.spec.js',
     plugins: [
