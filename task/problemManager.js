@@ -4,13 +4,17 @@ const fs = require("fs-extra"),
     title = process.argv[4],
     copyNum = process.argv[5];
 
-if (!num || !action) {
-    throw `invalid input(action / num) provided.`;
+// Check required arguments
+if (!action || Number(action) > 0) {
+    throw `Invalid action provided, please use 'add', 'copy' or 'rm'.`;
+    return;
+} else if(!num || !(Number(num) > 0)){
+    throw `Invalid num provided.`;
     return;
 }
 
 
-// public functions
+// public helper functions
 function getTitleByNum(num) {
     let targetFilename = fs.readdirSync(`./src/`).filter(file => {
         return file.indexOf(`${num}.`) === 0;
@@ -63,8 +67,8 @@ if (action == "rm") {
 
     // [action] - copy
 } else if (action == "copy") {
-    if (!copyNum) {
-        throw `invalid input(copyNum) provided.`;
+    if (!copyNum || !(Number(copyNum) > 0)) {
+        throw `Invalid copyNum provided.`;
         return;
     }
 
@@ -107,8 +111,8 @@ if (action == "rm") {
 
     // [action] - add
 } else if (action == "add") {
-    if (!title) {
-        throw `invalid input(title) provided.`;
+    if (!title || Number(title) > 0) {
+        throw `Invalid title provided, use proper char string as title.`;
         return;
     }
 
@@ -146,6 +150,6 @@ if (action == "rm") {
     createNewProblem(specSrcPath, specDstPath); // create spec file
 
 } else {
-    throw `unknown action, please use 'add' or 'rm'.`;
+    throw `unknown action, please use 'add', 'copy' or 'rm'.`;
     return;
 }
