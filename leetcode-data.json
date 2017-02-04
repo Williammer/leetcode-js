@@ -215,6 +215,12 @@
     "level": "low",
     "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/371.twoIntSum/solution.js"
 }, {
+    "num": 382,
+    "title": "LinkedList rand node",
+    "tags": "LinkedList, ReservoirSample",
+    "level": "mid",
+    "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/382.linkedListRandNode/solution.js"
+}, {
     "num": 404,
     "title": "Sum of left leaves",
     "tags": "Tree, BFS, DFS",
