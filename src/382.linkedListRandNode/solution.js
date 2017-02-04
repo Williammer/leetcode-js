@@ -80,5 +80,7 @@ linkedListRandNode.reservoirSample = (head) => {
 
  * Lessons:
    1. Probability can be an idea-helper to solve programming problems.
+   2. [test] Testing for random could be done(approximately) by
+    validating its distribution of large-scale input to be within acceptable deviation.
 
 ************************************************************************************************************************/
