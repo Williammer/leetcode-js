@@ -20,9 +20,11 @@ export class ListNode {
  *
  */
 export const arrayToLinkedlist = (arr) => {
-    let lastNode, newNode;
-    while (arr.length > 0) {
-        newNode = new ListNode(arr.pop());
+    let lastNode, newNode,
+        arrClone = arr.slice(0); // clone array with array.slice(0)
+
+    while (arrClone.length > 0) {
+        newNode = new ListNode(arrClone.pop());
 
         if (lastNode) {
             newNode.next = lastNode;
