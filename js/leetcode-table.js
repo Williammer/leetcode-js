@@ -1,11 +1,11 @@
 /****
- * leetcode table with vue
+ * leetcode table with Vue.js
  ***/
 (function($) {
     /**
      * v-table component
      */
-    var VTableComponent = {
+    const VTableComponent = {
         template: '<table>\
             <thead>\
                 <tr>\
@@ -44,7 +44,7 @@
                 template: '<a @click="showSourceCode(link)" id="v-link">solution</a>',
                 methods: {
                     setModalContent: function(data) {
-                        var vModal = document.getElementById('v-modal'),
+                        let vModal = document.getElementById('v-modal'),
                             preElement = document.createElement('pre'),
                             codeElement = document.createElement('code');
 
@@ -62,7 +62,7 @@
                         return vModal;
                     },
                     showModal: function(data) {
-                        var vModalContent = this.setModalContent(data);
+                        const vModalContent = this.setModalContent(data);
 
                         new $.Modal({
                             content: vModalContent,
@@ -97,7 +97,7 @@
         },
         /* derived data state model */
         data: function() {
-            var sortOrders = {};
+            let sortOrders = {};
             this.columns.forEach(function(key) {
                 sortOrders[key] = 1
             });
@@ -109,7 +109,7 @@
         },
         computed: {
             filteredData: function() {
-                var sortKey = this.sortKey,
+                let sortKey = this.sortKey,
                     filterKey = this.filterKey && this.filterKey.toLowerCase(),
                     order = this.sortOrders[sortKey] || 1,
                     data = this.data;
@@ -152,12 +152,12 @@
                 el.style.opacity = 0;
             },
             enter: function(el, done) {
-                Velocity(
+                $.Velocity(
                     el, { opacity: 1 }, { complete: done }
                 );
             },
             leave: function(el, done) {
-                Velocity(
+                $.Velocity(
                     el, { opacity: 0 }, { complete: done }
                 );
             }
