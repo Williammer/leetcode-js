@@ -68,6 +68,8 @@
                             content: vModalContent,
                             className: 'zoom'
                         }).open();
+
+                        // TODO: clear up upon close modal.
                     },
                     showSourceCode: function(url) {
                         if (!(typeof url === 'string' && url.length > 0)) {
