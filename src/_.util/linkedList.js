@@ -15,7 +15,7 @@ export class ListNode {
  * @return {boolean}
  *
  */
-const isListNode = (node) => {
+export const isListNode = (node) => {
     return (node instanceof ListNode) && node.val !== null;
 };
 
