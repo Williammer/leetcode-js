@@ -9,6 +9,17 @@ export class ListNode {
 };
 
 /**
+ * If the input is ListNode
+ *
+ * @param {ListNode} node
+ * @return {boolean}
+ *
+ */
+const isListNode = (node) => {
+    return (node instanceof ListNode) && node.val !== null;
+};
+
+/**
  * Convert array to linkedList
  *
  * "N" is item count
