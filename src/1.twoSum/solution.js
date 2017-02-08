@@ -10,10 +10,10 @@
    Because nums[0] + nums[1] = 2 + 7 = 9,
    return [0, 1].
 
+
  * @param {number[]} nums
  * @param {number} target
  * @return {number[]}
-
 
  * Analysis: requirement is mainly on getting 'key' from valid 'value',
    which makes Hash to be an efficient data structure to use.

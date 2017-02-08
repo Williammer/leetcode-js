@@ -9,30 +9,24 @@
     Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
     Output: 7 -> 0 -> 8
 
- * Definition for singly-linked list:
-    function ListNode(val) {
-      this.val = val;
-      this.next = null;
-    }
 
  * @param {ListNode} l1
  * @param {ListNode} l2
  * @return {ListNode}
 
-
- * Analysis: It's hard to insert nodes by recusively setting its next nodes for linklist, so at first I consider use a stack to cache those sum digits.
-   Later I've learned we can utilize the mutable feature of 2 referenced objects by having one doing the recursive insert work and the other to take the result, which is great.
+ * Analysis: At first I consider use a stack to cache the sum digits.
+   Later I've learned we can utilize the basic mutable reference feature for linkedList traversal, which is commonly used.
 
 ************************************************************************************************************************/
 
 
-import { ListNode } from "../_.util/linkedList";
+import { ListNode, isListNode } from "../_.util/linkedList";
 
 export const add2Nums = {};
 /**
  * Solution 1: Intro a stack helper to reversely insert each node into linklist.
  *
- * "N" is the max calcated sum digit length L in range [max(l1.length,l2.length), max(l1.length,l2.length)+1].
+ * "N" is max(l1.length,l2.length)
  * Time complexity: O(2N)
  * Space complexity: O(2N)
  */
@@ -42,14 +36,14 @@ add2Nums.stackHelper = (l1, l2) => {
         tmpStack = [],
         newNode, lastNode, l1Val, l2Val;
 
-    while ((l1 && typeof l1.val === "number") || (l2 && typeof l2.val === "number") || overflowedVal > 0) {
-        if (!(l1 && typeof l1.val === "number") && !(l2 && typeof l2.val === "number") && overflowedVal > 0) {
+    while (isListNode(l1) || isListNode(l2) || overflowedVal > 0) {
+        if (!isListNode(l1) && !isListNode(l2) && overflowedVal > 0) {
             tmpStack[tmpStack.length] = overflowedVal;
             break;
         }
 
-        l1Val = (l1 && typeof l1.val === "number") ? l1.val : 0;
-        l2Val = (l2 && typeof l2.val === "number") ? l2.val : 0;
+        l1Val = isListNode(l1) ? l1.val : 0;
+        l2Val = isListNode(l2) ? l2.val : 0;
 
         sumVal = (l1Val + l2Val + overflowedVal) % 10;
         overflowedVal = parseInt((l1Val + l2Val + overflowedVal) / 10, 10);
@@ -73,9 +67,9 @@ add2Nums.stackHelper = (l1, l2) => {
 };
 
 /**
- * Solution 2: js reference. Utilized js object reference change feature.
+ * Solution 2: basic js reference.
  *
- * "N" is the max calcated sum digit length L in range [max(l1.length,l2.length), max(l1.length,l2.length)+1].
+ * "N" is max(l1.length,l2.length)
  * Time complexity: O(N)
  * Space complexity: O(N)
  */
@@ -112,16 +106,16 @@ add2Nums.reference = (l1, l2) => {
 /**
  * Solution 3: Recursion.
  *
- * m: "N" is the max calcated sum digit length L in range [max(l1.length,l2.length), max(l1.length,l2.length)+1].
- * Time complexity: O(?)
- * Space complexity: O(?)
+ * "N" is max(l1.length,l2.length)
+ * Time complexity: O(N)
+ * Space complexity: O(N)
  */
 add2Nums.recursion = (l1, l2) => {
     let List, val;
     // Base case
-    if (!(l1 instanceof ListNode)) {
+    if (!isListNode(l1)) {
         return l2;
-    } else if (!(l2 instanceof ListNode)) {
+    } else if (!isListNode(l2)) {
         return l1;
     }
 
