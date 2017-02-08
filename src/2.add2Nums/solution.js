@@ -24,50 +24,7 @@ import { ListNode, isListNode } from "../_.util/linkedList";
 
 export const add2Nums = {};
 /**
- * Solution 1: Intro a stack helper to reversely insert each node into linklist.
- *
- * "N" is max(l1.length,l2.length)
- * Time complexity: O(2N)
- * Space complexity: O(2N)
- */
-add2Nums.stackHelper = (l1, l2) => {
-    let sumVal = 0,
-        overflowedVal = 0,
-        tmpStack = [],
-        newNode, lastNode, l1Val, l2Val;
-
-    while (isListNode(l1) || isListNode(l2) || overflowedVal > 0) {
-        if (!isListNode(l1) && !isListNode(l2) && overflowedVal > 0) {
-            tmpStack[tmpStack.length] = overflowedVal;
-            break;
-        }
-
-        l1Val = isListNode(l1) ? l1.val : 0;
-        l2Val = isListNode(l2) ? l2.val : 0;
-
-        sumVal = (l1Val + l2Val + overflowedVal) % 10;
-        overflowedVal = parseInt((l1Val + l2Val + overflowedVal) / 10, 10);
-
-        tmpStack[tmpStack.length] = sumVal;
-
-        l1 = (l1 && l1.next) || null;
-        l2 = (l2 && l2.next) || null;
-    }
-
-    while (tmpStack.length > 0) {
-        newNode = new ListNode(tmpStack.pop());
-
-        if (lastNode) {
-            newNode.next = lastNode;
-        }
-        lastNode = newNode;
-    }
-
-    return newNode;
-};
-
-/**
- * Solution 2: basic js reference.
+ * Solution 1: basic js reference.
  *
  * "N" is max(l1.length,l2.length)
  * Time complexity: O(N)
@@ -104,7 +61,7 @@ add2Nums.reference = (l1, l2) => {
 };
 
 /**
- * Solution 3: Recursion.
+ * Solution 2: Recursion.
  *
  * "N" is max(l1.length,l2.length)
  * Time complexity: O(N)
@@ -131,7 +88,7 @@ add2Nums.recursion = (l1, l2) => {
         // case 2: has carry num
         val = val - 10;
         List.val = val;
-        List.next = add2Nums.recursion(List.next, new ListNode(1)); // nested recursion!
+        List.next = add2Nums.recursion(List.next, new ListNode(1));
     }
 
     return List;
@@ -141,8 +98,7 @@ add2Nums.recursion = (l1, l2) => {
 /************************************************************************************************************************
 
  * Lessons:
-   1. Consider introduce stack data structure to reversely insert each node into linklist as it's hard to insert from head to tail for linklist.
-   2. Utilize mutable object reference feature.
-   3. Multi base case recursion. To recursion well, we need to consider head/tail of child when design parent, so that child-recur can utilize its parent's base case.
+   1. Mutable object reference is common for traverse linkedList.
+   2. Base case for recursion needs to be well-designed for different edge cases.
 
 ************************************************************************************************************************/
