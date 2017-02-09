@@ -96,6 +96,27 @@ export const cloneLinkedlist = (lList) => {
 };
 
 /**
+ * Add Node to List front
+ *
+ * "N" is item count
+ * Time complexity: O(1)
+ * Space complexity: O(1)
+ *
+ * @param {number} val, {ListNode} lList
+ * @return {ListNode}
+ *
+ */
+export const addToLinkedListFront = (val, lList) => {
+    if (typeof val !== 'number') {
+        return lList;
+    }
+    let newHead = new ListNode(val);
+    newHead.next = lList;
+
+    return newHead;
+};
+
+/**
  * Reverse linkedList
  *
  * "N" is item count
