@@ -7,7 +7,8 @@
    */
   const VTableComponent = {
     template: '\
-      <table>\
+      <table class="leetcode-tb">\
+        <span class="leetcode-tb-total">Total: {{filteredData.length}}</span>\
         <thead>\
           <tr>\
             <th v-for="key in columns" @click="sortBy(key)" :class="{ active: sortKey == key }">\

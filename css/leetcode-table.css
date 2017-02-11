@@ -5,12 +5,6 @@ body {
   font-weight: normal;
 }
 
-table {
-  border: 2px solid #4376b5;
-  border-radius: 3px;
-  background-color: #fff;
-}
-
 th {
   background: url(../images/background.png);
   cursor: pointer;
@@ -56,6 +50,22 @@ th.active .arrow {
 
 #leetcode-table {
   margin-top: 40px;
+}
+
+.leetcode-tb {
+  border: 2px solid #4376b5;
+  border-radius: 3px;
+  background-color: #fff;
+  position: relative;
+}
+
+.leetcode-tb-total {
+  position: absolute;
+  top: -45px;
+  right: -1px;
+  padding: 6px 10px;
+  background: #E8E8E8;
+  border-radius: 4px;
 }
 
 .arrow {
