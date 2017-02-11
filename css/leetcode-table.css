@@ -1,150 +1,150 @@
 body {
-    font-family: Lato, Copse, elvetica Neue, Arial, sans-serif;
-    font-size: 14px;
-    color: #444;
-    font-weight: normal;
+  font-family: Lato, Copse, elvetica Neue, Arial, sans-serif;
+  font-size: 14px;
+  color: #444;
+  font-weight: normal;
 }
 
 table {
-    border: 2px solid #4376b5;
-    border-radius: 3px;
-    background-color: #fff;
+  border: 2px solid #4376b5;
+  border-radius: 3px;
+  background-color: #fff;
 }
 
 th {
-    background: url(../images/background.png);
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    color: rgba(255, 255, 255, 0.83);
-    font-size: 16px;
+  background: url(../images/background.png);
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: rgba(255, 255, 255, 0.83);
+  font-size: 16px;
 }
 
 td {
-    color: #333;
+  color: #333;
 }
 
 tr:nth-child(even) {
-    background-color: #d7ebff;
+  background-color: #d7ebff;
 }
 
 tr:nth-child(odd) {
-    background-color: #FFF;
+  background-color: #FFF;
 }
 
 tr:hover {
-    background-color: #EFEFEF;
+  background-color: #EFEFEF;
 }
 
 th,
 td {
-    min-width: 120px;
-    padding: 10px 20px;
+  min-width: 120px;
+  padding: 10px 20px;
 }
 
 th.active {
-    font-weight: bold;
-    color: #ffcc00;
+  font-weight: bold;
+  color: #ffcc00;
 }
 
 th.active .arrow {
-    display: inline-block;
-    opacity: 1;
+  display: inline-block;
+  opacity: 1;
 }
 
 #leetcode-table {
-    margin-top: 40px;
+  margin-top: 40px;
 }
 
 .arrow {
-    display: none;
-    vertical-align: middle;
-    width: 0;
-    height: 0;
-    margin-left: 5px;
+  display: none;
+  vertical-align: middle;
+  width: 0;
+  height: 0;
+  margin-left: 5px;
 }
 
 .arrow.asc {
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-    border-bottom: 4px solid #ffcc00;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid #ffcc00;
 }
 
 .arrow.dsc {
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-    border-top: 4px solid #ffcc00;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #ffcc00;
 }
 
 .search {
-    position: relative;
-    max-width: 280px;
-    margin-bottom: 10px;
+  position: relative;
+  max-width: 280px;
+  margin-bottom: 10px;
 }
 
 .search-input {
-    position: relative;
-    display: inline-block;
-    height: 16px;
-    width: 166px;
-    font-size: 16px;
-    text-align: left;
-    line-height: 1;
-    padding: 8px 24px 8px 8px;
-    background: #FFF;
-    border: 1px solid rgba(34, 36, 38, .15);
-    border-radius: 0 4px 4px 0;
-    box-shadow: none;
-    outline: 0;
-    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-    -webkit-transition: box-shadow .1s ease, border-color .1s ease;
-    transition: box-shadow .1s ease, border-color .1s ease;
+  position: relative;
+  display: inline-block;
+  height: 16px;
+  width: 166px;
+  font-size: 16px;
+  text-align: left;
+  line-height: 1;
+  padding: 8px 24px 8px 8px;
+  background: #FFF;
+  border: 1px solid rgba(34, 36, 38, .15);
+  border-radius: 0 4px 4px 0;
+  box-shadow: none;
+  outline: 0;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-transition: box-shadow .1s ease, border-color .1s ease;
+  transition: box-shadow .1s ease, border-color .1s ease;
 }
 
 .search-input:focus {
-    border-color: #85B7D9;
+  border-color: #85B7D9;
 }
 
 .search-label {
-    width: 47px;
-    height: 14px;
-    display: inline-block;
-    background-color: #E8E8E8;
-    margin-right: -3px;
-    padding: 10px 12px 10px 12px;
-    line-height: 1;
-    vertical-align: top;
-    border-radius: 4px 0 0 4px;
-    color: #444;
-    font-weight: bold;
-    white-space: nowrap;
+  width: 47px;
+  height: 14px;
+  display: inline-block;
+  background-color: #E8E8E8;
+  margin-right: -3px;
+  padding: 10px 12px 10px 12px;
+  line-height: 1;
+  vertical-align: top;
+  border-radius: 4px 0 0 4px;
+  color: #444;
+  font-weight: bold;
+  white-space: nowrap;
 }
 
 .search-icon {
-    cursor: default;
-    width: 37px;
-    height: 34px;
-    opacity: 0.5;
-    -webkit-transition: opacity .3s ease;
-    transition: opacity .3s ease;
-    font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    background: transparent url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
-    position: absolute;
-    top: 0;
-    right: 6px;
-    border-radius: 4px;
+  cursor: default;
+  width: 37px;
+  height: 34px;
+  opacity: 0.5;
+  -webkit-transition: opacity .3s ease;
+  transition: opacity .3s ease;
+  font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  background: transparent url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+  position: absolute;
+  top: 0;
+  right: 6px;
+  border-radius: 4px;
 }
 
 #v-link:hover {
-    border-bottom: 1px solid;
+  border-bottom: 1px solid;
 }
 
 #v-link {
-    cursor: pointer;
+  cursor: pointer;
 }
