@@ -31,16 +31,21 @@ export const isListNode = (node) => {
  *
  */
 export const arrayToLinkedlist = (arr) => {
-    let lastNode, newNode,
+    if (!arr || !arr.length) {
+        return null;
+    }
+
+    let prevNode, newNode,
         arrClone = arr.slice(0); // clone array with array.slice(0)
 
     while (arrClone.length > 0) {
         newNode = new ListNode(arrClone.pop());
 
-        if (lastNode) {
-            newNode.next = lastNode;
+        if (prevNode) {
+            newNode.next = prevNode;
         }
-        lastNode = newNode;
+
+        prevNode = newNode;
     }
 
     return newNode;
