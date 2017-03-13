@@ -35,20 +35,36 @@ export const arrayToLinkedlist = (arr) => {
         return null;
     }
 
-    let prevNode, newNode,
-        arrClone = arr.slice(0); // clone array with array.slice(0)
+    // 1. The desc way, relative more concise.
+    let curNode, newNode;
+    for (let i = arr.length - 1; i >= 0; i--) {
+        newNode = new ListNode(arr[i]);
 
-    while (arrClone.length > 0) {
-        newNode = new ListNode(arrClone.pop());
-
-        if (prevNode) {
-            newNode.next = prevNode;
+        if (curNode) {
+            newNode.next = curNode;
         }
 
-        prevNode = newNode;
+        curNode = newNode;
     }
 
     return newNode;
+
+    /*
+    // 2. The asc way, with a refNode on 1st step.
+    let curNode, newNode, refNode;
+    for (let i = 0; i < arr.length; i++) {
+        newNode = new ListNode(arr[i]);
+
+        if (curNode) {
+            curNode.next = newNode;
+            curNode = curNode.next;
+        } else {
+            refNode = curNode = newNode;
+        }
+    }
+
+    return refNode;
+    */
 };
 
 /**
