@@ -12,11 +12,10 @@
   <link rel="stylesheet" href="css/leetcode-table.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/themes/prism-okaidia.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.1/fetch.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/prism.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/components/prism-javascript.min.js"></script>
-  <script src="https://unpkg.com/vue@2.0.8/dist/vue.min.js"></script>
-  <!-- <script src="https://unpkg.com/vue@2.0.8/dist/vue.js"></script> -->
+  <script src="https://unpkg.com/vue@2.2.4/dist/vue.min.js"></script>
 </head>
 
 <body>
@@ -33,7 +32,7 @@
       <div id="leetcode-table">
         <div class="search">
           <label class="search-label" for="query">Search: </label>
-          <input class="search-input" name="query" v-model="searchQuery">
+          <input class="search-input" name="query" v-model.trim="searchQuery">
           <i class="search-icon"></i>
         </div>
         <v-table :data="tbData" :columns="tbColumns" :filter-key="searchQuery">
