@@ -2,46 +2,58 @@
 [![codecov](https://codecov.io/gh/Williammer/leetcode-js/branch/master/graph/badge.svg)](https://codecov.io/gh/Williammer/leetcode-js)
 
 
-This is my leetcode javaScript solutions(and tests), each solution.js contains my personal analysis and learned lessons.
+This is my leetcode javaScript solutions, each solution contains my personal analysis and learned lessons for the algorithm and data structure problem.
+It's mainly for learning and sharing purpose.
 
 
-# * Solutions
-check out: [http://williammer.github.io/leetcode-js/](http://williammer.github.io/leetcode-js/)
+## * Solutions
+See: [https://williammer.github.io/leetcode-js](https://williammer.github.io/leetcode-js/)
 
 
-# * Usages
+## * Usages
 
-## 1. Install
+### 1. Install Package
 ``` bash
 $ npm install
 ```
 
 
-## 2. Testing (node/browser)
-All problems:
+### 2. Handle solution/spec
+Add:
+``` bash
+$ npm do add <problem number> <problem title>
+```
+Copy:
+``` bash
+$ npm do copy <problem number> <problem title> <to be copied problem number>
+```
+Remove:
+``` bash
+$ npm do rm <problem number>
+```
+
+
+### 3. Testing
+all suites:
 ``` bash
 $ npm test
 ```
 
-One problem:
+one or some suites:
 ``` bash
-$ npm test <problem number>
+$ npm test <"regexForTestFiles">
 ```
 
-## 3. Handle solution/spec
-Add:
+under watch mode:
 ``` bash
-$ npm start add <problem number> <problem title>
-```
-Copy:
-``` bash
-$ npm start copy <problem number> <problem title> <to be copied problem number>
-```
-Remove:
-``` bash
-$ npm start rm <problem number>
+$ npm test:watch
 ```
 
+with codecov report:
+``` bash
+$ npm test:codecov
+```
 
---
-Could also use`yarn` instead of `npm`.
+After each test has run, a new `__testReport.html` file is gonna be generated.
+You can open it in browser to see a clearer version of test report.
+

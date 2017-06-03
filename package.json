@@ -4,9 +4,10 @@
   "description": "my leetcode solutions, focusing on javaScript implementations.",
   "main": "*/solution.js",
   "scripts": {
-    "start": "node --harmony task/problemManager.js",
-    "test": "jest --verbose --coverage && codecov -t 009a0b3d-f46f-4bab-9bc7-e3bb0b72ae5e",
-    "test:watch": "jest --verbose --watch"
+    "do": "node --harmony task/problemManager.js",
+    "test": "jest",
+    "test:watch": "jest --verbose --watch",
+    "test:codecov": "jest --verbose --coverage && codecov -t 009a0b3d-f46f-4bab-9bc7-e3bb0b72ae5e"
   },
   "repository": {
     "type": "git",
