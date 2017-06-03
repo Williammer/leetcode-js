@@ -21,15 +21,15 @@ $ npm install
 ### 2. Handle solution/spec
 Add:
 ``` bash
-$ npm do add <problem number> <problem title>
+$ npm start add <problem number> <problem title>
 ```
 Copy:
 ``` bash
-$ npm do copy <problem number> <problem title> <to be copied problem number>
+$ npm start copy <problem number> <problem title> <to be copied problem number>
 ```
 Remove:
 ``` bash
-$ npm do rm <problem number>
+$ npm start rm <problem number>
 ```
 
 
