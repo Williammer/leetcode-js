@@ -22,18 +22,11 @@ All problems:
 ``` bash
 $ npm test
 ```
-``` bash
-$ npm test <'browser'>
-```
 
 One problem:
 ``` bash
 $ npm test <problem number>
 ```
-``` bash
-$ npm test <problem number> <'browser'>
-```
-
 
 ## 3. Handle solution/spec
 Add:
@@ -48,6 +41,7 @@ Remove:
 ``` bash
 $ npm start rm <problem number>
 ```
+
 
 --
 Could also use`yarn` instead of `npm`.
