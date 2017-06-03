@@ -46,12 +46,12 @@ $ npm test <"regexForTestFiles">
 
 under watch mode:
 ``` bash
-$ npm test:watch
+$ npm run test:watch
 ```
 
 with codecov report:
 ``` bash
-$ npm test:codecov
+$ npm run test:codecov
 ```
 
 After each test has run, a new `__testReport.html` file is gonna be generated.
