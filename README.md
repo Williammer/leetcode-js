@@ -8,11 +8,11 @@ This is my leetcode javaScript solutions, each solution contains my personal ana
 It's mainly for learning and sharing purpose.
 
 
-## * Solutions
+## Solutions
 See: [https://williammer.github.io/leetcode-js](https://williammer.github.io/leetcode-js/)
 
 
-## * Usages
+## Usages
 
 ### 1. Install Package
 ``` bash
