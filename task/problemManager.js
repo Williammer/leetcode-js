@@ -116,9 +116,9 @@ if (action == "rm") {
     return;
   }
 
-  const solutionSrcPath = `./src/tmpl`;
+  const solutionSrcPath = `./src/template`;
   const solutionDstPath = `./src/${num}.${title}`;
-  const specSrcPath = `./test/spec/tmpl.js`;
+  const specSrcPath = `./test/spec/template.js`;
   const specDstPath = `./test/spec/${num}.${title}.spec.js`;
 
   const createNewProblem = (srcPath, dstPath) => {

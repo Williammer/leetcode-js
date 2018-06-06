@@ -16,8 +16,6 @@
 ************************************************************************************************************************/
 
 
-export const $$_title = {};
-
 /**
  * Solution 1: 
  *
@@ -25,7 +23,7 @@ export const $$_title = {};
  * Time complexity: O()
  * Space complexity: O()
  */
-$$_title.fn = () => {
+export function normal() {
 
 
 	return;
