@@ -43,7 +43,7 @@ validAnagram.hash = (s, t) => {
     }
 
     if (typeof _hash[t[i]] === "number") {
-      _hash[t[i]]--;
+      _hash[t[i]] -= 1;
     } else {
       _hash[t[i]] = -1;
     }
@@ -116,7 +116,7 @@ validAnagram.alphaTable = (s, t) => {
     if (typeof alphaTable[t[i].charCodeAt(0) - baseCode] !== "number") {
       alphaTable[t[i].charCodeAt(0) - baseCode] = -1;
     } else {
-      alphaTable[t[i].charCodeAt(0) - baseCode]--;
+      alphaTable[t[i].charCodeAt(0) - baseCode] -= 1;
     }
   }
 
