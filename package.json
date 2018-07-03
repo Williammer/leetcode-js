@@ -5,7 +5,7 @@
   "main": "*/solution.js",
   "scripts": {
     "bench": "node --harmony test/spec/1.twoSum.spec.js",
-    "do": "node --harmony task/problemManager.js",
+    "do": "node --harmony cli.js",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:codecov": "jest --coverage && codecov -t 009a0b3d-f46f-4bab-9bc7-e3bb0b72ae5e"
@@ -34,7 +34,7 @@
     "jest-html-reporter": "^2.4.1"
   },
   "jest-html-reporter": {
-    "pageTitle": "Leetcode-js test suite",
+    "pageTitle": "leetcode-js test suite",
     "outputPath": "__testReport__.html",
     "includeFailureMsg": true
   }

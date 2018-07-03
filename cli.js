@@ -1,10 +1,7 @@
-const fs = require("fs-extra"),
-  action = process.argv[2],
-  num = process.argv[3],
-  title = process.argv[4],
-  copyNum = process.argv[5];
+const fs = require("fs-extra");
+const [, , action, num, title, copyNum] = process.argv;
 
-// Check required arguments
+// check required arguments
 if (!action || Number(action) > 0) {
   throw `Invalid action provided, please use 'add', 'copy' or 'rm'.`;
   return;
@@ -13,25 +10,30 @@ if (!action || Number(action) > 0) {
   return;
 }
 
+const mapActionToHandler = {
+  rm: remove.bind(null, num),
+  cp: copy.bind(null, num, title, copyNum),
+  add: add.bind(null, num, title),
+};
 
-// public helper functions
+// helper functions
 function getTitleByNum(num) {
-  let targetFilename = fs.readdirSync(`./src/`).filter(file => {
-    return file.indexOf(`${num}.`) === 0;
-  });
+  const targetFilename = fs
+    .readdirSync("./src/")
+    .filter(file => file.indexOf(`${num}.`) === 0);
 
   if (!targetFilename) {
     console.warn(`[readdir] can't find target file to remove.`);
-    return '';
+    return "";
   } else {
-    return targetFilename[0].split('.')[1];
+    return targetFilename[0].split(".")[1];
   }
 }
 
 function getFilePathByNum(path, num) {
-  let targetFilename = fs.readdirSync(path).filter(file => {
-    return file.indexOf(`${num}.`) === 0;
-  });
+  const targetFilename = fs
+    .readdirSync(path)
+    .filter(file => file.indexOf(`${num}.`) === 0);
 
   if (!targetFilename || !(targetFilename.length > 0)) {
     console.warn(`[readdir] can't find target file to remove.`);
@@ -41,17 +43,17 @@ function getFilePathByNum(path, num) {
   }
 }
 
-
-// [action] - rm
-if (action == "rm") {
-  const removeProblem = (dstPath) => {
-    fs.remove(dstPath, function(err) {
+// action handlers
+function remove(num) {
+  const removeProblem = dstPath => {
+    fs.remove(dstPath, err => {
       if (err) {
-        return console.error(err);
+        console.error(err);
+        return;
       }
 
-      console.log(`remove '${dstPath}'' success!`)
-    })
+      console.log(`remove '${dstPath}'' success!`);
+    });
   };
 
   const specDstPath = getFilePathByNum(`./test/spec/`, num);
@@ -64,9 +66,9 @@ if (action == "rm") {
     console.warn(`Wrong solutionDstPath, specDstPath.`);
     return;
   }
+}
 
-  // [action] - copy
-} else if (action == "copy") {
+function copy(num, title, copyNum) {
   if (!copyNum || !(Number(copyNum) > 0)) {
     throw `Invalid copyNum provided.`;
     return;
@@ -79,7 +81,7 @@ if (action == "rm") {
   const copyTitle = getTitleByNum(copyNum);
 
   const copyProblemFrom = (srcPath, dstPath) => {
-    fs.copy(srcPath, dstPath, (err) => {
+    fs.copy(srcPath, dstPath, err => {
       if (err) throw err;
 
       console.log(`${dstPath} - renamed copy complete.`);
@@ -94,11 +96,12 @@ if (action == "rm") {
         if (err) throw err;
 
         const titleRegExp = new RegExp(copyTitle, "g");
-        let updatedData = data.replace(titleRegExp, title)
+        let updatedData = data
+          .replace(titleRegExp, title)
           .replace(`Problem ${copyNum}`, `Problem ${num}`)
           .replace(`${copyNum}.`, `${num}.`);
 
-        fs.writeFile(filePath, updatedData, (err) => {
+        fs.writeFile(filePath, updatedData, err => {
           if (err) throw err;
           console.log(`updated ${filePath}`);
         });
@@ -108,9 +111,9 @@ if (action == "rm") {
 
   copyProblemFrom(solutionSrcPath, solutionDstPath); // create solution file
   copyProblemFrom(specSrcPath, specDstPath); // create spec file
+}
 
-  // [action] - add
-} else if (action == "add") {
+function add(num, title) {
   if (!title || Number(title) > 0) {
     throw `Invalid title provided, use proper char string as title.`;
     return;
@@ -122,7 +125,7 @@ if (action == "rm") {
   const specDstPath = `./test/spec/${num}.${title}.spec.js`;
 
   const createNewProblem = (srcPath, dstPath) => {
-    fs.copy(srcPath, dstPath, (err) => {
+    fs.copy(srcPath, dstPath, err => {
       if (err) throw err;
 
       let filePath = dstPath;
@@ -136,9 +139,11 @@ if (action == "rm") {
       fs.readFile(filePath, "utf8", (err, data) => {
         if (err) throw err;
 
-        let updatedData = data.replace(/\$\$\_title/g, title).replace(/\$\$\_num/g, num);
+        let updatedData = data
+          .replace(/\$\$\_title/g, title)
+          .replace(/\$\$\_num/g, num);
 
-        fs.writeFile(filePath, updatedData, (err) => {
+        fs.writeFile(filePath, updatedData, err => {
           if (err) throw err;
           console.log(`updated ${filePath}`);
         });
@@ -148,8 +153,12 @@ if (action == "rm") {
 
   createNewProblem(solutionSrcPath, solutionDstPath); // create solution file
   createNewProblem(specSrcPath, specDstPath); // create spec file
+}
 
-} else {
+const handler = mapActionToHandler[action];
+if (typeof handler !== "function") {
   throw `unknown action, please use 'add', 'copy' or 'rm'.`;
   return;
 }
+
+handler();
