@@ -38,16 +38,13 @@ bTreePostOrderTraversal.dfs = bTreePostOrderTraversalFn;
  * Space complexity: O(N)
  */
 bTreePostOrderTraversal.iterative = (root) => {
-  const isNode = node => (node instanceof TreeNode) && node.val !== null;
+  const isNode = node => node instanceof TreeNode && node.val !== null;
 
   const result = [];
 
-
   const _stack = [];
 
-
   let curNode = root;
-
 
   let newNode;
 
@@ -65,7 +62,6 @@ bTreePostOrderTraversal.iterative = (root) => {
 
   return result;
 };
-
 
 /**
  * Lessons:

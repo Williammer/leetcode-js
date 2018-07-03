@@ -36,7 +36,6 @@ serializeBT.deserialize = (data) => {
   return arrayToBinaryTree(inputArray);
 };
 
-
 /**
  * Lessons:
    1. Compression is about converting the form of the data (structure), which is deep.

@@ -47,7 +47,7 @@ invertBTree.bfs = invertBTreeFn;
  *  And because h ∈ O(n), the space complexity is O(n).
  */
 invertBTree.recursion = (root) => {
-  const isNode = node => (node instanceof TreeNode) && node.val !== null;
+  const isNode = node => node instanceof TreeNode && node.val !== null;
 
   if (!isNode(root)) {
     return [];
@@ -69,7 +69,6 @@ invertBTree.recursion = (root) => {
 
   return root;
 };
-
 
 /**
  * Lessons:

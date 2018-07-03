@@ -15,7 +15,6 @@
 
  */
 
-
 export const reverseInt = {};
 
 /**
@@ -30,14 +29,12 @@ reverseInt.fn = (x) => {
 
   let result = 0;
 
-
-  const sign = (x >= 0) ? 1 : -1;
-
+  const sign = x >= 0 ? 1 : -1;
 
   let absX = Math.abs(x);
 
   while (absX > 0) {
-    result = (absX % 10) + (result * 10); // (absX % 10) is the digits of this pos starting from last one.
+    result = (absX % 10) + result * 10; // (absX % 10) is the digits of this pos starting from last one.
     absX = Math.floor(absX / 10);
 
     if (result > MAX_INT_32) {
@@ -47,7 +44,6 @@ reverseInt.fn = (x) => {
 
   return sign * result;
 };
-
 
 /**
  * Lessons:

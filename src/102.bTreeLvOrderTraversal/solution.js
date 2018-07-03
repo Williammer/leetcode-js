@@ -24,7 +24,6 @@
 
  */
 
-
 import { TreeNode, bTreeLvOrderTraversalFn } from "../_.util/binaryTree";
 
 export const bTreeLvOrderTraversal = {};
@@ -46,7 +45,7 @@ bTreeLvOrderTraversal.bfs = bTreeLvOrderTraversalFn;
  * Space complexity: O(N)
  */
 bTreeLvOrderTraversal.dfs = (root) => {
-  const isNode = node => (node instanceof TreeNode) && node.val !== null;
+  const isNode = node => node instanceof TreeNode && node.val !== null;
 
   if (!isNode(root)) {
     return [];
@@ -74,7 +73,6 @@ bTreeLvOrderTraversal.dfs = (root) => {
 
   return result;
 };
-
 
 /**
  * Lessons:

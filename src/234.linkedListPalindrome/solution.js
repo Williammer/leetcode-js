@@ -15,7 +15,6 @@
 
  */
 
-
 import { ListNode, cloneLinkedlist, reverseLinkedListFn } from "../_.util/linkedList";
 
 export const linkedListPalindrome = {};
@@ -33,7 +32,6 @@ linkedListPalindrome.reverseAll = (head) => {
   }
 
   const cloneHead = cloneLinkedlist(head);
-
 
   let reversedHead = reverseLinkedListFn(cloneHead);
 
@@ -63,9 +61,7 @@ linkedListPalindrome.reverseHalf = (head) => {
 
   let fast = head;
 
-
   let slow = head;
-
 
   let reverse;
 
@@ -91,7 +87,6 @@ linkedListPalindrome.reverseHalf = (head) => {
   }
   return true;
 };
-
 
 /**
  * Lessons:

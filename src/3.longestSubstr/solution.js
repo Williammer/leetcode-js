@@ -15,7 +15,6 @@
 
  */
 
-
 export const longestSubstr = {};
 
 /**
@@ -33,21 +32,18 @@ longestSubstr.slideWin = (s) => {
   const strLen = s.length;
   let idx = 0;
 
-
   let curLen = 1;
 
-
   let maxLen = 1;
-
 
   let isRepeat = false;
 
   while (idx < strLen - 1 && maxLen < strLen - idx) {
     if (curLen === 1) {
-      isRepeat = (s[idx] === s[idx + 1]);
+      isRepeat = s[idx] === s[idx + 1];
     } else {
       // isRepeat = s.substring(idx, idx+curLen).lastIndexOf(s[idx + curLen]) > -1;
-      isRepeat = (s.substring(idx, idx + curLen)).includes(s[idx + curLen]); // ES6 str.includes(), similar perf as indexOf/lastIndexOf
+      isRepeat = s.substring(idx, idx + curLen).includes(s[idx + curLen]); // ES6 str.includes(), similar perf as indexOf/lastIndexOf
     }
 
     if (isRepeat) {
@@ -72,8 +68,10 @@ longestSubstr.slideWin = (s) => {
  * Space complexity: O(1)
  */
 longestSubstr.slideWinEnhanced = (s) => {
-  let maxLen; let left; let right; let
-    i;
+  let maxLen;
+  let left;
+  let right;
+  let i;
 
   if (s.length < 2) {
     return s.length;
@@ -83,14 +81,14 @@ longestSubstr.slideWinEnhanced = (s) => {
 
   for (left = 0, right = 1; right < s.length; right += 1) {
     i = s.lastIndexOf(s[right], right - 1);
-    if (i >= 0) { // has repeated
+    if (i >= 0) {
+      // has repeated
       maxLen = Math.max(maxLen, right - left);
       left = Math.max(left, i + 1);
     }
   }
   return Math.max(maxLen, right - left);
 };
-
 
 /**
  * Solution 3: slide window with hash
@@ -100,14 +98,17 @@ longestSubstr.slideWinEnhanced = (s) => {
  * Space complexity: O(N)
  */
 longestSubstr.hash = (s) => {
-  const res = {}; let i; let left = 0; let
-    maxLen = 0;
+  const res = {};
+  let i;
+  let left = 0;
+  let maxLen = 0;
 
   for (i = 0; i < s.length; i += 1) {
     if (res[s[i]] === undefined) {
       res[s[i]] = i; // {char : idx} pair
     } else {
-      if (res[s[i]] >= left) { // repeated in current sub str
+      if (res[s[i]] >= left) {
+        // repeated in current sub str
         maxLen = Math.max(maxLen, i - left);
         left = res[s[i]] + 1; // start from repeated char's next char
       }
@@ -125,8 +126,8 @@ longestSubstr.hash = (s) => {
  * Space complexity: O(N)
  */
 longestSubstr.hashReduce = (s) => {
-  const map = {}; let
-    left = 0;
+  const map = {};
+  let left = 0;
 
   return s.split("").reduce((max, v, i) => {
     left = map[v] >= left ? map[v] + 1 : left;
@@ -134,7 +135,6 @@ longestSubstr.hashReduce = (s) => {
     return Math.max(max, i - left + 1);
   }, 0);
 };
-
 
 /**
  * Lessons:

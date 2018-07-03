@@ -24,17 +24,15 @@ export const sameTree = {};
  * Space complexity: O(2N)
  */
 sameTree.toArray = (p, q) => {
-  const isNode = node => (node instanceof TreeNode) && node.val !== null;
+  const isNode = node => node instanceof TreeNode && node.val !== null;
 
   if (!isNode(p) || !isNode(q)) {
-    return !!((!isNode(p) && !isNode(q)));
+    return !!(!isNode(p) && !isNode(q));
   }
 
   const pArr = binaryTreeToArray(p);
 
-
   const qArr = binaryTreeToArray(q);
-
 
   let isSameTree = true;
 
@@ -56,7 +54,6 @@ sameTree.toArray = (p, q) => {
   return isSameTree;
 };
 
-
 /**
  * Solution 2: recursively compare nodes of same pos for both trees (aka dfs)
  *
@@ -65,7 +62,6 @@ sameTree.toArray = (p, q) => {
  * Space complexity: O(N)
  */
 sameTree.recursion = sameTreeFn;
-
 
 /**
  * Lessons:

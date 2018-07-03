@@ -16,7 +16,6 @@
 
  */
 
-
 export const validAnagram = {};
 
 /**
@@ -33,9 +32,7 @@ validAnagram.hash = (s, t) => {
 
   const len = s.length;
 
-
   const _hash = {};
-
 
   let i = 0;
   while (i < len) {
@@ -77,7 +74,6 @@ validAnagram.sort = (s, t) => {
 
   const sortStr = str => str.split("").sort();
 
-
   const compareArr = (arr, arr2) => {
     if (arr.length !== arr2.length) {
       return false;
@@ -107,26 +103,25 @@ validAnagram.alphaTable = (s, t) => {
     return false;
   }
 
-  const alphaTable = []; const
-    baseCode = 97;
+  const alphaTable = [];
+  const baseCode = 97;
 
   for (let i = s.length - 1; i >= 0; i--) {
-    	if (typeof alphaTable[s[i].charCodeAt(0) - baseCode] !== "number") {
-    		alphaTable[s[i].charCodeAt(0) - baseCode] = 1;
-    	} else {
-    		alphaTable[s[i].charCodeAt(0) - baseCode] += 1;
-    	}
+    if (typeof alphaTable[s[i].charCodeAt(0) - baseCode] !== "number") {
+      alphaTable[s[i].charCodeAt(0) - baseCode] = 1;
+    } else {
+      alphaTable[s[i].charCodeAt(0) - baseCode] += 1;
+    }
 
-    	if (typeof alphaTable[t[i].charCodeAt(0) - baseCode] !== "number") {
-    		alphaTable[t[i].charCodeAt(0) - baseCode] = -1;
-    	} else {
-    		alphaTable[t[i].charCodeAt(0) - baseCode]--;
-    	}
+    if (typeof alphaTable[t[i].charCodeAt(0) - baseCode] !== "number") {
+      alphaTable[t[i].charCodeAt(0) - baseCode] = -1;
+    } else {
+      alphaTable[t[i].charCodeAt(0) - baseCode]--;
+    }
   }
 
-  return alphaTable.every(val => !(val));
+  return alphaTable.every(val => !val);
 };
-
 
 /**
  * Lessons:

@@ -14,14 +14,14 @@
 
  */
 
-
 export const twoIntSum = {};
 
 twoIntSum.recursion = (a, b) => {
   if (typeof a !== "number" || typeof b !== "number") {
     if (typeof a !== "number" && typeof b !== "number") {
       return 0;
-    } if (typeof b === "number") {
+    }
+    if (typeof b === "number") {
       return b;
     }
     return a;
@@ -41,14 +41,15 @@ twoIntSum.iterate = (a, b) => {
   if (typeof a !== "number" || typeof b !== "number") {
     if (typeof a !== "number" && typeof b !== "number") {
       return 0;
-    } if (typeof b === "number") {
+    }
+    if (typeof b === "number") {
       return b;
     }
     return a;
   }
 
-  let result; let
-    tmpA;
+  let result;
+  let tmpA;
   while ((a & b) !== 0) {
     tmpA = a ^ b;
     b = (a & b) << 1;
@@ -59,7 +60,6 @@ twoIntSum.iterate = (a, b) => {
 
   return result;
 };
-
 
 /** *********
 
@@ -74,7 +74,8 @@ twoIntSubstract.recursion = (a, b) => {
   if (typeof a !== "number" || typeof b !== "number") {
     if (typeof a !== "number" && typeof b !== "number") {
       return 0;
-    } if (typeof b === "number") {
+    }
+    if (typeof b === "number") {
       return b;
     }
     return a;
@@ -84,7 +85,7 @@ twoIntSubstract.recursion = (a, b) => {
   if (b == 0) {
     result = a;
   } else {
-    result = twoIntSubstract.recursion(a ^ b, ((~a) & b) << 1);
+    result = twoIntSubstract.recursion(a ^ b, (~a & b) << 1);
   }
 
   return result;
@@ -94,17 +95,18 @@ twoIntSubstract.iterate = (a, b) => {
   if (typeof a !== "number" || typeof b !== "number") {
     if (typeof a !== "number" && typeof b !== "number") {
       return 0;
-    } if (typeof b === "number") {
+    }
+    if (typeof b === "number") {
       return b;
     }
     return a;
   }
 
-  let result; let
-    tmpA;
-  while (((~a) & b) !== 0) {
+  let result;
+  let tmpA;
+  while ((~a & b) !== 0) {
     tmpA = a ^ b;
-    b = ((~a) & b) << 1;
+    b = (~a & b) << 1;
     a = tmpA;
   }
 
@@ -112,7 +114,6 @@ twoIntSubstract.iterate = (a, b) => {
 
   return result;
 };
-
 
 /**
  * Lessons:

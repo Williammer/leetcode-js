@@ -34,9 +34,7 @@ oddEvenLinkedlist.iterate = (head) => {
 
   const result = head;
 
-
   const evenList = result.next;
-
 
   let evenHead = evenList;
 
@@ -52,7 +50,6 @@ oddEvenLinkedlist.iterate = (head) => {
 
   return result;
 };
-
 
 /**
  * Lessons:

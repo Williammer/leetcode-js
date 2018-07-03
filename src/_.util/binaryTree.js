@@ -31,15 +31,12 @@ export const arrayToBinaryTree = (valArray) => {
 
   const rootNode = new TreeNode(valArray[0]);
 
-
   let arrAnchorIndex = 1;
-
 
   const parentNodes = [rootNode];
 
   while (parentNodes.length > 0 && arrAnchorIndex < valArray.length) {
     let parentNodesIndex = 0;
-
 
     const curDepthLength = parentNodes.length;
 
@@ -47,12 +44,10 @@ export const arrayToBinaryTree = (valArray) => {
     while (parentNodesIndex < curDepthLength) {
       const curParentNode = parentNodes.shift();
 
-
       let childNodesIndex = 0;
 
       while (childNodesIndex < 2) {
         const val = valArray[arrAnchorIndex];
-
 
         let curNode = null;
 
@@ -98,7 +93,7 @@ export const arrayToBinaryTree = (valArray) => {
  *
  */
 export const binaryTreeToArray = (root) => {
-  const isNode = node => (node instanceof TreeNode) && node.val !== null;
+  const isNode = node => node instanceof TreeNode && node.val !== null;
 
   if (!isNode(root)) {
     return [];
@@ -106,15 +101,12 @@ export const binaryTreeToArray = (root) => {
 
   const _queue = [root];
 
-
   let bTreeArray = [root.val];
-
 
   let nullChainCount = 0;
 
   while (_queue.length > 0) {
     const curDepthLength = _queue.length;
-
 
     const curNode = _queue.shift();
 
@@ -160,7 +152,7 @@ export const binaryTreeToArray = (root) => {
  *
  */
 export const binaryTreeToString = (root) => {
-  const isNode = node => (node instanceof TreeNode) && node.val !== null;
+  const isNode = node => node instanceof TreeNode && node.val !== null;
 
   if (!isNode(root)) {
     return "";
@@ -168,15 +160,12 @@ export const binaryTreeToString = (root) => {
 
   const _queue = [root];
 
-
   let bTreeStr = `${root.val}`;
-
 
   let nullChainCount = 0;
 
   while (_queue.length > 0) {
     const curDepthLength = _queue.length;
-
 
     const curNode = _queue.shift();
 
@@ -222,12 +211,12 @@ export const binaryTreeToString = (root) => {
  *
  */
 export const sameTreeFn = (p, q) => {
-  const isNode = node => (node instanceof TreeNode) && node.val !== null;
+  const isNode = node => node instanceof TreeNode && node.val !== null;
 
   if (isNode(p) && isNode(q)) {
-    return p.val === q.val ? (sameTreeFn(p.left, q.left) && sameTreeFn(p.right, q.right)) : false;
+    return p.val === q.val ? sameTreeFn(p.left, q.left) && sameTreeFn(p.right, q.right) : false;
   }
-  return !!((!isNode(p) && !isNode(q)));
+  return !!(!isNode(p) && !isNode(q));
 };
 
 /**
@@ -244,14 +233,13 @@ export const sameTreeFn = (p, q) => {
  *
  */
 export const bTreeLvOrderTraversalFn = (root) => {
-  const isNode = node => (node instanceof TreeNode) && node.val !== null;
+  const isNode = node => node instanceof TreeNode && node.val !== null;
 
   if (!isNode(root)) {
     return [];
   }
 
   const result = [];
-
 
   const _queue = [];
 
@@ -260,9 +248,7 @@ export const bTreeLvOrderTraversalFn = (root) => {
   while (_queue.length > 0) {
     let i = 0;
 
-
     const lengthThisDepth = _queue.length;
-
 
     const arrayThisDepth = [];
 
@@ -300,11 +286,9 @@ export const bTreeLvOrderTraversalFn = (root) => {
  *
  */
 export const bTreePreOrderTraversalFn = (root) => {
-  const isNode = node => (node instanceof TreeNode) && node.val !== null;
-
+  const isNode = node => node instanceof TreeNode && node.val !== null;
 
   const result = [];
-
 
   const dfsVal = (node) => {
     if (isNode(node)) {
@@ -338,11 +322,9 @@ export const bTreePreOrderTraversalFn = (root) => {
  *
  */
 export const bTreePostOrderTraversalFn = (root) => {
-  const isNode = node => (node instanceof TreeNode) && node.val !== null;
-
+  const isNode = node => node instanceof TreeNode && node.val !== null;
 
   const result = [];
-
 
   const dfsVal = (node) => {
     if (isNode(node)) {
@@ -376,11 +358,9 @@ export const bTreePostOrderTraversalFn = (root) => {
  *
  */
 export const bTreeInOrderTraversalFn = (root) => {
-  const isNode = node => (node instanceof TreeNode) && node.val !== null;
-
+  const isNode = node => node instanceof TreeNode && node.val !== null;
 
   const result = [];
-
 
   const dfsVal = (node) => {
     if (isNode(node)) {
@@ -415,7 +395,7 @@ export const bTreeInOrderTraversalFn = (root) => {
  *
  */
 export const bTreeMaxDepthFn = (root) => {
-  const isNode = node => (node instanceof TreeNode) && node.val !== null;
+  const isNode = node => node instanceof TreeNode && node.val !== null;
 
   if (!isNode(root)) {
     return 0;
@@ -438,14 +418,13 @@ export const bTreeMaxDepthFn = (root) => {
  *
  */
 export const bTreeMinDepthFn = (root) => {
-  const isNode = node => (node instanceof TreeNode) && node.val !== null;
+  const isNode = node => node instanceof TreeNode && node.val !== null;
 
   if (!isNode(root)) {
     return 0;
   }
 
   const _queue = [root];
-
 
   let minDepth = 1;
 
@@ -465,7 +444,6 @@ export const bTreeMinDepthFn = (root) => {
       if (isNode(curNode.right)) {
         _queue.push(curNode.right);
       }
-
 
       i += 1;
 
@@ -493,7 +471,7 @@ export const bTreeMinDepthFn = (root) => {
  *
  */
 export const invertBTreeFn = (root) => {
-  const isNode = node => (node instanceof TreeNode) && node.val !== null;
+  const isNode = node => node instanceof TreeNode && node.val !== null;
 
   if (!isNode(root)) {
     return [];
@@ -503,7 +481,6 @@ export const invertBTreeFn = (root) => {
 
   while (_queue.length > 0) {
     const curNode = _queue.shift();
-
 
     let tmp;
 
@@ -539,7 +516,6 @@ export const invertBTreeFn = (root) => {
 export const sortedArrayToBSTFn = (nums) => {
   const createNode = val => (typeof val === "number" ? new TreeNode(val) : null);
 
-
   const splitArray = (array) => {
     if (!(array && array.length > 0)) {
       return null;
@@ -547,15 +523,11 @@ export const sortedArrayToBSTFn = (nums) => {
 
     const arrLen = array.length;
 
-
     const lastIdx = arrLen - 1;
-
 
     const midIdx = Math.floor(lastIdx / 2);
 
-
     const leftArr = arrLen > 2 ? array.slice(0, midIdx) : null;
-
 
     const rightArr = arrLen > 1 ? array.slice(midIdx + 1, lastIdx + 1) : null;
 

@@ -14,7 +14,6 @@
 
  */
 
-
 export const strPalindrome = {};
 
 /**
@@ -28,8 +27,7 @@ strPalindrome.twoPointers = (s) => {
   const isAlphaNumeric = (s) => {
     const code = s.charCodeAt();
 
-    return (code >= 48 && code <= 57)
-            || (code >= 97 && code <= 122);
+    return (code >= 48 && code <= 57) || (code >= 97 && code <= 122);
   };
 
   if (typeof s !== "string") {
@@ -43,7 +41,6 @@ strPalindrome.twoPointers = (s) => {
   s = s.toLowerCase();
 
   let pHead = 0;
-
 
   let pTail = s.length - 1;
 
@@ -77,22 +74,20 @@ strPalindrome.twoPointersInsens = (s) => {
   const isAlphaNumeric = (s) => {
     const code = s.charCodeAt();
 
-    return (code >= 48 && code <= 57)
-                || (code >= 65 && code <= 90)
-                || (code >= 97 && code <= 122);
+    return (code >= 48 && code <= 57) || (code >= 65 && code <= 90) || (code >= 97 && code <= 122);
   };
-
 
   const insensitiveCompare = (a, b) => {
     const codeA = a.charCodeAt();
 
-
     const codeB = b.charCodeAt();
 
-    return (a === b
-                || (codeA >= 65 && codeA <= 90 || codeA >= 97 && codeA <= 122)
-                && (codeB >= 65 && codeB <= 90 || codeB >= 97 && codeB <= 122)
-                && Math.abs(codeA - codeB) === 32);
+    return (
+      a === b
+      || (((codeA >= 65 && codeA <= 90) || (codeA >= 97 && codeA <= 122))
+        && ((codeB >= 65 && codeB <= 90) || (codeB >= 97 && codeB <= 122))
+        && Math.abs(codeA - codeB) === 32)
+    );
   };
 
   if (typeof s !== "string") {
@@ -104,7 +99,6 @@ strPalindrome.twoPointersInsens = (s) => {
   }
 
   let pHead = 0;
-
 
   let pTail = s.length - 1;
 
@@ -126,7 +120,6 @@ strPalindrome.twoPointersInsens = (s) => {
 
   return true;
 };
-
 
 /**
  * Lessons:

@@ -13,7 +13,6 @@
 
  */
 
-
 /**
  * Solution 1:
  *
@@ -21,11 +20,7 @@
  * Time complexity: O()
  * Space complexity: O()
  */
-export function normal() {
-
-
-}
-
+export function normal() {}
 
 /**
  * Lessons:

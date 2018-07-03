@@ -24,7 +24,6 @@
 
  */
 
-
 import { TreeNode, bTreeMaxDepthFn } from "../_.util/binaryTree";
 
 export const bTreeMaxDepth = {};
@@ -37,14 +36,13 @@ export const bTreeMaxDepth = {};
  * Space complexity: O(N)
  */
 bTreeMaxDepth.dfsFat = (root) => {
-  const isNode = node => (node instanceof TreeNode) && node.val !== null;
+  const isNode = node => node instanceof TreeNode && node.val !== null;
 
   if (!isNode(root)) {
     return 0;
   }
 
   const nodeDepths = new WeakMap();
-
 
   let maxDepth = 1;
 
@@ -89,7 +87,7 @@ bTreeMaxDepth.dfs = bTreeMaxDepthFn;
  * Space complexity: O(N)
  */
 bTreeMaxDepth.bfs = (root) => {
-  const isNode = node => (node instanceof TreeNode) && node.val !== null;
+  const isNode = node => node instanceof TreeNode && node.val !== null;
 
   if (!isNode(root)) {
     return 0;
@@ -97,14 +95,12 @@ bTreeMaxDepth.bfs = (root) => {
 
   const _queue = [];
 
-
   let maxDepth = 0;
 
   _queue.push(root);
 
   while (_queue.length > 0) {
     let i = 0;
-
 
     const lenThisDepth = _queue.length;
 
@@ -127,7 +123,6 @@ bTreeMaxDepth.bfs = (root) => {
 
   return maxDepth;
 };
-
 
 /**
  * Lessons:

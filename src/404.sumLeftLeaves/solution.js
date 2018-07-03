@@ -18,11 +18,9 @@ There are two left leaves in the binary tree, with values 9 and 15 respectively.
 
  */
 
-
 import { TreeNode } from "../_.util/binaryTree";
 
 export const sumLeftLeaves = {};
-
 
 /**
  * Solution 1: Use dfs traveral to find and sum
@@ -32,8 +30,7 @@ export const sumLeftLeaves = {};
  * Space complexity: O(N)
  */
 sumLeftLeaves.dfs = (root) => {
-  const isNode = node => (node instanceof TreeNode) && node.val !== null;
-
+  const isNode = node => node instanceof TreeNode && node.val !== null;
 
   const isLeaf = node => isNode(node) && !isNode(node.left) && !isNode(node.right);
 
@@ -69,8 +66,7 @@ sumLeftLeaves.dfs = (root) => {
  * Space complexity: O(N)
  */
 sumLeftLeaves.bfs = (root) => {
-  const isNode = node => (node instanceof TreeNode) && node.val !== null;
-
+  const isNode = node => node instanceof TreeNode && node.val !== null;
 
   const isLeaf = node => isNode(node) && !isNode(node.left) && !isNode(node.right);
 
@@ -79,7 +75,6 @@ sumLeftLeaves.bfs = (root) => {
   }
 
   const _queue = [root];
-
 
   let sum = 0;
 
@@ -101,7 +96,6 @@ sumLeftLeaves.bfs = (root) => {
 
   return sum;
 };
-
 
 /**
  * Lessons:

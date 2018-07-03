@@ -14,7 +14,6 @@
 
  */
 
-
 import { ListNode, reverseLinkedListFn } from "../_.util/linkedList";
 
 export const reverseLinkedList = {};
@@ -27,7 +26,6 @@ export const reverseLinkedList = {};
  * Space complexity: O(1)
  */
 reverseLinkedList.iterate = reverseLinkedListFn;
-
 
 /**
  * Solution 2: Recursion.
@@ -49,7 +47,6 @@ reverseLinkedList.recursion = (head) => {
 
   return reverse(head, null);
 };
-
 
 /**
  * Lessons:

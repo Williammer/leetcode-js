@@ -14,7 +14,6 @@
 
  */
 
-
 export const atoi = {};
 
 atoi.traverse = (str) => {
@@ -23,8 +22,9 @@ atoi.traverse = (str) => {
   }
 
   const MAX_INT_32 = Math.pow(2, 31) - 1;
-  let i; let curChar; let curCharCode;
-
+  let i;
+  let curChar;
+  let curCharCode;
 
   let result = 0;
 
@@ -36,7 +36,8 @@ atoi.traverse = (str) => {
       // has nothing yet
       if (curChar === "-") {
         result = curChar;
-      } else if (curCharCode > 48 && curCharCode <= 57) { // skip 0 as 1st digit
+      } else if (curCharCode > 48 && curCharCode <= 57) {
+        // skip 0 as 1st digit
         result = curChar * 1;
       }
     } else {
@@ -44,12 +45,13 @@ atoi.traverse = (str) => {
       if (typeof result === "number") {
         if (curCharCode >= 48 && curCharCode <= 57) {
           // add num to result
-          result = (result > 0) ? (result * 10) + (curChar * 1) : (result * 10) - (curChar * 1);
+          result = result > 0 ? result * 10 + curChar * 1 : result * 10 - curChar * 1;
 
           // edge check
           if (result >= MAX_INT_32) {
             return MAX_INT_32;
-          } if (result <= (-MAX_INT_32 - 1)) {
+          }
+          if (result <= -MAX_INT_32 - 1) {
             return -MAX_INT_32 - 1;
           }
         } else {
@@ -75,7 +77,6 @@ atoi.traverse = (str) => {
 
   return result;
 };
-
 
 /**
  * Lessons:

@@ -27,7 +27,6 @@ export const medianOfSortedArrs = {};
 
 longestSubstr.fn = (arr1, arr2) => median;
 
-
 /**
  * Lessons:
    1.

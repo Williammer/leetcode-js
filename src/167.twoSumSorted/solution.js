@@ -36,12 +36,14 @@ twoSumSorted.bSearch = (sortedNums, target) => {
     return;
   }
 
-  let i; let lo; let hi; let mid; let
-    compensate;
+  let i;
+  let lo;
+  let hi;
+  let mid;
+  let compensate;
 
   // loop over the anchor num starting from smallest num.
-  anchorEleLoop:
-  for (i = 0; i < sortedNums.length - 1; i += 1) {
+  anchorEleLoop: for (i = 0; i < sortedNums.length - 1; i += 1) {
     lo = i + 1;
     hi = sortedNums.length - 1;
     compensate = target - sortedNums[i];
@@ -52,21 +54,22 @@ twoSumSorted.bSearch = (sortedNums, target) => {
     }
 
     // binary search the compensate target
-    	while (lo <= hi) {
-        	// handle 1 or 2 nums on the binarySearch area's case
-	        if (lo === hi) {
-	            if (compensate === sortedNums[hi]) {
-	                return [(i + 1), (hi + 1)];
-	            }
-	                continue anchorEleLoop;
-	        } else if (lo + 1 === hi) {
-	            if (compensate === sortedNums[hi]) {
-	                return [(i + 1), (hi + 1)];
-	            } if (compensate === sortedNums[lo]) {
-	                return [(i + 1), (lo + 1)];
-	            }
-	                continue anchorEleLoop;
-	        }
+    while (lo <= hi) {
+      // handle 1 or 2 nums on the binarySearch area's case
+      if (lo === hi) {
+        if (compensate === sortedNums[hi]) {
+          return [i + 1, hi + 1];
+        }
+        continue anchorEleLoop;
+      } else if (lo + 1 === hi) {
+        if (compensate === sortedNums[hi]) {
+          return [i + 1, hi + 1];
+        }
+        if (compensate === sortedNums[lo]) {
+          return [i + 1, lo + 1];
+        }
+        continue anchorEleLoop;
+      }
 
       // Key is in a[lo..hi] or not present, goes to N/2 if has even nums
       mid = Math.floor((hi + lo) / 2);
@@ -76,7 +79,7 @@ twoSumSorted.bSearch = (sortedNums, target) => {
       } else if (compensate > sortedNums[mid]) {
         lo = mid + 1;
       } else {
-        return [(i + 1), (mid + 1)];
+        return [i + 1, mid + 1];
       }
     }
   }
@@ -96,7 +99,6 @@ twoSumSorted.twoPointer = (sortedNums, target) => {
 
   let lo = 0;
 
-
   let hi = sortedNums.length - 1;
 
   while (lo < hi) {
@@ -109,7 +111,6 @@ twoSumSorted.twoPointer = (sortedNums, target) => {
     }
   }
 };
-
 
 /**
  * Lessons:

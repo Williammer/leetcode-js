@@ -16,7 +16,6 @@
 
  */
 
-
 import { TreeNode, bTreeMinDepthFn } from "../_.util/binaryTree";
 
 export const bTreeMinDepth = {};
@@ -38,7 +37,7 @@ bTreeMinDepth.bfs = bTreeMinDepthFn;
  * Space complexity: O(N)
  */
 bTreeMinDepth.dfs = (root) => {
-  const isNode = node => (node instanceof TreeNode) && node.val !== null;
+  const isNode = node => node instanceof TreeNode && node.val !== null;
 
   if (!isNode(root)) {
     return 0;
@@ -49,7 +48,6 @@ bTreeMinDepth.dfs = (root) => {
   }
   return Math.max(bTreeMinDepth.dfs(root.left), bTreeMinDepth.dfs(root.right)) + 1;
 };
-
 
 /**
  * Lessons:

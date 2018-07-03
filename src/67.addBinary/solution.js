@@ -15,7 +15,6 @@
 
  */
 
-
 export const addBinary = {};
 
 /**
@@ -29,26 +28,22 @@ addBinary.iterate = (a, b) => {
   // NOTE: here could hv a input check for int-string;
   let i = a.length - 1;
 
-
   let j = b.length - 1;
 
-
   let carry = 0;
-
 
   let result = "";
 
   while (i >= 0 || j >= 0 || carry === 1) {
-    carry += (i >= 0) ? parseInt(a[i--], 10) : 0;
-    carry += (j >= 0) ? parseInt(b[j--], 10) : 0;
+    carry += i >= 0 ? parseInt(a[i--], 10) : 0;
+    carry += j >= 0 ? parseInt(b[j--], 10) : 0;
 
     result = (carry % 2) + result;
-    carry = parseInt((carry / 2), 10);
+    carry = parseInt(carry / 2, 10);
   }
 
   return result;
 };
-
 
 /**
  * Lessons:

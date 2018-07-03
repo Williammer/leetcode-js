@@ -16,7 +16,6 @@
 
  */
 
-
 export const intPalindrome = {};
 
 /**
@@ -27,15 +26,13 @@ export const intPalindrome = {};
  * Space complexity: O(1)
  */
 intPalindrome.twoPointers = (num) => {
-  if (typeof num !== "number" || num < 0 || num !== 0 && num % 10 === 0) {
+  if (typeof num !== "number" || num < 0 || (num !== 0 && num % 10 === 0)) {
     return false;
   }
 
   let digitEnd;
 
-
   let digitStart = num;
-
 
   let numBase = 1;
 
@@ -69,7 +66,7 @@ intPalindrome.twoPointers = (num) => {
  * Space complexity: O(1)
  */
 intPalindrome.halfRev = (num) => {
-  if (typeof num !== "number" || num < 0 || num !== 0 && num % 10 === 0) {
+  if (typeof num !== "number" || num < 0 || (num !== 0 && num % 10 === 0)) {
     return false;
   }
 
@@ -80,13 +77,12 @@ intPalindrome.halfRev = (num) => {
   let revNum = 0;
 
   while (num > revNum) {
-    revNum = revNum * 10 + num % 10;
+    revNum = revNum * 10 + (num % 10);
     num = Math.floor(num / 10);
   }
 
   return num === revNum || num === Math.floor(revNum / 10);
 };
-
 
 /**
  * Lessons:

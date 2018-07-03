@@ -14,7 +14,6 @@
 
  */
 
-
 import { ListNode, linkedListHasCycleFn } from "../_.util/linkedList";
 
 export const linkedListHasCycle = {};
@@ -27,7 +26,6 @@ export const linkedListHasCycle = {};
  * Space complexity: O(1)
  */
 linkedListHasCycle.twoPointers = linkedListHasCycleFn;
-
 
 /**
  * Solution 2: Hash (WeakSet)
@@ -50,7 +48,6 @@ linkedListHasCycle.hash = (head) => {
 
   return false;
 };
-
 
 /**
  * Lessons:

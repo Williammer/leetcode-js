@@ -19,7 +19,6 @@
 
  */
 
-
 export const twoSum = {};
 /**
  * Solution 1: brutal force loop
@@ -34,8 +33,9 @@ twoSum.brutal = (nums, target) => {
   }
 
   const len = nums.length;
-  let i; let j; let
-    compensate;
+  let i;
+  let j;
+  let compensate;
 
   for (i = 0; i < len; i += 1) {
     compensate = target - nums[i];
@@ -63,11 +63,11 @@ twoSum.hash = (nums, target) => {
   }
 
   const len = nums.length;
-  let i; const hash = {};
+  let i;
+  const hash = {};
 
-
-  let key; let
-    compensate;
+  let key;
+  let compensate;
 
   for (i = 0; i < len; i += 1) {
     compensate = target - nums[i];
@@ -79,7 +79,6 @@ twoSum.hash = (nums, target) => {
     hash[nums[i]] = i;
   }
 };
-
 
 /**
  * Lessons:

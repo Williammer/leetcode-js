@@ -36,7 +36,6 @@ serializeBST.deserialize = (data) => {
   return arrayToBinaryTree(inputArray);
 };
 
-
 /**
  * Lessons:
    1. What applies to BT also applies to BST.

@@ -27,12 +27,20 @@ export const intersectOf2Arr = {};
  * Space complexity: O(N)
  */
 intersectOf2Arr.hash = (nums1, nums2) => {
-  if (!(nums1 && nums2 && typeof nums1 === "object" && typeof nums2 === "object" && nums1.length > 0 && nums2.length > 0)) {
+  if (
+    !(
+      nums1
+      && nums2
+      && typeof nums1 === "object"
+      && typeof nums2 === "object"
+      && nums1.length > 0
+      && nums2.length > 0
+    )
+  ) {
     return [];
   }
 
   const _hash = {};
-
 
   const intersectSet = new Set();
 
@@ -57,18 +65,24 @@ intersectOf2Arr.hash = (nums1, nums2) => {
  * Space complexity: O(N)
  */
 intersectOf2Arr.sortedBSearch = (nums1, nums2) => {
-  if (!(nums1 && nums2 && typeof nums1 === "object" && typeof nums2 === "object" && nums1.length > 0 && nums2.length > 0)) {
+  if (
+    !(
+      nums1
+      && nums2
+      && typeof nums1 === "object"
+      && typeof nums2 === "object"
+      && nums1.length > 0
+      && nums2.length > 0
+    )
+  ) {
     return [];
   }
   const nums1Last = nums1.length - 1;
 
-
   const nums2Last = nums2.length - 1;
-
 
   const binarySearch = (arr, target, lo) => {
     let hi = arr.length - 1;
-
 
     let mid;
 
@@ -88,14 +102,11 @@ intersectOf2Arr.sortedBSearch = (nums1, nums2) => {
     return false;
   };
 
-
   const ascSort = (a, b) => a - b;
 
   let low2 = 0;
 
-
   let lastTarget = null;
-
 
   const result = [];
 
@@ -124,15 +135,22 @@ intersectOf2Arr.sortedBSearch = (nums1, nums2) => {
  * Space complexity: O(N)
  */
 intersectOf2Arr.sorted2Pointer = (nums1, nums2) => {
-  if (!(nums1 && nums2 && typeof nums1 === "object" && typeof nums2 === "object" && nums1.length > 0 && nums2.length > 0)) {
+  if (
+    !(
+      nums1
+      && nums2
+      && typeof nums1 === "object"
+      && typeof nums2 === "object"
+      && nums1.length > 0
+      && nums2.length > 0
+    )
+  ) {
     return [];
   }
 
   const nums1Last = nums1.length - 1;
 
-
   const nums2Last = nums2.length - 1;
-
 
   const ascSort = (a, b) => a - b;
 
@@ -141,9 +159,7 @@ intersectOf2Arr.sorted2Pointer = (nums1, nums2) => {
 
   let low2 = 0;
 
-
   const result = [];
-
 
   let lastTarget = null;
 
@@ -164,7 +180,6 @@ intersectOf2Arr.sorted2Pointer = (nums1, nums2) => {
 
   return result;
 };
-
 
 /**
  * Lessons:

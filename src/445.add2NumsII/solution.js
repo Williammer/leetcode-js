@@ -19,9 +19,11 @@
 
  */
 
-
 import {
-  ListNode, isListNode, reverseLinkedListFn, addToLinkedListFront,
+  ListNode,
+  isListNode,
+  reverseLinkedListFn,
+  addToLinkedListFront,
 } from "../_.util/linkedList";
 import { add2Nums } from "../2.add2Nums/solution";
 
@@ -46,7 +48,6 @@ add2NumsII.reverseInput = (l1, l2) => {
   }
 
   const rl1 = reverseLinkedListFn(l1);
-
 
   const rl2 = reverseLinkedListFn(l2);
 
@@ -75,21 +76,15 @@ add2NumsII.stackHelper = (l1, l2) => {
 
   let curSum = 0;
 
-
   let carry = 0;
-
 
   let l1Head = l1;
 
-
   let l2Head = l2;
-
 
   const _stackL1 = [];
 
-
   const _stackL2 = [];
-
 
   let result = null;
 
@@ -121,7 +116,6 @@ add2NumsII.stackHelper = (l1, l2) => {
 
   return result;
 };
-
 
 /**
  * Lessons:

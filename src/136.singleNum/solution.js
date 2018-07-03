@@ -17,7 +17,6 @@
 
  */
 
-
 export const singleNum = {};
 
 /**
@@ -33,7 +32,6 @@ singleNum.hash = (nums) => {
   }
 
   const _hash = new Map();
-
 
   let result = null;
 
@@ -75,7 +73,6 @@ singleNum.bit = (nums) => {
 
   return result;
 };
-
 
 /**
  * Lessons:

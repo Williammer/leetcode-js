@@ -15,7 +15,6 @@
 
  */
 
-
 export const linkedListRandNode = {};
 
 /**
@@ -27,7 +26,6 @@ export const linkedListRandNode = {};
  */
 linkedListRandNode.touchEnd = (head) => {
   let resultHead = head;
-
 
   let lastIndex = 0;
 
@@ -63,7 +61,6 @@ linkedListRandNode.reservoirSample = (head) => {
 
   let resultHead = head;
 
-
   let selectedVal = resultHead.val;
 
   for (let i = 1; resultHead.next !== null; i += 1) {
@@ -77,7 +74,6 @@ linkedListRandNode.reservoirSample = (head) => {
 
   return selectedVal;
 };
-
 
 /**
  * Lessons:

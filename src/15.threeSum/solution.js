@@ -19,7 +19,6 @@
 
  */
 
-
 export const threeSum = {};
 
 /**
@@ -38,12 +37,9 @@ threeSum.sortedtwoPointers = (nums) => {
 
   const len = nums.length - 1;
 
-
   let pLeft;
 
-
   let pRight;
-
 
   const result = [];
 
@@ -91,9 +87,7 @@ threeSum.twoPointersHash = (nums) => {
 
   const isUndefined = obj => typeof obj === "undefined";
 
-
-  const get3rdNum = (p1, p2) => ((nums[p1] + nums[p2] !== 0) ? -(nums[p1] + nums[p2]) : 0);
-
+  const get3rdNum = (p1, p2) => (nums[p1] + nums[p2] !== 0 ? -(nums[p1] + nums[p2]) : 0);
 
   const _getInnerSortedArray = (pLeft, pRight) => {
     const innerArr = [];
@@ -131,16 +125,14 @@ threeSum.twoPointersHash = (nums) => {
     return innerArr;
   };
 
-
-  const _resultContains = (result, _sortedArray) => result.some(innerArr => (innerArr.length === _sortedArray.length) && innerArr.every((v, i) => v === _sortedArray[i]));
-
+  const _resultContains = (result, _sortedArray) => result.some(
+    innerArr => innerArr.length === _sortedArray.length && innerArr.every((v, i) => v === _sortedArray[i]),
+  );
 
   const _markAllMatches = (_hash, pLeft, pRight) => {
     const num1 = nums[pLeft];
 
-
     const num2 = nums[pRight];
-
 
     const num3 = get3rdNum(pRight, pLeft);
 
@@ -152,23 +144,18 @@ threeSum.twoPointersHash = (nums) => {
     _hash[num3] = true;
   };
 
-
   const len = nums.length - 1;
-
 
   let pLeft = 0;
 
-
   let pRight = 1;
 
-
   let _hash = {};
-
 
   const result = [];
 
   if (len === 2) {
-    if ((nums[pLeft] + nums[pRight] + nums[pRight + 1] === 0)) {
+    if (nums[pLeft] + nums[pRight] + nums[pRight + 1] === 0) {
       result.push(_getInnerSortedArray(pLeft, pRight));
     }
     return result;
@@ -176,7 +163,8 @@ threeSum.twoPointersHash = (nums) => {
 
   for (pLeft = 0; pLeft < len; pLeft += 1) {
     for (pRight = pLeft + 1; pRight < len + 1; pRight += 1) {
-      if (_hash[nums[pRight]] === false) { // got a desired num
+      if (_hash[nums[pRight]] === false) {
+        // got a desired num
         const _sortedArray = _getInnerSortedArray(pLeft, pRight);
 
         if (!_resultContains(result, _sortedArray)) {
@@ -195,7 +183,6 @@ threeSum.twoPointersHash = (nums) => {
 
   return result;
 };
-
 
 /**
  * Lessons:

@@ -25,10 +25,8 @@ export const kthSmallInBST = {};
 kthSmallInBST.inOrder = (root, k) => {
   let i = 1;
 
-
   let result;
-  const isNode = node => (node instanceof TreeNode) && node.val !== null;
-
+  const isNode = node => node instanceof TreeNode && node.val !== null;
 
   const dfsVal = (node) => {
     if (i > k) {
@@ -46,7 +44,6 @@ kthSmallInBST.inOrder = (root, k) => {
         return;
       }
       i += 1;
-
 
       if (isNode(node.right)) {
         dfsVal(node.right);
@@ -71,14 +68,13 @@ kthSmallInBST.inOrder = (root, k) => {
  * Space complexity: O(N)
  */
 kthSmallInBST.inOrderIter = (root, k) => {
-  const isNode = node => (node instanceof TreeNode) && node.val !== null;
+  const isNode = node => node instanceof TreeNode && node.val !== null;
 
   if (!isNode(root) || k <= 0) {
     return undefined;
   }
 
   const _stack = [];
-
 
   let curNode = root;
 
@@ -108,8 +104,7 @@ kthSmallInBST.inOrderIter = (root, k) => {
  * Space complexity: O(logN)
  */
 kthSmallInBST.binarySearch = (root, k) => {
-  const isNode = node => (node instanceof TreeNode) && node.val !== null;
-
+  const isNode = node => node instanceof TreeNode && node.val !== null;
 
   const nodeCount = (node) => {
     if (!isNode(node)) {
@@ -126,7 +121,8 @@ kthSmallInBST.binarySearch = (root, k) => {
   if (k <= leftCount) {
     // within left sub-tree
     return kthSmallInBST.binarySearch(root.left, k);
-  } if (k > leftCount + 1) {
+  }
+  if (k > leftCount + 1) {
     // within right sub-tree
     return kthSmallInBST.binarySearch(root.right, k - leftCount - 1); // start from right sub-tree
   }
@@ -134,7 +130,6 @@ kthSmallInBST.binarySearch = (root, k) => {
   // within root
   return root.val;
 };
-
 
 /**
  * Lessons:

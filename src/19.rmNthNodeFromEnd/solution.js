@@ -15,7 +15,6 @@
 
  */
 
-
 import { ListNode } from "../_.util/linkedList";
 
 export const rmNthNodeFromEnd = {};
@@ -28,7 +27,7 @@ export const rmNthNodeFromEnd = {};
  * Space complexity: O(1)
  */
 rmNthNodeFromEnd.touchTail = (head, n) => {
-  const isNode = node => (node instanceof ListNode) && node.val !== null;
+  const isNode = node => node instanceof ListNode && node.val !== null;
 
   if (n < 1 || !isNode(head)) {
     return head;
@@ -36,9 +35,7 @@ rmNthNodeFromEnd.touchTail = (head, n) => {
 
   const resultParent = new ListNode(-1);
 
-
   let tailToucher;
-
 
   let tracker;
 
@@ -64,7 +61,6 @@ rmNthNodeFromEnd.touchTail = (head, n) => {
 
   return resultParent.next;
 };
-
 
 /**
  * Lessons:

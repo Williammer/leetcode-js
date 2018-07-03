@@ -15,7 +15,7 @@ export class ListNode {
  * @return {boolean}
  *
  */
-export const isListNode = node => (node instanceof ListNode) && node.val !== null;
+export const isListNode = node => node instanceof ListNode && node.val !== null;
 
 /**
  * Convert array to linkedList
@@ -34,8 +34,8 @@ export const arrayToLinkedlist = (arr) => {
   }
 
   // 1. The desc way, relative more concise.
-  let curNode; let
-    newNode;
+  let curNode;
+  let newNode;
   for (let i = arr.length - 1; i >= 0; i--) {
     newNode = new ListNode(arr[i]);
 
@@ -80,7 +80,6 @@ export const arrayToLinkedlist = (arr) => {
 export const linkedlistToArray = (lList) => {
   let curNode = lList;
 
-
   const arr = [];
 
   while (curNode && typeof curNode.val === "number") {
@@ -105,7 +104,6 @@ export const linkedlistToArray = (lList) => {
  */
 export const cloneLinkedlist = (lList) => {
   const newList = new ListNode(-1);
-
 
   let curNode = newList;
 
@@ -156,7 +154,6 @@ export const addToLinkedListFront = (val, lList) => {
 export const reverseLinkedListFn = function (head) {
   let newHead = null;
 
-
   let next = null;
 
   while (head) {
@@ -185,9 +182,7 @@ export const reverseLinkedListFn = function (head) {
 export const makeCycle = (head, cycleHeadIndex, cycleTailIndex) => {
   const newHead = head;
 
-
   let index = 0;
-
 
   let cycleHead;
 
@@ -226,7 +221,6 @@ export const makeCycle = (head, cycleHeadIndex, cycleTailIndex) => {
  */
 export const linkedListHasCycleFn = function (head) {
   let walk = head;
-
 
   let run = head;
 

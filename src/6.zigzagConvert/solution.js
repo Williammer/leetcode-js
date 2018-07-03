@@ -29,17 +29,14 @@ zigzagConvert.array2D = (s, numRows) => {
 
   const strLen = s.length;
 
-
-  const isEven = row => (row % 2 === 0);
-
+  const isEven = row => row % 2 === 0;
 
   const mod = (num, n) => ((num % n) + n) % n;
 
   const outputString = "";
 
-
-  let x; let
-    y;
+  let x;
+  let y;
 
   for (let i = 0; i < strLen; i += 1) {
     // figure out each char in the new string
@@ -57,17 +54,14 @@ zigzagConvert.array2D = (s, numRows) => {
     }
   }
 
-
   return outputString;
 };
-
 
 /**
  * Lessons:
    1.
 
  */
-
 
 /**
  * Extended idea: What if we lay it out horizontally and veritically re-construct to another string instead:

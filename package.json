@@ -6,6 +6,7 @@
   "scripts": {
     "do": "node --harmony cli.js",
     "lint": "eslint src/*/**.js",
+    "nice": "prettier --config ./.prettierrc src/*/**.js --write",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:codecov": "jest --coverage && codecov -t 009a0b3d-f46f-4bab-9bc7-e3bb0b72ae5e",
@@ -36,7 +37,8 @@
     "eslint-plugin-import": "^2.13.0",
     "fs-extra": "^6.0.1",
     "jest": "^23.2.0",
-    "jest-html-reporter": "^2.4.1"
+    "jest-html-reporter": "^2.4.1",
+    "prettier": "^1.13.7"
   },
   "jest-html-reporter": {
     "pageTitle": "leetcode-js test suite",

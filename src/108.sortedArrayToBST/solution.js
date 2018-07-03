@@ -23,7 +23,6 @@ export const sortedArrayToBST = {};
  */
 sortedArrayToBST.dfs = sortedArrayToBSTFn;
 
-
 /**
  * Lessons:
    1. BST is basically Binary Tree that stem from sorted array.

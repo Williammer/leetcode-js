@@ -35,11 +35,9 @@ export const pathSum = {};
  * Space complexity: O(N)
  */
 pathSum.dfsReducer = (root, sum) => {
-  const isNode = node => (node instanceof TreeNode) && node.val !== null;
-
+  const isNode = node => node instanceof TreeNode && node.val !== null;
 
   const isLeaf = node => isNode(node) && !isNode(node.left) && !isNode(node.right);
-
 
   const dfsVal = (node) => {
     if (isNode(node)) {
@@ -49,14 +47,14 @@ pathSum.dfsReducer = (root, sum) => {
 
       if (isNode(node.left)) {
         node.left.val += node.val; // accumulate path sum on each node
-        if (isLeaf(node.left) && node.left.val === sum || dfsVal(node.left)) {
+        if ((isLeaf(node.left) && node.left.val === sum) || dfsVal(node.left)) {
           return true;
         }
       }
 
       if (isNode(node.right)) {
         node.right.val += node.val; // accumulate path sum on each node
-        if (isLeaf(node.right) && node.right.val === sum || dfsVal(node.right)) {
+        if ((isLeaf(node.right) && node.right.val === sum) || dfsVal(node.right)) {
           return true;
         }
       }
@@ -74,8 +72,7 @@ pathSum.dfsReducer = (root, sum) => {
  * Space complexity: O(N)
  */
 pathSum.dfs = (root, sum) => {
-  const isNode = node => (node instanceof TreeNode) && node.val !== null;
-
+  const isNode = node => node instanceof TreeNode && node.val !== null;
 
   const isLeaf = node => isNode(node) && !isNode(node.left) && !isNode(node.right);
 
@@ -88,7 +85,6 @@ pathSum.dfs = (root, sum) => {
 
   return pathSum.dfs(root.left, sum - root.val) || pathSum.dfs(root.right, sum - root.val);
 };
-
 
 /**
  * Lessons:

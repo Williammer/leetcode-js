@@ -27,7 +27,6 @@
 
  */
 
-
 import { TreeNode } from "../_.util/binaryTree";
 
 export const houseRobberIII = {};
@@ -40,8 +39,7 @@ export const houseRobberIII = {};
  * Space complexity: O(N)
  */
 houseRobberIII.memo = (root) => {
-  const isNode = node => (node instanceof TreeNode) && node.val !== null;
-
+  const isNode = node => node instanceof TreeNode && node.val !== null;
 
   const dpRob = (root, weakMap) => {
     if (!isNode(root)) {
@@ -52,7 +50,6 @@ houseRobberIII.memo = (root) => {
     }
 
     let value = 0;
-
 
     let result = 0;
     if (isNode(root.left)) {
@@ -78,8 +75,7 @@ houseRobberIII.memo = (root) => {
  * Space complexity: O(N)
  */
 houseRobberIII.recursion = (root) => {
-  const isNode = node => (node instanceof TreeNode) && node.val !== null;
-
+  const isNode = node => node instanceof TreeNode && node.val !== null;
 
   const dpRob = (root) => {
     if (!isNode(root)) {
@@ -88,9 +84,7 @@ houseRobberIII.recursion = (root) => {
 
     const result = [];
 
-
     const leftSub = dpRob(root.left);
-
 
     const rightSub = dpRob(root.right);
 
@@ -102,7 +96,6 @@ houseRobberIII.recursion = (root) => {
   const result = dpRob(root);
   return Math.max(result[0], result[1]);
 };
-
 
 /**
  * Lessons:

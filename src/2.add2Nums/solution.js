@@ -18,7 +18,6 @@
 
  */
 
-
 import { ListNode, isListNode } from "../_.util/linkedList";
 
 export const add2Nums = {};
@@ -37,7 +36,6 @@ add2Nums.reference = (l1, l2) => {
   // referenced List with head
 
   let sum = 0;
-
 
   let carry = 0;
 
@@ -73,12 +71,13 @@ add2Nums.reference = (l1, l2) => {
  * Space complexity: O(N)
  */
 add2Nums.recursion = (l1, l2) => {
-  let List; let
-    val;
+  let List;
+  let val;
   // Base case
   if (!isListNode(l1)) {
     return l2;
-  } if (!isListNode(l2)) {
+  }
+  if (!isListNode(l2)) {
     return l1;
   }
 
@@ -99,7 +98,6 @@ add2Nums.recursion = (l1, l2) => {
 
   return List;
 };
-
 
 /**
  * Lessons:
