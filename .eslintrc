@@ -1,7 +1,9 @@
 {
   "extends": "airbnb-base",
   "rules": {
-    "quotes": ["warn", "double"],
+    "max-len": 1,
+    "quotes": [1, "double"],
+    "no-underscore-dangle": 0,
     "import/prefer-default-export": 0,
     "no-plusplus": [2, { "allowForLoopAfterthoughts": true }],
     "consistent-return": [1, { "treatUndefinedAsUnspecified": true }]

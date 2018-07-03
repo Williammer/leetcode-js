@@ -5,7 +5,7 @@
   "main": "*/solution.js",
   "scripts": {
     "do": "node --harmony cli.js",
-    "lint": "eslint src/*/**.js test/*/**.js",
+    "lint": "eslint src/*/**.js",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:codecov": "jest --coverage && codecov -t 009a0b3d-f46f-4bab-9bc7-e3bb0b72ae5e",
