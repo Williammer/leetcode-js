@@ -60,10 +60,9 @@ export function normal(nums) {
       }
     }
 
-    if (result[0] === null ||
-        result[1] === null ||
-        maxValue - minValue < result[1] - result[0]
-    ) {
+    if (result[0] === null
+      || result[1] === null
+      || maxValue - minValue < result[1] - result[0]) {
       result = [minValue, maxValue];
     }
 
