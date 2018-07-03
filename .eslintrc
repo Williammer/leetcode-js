@@ -1,0 +1,7 @@
+{
+  "extends": "airbnb-base",
+  "rules": {
+    "quotes": ["warn", "double"],
+    "import/prefer-default-export": 0
+  }
+}

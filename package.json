@@ -29,6 +29,9 @@
     "babel-preset-env": "^1.7.0",
     "benchmark": "^2.1.4",
     "codecov": "^3.0.2",
+    "eslint": "^5.0.1",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-plugin-import": "^2.13.0",
     "fs-extra": "^6.0.1",
     "jest": "^23.2.0",
     "jest-html-reporter": "^2.4.1"
