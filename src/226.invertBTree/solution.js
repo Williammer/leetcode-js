@@ -1,4 +1,4 @@
-/************************************************************************************************************************
+/** **********************************************************************************************************************
 
  * Problem: https://leetcode.com/problems/invert-binary-tree/
 
@@ -22,7 +22,7 @@
 
  * Analysis: bfs is my first reaction when found the invert is done from top to bottom of the tree.
 
-************************************************************************************************************************/
+*********************************************************************************************************************** */
 
 import { TreeNode, invertBTreeFn } from "../_.util/binaryTree";
 
@@ -48,35 +48,33 @@ invertBTree.bfs = invertBTreeFn;
  *  And because h ∈ O(n), the space complexity is O(n).
  */
 invertBTree.recursion = (root) => {
-    const isNode = (node) => {
-        return (node instanceof TreeNode) && node.val !== null;
-    };
+  const isNode = node => (node instanceof TreeNode) && node.val !== null;
 
-    if (!isNode(root)) {
-        return [];
-    }
+  if (!isNode(root)) {
+    return [];
+  }
 
-    if (isNode(root.left) || isNode(root.right)) {
-        // invert left, right child of each Node
-        let tmp = root.left;
-        root.left = root.right;
-        root.right = tmp;
-    }
+  if (isNode(root.left) || isNode(root.right)) {
+    // invert left, right child of each Node
+    const tmp = root.left;
+    root.left = root.right;
+    root.right = tmp;
+  }
 
-    if (isNode(root.left)) {
-        invertBTree.recursion(root.left);
-    }
-    if (isNode(root.right)) {
-        invertBTree.recursion(root.right);
-    }
+  if (isNode(root.left)) {
+    invertBTree.recursion(root.left);
+  }
+  if (isNode(root.right)) {
+    invertBTree.recursion(root.right);
+  }
 
-    return root;
+  return root;
 };
 
 
-/************************************************************************************************************************
+/** **********************************************************************************************************************
 
  * Lessons:
    1. Observe the pattern then choose the proper way to solve, and always have the problem picture in mind.
 
-************************************************************************************************************************/
+*********************************************************************************************************************** */

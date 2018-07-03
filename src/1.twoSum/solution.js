@@ -1,4 +1,4 @@
-/************************************************************************************************************************
+/** **********************************************************************************************************************
 
  * Problem: https://leetcode.com/problems/two-sum/
    Given an array of integers, return indices of the two numbers such that they add up to a specific target.
@@ -18,7 +18,7 @@
  * Analysis: requirement is mainly on getting 'key' from valid 'value',
    which makes Hash to be an efficient data structure to use.
 
-************************************************************************************************************************/
+*********************************************************************************************************************** */
 
 
 export const twoSum = {};
@@ -30,23 +30,23 @@ export const twoSum = {};
  * Space complexity: O(1)
  */
 twoSum.brutal = (nums, target) => {
-    if (!(Array.isArray(nums) && nums.length > 1) || typeof target !== "number") {
-        return;
-    }
-
-    const len = nums.length;
-    let i, j, compensate;
-
-    for (i = 0; i < len; i++) {
-        compensate = target - nums[i];
-
-        for (j = i + 1; j < len; j++) {
-            if (nums[j] === compensate) {
-                return [i, j];
-            }
-        }
-    }
+  if (!(Array.isArray(nums) && nums.length > 1) || typeof target !== "number") {
     return;
+  }
+
+  const len = nums.length;
+  let i; let j; let
+    compensate;
+
+  for (i = 0; i < len; i++) {
+    compensate = target - nums[i];
+
+    for (j = i + 1; j < len; j++) {
+      if (nums[j] === compensate) {
+        return [i, j];
+      }
+    }
+  }
 };
 
 /**
@@ -59,28 +59,30 @@ twoSum.brutal = (nums, target) => {
  * Space complexity: O(N)
  */
 twoSum.hash = (nums, target) => {
-    if (!(Array.isArray(nums) && nums.length > 1) || typeof target !== "number") {
-        return;
-    }
-
-    const len = nums.length;
-    let i, hash = {},
-        key, compensate;
-
-    for (i = 0; i < len; i++) {
-        compensate = target - nums[i];
-
-        key = hash[compensate];
-        if (typeof key === "number" && key !== i) {
-            return [key, i];
-        }
-        hash[nums[i]] = i;
-    }
+  if (!(Array.isArray(nums) && nums.length > 1) || typeof target !== "number") {
     return;
+  }
+
+  const len = nums.length;
+  let i; const hash = {};
+
+
+  let key; let
+    compensate;
+
+  for (i = 0; i < len; i++) {
+    compensate = target - nums[i];
+
+    key = hash[compensate];
+    if (typeof key === "number" && key !== i) {
+      return [key, i];
+    }
+    hash[nums[i]] = i;
+  }
 };
 
 
-/************************************************************************************************************************
+/** **********************************************************************************************************************
 
  * Lessons:
    1. Consider introduce appriorate helper data structures to solve problems.
@@ -90,4 +92,4 @@ twoSum.hash = (nums, target) => {
 
    3.  For list:array based problem that aims at finding values than keys, we can consider sort it first and utilize some of its treats like binary search.
 
-************************************************************************************************************************/
+*********************************************************************************************************************** */

@@ -1,4 +1,4 @@
-/************************************************************************************************************************
+/** **********************************************************************************************************************
 
  * Problem: https://leetcode.com/problems/odd-even-linked-list/
     Given a singly linked list, group all odd nodes together followed by the even nodes.
@@ -15,7 +15,7 @@
 
  * Analysis: Group linkedlist by odd/even is mainly about changing its node references, and connect them back at last.
 
-************************************************************************************************************************/
+*********************************************************************************************************************** */
 
 import { ListNode } from "../_.util/linkedList";
 
@@ -29,32 +29,36 @@ export const oddEvenLinkedlist = {};
  * Space complexity: O(N)
  */
 oddEvenLinkedlist.iterate = (head) => {
-    if (!head) {
-        return head;
-    }
+  if (!head) {
+    return head;
+  }
 
-    let result = head,
-        evenList = result.next,
-        evenHead = evenList;
+  const result = head;
 
-    while (evenHead && evenHead.next) {
-        head.next = head.next.next; // eventHead.next is refered on head.next.next
-        evenHead.next = evenHead.next.next;
 
-        head = head.next;
-        evenHead = evenHead.next;
-    }
+  const evenList = result.next;
 
-    head.next = evenList;
 
-    return result;
+  let evenHead = evenList;
+
+  while (evenHead && evenHead.next) {
+    head.next = head.next.next; // eventHead.next is refered on head.next.next
+    evenHead.next = evenHead.next.next;
+
+    head = head.next;
+    evenHead = evenHead.next;
+  }
+
+  head.next = evenList;
+
+  return result;
 };
 
 
-/************************************************************************************************************************
+/** **********************************************************************************************************************
 
  * Lessons:
    1. LinkedList pointer handling is an under-estimated and error-prone work. Need to practice more.
    2. Pointers is easy to get confused, better use visualized way to think.
 
-************************************************************************************************************************/
+*********************************************************************************************************************** */

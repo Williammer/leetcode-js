@@ -1,4 +1,4 @@
-/************************************************************************************************************************
+/** **********************************************************************************************************************
 
  * Problem: https://leetcode.com/problems/maximum-depth-of-binary-tree/
     Given a binary tree, find its maximum depth.
@@ -23,7 +23,7 @@
  * Analysis: Traverse is surely needed, dfs(pre-order traverse) and bfs(level-order traverse) are available options;
     another main problem to solve is record and calculate the maxDepth, so we can record each parentNode's depth before dfs into its sub trees.
 
-************************************************************************************************************************/
+*********************************************************************************************************************** */
 
 
 import { TreeNode, bTreeMaxDepthFn } from "../_.util/binaryTree";
@@ -38,41 +38,39 @@ export const bTreeMaxDepth = {};
  * Space complexity: O(N)
  */
 bTreeMaxDepth.dfsFat = (root) => {
-    const isNode = (node) => {
-        return (node instanceof TreeNode) && node.val !== null;
-    };
+  const isNode = node => (node instanceof TreeNode) && node.val !== null;
 
-    if (!isNode(root)) {
-        return 0;
+  if (!isNode(root)) {
+    return 0;
+  }
+
+  const nodeDepths = new WeakMap();
+
+
+  let maxDepth = 1;
+
+  const dfs = (node) => {
+    const curDepth = nodeDepths.get(node);
+
+    if (isNode(node.left) || isNode(node.right)) {
+      if (isNode(node.left)) {
+        nodeDepths.set(node.left, curDepth + 1);
+        dfs(node.left);
+      }
+
+      if (isNode(node.right)) {
+        nodeDepths.set(node.right, curDepth + 1);
+        dfs(node.right);
+      }
+    } else if (maxDepth < curDepth) {
+      maxDepth = curDepth;
     }
+  };
 
-    let nodeDepths = new WeakMap(),
-        maxDepth = 1;
+  nodeDepths.set(root, maxDepth);
+  dfs(root);
 
-    const dfs = (node) => {
-        const curDepth = nodeDepths.get(node);
-
-        if (isNode(node.left) || isNode(node.right)) {
-            if (isNode(node.left)) {
-                nodeDepths.set(node.left, curDepth + 1);
-                dfs(node.left);
-            }
-
-            if (isNode(node.right)) {
-                nodeDepths.set(node.right, curDepth + 1);
-                dfs(node.right);
-            }
-        } else {
-            if (maxDepth < curDepth) {
-                maxDepth = curDepth;
-            }
-        }
-    };
-
-    nodeDepths.set(root, maxDepth);
-    dfs(root);
-
-    return maxDepth;
+  return maxDepth;
 };
 
 /**
@@ -92,48 +90,50 @@ bTreeMaxDepth.dfs = bTreeMaxDepthFn;
  * Space complexity: O(N)
  */
 bTreeMaxDepth.bfs = (root) => {
-    const isNode = (node) => {
-        return (node instanceof TreeNode) && node.val !== null;
-    };
+  const isNode = node => (node instanceof TreeNode) && node.val !== null;
 
-    if (!isNode(root)) {
-        return 0;
+  if (!isNode(root)) {
+    return 0;
+  }
+
+  const _queue = [];
+
+
+  let maxDepth = 0;
+
+  _queue.push(root);
+
+  while (_queue.length > 0) {
+    let i = 0;
+
+
+    const lenThisDepth = _queue.length;
+
+    maxDepth++;
+
+    // loop nodes of each depth
+    while (i < lenThisDepth) {
+      const curNode = _queue.shift();
+
+      if (isNode(curNode.left)) {
+        _queue.push(curNode.left);
+      }
+      if (isNode(curNode.right)) {
+        _queue.push(curNode.right);
+      }
+
+      i++;
     }
+  }
 
-    let _queue = [],
-        maxDepth = 0;
-
-    _queue.push(root);
-
-    while (_queue.length > 0) {
-        let i = 0,
-            lenThisDepth = _queue.length;
-
-        maxDepth++;
-
-        // loop nodes of each depth
-        while (i < lenThisDepth) {
-            let curNode = _queue.shift();
-
-            if (isNode(curNode.left)) {
-                _queue.push(curNode.left);
-            }
-            if (isNode(curNode.right)) {
-                _queue.push(curNode.right);
-            }
-
-            i++;
-        }
-    }
-
-    return maxDepth;
+  return maxDepth;
 };
 
 
-/************************************************************************************************************************
+/** **********************************************************************************************************************
 
  * Lessons:
    1. Try to consider if it's possible to recursion the function itself with the basic pattern to achieve super simplicity.
    2. Dynamic programming with loop is powerful by making well-designed terminate conditions.
 
-************************************************************************************************************************/
+*********************************************************************************************************************** */

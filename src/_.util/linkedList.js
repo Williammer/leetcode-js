@@ -2,11 +2,11 @@
  * Definition for a linkedList node
  */
 export class ListNode {
-    constructor(val) {
-        this.val = val;
-        this.next = null;
-    }
-};
+  constructor(val) {
+    this.val = val;
+    this.next = null;
+  }
+}
 
 /**
  * If the input is ListNode
@@ -15,9 +15,7 @@ export class ListNode {
  * @return {boolean}
  *
  */
-export const isListNode = (node) => {
-    return (node instanceof ListNode) && node.val !== null;
-};
+export const isListNode = node => (node instanceof ListNode) && node.val !== null;
 
 /**
  * Convert array to linkedList
@@ -31,25 +29,26 @@ export const isListNode = (node) => {
  *
  */
 export const arrayToLinkedlist = (arr) => {
-    if (!arr || !arr.length) {
-        return null;
+  if (!arr || !arr.length) {
+    return null;
+  }
+
+  // 1. The desc way, relative more concise.
+  let curNode; let
+    newNode;
+  for (let i = arr.length - 1; i >= 0; i--) {
+    newNode = new ListNode(arr[i]);
+
+    if (curNode) {
+      newNode.next = curNode;
     }
 
-    // 1. The desc way, relative more concise.
-    let curNode, newNode;
-    for (let i = arr.length - 1; i >= 0; i--) {
-        newNode = new ListNode(arr[i]);
+    curNode = newNode;
+  }
 
-        if (curNode) {
-            newNode.next = curNode;
-        }
+  return newNode;
 
-        curNode = newNode;
-    }
-
-    return newNode;
-
-    /*
+  /*
     // 2. The asc way, with a refNode on 1st step.
     let curNode, newNode, refNode;
     for (let i = 0; i < arr.length; i++) {
@@ -79,16 +78,18 @@ export const arrayToLinkedlist = (arr) => {
  *
  */
 export const linkedlistToArray = (lList) => {
-    let curNode = lList,
-        arr = [];
+  let curNode = lList;
 
-    while (curNode && typeof curNode.val === "number") {
-        arr.push(curNode.val);
 
-        curNode = curNode.next;
-    }
+  const arr = [];
 
-    return arr;
+  while (curNode && typeof curNode.val === "number") {
+    arr.push(curNode.val);
+
+    curNode = curNode.next;
+  }
+
+  return arr;
 };
 
 /**
@@ -103,17 +104,19 @@ export const linkedlistToArray = (lList) => {
  *
  */
 export const cloneLinkedlist = (lList) => {
-    let newList = new ListNode(-1),
-        curNode = newList;
+  const newList = new ListNode(-1);
 
-    while (lList) {
-        curNode.next = new ListNode(lList.val);
 
-        lList = lList.next;
-        curNode = curNode.next;
-    }
+  let curNode = newList;
 
-    return newList.next;
+  while (lList) {
+    curNode.next = new ListNode(lList.val);
+
+    lList = lList.next;
+    curNode = curNode.next;
+  }
+
+  return newList.next;
 };
 
 /**
@@ -128,13 +131,13 @@ export const cloneLinkedlist = (lList) => {
  *
  */
 export const addToLinkedListFront = (val, lList) => {
-    if (typeof val !== 'number') {
-        return lList;
-    }
-    let newHead = new ListNode(val);
-    newHead.next = lList;
+  if (typeof val !== "number") {
+    return lList;
+  }
+  const newHead = new ListNode(val);
+  newHead.next = lList;
 
-    return newHead;
+  return newHead;
 };
 
 /**
@@ -150,18 +153,20 @@ export const addToLinkedListFront = (val, lList) => {
  * More on 206.reverseLinkedList
  *
  */
-export const reverseLinkedListFn = function(head) {
-    let newHead = null,
-        next = null;
+export const reverseLinkedListFn = function (head) {
+  let newHead = null;
 
-    while (head) {
-        next = head.next;
-        head.next = newHead;
-        newHead = head;
-        head = next;
-    }
 
-    return newHead;
+  let next = null;
+
+  while (head) {
+    next = head.next;
+    head.next = newHead;
+    newHead = head;
+    head = next;
+  }
+
+  return newHead;
 };
 
 /**
@@ -178,28 +183,32 @@ export const reverseLinkedListFn = function(head) {
  *
  */
 export const makeCycle = (head, cycleHeadIndex, cycleTailIndex) => {
-    let newHead = head,
-        index = 0,
-        cycleHead;
+  const newHead = head;
 
-    cycleHeadIndex = cycleHeadIndex || 0;
-    cycleTailIndex = cycleTailIndex >= cycleHeadIndex ? cycleTailIndex : cycleHeadIndex;
 
-    while (head) {
-        if (cycleHeadIndex === index) {
-            cycleHead = head;
-        }
+  let index = 0;
 
-        // create cycle by connecting cycleTail to cycleHead
-        if (!head.next || cycleTailIndex === index) {
-            head.next = cycleHead;
-            break;
-        }
-        head = head.next;
-        index++;
+
+  let cycleHead;
+
+  cycleHeadIndex = cycleHeadIndex || 0;
+  cycleTailIndex = cycleTailIndex >= cycleHeadIndex ? cycleTailIndex : cycleHeadIndex;
+
+  while (head) {
+    if (cycleHeadIndex === index) {
+      cycleHead = head;
     }
 
-    return newHead;
+    // create cycle by connecting cycleTail to cycleHead
+    if (!head.next || cycleTailIndex === index) {
+      head.next = cycleHead;
+      break;
+    }
+    head = head.next;
+    index++;
+  }
+
+  return newHead;
 };
 
 /**
@@ -215,18 +224,20 @@ export const makeCycle = (head, cycleHeadIndex, cycleTailIndex) => {
  * More on 141.linkedListHasCycle
  *
  */
-export const linkedListHasCycleFn = function(head) {
-    let walk = head,
-        run = head;
+export const linkedListHasCycleFn = function (head) {
+  let walk = head;
 
-    while (walk && run && run.next) {
-        walk = walk.next;
-        run = run.next.next;
 
-        if (walk === run) {
-            return true;
-        }
+  let run = head;
+
+  while (walk && run && run.next) {
+    walk = walk.next;
+    run = run.next.next;
+
+    if (walk === run) {
+      return true;
     }
+  }
 
-    return false;
+  return false;
 };

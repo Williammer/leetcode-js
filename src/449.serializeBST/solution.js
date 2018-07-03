@@ -1,4 +1,4 @@
-/************************************************************************************************************************
+/** **********************************************************************************************************************
 
  * Problem: https://leetcode.com/problems/serialize-and-deserialize-bst/
     Serialization is the process of converting a data structure or object into a sequence of bits,
@@ -16,7 +16,7 @@
  * Analysis: This problem is to convert the representation of a BST.
     We know that BST can be Object or Array, we can explore other possible conversions like array->string->encode(str)...
 
-************************************************************************************************************************/
+*********************************************************************************************************************** */
 
 import { TreeNode, binaryTreeToString, arrayToBinaryTree } from "../_.util/binaryTree";
 
@@ -32,17 +32,15 @@ export const serializeBST = {};
 serializeBST.serialize = binaryTreeToString;
 
 serializeBST.deserialize = (data) => {
-    const inputArray = data.split(",").map((val) => {
-        return val === "" ? null : Number(val);
-    });
+  const inputArray = data.split(",").map(val => (val === "" ? null : Number(val)));
 
-    return arrayToBinaryTree(inputArray);
+  return arrayToBinaryTree(inputArray);
 };
 
 
-/************************************************************************************************************************
+/** **********************************************************************************************************************
 
  * Lessons:
    1. What applies to BT also applies to BST.
 
-************************************************************************************************************************/
+*********************************************************************************************************************** */

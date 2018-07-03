@@ -1,4 +1,4 @@
-/************************************************************************************************************************
+/** **********************************************************************************************************************
 
  * Problem: https://leetcode.com/problems/binary-tree-inorder-traversal/
     Given a binary tree, return the inorder traversal of its nodes' values.
@@ -16,7 +16,7 @@
 
  * Analysis: In theory, inorder should still be DFS, so we can try that.
 
-************************************************************************************************************************/
+*********************************************************************************************************************** */
 
 import { TreeNode, bTreeInOrderTraversalFn } from "../_.util/binaryTree";
 
@@ -39,35 +39,39 @@ bTreeInOrderTraversal.dfs = bTreeInOrderTraversalFn;
  * Space complexity: O(N)
  */
 bTreeInOrderTraversal.iterative = (root) => {
-    const isNode = (node) => {
-        return (node instanceof TreeNode) && node.val !== null;
-    };
+  const isNode = node => (node instanceof TreeNode) && node.val !== null;
 
-    let result = [],
-        _stack = [],
-        curNode = root,
-        newNode;
+  const result = [];
 
-    while (isNode(curNode) || _stack.length > 0) {
-        if (isNode(curNode)) {
-            _stack.push(curNode);
-            curNode = curNode.left;
-        } else {
-            // process a node in stack
-            newNode = _stack.pop();
-            result.push(newNode.val);
-            curNode = newNode.right;
-        }
+
+  const _stack = [];
+
+
+  let curNode = root;
+
+
+  let newNode;
+
+  while (isNode(curNode) || _stack.length > 0) {
+    if (isNode(curNode)) {
+      _stack.push(curNode);
+      curNode = curNode.left;
+    } else {
+      // process a node in stack
+      newNode = _stack.pop();
+      result.push(newNode.val);
+      curNode = newNode.right;
     }
+  }
 
-    return result;
+  return result;
 };
 
 
-/************************************************************************************************************************
+/** **********************************************************************************************************************
 
  * Lessons:
    1. In-order is basically dfs, and dfs is recursion.
    2. One thing to note is that in-order for BST will traverse the tree in sorted order.
 
-************************************************************************************************************************/
+*********************************************************************************************************************** */

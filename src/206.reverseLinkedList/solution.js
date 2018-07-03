@@ -1,4 +1,4 @@
-/************************************************************************************************************************
+/** **********************************************************************************************************************
 
  * Problem: https://leetcode.com/problems/reverse-linked-list/
     Reverse a singly linked list.
@@ -13,7 +13,7 @@
 
  * Analysis: Reverse is to break the old listNode's reference and point it to new listNode.
 
-************************************************************************************************************************/
+*********************************************************************************************************************** */
 
 
 import { ListNode, reverseLinkedListFn } from "../_.util/linkedList";
@@ -38,23 +38,23 @@ reverseLinkedList.iterate = reverseLinkedListFn;
  * Space complexity: O(N)
  */
 reverseLinkedList.recursion = (head) => {
-    const reverse = (head, newHead) => {
-        if (!head) {
-            return newHead;
-        }
-        let next = head.next;
-        head.next = newHead;
+  const reverse = (head, newHead) => {
+    if (!head) {
+      return newHead;
+    }
+    const next = head.next;
+    head.next = newHead;
 
-        return reverse(next, head);
-    };
+    return reverse(next, head);
+  };
 
-    return reverse(head, null);
+  return reverse(head, null);
 };
 
 
-/************************************************************************************************************************
+/** **********************************************************************************************************************
 
  * Lessons:
    1. LinkedList handling on the code(such as those assignments) is a bit abstract, better think in the visualized way.
 
-************************************************************************************************************************/
+*********************************************************************************************************************** */

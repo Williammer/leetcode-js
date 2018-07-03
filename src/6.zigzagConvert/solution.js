@@ -1,4 +1,4 @@
-/************************************************************************************************************************
+/** **********************************************************************************************************************
 
  * Problem: The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this:
     (you may want to display this pattern in a fixed font for better legibility)
@@ -18,58 +18,60 @@
 
  * Analysis: An obvious idea is to use a 2d array that keeps track of it's x/y indexes. But it'll be a bit different for Odd/Even numRows.
 
-************************************************************************************************************************/
+*********************************************************************************************************************** */
 
 export const zigzagConvert = {};
 
 zigzagConvert.array2D = (s, numRows) => {
-    if (!(typeof s === "string" && s.length > 0 && typeof numRows === "number" && numRows > 0)) {
-        console.error("invalid inputs.");
-        return;
+  if (!(typeof s === "string" && s.length > 0 && typeof numRows === "number" && numRows > 0)) {
+    console.error("invalid inputs.");
+    return;
+  }
+
+  const strLen = s.length;
+
+
+  const isEven = row => (row % 2 === 0);
+
+
+  const mod = (num, n) => ((num % n) + n) % n;
+
+  const outputString = "";
+
+
+  let x; let
+    y;
+
+  for (let i = 0; i < strLen; i++) {
+    // figure out each char in the new string
+
+    if (i >= numRows) {
+      y = mod(i, numRows);
+      x = i / numRows;
+    } else {
+      y = i;
+      x = 0;
     }
 
-    const strLen = s.length,
-        isEven = (row) => (row % 2 === 0),
-        mod = (num, n) => ((num % n) + n) % n;
-
-    let outputString = "",
-        x, y;
-
-    for (let i = 0; i < strLen; i++) {
-        // figure out each char in the new string
-
-        if (i >= numRows) {
-            y = mod(i, numRows);
-            x = i / numRows;
-        } else {
-            y = i;
-            x = 0;
-        }
-
-        if (!isEven(y) || isEven(x)) {
-            outputString
-        }
+    if (!isEven(y) || isEven(x)) {
+      outputString;
     }
+  }
 
 
-    return outputString;
+  return outputString;
 };
 
 
-
-
-
-/************************************************************************************************************************
+/** **********************************************************************************************************************
 
  * Lessons:
-   1. 
+   1.
 
-************************************************************************************************************************/
-
-
+*********************************************************************************************************************** */
 
 
-/************************************************************************************************************************
+/** **********************************************************************************************************************
 
  * Extended idea: What if we lay it out horizontally and veritically re-construct to another string instead:
     let's regard each char+space as a unit for 1st row, suppose we have n units in 1st row, which is n chars, including the last single char;
@@ -84,4 +86,4 @@ zigzagConvert.array2D = (s, numRows) => {
             n * numRows/2 + (2n-1) * numRows/2 >= s.length;
     After divided the string into ZigZag pattern, we can re-construct it based on the index of each rows that has chars.
 
-************************************************************************************************************************/
+*********************************************************************************************************************** */

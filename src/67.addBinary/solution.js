@@ -1,4 +1,4 @@
-/************************************************************************************************************************
+/** **********************************************************************************************************************
 
  * Problem:https://leetcode.com/problems/add-binary/
      Given two binary strings, return their sum (also a binary string).
@@ -14,7 +14,7 @@
 
  * Analysis: Loop over each num and handle the carry num.
 
-************************************************************************************************************************/
+*********************************************************************************************************************** */
 
 
 export const addBinary = {};
@@ -27,28 +27,34 @@ export const addBinary = {};
  * Space complexity: O(1)
  */
 addBinary.iterate = (a, b) => {
-	// NOTE: here could hv a input check for int-string;
-    let i = a.length - 1,
-        j = b.length - 1,
-        carry = 0,
-        result = "";
+  // NOTE: here could hv a input check for int-string;
+  let i = a.length - 1;
 
-    while (i >= 0 || j >= 0 || carry === 1) {
-        carry += (i >= 0) ? parseInt(a[i--], 10) : 0;
-        carry += (j >= 0) ? parseInt(b[j--], 10) : 0;
 
-        result = (carry % 2) + result;
-        carry = parseInt((carry / 2), 10);
-    }
+  let j = b.length - 1;
 
-    return result;
+
+  let carry = 0;
+
+
+  let result = "";
+
+  while (i >= 0 || j >= 0 || carry === 1) {
+    carry += (i >= 0) ? parseInt(a[i--], 10) : 0;
+    carry += (j >= 0) ? parseInt(b[j--], 10) : 0;
+
+    result = (carry % 2) + result;
+    carry = parseInt((carry / 2), 10);
+  }
+
+  return result;
 };
 
 
-/************************************************************************************************************************
+/** **********************************************************************************************************************
 
  * Lessons:
    1. Good practice of looping and handling of various cases of carry num.
    2. Mutiple condition while loop is powerful.
 
-************************************************************************************************************************/
+*********************************************************************************************************************** */

@@ -1,4 +1,4 @@
-/************************************************************************************************************************
+/** **********************************************************************************************************************
 
  * Problem: https://leetcode.com/problems/swap-nodes-in-pairs/
     Given a linked list, swap every two adjacent nodes and return its head.
@@ -13,7 +13,7 @@
  * Analysis: Swap in pair needs to change reference relations in linkedList;
     and since the head changed after swap, we need to have a dummyHead which points to head.
 
-************************************************************************************************************************/
+*********************************************************************************************************************** */
 
 
 import { ListNode } from "../_.util/linkedList";
@@ -28,29 +28,29 @@ export const swapLinkedListPair = {};
  * Space complexity: O(1)
  */
 swapLinkedListPair.iterate = (head) => {
-    const isNode = (node) => {
-        return (node instanceof ListNode) && node.val !== null;
-    };
+  const isNode = node => (node instanceof ListNode) && node.val !== null;
 
-    if (!isNode(head) || !isNode(head.next)) {
-        return head;
-    }
+  if (!isNode(head) || !isNode(head.next)) {
+    return head;
+  }
 
-    let dummyHead = new ListNode(-1),
-        parentHead = dummyHead;
+  const dummyHead = new ListNode(-1);
 
-    dummyHead.next = head;
 
-    while (isNode(parentHead) && isNode(head) && isNode(head.next)) {
-        parentHead.next = head.next;
-        head.next = head.next.next;
-        parentHead.next.next = head;
+  let parentHead = dummyHead;
 
-        parentHead = parentHead.next.next;
-        head = parentHead.next;
-    }
+  dummyHead.next = head;
 
-    return dummyHead.next;
+  while (isNode(parentHead) && isNode(head) && isNode(head.next)) {
+    parentHead.next = head.next;
+    head.next = head.next.next;
+    parentHead.next.next = head;
+
+    parentHead = parentHead.next.next;
+    head = parentHead.next;
+  }
+
+  return dummyHead.next;
 };
 
 /**
@@ -61,31 +61,31 @@ swapLinkedListPair.iterate = (head) => {
  * Space complexity: O(N)
  */
 swapLinkedListPair.recursion = (head) => {
-    const isNode = (node) => {
-        return (node instanceof ListNode) && node.val !== null;
-    },
-    swap = (parentHead, head) => {
-        if (!isNode(parentHead) || !isNode(head) || !isNode(head.next)) {
-            return parentHead;
-        }
+  const isNode = node => (node instanceof ListNode) && node.val !== null;
 
-        parentHead.next = head.next;
-        head.next = head.next.next;
-        parentHead.next.next = swap(head, head.next);
 
-        return parentHead;
-    };
+  const swap = (parentHead, head) => {
+    if (!isNode(parentHead) || !isNode(head) || !isNode(head.next)) {
+      return parentHead;
+    }
 
-    let dummyHead = new ListNode(-1);
-    dummyHead.next = head;
+    parentHead.next = head.next;
+    head.next = head.next.next;
+    parentHead.next.next = swap(head, head.next);
 
-    return swap(dummyHead, head).next;
+    return parentHead;
+  };
+
+  const dummyHead = new ListNode(-1);
+  dummyHead.next = head;
+
+  return swap(dummyHead, head).next;
 };
 
 
-/************************************************************************************************************************
+/** **********************************************************************************************************************
 
  * Lessons:
    1. Infinite loop may happen for LinkedList recursion, use enough var to avoid it during changing the references relation.
 
-************************************************************************************************************************/
+*********************************************************************************************************************** */

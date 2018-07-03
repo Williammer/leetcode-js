@@ -1,4 +1,4 @@
-/************************************************************************************************************************
+/** **********************************************************************************************************************
 
  * Problem: https://leetcode.com/problems/linked-list-cycle/
     Given a linked list, determine if it has a cycle in it. Can you solve it without using extra space?
@@ -13,7 +13,7 @@
 
  * Analysis: If a linkedList has cycle, we'll encounter same old nodes more than once during list traversal.
 
-************************************************************************************************************************/
+*********************************************************************************************************************** */
 
 
 import { ListNode, linkedListHasCycleFn } from "../_.util/linkedList";
@@ -38,24 +38,24 @@ linkedListHasCycle.twoPointers = linkedListHasCycleFn;
  * Space complexity: O(N)
  */
 linkedListHasCycle.hash = (head) => {
-    let _hash = new WeakSet();
+  const _hash = new WeakSet();
 
-    while(head){
-        if (_hash.has(head)) {
-            return true;
-        }
-
-        _hash.add(head);
-        head = head.next;
+  while (head) {
+    if (_hash.has(head)) {
+      return true;
     }
 
-    return false;
+    _hash.add(head);
+    head = head.next;
+  }
+
+  return false;
 };
 
 
-/************************************************************************************************************************
+/** **********************************************************************************************************************
 
  * Lessons:
    1. This problem is a pretty good use case of WeakSet on linkedList nodes.
 
-************************************************************************************************************************/
+*********************************************************************************************************************** */

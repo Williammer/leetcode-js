@@ -1,4 +1,4 @@
-/************************************************************************************************************************
+/** **********************************************************************************************************************
 
  * Problem: https://leetcode.com/problems/path-sum/
     Given a binary tree and a sum, determine if the tree has a root-to-leaf path such that adding up all the values along the path equals the given sum.
@@ -22,7 +22,7 @@
  * Analysis: Pre-order dfs can be helpful for finding the path info.
  	And since this problem is about root-to-leaf path, we can replace values of each sub-node with root2node value sum.
 
-************************************************************************************************************************/
+*********************************************************************************************************************** */
 
 import { TreeNode } from "../_.util/binaryTree";
 
@@ -36,35 +36,35 @@ export const pathSum = {};
  * Space complexity: O(N)
  */
 pathSum.dfsReducer = (root, sum) => {
-    const isNode = (node) => {
-            return (node instanceof TreeNode) && node.val !== null;
-        },
-        isLeaf = (node) => {
-            return isNode(node) && !isNode(node.left) && !isNode(node.right);
-        },
-        dfsVal = (node) => {
-            if (isNode(node)) {
-                if (isLeaf(node) && node.val === sum) {
-                    return true;
-                }
+  const isNode = node => (node instanceof TreeNode) && node.val !== null;
 
-                if (isNode(node.left)) {
-                    node.left.val += node.val; // accumulate path sum on each node
-                    if (isLeaf(node.left) && node.left.val === sum || dfsVal(node.left)) {
-                        return true;
-                    }
-                }
 
-                if (isNode(node.right)) {
-                    node.right.val += node.val; // accumulate path sum on each node
-                    if (isLeaf(node.right) && node.right.val === sum || dfsVal(node.right)) {
-                        return true;
-                    }
-                }
-            }
-        };
+  const isLeaf = node => isNode(node) && !isNode(node.left) && !isNode(node.right);
 
-    return !!dfsVal(root);
+
+  const dfsVal = (node) => {
+    if (isNode(node)) {
+      if (isLeaf(node) && node.val === sum) {
+        return true;
+      }
+
+      if (isNode(node.left)) {
+        node.left.val += node.val; // accumulate path sum on each node
+        if (isLeaf(node.left) && node.left.val === sum || dfsVal(node.left)) {
+          return true;
+        }
+      }
+
+      if (isNode(node.right)) {
+        node.right.val += node.val; // accumulate path sum on each node
+        if (isLeaf(node.right) && node.right.val === sum || dfsVal(node.right)) {
+          return true;
+        }
+      }
+    }
+  };
+
+  return !!dfsVal(root);
 };
 
 /**
@@ -75,28 +75,26 @@ pathSum.dfsReducer = (root, sum) => {
  * Space complexity: O(N)
  */
 pathSum.dfs = (root, sum) => {
-    const isNode = (node) => {
-            return (node instanceof TreeNode) && node.val !== null;
-        },
-        isLeaf = (node) => {
-            return isNode(node) && !isNode(node.left) && !isNode(node.right);
-        };
+  const isNode = node => (node instanceof TreeNode) && node.val !== null;
 
-    if (!isNode(root)) {
-        return false;
-    }
-    if (isLeaf(root)) {
-        return root.val === sum;
-    }
 
-    return pathSum.dfs(root.left, sum - root.val) || pathSum.dfs(root.right, sum - root.val);
+  const isLeaf = node => isNode(node) && !isNode(node.left) && !isNode(node.right);
+
+  if (!isNode(root)) {
+    return false;
+  }
+  if (isLeaf(root)) {
+    return root.val === sum;
+  }
+
+  return pathSum.dfs(root.left, sum - root.val) || pathSum.dfs(root.right, sum - root.val);
 };
 
 
-/************************************************************************************************************************
+/** **********************************************************************************************************************
 
  * Lessons:
    1. Reduce node values to get path Sum.
    2. Minus sum to match node values.
 
-************************************************************************************************************************/
+*********************************************************************************************************************** */

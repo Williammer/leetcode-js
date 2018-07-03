@@ -1,4 +1,4 @@
-/************************************************************************************************************************
+/** **********************************************************************************************************************
 
  * Problem: https://leetcode.com/problems/add-two-numbers-ii/
     You are given two non-empty linked lists representing two non-negative integers.
@@ -18,10 +18,12 @@
  * Analysis: The sum is added start from the tail node of 2 nums, reversed the input list will turn it into 2.add2Nums.
     The other way to reverse is use stack(s) as helper.
 
-************************************************************************************************************************/
+*********************************************************************************************************************** */
 
 
-import { ListNode, isListNode, reverseLinkedListFn, addToLinkedListFront } from "../_.util/linkedList";
+import {
+  ListNode, isListNode, reverseLinkedListFn, addToLinkedListFront,
+} from "../_.util/linkedList";
 import { add2Nums } from "../2.add2Nums/solution";
 
 export const add2NumsII = {};
@@ -34,22 +36,24 @@ export const add2NumsII = {};
  * Space complexity: O(N)
  */
 add2NumsII.reverseInput = (l1, l2) => {
-    if (!isListNode(l1) || !isListNode(l2)) {
-        if (!isListNode(l1) && !isListNode(l2)) {
-            return null;
-        }
-        if (!isListNode(l1)) {
-            return l2;
-        }
-        return l1;
+  if (!isListNode(l1) || !isListNode(l2)) {
+    if (!isListNode(l1) && !isListNode(l2)) {
+      return null;
     }
+    if (!isListNode(l1)) {
+      return l2;
+    }
+    return l1;
+  }
 
-    const rl1 = reverseLinkedListFn(l1),
-        rl2 = reverseLinkedListFn(l2);
+  const rl1 = reverseLinkedListFn(l1);
 
-    let rSum = add2Nums.reference(rl1, rl2);
 
-    return reverseLinkedListFn(rSum);
+  const rl2 = reverseLinkedListFn(l2);
+
+  const rSum = add2Nums.reference(rl1, rl2);
+
+  return reverseLinkedListFn(rSum);
 };
 
 /**
@@ -60,57 +64,69 @@ add2NumsII.reverseInput = (l1, l2) => {
  * Space complexity: O(3N)
  */
 add2NumsII.stackHelper = (l1, l2) => {
-    if (!isListNode(l1) || !isListNode(l2)) {
-        if (!isListNode(l1) && !isListNode(l2)) {
-            return null;
-        }
-        if (!isListNode(l1)) {
-            return l2;
-        }
-        return l1;
+  if (!isListNode(l1) || !isListNode(l2)) {
+    if (!isListNode(l1) && !isListNode(l2)) {
+      return null;
+    }
+    if (!isListNode(l1)) {
+      return l2;
+    }
+    return l1;
+  }
+
+  let curSum = 0;
+
+
+  let carry = 0;
+
+
+  let l1Head = l1;
+
+
+  let l2Head = l2;
+
+
+  const _stackL1 = [];
+
+
+  const _stackL2 = [];
+
+
+  let result = null;
+
+  while (l1Head || l2Head) {
+    if (l1Head) {
+      _stackL1.push(l1Head.val);
+      l1Head = l1Head.next;
+    }
+    if (l2Head) {
+      _stackL2.push(l2Head.val);
+      l2Head = l2Head.next;
+    }
+  }
+
+  while (_stackL1.length > 0 || _stackL2.length > 0 || curSum > 0) {
+    if (_stackL1.length > 0) {
+      curSum += _stackL1.pop();
+    }
+    if (_stackL2.length > 0) {
+      curSum += _stackL2.pop();
     }
 
-    let curSum = 0,
-        carry = 0,
-        l1Head = l1,
-        l2Head = l2,
-        _stackL1 = [],
-        _stackL2 = [],
-        result = null;
+    carry = Math.floor(curSum / 10);
+    curSum %= 10;
 
-    while (l1Head || l2Head) {
-        if (l1Head) {
-            _stackL1.push(l1Head.val);
-            l1Head = l1Head.next;
-        }
-        if (l2Head) {
-            _stackL2.push(l2Head.val);
-            l2Head = l2Head.next;
-        }
-    }
+    result = !result ? new ListNode(curSum) : addToLinkedListFront(curSum, result);
+    curSum = carry;
+  }
 
-    while (_stackL1.length > 0 || _stackL2.length > 0 || curSum > 0) {
-        if (_stackL1.length > 0) {
-            curSum += _stackL1.pop();
-        }
-        if (_stackL2.length > 0) {
-            curSum += _stackL2.pop();
-        }
-
-        carry = Math.floor(curSum / 10);
-        curSum = curSum % 10;
-
-        result = !result ? new ListNode(curSum) : addToLinkedListFront(curSum, result);
-        curSum = carry;
-    }
-
-    return result;
+  return result;
 };
 
 
-/************************************************************************************************************************
+/** **********************************************************************************************************************
 
  * Lessons:
    1. Although seems bit complex, introducing more than one helper data structure is effective for solving the problem.
 
-************************************************************************************************************************/
+*********************************************************************************************************************** */

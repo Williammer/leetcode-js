@@ -7,7 +7,7 @@ describe("# Problem 1 - Two sum (assume that each input would have exactly one s
 
   const allTestSuites = [{
     title: "return expected result for even nums array:  [2, 7, 11, 15] & 9 => [0, 1]",
-    suite: (solutionName) => () => {
+    suite: solutionName => () => {
       const nums = [2, 7, 11, 15];
       const target = 9;
 
@@ -17,7 +17,7 @@ describe("# Problem 1 - Two sum (assume that each input would have exactly one s
   }, {
 
     title: "return expected result for odd nums array:  [2, 20, 11, 7, 15] & 9 => [0, 3]",
-    suite: (solutionName) => () => {
+    suite: solutionName => () => {
       const nums = [2, 20, 11, 7, 15];
       const target = 9;
 
@@ -27,7 +27,7 @@ describe("# Problem 1 - Two sum (assume that each input would have exactly one s
   }, {
 
     title: "return undefined if no desired result:  [2, 7, 11, 15] & 8 => undefined",
-    suite: (solutionName) => () => {
+    suite: solutionName => () => {
       const nums = [2, 7, 11, 15];
       const target = 8;
 
@@ -37,13 +37,23 @@ describe("# Problem 1 - Two sum (assume that each input would have exactly one s
   }, {
 
     title: "return undefined if nums is not array",
-    suite: (solutionName) => () => {
-      const foo = 42,
-        bar = "baz",
-        wow = undefined,
-        much = {},
-        fn = () => {},
-        test = null;
+    suite: solutionName => () => {
+      const foo = 42;
+
+
+      const bar = "baz";
+
+
+      const wow = undefined;
+
+
+      const much = {};
+
+
+      const fn = () => {};
+
+
+      const test = null;
 
       const target = 9;
 
@@ -57,7 +67,7 @@ describe("# Problem 1 - Two sum (assume that each input would have exactly one s
   }, {
 
     title: "return undefined if nums is an array with less than 2 values:  [2] & 9 => undefined",
-    suite: (solutionName) => () => {
+    suite: solutionName => () => {
       const nums = [2];
       const target = 9;
 
@@ -67,13 +77,23 @@ describe("# Problem 1 - Two sum (assume that each input would have exactly one s
   }, {
 
     title: "return undefined if target is not a number",
-    suite: (solutionName) => () => {
-      const foo = [],
-        bar = "baz",
-        wow = undefined,
-        much = {},
-        fn = () => {},
-        test = null;
+    suite: solutionName => () => {
+      const foo = [];
+
+
+      const bar = "baz";
+
+
+      const wow = undefined;
+
+
+      const much = {};
+
+
+      const fn = () => {};
+
+
+      const test = null;
 
       const nums = [2, 7, 11, 15];
 

@@ -1,4 +1,4 @@
-/************************************************************************************************************************
+/** **********************************************************************************************************************
 
  * Problem: https://leetcode.com/problems/single-number/
     Given an array of integers, every element appears twice except for one. Find that single one.
@@ -16,7 +16,7 @@
     The other idea is to use the hash to keep records while looping over the array, which is similar to 1.twoSum, 15.threeSum, it can hv linear time, but the hash will cost mem complexity.
     Another idea is use the magical bit manipulation, XOR is the trick.
 
-************************************************************************************************************************/
+*********************************************************************************************************************** */
 
 
 export const singleNum = {};
@@ -29,28 +29,30 @@ export const singleNum = {};
  * Space complexity: O(N)
  */
 singleNum.hash = (nums) => {
-    if (!Array.isArray(nums) || nums.length === 0) {
-        return null;
+  if (!Array.isArray(nums) || nums.length === 0) {
+    return null;
+  }
+
+  const _hash = new Map();
+
+
+  let result = null;
+
+  for (let i = 0; i < nums.length; i++) {
+    const curNum = nums[i];
+
+    if (_hash.has(curNum)) {
+      _hash.delete(curNum);
+    } else {
+      _hash.set(curNum, true);
     }
+  }
 
-    let _hash = new Map(),
-        result = null;
+  if (_hash.size === 1) {
+    result = _hash.keys().next().value;
+  }
 
-    for (let i = 0; i < nums.length; i++) {
-        let curNum = nums[i];
-
-        if (_hash.has(curNum)) {
-            _hash.delete(curNum);
-        } else {
-            _hash.set(curNum, true);
-        }
-    }
-
-    if (_hash.size === 1) {
-        result = _hash.keys().next().value;
-    }
-
-    return result;
+  return result;
 };
 
 /**
@@ -62,25 +64,25 @@ singleNum.hash = (nums) => {
  * Space complexity: O(1)
  */
 singleNum.bit = (nums) => {
-    if (!Array.isArray(nums) || nums.length === 0) {
-        return null;
-    }
+  if (!Array.isArray(nums) || nums.length === 0) {
+    return null;
+  }
 
-    let result = nums[0];
+  let result = nums[0];
 
-    for (let i = 1; i < nums.length; i++) {
-        result ^= nums[i];
-    }
+  for (let i = 1; i < nums.length; i++) {
+    result ^= nums[i];
+  }
 
-    return result;
+  return result;
 };
 
 
-/************************************************************************************************************************
+/** **********************************************************************************************************************
 
  * Lessons:
    1. XOR is powerful for its self organizing ability. eg. (2^1^4^5^2^4^1) => ((2^2)^(1^1)^(4^4)^(5)) => (0^0^0^5) => 5.
    2. hash is useful for searching, this problem included.
    3. ES6 Map is pretty handy for collection update tasks like getting size, getting keys and delete entry.
 
-************************************************************************************************************************/
+*********************************************************************************************************************** */

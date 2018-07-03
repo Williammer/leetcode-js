@@ -1,4 +1,4 @@
-/************************************************************************************************************************
+/** **********************************************************************************************************************
 
  * Problem: https://leetcode.com/problems/linked-list-random-node/
     Given a singly linked list, return a random node's value from the linked list.
@@ -14,7 +14,7 @@
  * Analysis: Touch end to get length is my first thought,
   later I learnt about the Reservoir sampling approach which progressively rand each node.
 
-************************************************************************************************************************/
+*********************************************************************************************************************** */
 
 
 export const linkedListRandNode = {};
@@ -27,21 +27,23 @@ export const linkedListRandNode = {};
  * Space complexity: O(N)
  */
 linkedListRandNode.touchEnd = (head) => {
-	let resultHead = head,
-		lastIndex = 0;
+  let resultHead = head;
 
-    while(head.next){
-        lastIndex++;
-        head = head.next;
-    }
 
-    let randIndex = Math.floor(Math.random() * (lastIndex+1));
-    while(randIndex > 0){
-        resultHead = resultHead.next;
-        randIndex--;
-    }
+  let lastIndex = 0;
 
-    return resultHead.val;
+  while (head.next) {
+    lastIndex++;
+    head = head.next;
+  }
+
+  let randIndex = Math.floor(Math.random() * (lastIndex + 1));
+  while (randIndex > 0) {
+    resultHead = resultHead.next;
+    randIndex--;
+  }
+
+  return resultHead.val;
 };
 
 /**
@@ -52,35 +54,37 @@ linkedListRandNode.touchEnd = (head) => {
  * Space complexity: O(1)
  */
 linkedListRandNode.reservoirSample = (head) => {
-	if(!head.next){
-        return head.val;
+  if (!head.next) {
+    return head.val;
+  }
+
+  const getRand = function (min, max) {
+    return min + Math.floor(Math.random() * (max - min + 1));
+  };
+
+  let resultHead = head;
+
+
+  let selectedVal = resultHead.val;
+
+  for (let i = 1; resultHead.next !== null; i++) {
+    const rand = getRand(0, i);
+
+    if (rand === 0) {
+      selectedVal = resultHead.next.val;
     }
+    resultHead = resultHead.next;
+  }
 
-    const getRand = function(min, max){
-        return min + Math.floor(Math.random() * (max - min + 1));
-    }
-
-    let resultHead = head,
-        selectedVal = resultHead.val;
-
-    for(var i = 1; resultHead.next !== null; i++){
-        let rand = getRand(0, i);
-
-        if(rand === 0){
-            selectedVal = resultHead.next.val;
-        }
-        resultHead = resultHead.next;
-    }
-
-    return selectedVal;
+  return selectedVal;
 };
 
 
-/************************************************************************************************************************
+/** **********************************************************************************************************************
 
  * Lessons:
    1. Probability can be an idea-helper to solve programming problems.
    2. [test] Testing for random could be done(approximately) by
     validating its distribution of large-scale input to be within acceptable deviation.
 
-************************************************************************************************************************/
+*********************************************************************************************************************** */

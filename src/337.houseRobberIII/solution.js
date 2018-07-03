@@ -1,4 +1,4 @@
-/************************************************************************************************************************
+/** **********************************************************************************************************************
 
  * Problem: https://leetcode.com/problems/house-robber-iii/
     "all houses in this place forms a binary tree".
@@ -26,7 +26,7 @@
 
  * Analysis: This problem needs to solve the sub-set values recusively.
 
-************************************************************************************************************************/
+*********************************************************************************************************************** */
 
 
 import { TreeNode } from "../_.util/binaryTree";
@@ -41,32 +41,34 @@ export const houseRobberIII = {};
  * Space complexity: O(N)
  */
 houseRobberIII.memo = (root) => {
-    const isNode = (node) => {
-            return (node instanceof TreeNode) && node.val !== null;
-        },
-        dpRob = (root, weakMap) => {
-            if (!isNode(root)) {
-                return 0;
-            }
-            if (weakMap.has(root)) {
-                return weakMap.get(root);
-            }
+  const isNode = node => (node instanceof TreeNode) && node.val !== null;
 
-            let value = 0,
-                result = 0;
-            if (isNode(root.left)) {
-                value += dpRob(root.left.left, weakMap) + dpRob(root.left.right, weakMap);
-            }
-            if (isNode(root.right)) {
-                value += dpRob(root.right.left, weakMap) + dpRob(root.right.right, weakMap);
-            }
 
-            result = Math.max(root.val + value, dpRob(root.left, weakMap) + dpRob(root.right, weakMap));
-            weakMap.set(root, result);
-            return result;
-        };
+  const dpRob = (root, weakMap) => {
+    if (!isNode(root)) {
+      return 0;
+    }
+    if (weakMap.has(root)) {
+      return weakMap.get(root);
+    }
 
-    return dpRob(root, new WeakMap());
+    let value = 0;
+
+
+    let result = 0;
+    if (isNode(root.left)) {
+      value += dpRob(root.left.left, weakMap) + dpRob(root.left.right, weakMap);
+    }
+    if (isNode(root.right)) {
+      value += dpRob(root.right.left, weakMap) + dpRob(root.right.right, weakMap);
+    }
+
+    result = Math.max(root.val + value, dpRob(root.left, weakMap) + dpRob(root.right, weakMap));
+    weakMap.set(root, result);
+    return result;
+  };
+
+  return dpRob(root, new WeakMap());
 };
 
 /**
@@ -77,32 +79,36 @@ houseRobberIII.memo = (root) => {
  * Space complexity: O(N)
  */
 houseRobberIII.recursion = (root) => {
-    const isNode = (node) => {
-            return (node instanceof TreeNode) && node.val !== null;
-        },
-        dpRob = (root) => {
-            if (!isNode(root)) {
-                return [0, 0];
-            }
+  const isNode = node => (node instanceof TreeNode) && node.val !== null;
 
-            let result = [],
-                leftSub = dpRob(root.left),
-                rightSub = dpRob(root.right);
 
-            result[0] = root.val + leftSub[1] + rightSub[1];
-            result[1] = Math.max(leftSub[0], leftSub[1]) + Math.max(rightSub[0], rightSub[1]);
-            return result;
-        };
+  const dpRob = (root) => {
+    if (!isNode(root)) {
+      return [0, 0];
+    }
 
-    const result = dpRob(root);
-    return Math.max(result[0], result[1]);
+    const result = [];
+
+
+    const leftSub = dpRob(root.left);
+
+
+    const rightSub = dpRob(root.right);
+
+    result[0] = root.val + leftSub[1] + rightSub[1];
+    result[1] = Math.max(leftSub[0], leftSub[1]) + Math.max(rightSub[0], rightSub[1]);
+    return result;
+  };
+
+  const result = dpRob(root);
+  return Math.max(result[0], result[1]);
 };
 
 
-/************************************************************************************************************************
+/** **********************************************************************************************************************
 
  * Lessons:
    1. Dynamic programming idea to avoid overlapped subsets with memoization is used here.
    2. Using flag to mark the significant state is very helpful in solving the problem.
 
-************************************************************************************************************************/
+*********************************************************************************************************************** */

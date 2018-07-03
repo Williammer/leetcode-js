@@ -1,4 +1,4 @@
-/************************************************************************************************************************
+/** **********************************************************************************************************************
 
  * Problem: https://leetcode.com/problems/binary-tree-level-order-traversal/
     Given a binary tree, return the level order traversal of its nodes' values. (ie, from left to right, level by level).
@@ -23,7 +23,7 @@
 
  * Analysis: This is similar to the bfs solution in 104.maxDepth problem.
 
-************************************************************************************************************************/
+*********************************************************************************************************************** */
 
 
 import { TreeNode, bTreeLvOrderTraversalFn } from "../_.util/binaryTree";
@@ -47,42 +47,40 @@ bTreeLvOrderTraversal.bfs = bTreeLvOrderTraversalFn;
  * Space complexity: O(N)
  */
 bTreeLvOrderTraversal.dfs = (root) => {
-    const isNode = (node) => {
-        return (node instanceof TreeNode) && node.val !== null;
-    };
+  const isNode = node => (node instanceof TreeNode) && node.val !== null;
 
-    if (!isNode(root)) {
-        return [];
+  if (!isNode(root)) {
+    return [];
+  }
+
+  const result = [];
+
+  const dfs = (node, depth) => {
+    if (result.length === depth) {
+      // add new depth array when it's on the limit of result array.
+      result.push([]);
     }
 
-    let result = [];
+    result[depth].push(node.val);
 
-    const dfs = (node, depth) => {
-        if (result.length === depth) {
-            // add new depth array when it's on the limit of result array.
-            result.push([]);
-        }
+    if (isNode(node.left)) {
+      dfs(node.left, depth + 1);
+    }
+    if (isNode(node.right)) {
+      dfs(node.right, depth + 1);
+    }
+  };
 
-        result[depth].push(node.val);
+  dfs(root, 0);
 
-        if (isNode(node.left)) {
-            dfs(node.left, depth + 1);
-        }
-        if (isNode(node.right)) {
-            dfs(node.right, depth + 1);
-        }
-    };
-
-    dfs(root, 0);
-
-    return result;
+  return result;
 };
 
 
-/************************************************************************************************************************
+/** **********************************************************************************************************************
 
  * Lessons:
 	1. level-order traversal is in many ways similar to bfs. One key for bfs is to use a reusable queue to loop over nodes of each depth.
 	2. dfs can also achieve it, just need to keep track of depth state, which corresponds to each result array index - 1.
 
-************************************************************************************************************************/
+*********************************************************************************************************************** */
