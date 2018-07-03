@@ -238,4 +238,10 @@
     "tags": "Tree, BST, Compression",
     "level": "mid",
     "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/449.serializeBST/solution.js"
+}, {
+    "num": 632,
+    "title": "Shortest range of K sorted list",
+    "tags": "Array, Sort, Pointer",
+    "level": "mid",
+    "solution.js": "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/632.shortestRangeInKSortedList/solution.js"
 }]

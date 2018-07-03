@@ -9,34 +9,85 @@
     Input:[[4,10,15,24,26], [0,9,12,20], [5,18,22,30]]
     Output: [20,24]
 
-
  * @param {number[][]} nums
  * @return {number[]}
 
- * Analysis:
- *  Interfence 1: The start and end num of the range has to be within two different lists.
- *  
-
 ************************************************************************************************************************/
 
-
 /**
- * Solution 1: 
+ * Solution 1: Bump up the list pointer of the smallest num to seek smaller range.
+ * Start from smallest num of each list, find the minimized num and move its pointer to next num,
+ *  in an attempt to seek for smaller range.
  *
- * "N" is 
- * Time complexity: O()
- * Space complexity: O()
+ * (N: The num of times to get the num range of each number combination of lists.)
+ * Time complexity: [O(1), O(K * N/2), O(K * N)]
+ * Space complexity: O(K)
  */
 export function normal(nums) {
+  if (!Array.isArray(nums) || nums.length <= 0) {
+    throw new Error('Invalid lists input provided');
+  }
 
+  const pointers = nums.map(() => 0);
+  let minIndex = 0;
+  let result = [null, null];
+  if (nums.length === 1) {
+    return [nums[0][0], nums[0][0]];
+  }
 
-  return;
-};
+  while (pointers[minIndex] < nums[minIndex].length) {
+    let minValue = null;
+    let maxValue = null;
+    let maxIndex;
+    const setMax = (value, index) => {
+      maxValue = value;
+      maxIndex = index;
+    };
+    const setMin = (value, index) => {
+      minValue = value;
+      minIndex = index;
+    };
 
+    pointers.forEach((pointer, index) => {
+      const value = nums[index][pointer];
+
+      if (minValue === null) {
+        setMin(value, index);
+      } else if (maxValue === null) {
+        if (value < minValue) {
+          setMax(minValue, minIndex);
+          setMin(value, index);
+        } else {
+          setMax(value, index);
+        }
+      } else if (value < minValue) {
+        setMin(value, index);
+      } else if (value > maxValue) {
+        setMax(value, index);
+      }
+    });
+
+    if (result[0] === null ||
+        result[1] === null ||
+        maxValue - minValue < result[1] - result[0]
+    ) {
+      result = [minValue, maxValue];
+    }
+
+    if (maxValue === minValue) {
+      break;
+    }
+
+    pointers[minIndex]++;
+  }
+
+  return result;
+}
 
 /************************************************************************************************************************
 
  * Lessons:
-   1. 
+   1. Analyse what is needed to do to get closer to find the smallest range, which is to
+      bump up the index of the min edge of the current smallest range.
 
 ************************************************************************************************************************/
