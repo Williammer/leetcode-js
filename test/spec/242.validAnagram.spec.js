@@ -5,21 +5,15 @@ describe("# Problem 242 - Given two strings s and t, write a function to determi
     it("invalid input => false", () => {
       const foo = 42;
 
-
       const bar = true;
-
 
       const bar2 = false;
 
-
       const wow = undefined;
-
 
       const much = {};
 
-
       const fn = () => {};
-
 
       const test = null;
 
@@ -89,21 +83,15 @@ describe("# Problem 242 - Given two strings s and t, write a function to determi
     it("invalid input => false", () => {
       const foo = 42;
 
-
       const bar = true;
-
 
       const bar2 = false;
 
-
       const wow = undefined;
-
 
       const much = {};
 
-
       const fn = () => {};
-
 
       const test = null;
 
@@ -173,21 +161,15 @@ describe("# Problem 242 - Given two strings s and t, write a function to determi
     it("invalid input => false", () => {
       const foo = 42;
 
-
       const bar = true;
-
 
       const bar2 = false;
 
-
       const wow = undefined;
-
 
       const much = {};
 
-
       const fn = () => {};
-
 
       const test = null;
 

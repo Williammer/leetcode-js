@@ -126,7 +126,6 @@ describe("# Problem 371 - Calculate the sum of two integers without operator + a
   });
 });
 
-
 describe("# Problem 371 - extended - Calculate the substraction of two integers without operator + and -.", () => {
   describe("Solution 1: use ^, & and << in recursion way.", () => {
     it("all positive num; a > b: 47 - 19", () => {

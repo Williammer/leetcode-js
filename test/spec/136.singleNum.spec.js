@@ -5,7 +5,6 @@ describe("# Problem 136 - Given an array of integers, every element appears twic
     it("[] => null ", () => {
       const arr = [];
 
-
       const result = singleNum.hash(arr);
 
       expect(result).toBeNull();
@@ -13,7 +12,6 @@ describe("# Problem 136 - Given an array of integers, every element appears twic
 
     it("[1] => 1 ", () => {
       const arr = [1];
-
 
       const result = singleNum.hash(arr);
 
@@ -23,7 +21,6 @@ describe("# Problem 136 - Given an array of integers, every element appears twic
     it("[2, 1, 2] => 1 ", () => {
       const arr = [2, 1, 2];
 
-
       const result = singleNum.hash(arr);
 
       expect(result).toEqual(1);
@@ -32,7 +29,6 @@ describe("# Problem 136 - Given an array of integers, every element appears twic
     it("[2, 1, 2, 1, 3] => 3 ", () => {
       const arr = [2, 1, 2, 1, 3];
 
-
       const result = singleNum.hash(arr);
 
       expect(result).toEqual(3);
@@ -40,7 +36,6 @@ describe("# Problem 136 - Given an array of integers, every element appears twic
 
     it("[1,2,3,4,4,3,1] => 2 ", () => {
       const arr = [1, 2, 3, 4, 4, 3, 1];
-
 
       const result = singleNum.hash(arr);
 
@@ -52,7 +47,6 @@ describe("# Problem 136 - Given an array of integers, every element appears twic
     it("[] => null ", () => {
       const arr = [];
 
-
       const result = singleNum.bit(arr);
 
       expect(result).toBeNull();
@@ -60,7 +54,6 @@ describe("# Problem 136 - Given an array of integers, every element appears twic
 
     it("[1] => 1 ", () => {
       const arr = [1];
-
 
       const result = singleNum.bit(arr);
 
@@ -70,7 +63,6 @@ describe("# Problem 136 - Given an array of integers, every element appears twic
     it("[2, 1, 2] => 1 ", () => {
       const arr = [2, 1, 2];
 
-
       const result = singleNum.bit(arr);
 
       expect(result).toEqual(1);
@@ -79,7 +71,6 @@ describe("# Problem 136 - Given an array of integers, every element appears twic
     it("[2, 1, 2, 1, 3] => 3 ", () => {
       const arr = [2, 1, 2, 1, 3];
 
-
       const result = singleNum.bit(arr);
 
       expect(result).toEqual(3);
@@ -87,7 +78,6 @@ describe("# Problem 136 - Given an array of integers, every element appears twic
 
     it("[1,2,3,4,4,3,1] => 2 ", () => {
       const arr = [1, 2, 3, 4, 4, 3, 1];
-
 
       const result = singleNum.bit(arr);
 

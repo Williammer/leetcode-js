@@ -6,18 +6,13 @@ describe("# Problem 445 - Add two non-negative numbers represented by two linked
     it("return null if 2 nums are both invalid: null+null => null", () => {
       const foo = 42;
 
-
       const bar = "baz";
-
 
       const wow = undefined;
 
-
       const much = {};
 
-
       const fn = () => {};
-
 
       const test = null;
 
@@ -36,7 +31,6 @@ describe("# Problem 445 - Add two non-negative numbers represented by two linked
       const result13 = add2NumsII.reverseInput(much, fn);
       const result14 = add2NumsII.reverseInput(much, test);
       const result15 = add2NumsII.reverseInput(fn, test);
-
 
       expect(result1).toBeNull();
       expect(result2).toBeNull();
@@ -59,18 +53,13 @@ describe("# Problem 445 - Add two non-negative numbers represented by two linked
       const l1 = arrayToLinkedlist([2, 4, 3]);
       const foo = 42;
 
-
       const bar = "baz";
-
 
       const wow = undefined;
 
-
       const much = {};
 
-
       const fn = () => {};
-
 
       const test = null;
 
@@ -150,18 +139,13 @@ describe("# Problem 445 - Add two non-negative numbers represented by two linked
     it("return null if 2 nums are both invalid: null+null => null", () => {
       const foo = 42;
 
-
       const bar = "baz";
-
 
       const wow = undefined;
 
-
       const much = {};
 
-
       const fn = () => {};
-
 
       const test = null;
 
@@ -180,7 +164,6 @@ describe("# Problem 445 - Add two non-negative numbers represented by two linked
       const result13 = add2NumsII.stackHelper(much, fn);
       const result14 = add2NumsII.stackHelper(much, test);
       const result15 = add2NumsII.stackHelper(fn, test);
-
 
       expect(result1).toBeNull();
       expect(result2).toBeNull();
@@ -203,18 +186,13 @@ describe("# Problem 445 - Add two non-negative numbers represented by two linked
       const l1 = arrayToLinkedlist([2, 4, 3]);
       const foo = 42;
 
-
       const bar = "baz";
-
 
       const wow = undefined;
 
-
       const much = {};
 
-
       const fn = () => {};
-
 
       const test = null;
 

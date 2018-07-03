@@ -102,7 +102,6 @@ describe("# Problem 112 - Has root2leaf path sum certain.", () => {
       expect(result).toEqual(true);
     });
 
-
     it("[6, 2, 9, null, 4, 7, 10, 3], 37 --> false", () => {
       const array = [6, 2, 9, null, 4, 7, 10, 3];
       const tree = arrayToBinaryTree(array);
@@ -221,7 +220,6 @@ describe("# Problem 112 - Has root2leaf path sum certain.", () => {
 
       expect(result).toEqual(true);
     });
-
 
     it("[6, 2, 9, null, 4, 7, 10, 3], 37 --> false", () => {
       const array = [6, 2, 9, null, 4, 7, 10, 3];

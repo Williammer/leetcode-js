@@ -1,5 +1,9 @@
 import {
-  ListNode, arrayToLinkedlist, linkedlistToArray, cloneLinkedlist, addToLinkedListFront,
+  ListNode,
+  arrayToLinkedlist,
+  linkedlistToArray,
+  cloneLinkedlist,
+  addToLinkedListFront,
 } from "../../src/_.util/linkedList";
 import { arrayToBinaryTree, binaryTreeToArray } from "../../src/_.util/binaryTree";
 
@@ -72,7 +76,6 @@ describe("[Util] linkedList - add node to Linkedlist front.", () => {
   });
 });
 
-
 // # binaryTree
 describe("[Util] binaryTree - Generate binary tree base on node values array, the value evaluated as false will be considered null node.", () => {
   it("[1, null, null, 1, 2, 3, 4]", () => {
@@ -136,7 +139,6 @@ describe("[Util] binaryTree - Generate binary tree base on node values array, th
     expect(rootNode.right.right.right.val).toEqual(6);
   });
 });
-
 
 describe("[Util] binaryTree - Generate node values array base on binary tree.", () => {
   it("[1, null, null]", () => {

@@ -36,7 +36,6 @@ describe("# Problem 2 - Add two non-negative numbers represented by two linked l
     });
   });
 
-
   describe("Solution 2: Recursion", () => {
     it("return right sum for 2 nums with same digits num that has not carry num: [2, 4, 3]+[5, 2, 5] => [7, 6, 8]", () => {
       const l1 = arrayToLinkedlist([2, 4, 3]);

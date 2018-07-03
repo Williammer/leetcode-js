@@ -13,18 +13,13 @@ describe("# Problem 167 - Find 2 indexes of nums from a sorted array which adds 
     it("return undefined if nums is not array", () => {
       const foo = 42;
 
-
       const bar = "baz";
-
 
       const wow = undefined;
 
-
       const much = {};
 
-
       const fn = () => {};
-
 
       const test = null;
 
@@ -49,18 +44,13 @@ describe("# Problem 167 - Find 2 indexes of nums from a sorted array which adds 
     it("return undefined if target is not a number", () => {
       const foo = [];
 
-
       const bar = "baz";
-
 
       const wow = undefined;
 
-
       const much = {};
 
-
       const fn = () => {};
-
 
       const test = null;
 
@@ -135,18 +125,13 @@ describe("# Problem 167 - Find 2 indexes of nums from a sorted array which adds 
     it("return undefined if nums is not array", () => {
       const foo = 42;
 
-
       const bar = "baz";
-
 
       const wow = undefined;
 
-
       const much = {};
 
-
       const fn = () => {};
-
 
       const test = null;
 
@@ -171,18 +156,13 @@ describe("# Problem 167 - Find 2 indexes of nums from a sorted array which adds 
     it("return undefined if target is not a number", () => {
       const foo = [];
 
-
       const bar = "baz";
-
 
       const wow = undefined;
 
-
       const much = {};
 
-
       const fn = () => {};
-
 
       const test = null;
 

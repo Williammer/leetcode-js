@@ -8,8 +8,8 @@ describe("# Problem 125 - whether the given string is palindrome. Only consider 
       expect(result).toEqual(true);
     });
 
-    it("';:\|{><?' -> true", () => {
-      const result = strPalindrome.twoPointers(";:\|{><?");
+    it("';:|{><?' -> true", () => {
+      const result = strPalindrome.twoPointers(";:|{><?");
 
       expect(result).toEqual(true);
     });
@@ -26,8 +26,8 @@ describe("# Problem 125 - whether the given string is palindrome. Only consider 
       expect(result).toEqual(true);
     });
 
-    it("'.;:\|a.;:\|{><?a><?' -> true", () => {
-      const result = strPalindrome.twoPointers(".;:\|a.;:\|{><?a><?");
+    it("'.;:|a.;:|{><?a><?' -> true", () => {
+      const result = strPalindrome.twoPointers(".;:|a.;:|{><?a><?");
 
       expect(result).toEqual(true);
     });
@@ -82,8 +82,8 @@ describe("# Problem 125 - whether the given string is palindrome. Only consider 
       expect(result).toEqual(true);
     });
 
-    it("';:\|{><?' -> true", () => {
-      const result = strPalindrome.twoPointersInsens(";:\|{><?");
+    it("';:|{><?' -> true", () => {
+      const result = strPalindrome.twoPointersInsens(";:|{><?");
 
       expect(result).toEqual(true);
     });
@@ -100,8 +100,8 @@ describe("# Problem 125 - whether the given string is palindrome. Only consider 
       expect(result).toEqual(true);
     });
 
-    it("'.;:\|a.;:\|{><?a><?' -> true", () => {
-      const result = strPalindrome.twoPointersInsens(".;:\|a.;:\|{><?a><?");
+    it("'.;:|a.;:|{><?a><?' -> true", () => {
+      const result = strPalindrome.twoPointersInsens(".;:|a.;:|{><?a><?");
 
       expect(result).toEqual(true);
     });
