@@ -36,21 +36,21 @@ describe("# Problem 632 - Shortest range for K sorted lists.", () => {
     },
   ];
 
-    describe("Solution 1: move the pointer of smallest num", () => {
-      dataSets.forEach(({ data: lists, result }) => {
-        describe(`input: ${JSON.stringify(lists)} => output: ${JSON.stringify(result)}`, () => {
-          it("the range should contain at least one item from each list", () => {
-            const [start, end] = normal(lists);
-            const allListInRange = lists.every(
-              list => list.find(item => item >= start && item <= end) !== undefined
-            );
-            expect(allListInRange).toBe(true);
-          });
+  describe("Solution 1: move the pointer of smallest num", () => {
+    dataSets.forEach(({ data: lists, result }) => {
+      describe(`input: ${JSON.stringify(lists)} => output: ${JSON.stringify(result)}`, () => {
+        it("the range should contain at least one item from each list", () => {
+          const [start, end] = normal(lists);
+          const allListInRange = lists.every(
+            list => list.find(item => item >= start && item <= end) !== undefined,
+          );
+          expect(allListInRange).toBe(true);
+        });
 
-          it("should find the shortest range of items from K sorted lists", () => {
-            expect(normal(lists)).toEqual(result);
-          });
+        it("should find the shortest range of items from K sorted lists", () => {
+          expect(normal(lists)).toEqual(result);
         });
       });
+    });
   });
 });

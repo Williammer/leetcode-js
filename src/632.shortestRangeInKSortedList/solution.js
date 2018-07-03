@@ -1,18 +1,17 @@
-/************************************************************************************************************************
-
+/**
  * Problem: https://leetcode.com/problems/smallest-range/description/
     You have k lists of sorted integers in ascending order.
     Find the smallest range that includes at least one number from each of the k lists.
     We define the range [a,b] is smaller than range [c,d] if b-a < d-c or a < c if b-a == d-c.
-
+ *
  * Example 1:
     Input:[[4,10,15,24,26], [0,9,12,20], [5,18,22,30]]
     Output: [20,24]
-
+ *
  * @param {number[][]} nums
  * @return {number[]}
-
-************************************************************************************************************************/
+ *
+ */
 
 /**
  * Solution 1: Bump up the list pointer of the smallest num to seek smaller range.
@@ -25,7 +24,7 @@
  */
 export function normal(nums) {
   if (!Array.isArray(nums) || nums.length <= 0) {
-    throw new Error('Invalid lists input provided');
+    throw new Error("Invalid lists input provided");
   }
 
   const pointers = nums.map(() => 0);
@@ -38,34 +37,28 @@ export function normal(nums) {
   while (pointers[minIndex] < nums[minIndex].length) {
     let minValue = null;
     let maxValue = null;
-    let maxIndex;
-    const setMax = (value, index) => {
-      maxValue = value;
-      maxIndex = index;
-    };
-    const setMin = (value, index) => {
-      minValue = value;
-      minIndex = index;
-    };
 
-    pointers.forEach((pointer, index) => {
-      const value = nums[index][pointer];
-
+    for (let i = 0; i < pointers.length; i += 1) {
+      const pointer = pointers[i];
+      const value = nums[i][pointer];
       if (minValue === null) {
-        setMin(value, index);
+        minValue = value;
+        minIndex = i;
       } else if (maxValue === null) {
         if (value < minValue) {
-          setMax(minValue, minIndex);
-          setMin(value, index);
+          maxValue = minValue;
+          minValue = value;
+          minIndex = i;
         } else {
-          setMax(value, index);
+          maxValue = value;
         }
       } else if (value < minValue) {
-        setMin(value, index);
+        minValue = value;
+        minIndex = i;
       } else if (value > maxValue) {
-        setMax(value, index);
+        maxValue = value;
       }
-    });
+    }
 
     if (result[0] === null ||
         result[1] === null ||
@@ -78,16 +71,15 @@ export function normal(nums) {
       break;
     }
 
-    pointers[minIndex]++;
+    pointers[minIndex] += 1;
   }
 
   return result;
 }
 
-/************************************************************************************************************************
-
+/**
+ *
  * Lessons:
    1. Analyse what is needed to do to get closer to find the smallest range, which is to
       bump up the index of the min edge of the current smallest range.
-
-************************************************************************************************************************/
+ */
