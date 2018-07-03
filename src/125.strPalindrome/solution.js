@@ -1,5 +1,4 @@
-/** **********************************************************************************************************************
-
+/**
  * Problem: https://leetcode.com/problems/valid-palindrome/
     Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
 
@@ -13,7 +12,7 @@
 
  * Analysis: Shrink the string range by a head and tail pointer and to compare each char.
 
-*********************************************************************************************************************** */
+ */
 
 
 export const strPalindrome = {};
@@ -50,7 +49,7 @@ strPalindrome.twoPointers = (s) => {
 
   while (pHead < pTail) {
     while (!isAlphaNumeric(s[pHead]) && pHead < pTail) {
-      pHead++;
+      pHead += 1;
     }
     while (!isAlphaNumeric(s[pTail]) && pHead < pTail) {
       pTail--;
@@ -60,7 +59,7 @@ strPalindrome.twoPointers = (s) => {
       return false;
     }
 
-    pHead++;
+    pHead += 1;
     pTail--;
   }
 
@@ -111,7 +110,7 @@ strPalindrome.twoPointersInsens = (s) => {
 
   while (pHead < pTail) {
     while (!isAlphaNumeric(s[pHead]) && pHead < pTail) {
-      pHead++;
+      pHead += 1;
     }
     while (!isAlphaNumeric(s[pTail]) && pHead < pTail) {
       pTail--;
@@ -121,7 +120,7 @@ strPalindrome.twoPointersInsens = (s) => {
       return false;
     }
 
-    pHead++;
+    pHead += 1;
     pTail--;
   }
 
@@ -129,12 +128,11 @@ strPalindrome.twoPointersInsens = (s) => {
 };
 
 
-/** **********************************************************************************************************************
-
+/**
  * Lessons:
    1. Tackle palindrome with 2 pointers is effective and strightforward.
    2. Be careful for the brackets added in the multiple boolean logic expressions,
     '||' returns true if the before-part is true, so it needs proper brackets to restrict the scope.
     eg. (ca >= 65 && ca <= 90) || (cb >= 97 && cb <= 122) will be different from (ca >= 65 && ca <= 90 || cb >= 97 && cb <= 122).
 
-*********************************************************************************************************************** */
+ */

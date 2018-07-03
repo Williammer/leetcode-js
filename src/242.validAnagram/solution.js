@@ -1,5 +1,4 @@
-/** **********************************************************************************************************************
-
+/**
  * Problem: https://leetcode.com/problems/valid-anagram/
     Given two strings s and t, write a function to determine if t is an anagram of s.
  	You may assume the string contains only lowercase alphabets.
@@ -15,7 +14,7 @@
 
  * Analysis: This is a compare question, thus we can think of solutions like hash, sort, etc.
 
-*********************************************************************************************************************** */
+ */
 
 
 export const validAnagram = {};
@@ -41,7 +40,7 @@ validAnagram.hash = (s, t) => {
   let i = 0;
   while (i < len) {
     if (typeof _hash[s[i]] === "number") {
-      _hash[s[i]]++;
+      _hash[s[i]] += 1;
     } else {
       _hash[s[i]] = 1;
     }
@@ -52,7 +51,7 @@ validAnagram.hash = (s, t) => {
       _hash[t[i]] = -1;
     }
 
-    i++;
+    i += 1;
   }
 
   for (const key in _hash) {
@@ -115,7 +114,7 @@ validAnagram.alphaTable = (s, t) => {
     	if (typeof alphaTable[s[i].charCodeAt(0) - baseCode] !== "number") {
     		alphaTable[s[i].charCodeAt(0) - baseCode] = 1;
     	} else {
-    		alphaTable[s[i].charCodeAt(0) - baseCode]++;
+    		alphaTable[s[i].charCodeAt(0) - baseCode] += 1;
     	}
 
     	if (typeof alphaTable[t[i].charCodeAt(0) - baseCode] !== "number") {
@@ -129,11 +128,10 @@ validAnagram.alphaTable = (s, t) => {
 };
 
 
-/** **********************************************************************************************************************
-
+/**
  * Lessons:
    1. The alphaTable solution is most efficient epecially on case that has many same chars in both strings.
    2. Some restrictions on Array make it unable to handle specific chars well.
    3. Array#forEach doesn't hv native ability to break, it needs thrown exception to break! Use Array#some/every instead.
 
-*********************************************************************************************************************** */
+ */

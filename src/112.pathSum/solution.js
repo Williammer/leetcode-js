@@ -1,5 +1,4 @@
-/** **********************************************************************************************************************
-
+/**
  * Problem: https://leetcode.com/problems/path-sum/
     Given a binary tree and a sum, determine if the tree has a root-to-leaf path such that adding up all the values along the path equals the given sum.
 
@@ -22,7 +21,7 @@
  * Analysis: Pre-order dfs can be helpful for finding the path info.
  	And since this problem is about root-to-leaf path, we can replace values of each sub-node with root2node value sum.
 
-*********************************************************************************************************************** */
+ */
 
 import { TreeNode } from "../_.util/binaryTree";
 
@@ -91,10 +90,9 @@ pathSum.dfs = (root, sum) => {
 };
 
 
-/** **********************************************************************************************************************
-
+/**
  * Lessons:
    1. Reduce node values to get path Sum.
    2. Minus sum to match node values.
 
-*********************************************************************************************************************** */
+ */

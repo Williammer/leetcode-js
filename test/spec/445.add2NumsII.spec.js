@@ -1,4 +1,4 @@
-import { ListNode, arrayToLinkedlist, linkedlistToArray } from "../../src/_.util/linkedList";
+import { arrayToLinkedlist, linkedlistToArray } from "../../src/_.util/linkedList";
 import { add2NumsII } from "../../src/445.add2NumsII/solution";
 
 describe("# Problem 445 - Add two non-negative numbers represented by two linked lists into a number represented by a linked list too", () => {

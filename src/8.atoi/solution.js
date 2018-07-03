@@ -1,5 +1,4 @@
-/** **********************************************************************************************************************
-
+/**
  * Problem: https://leetcode.com/problems/string-to-integer-atoi/
     Implement atoi to convert a string to an integer.
     Notes: It is intended for this problem to be specified vaguely (ie, no given input specs). You are responsible to gather all the input requirements up front.
@@ -13,7 +12,7 @@
 
  * Analysis: we can traverse each char and put into result if valid.
 
-*********************************************************************************************************************** */
+ */
 
 
 export const atoi = {};
@@ -29,7 +28,7 @@ atoi.traverse = (str) => {
 
   let result = 0;
 
-  for (i = 0; i < str.length; i++) {
+  for (i = 0; i < str.length; i += 1) {
     curChar = str[i];
     curCharCode = str.charCodeAt(i);
 
@@ -78,9 +77,8 @@ atoi.traverse = (str) => {
 };
 
 
-/** **********************************************************************************************************************
-
+/**
  * Lessons:
    1. Edge consideration like over/underflow, positive/negative number are the major things to practice here.
 
-*********************************************************************************************************************** */
+ */

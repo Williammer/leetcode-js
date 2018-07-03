@@ -1,5 +1,4 @@
-/** **********************************************************************************************************************
-
+/**
  * Problem: https://leetcode.com/problems/serialize-and-deserialize-bst/
     Serialization is the process of converting a data structure or object into a sequence of bits,
      so that it can be stored in a file or memory buffer.
@@ -16,7 +15,7 @@
  * Analysis: This problem is to convert the representation of a BST.
     We know that BST can be Object or Array, we can explore other possible conversions like array->string->encode(str)...
 
-*********************************************************************************************************************** */
+ */
 
 import { TreeNode, binaryTreeToString, arrayToBinaryTree } from "../_.util/binaryTree";
 
@@ -38,9 +37,8 @@ serializeBST.deserialize = (data) => {
 };
 
 
-/** **********************************************************************************************************************
-
+/**
  * Lessons:
    1. What applies to BT also applies to BST.
 
-*********************************************************************************************************************** */
+ */

@@ -1,5 +1,4 @@
-/** **********************************************************************************************************************
-
+/**
  * Problem: https://leetcode.com/problems/kth-smallest-element-in-a-bst/
     Given a binary search tree, write a function kthSmallest to find the kth smallest element in it.
 
@@ -10,7 +9,7 @@
 
  * Analysis: Try in-order, which traverse nodes in sorted order of values.
 
-*********************************************************************************************************************** */
+ */
 
 import { TreeNode } from "../_.util/binaryTree";
 
@@ -43,10 +42,10 @@ kthSmallInBST.inOrder = (root, k) => {
 
       if (i === k) {
         result = node.val;
-        i++;
+        i += 1;
         return;
       }
-      i++;
+      i += 1;
 
 
       if (isNode(node.right)) {
@@ -137,11 +136,10 @@ kthSmallInBST.binarySearch = (root, k) => {
 };
 
 
-/** **********************************************************************************************************************
-
+/**
  * Lessons:
    1. in-order for BST will traverse the tree in sorted order.
    2. the iterative in-order traverse is delicated, with using 'while' and 'stack' to full power to fullfill recursion.
    3. the count of a node & its child is a useful derived data.
 
-*********************************************************************************************************************** */
+ */

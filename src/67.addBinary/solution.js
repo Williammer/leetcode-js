@@ -1,5 +1,4 @@
-/** **********************************************************************************************************************
-
+/**
  * Problem:https://leetcode.com/problems/add-binary/
      Given two binary strings, return their sum (also a binary string).
 
@@ -14,7 +13,7 @@
 
  * Analysis: Loop over each num and handle the carry num.
 
-*********************************************************************************************************************** */
+ */
 
 
 export const addBinary = {};
@@ -51,10 +50,9 @@ addBinary.iterate = (a, b) => {
 };
 
 
-/** **********************************************************************************************************************
-
+/**
  * Lessons:
    1. Good practice of looping and handling of various cases of carry num.
    2. Mutiple condition while loop is powerful.
 
-*********************************************************************************************************************** */
+ */

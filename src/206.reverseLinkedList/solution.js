@@ -1,5 +1,4 @@
-/** **********************************************************************************************************************
-
+/**
  * Problem: https://leetcode.com/problems/reverse-linked-list/
     Reverse a singly linked list.
 
@@ -13,7 +12,7 @@
 
  * Analysis: Reverse is to break the old listNode's reference and point it to new listNode.
 
-*********************************************************************************************************************** */
+ */
 
 
 import { ListNode, reverseLinkedListFn } from "../_.util/linkedList";
@@ -52,9 +51,8 @@ reverseLinkedList.recursion = (head) => {
 };
 
 
-/** **********************************************************************************************************************
-
+/**
  * Lessons:
    1. LinkedList handling on the code(such as those assignments) is a bit abstract, better think in the visualized way.
 
-*********************************************************************************************************************** */
+ */

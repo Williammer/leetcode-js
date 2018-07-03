@@ -1,5 +1,4 @@
-/** **********************************************************************************************************************
-
+/**
  * Problem: https://leetcode.com/problems/binary-tree-inorder-traversal/
     Given a binary tree, return the inorder traversal of its nodes' values.
 
@@ -16,7 +15,7 @@
 
  * Analysis: In theory, inorder should still be DFS, so we can try that.
 
-*********************************************************************************************************************** */
+ */
 
 import { TreeNode, bTreeInOrderTraversalFn } from "../_.util/binaryTree";
 
@@ -68,10 +67,9 @@ bTreeInOrderTraversal.iterative = (root) => {
 };
 
 
-/** **********************************************************************************************************************
-
+/**
  * Lessons:
    1. In-order is basically dfs, and dfs is recursion.
    2. One thing to note is that in-order for BST will traverse the tree in sorted order.
 
-*********************************************************************************************************************** */
+ */

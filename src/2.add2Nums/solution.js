@@ -1,5 +1,4 @@
-/** **********************************************************************************************************************
-
+/**
  * Problem: https://leetcode.com/problems/add-two-numbers/
     You are given two linked lists representing two non-negative numbers.
     The digits are stored in reverse order and each of their nodes contain a single digit.
@@ -17,7 +16,7 @@
  * Analysis: At first I consider use a stack to cache the sum digits.
    Later I've learned we can utilize the basic mutable reference feature for linkedList traversal, which is commonly used.
 
-*********************************************************************************************************************** */
+ */
 
 
 import { ListNode, isListNode } from "../_.util/linkedList";
@@ -102,10 +101,9 @@ add2Nums.recursion = (l1, l2) => {
 };
 
 
-/** **********************************************************************************************************************
-
+/**
  * Lessons:
    1. Mutable object reference is common for traverse linkedList.
    2. Base case for recursion needs to be well-designed for different edge cases.
 
-*********************************************************************************************************************** */
+ */

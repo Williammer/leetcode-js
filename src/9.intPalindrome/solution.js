@@ -1,5 +1,4 @@
-/** **********************************************************************************************************************
-
+/**
  * Problem: https://leetcode.com/problems/palindrome-number/
     Determine whether an integer is a palindrome. Do this without extra space. Negative num be regarded as false.
 
@@ -15,7 +14,7 @@
     We can achieve this by trying to get two digits with one from the start and one from the end of the number.
     Another thinking is to get the reversed half part of the num and compare.
 
-*********************************************************************************************************************** */
+ */
 
 
 export const intPalindrome = {};
@@ -89,9 +88,8 @@ intPalindrome.halfRev = (num) => {
 };
 
 
-/** **********************************************************************************************************************
-
+/**
  * Lessons:
    1. There are useful ways like '%', '/' and num reverse that enable us to manipulate numbers like string or array.
 
-*********************************************************************************************************************** */
+ */

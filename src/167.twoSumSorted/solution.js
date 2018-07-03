@@ -1,5 +1,4 @@
-/** **********************************************************************************************************************
-
+/**
  * Problem: https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
     Given an array of integers that is already sorted in ascending order, find two numbers such that they add up to a specific target number.
 	NOTE: index1 must be less than index2. Please note that your returned answers (both index1 and index2) are not zero-based.
@@ -21,7 +20,7 @@
 
     NOTE: Array:sort by default didn't sort nums in ascending order, so need the helper function 'sortNumber' to set the rule.
 
-*********************************************************************************************************************** */
+ */
 
 export const twoSumSorted = {};
 
@@ -42,7 +41,7 @@ twoSumSorted.bSearch = (sortedNums, target) => {
 
   // loop over the anchor num starting from smallest num.
   anchorEleLoop:
-  for (i = 0; i < sortedNums.length - 1; i++) {
+  for (i = 0; i < sortedNums.length - 1; i += 1) {
     lo = i + 1;
     hi = sortedNums.length - 1;
     compensate = target - sortedNums[i];
@@ -104,7 +103,7 @@ twoSumSorted.twoPointer = (sortedNums, target) => {
     if (sortedNums[lo] + sortedNums[hi] > target) {
       hi--;
     } else if (sortedNums[lo] + sortedNums[hi] < target) {
-      lo++;
+      lo += 1;
     } else {
       return [lo + 1, hi + 1];
     }
@@ -112,11 +111,10 @@ twoSumSorted.twoPointer = (sortedNums, target) => {
 };
 
 
-/** **********************************************************************************************************************
-
+/**
  * Lessons:
    1. Some edge cases of binary search needs to be handled carefully.
    2. Nested loop can be continue respectively with label, which was rarely used.
    3. two pointer solution is an efficient yet easy to understand solution, sometimes we efficiency and concise can be achieved together.
 
-*********************************************************************************************************************** */
+ */

@@ -1,5 +1,4 @@
-/** **********************************************************************************************************************
-
+/**
  * Problem: https://leetcode.com/problems/palindrome-linked-list/
     Given a singly linked list, determine if it is a palindrome.
 
@@ -14,7 +13,7 @@
  * Analysis: LinkedList looks bit different than string/array or number, we can create a reversed linkedList and compare.
     We can also try to reverse only half of the list with fast/slow pointers.
 
-*********************************************************************************************************************** */
+ */
 
 
 import { ListNode, cloneLinkedlist, reverseLinkedListFn } from "../_.util/linkedList";
@@ -94,10 +93,9 @@ linkedListPalindrome.reverseHalf = (head) => {
 };
 
 
-/** **********************************************************************************************************************
-
+/**
  * Lessons:
    1. palindrome problems can normally be handled by 2pointer shrink or half/all reverse compare.
    2. linkedList's fast/slow pointers can help decide middle position.
 
-*********************************************************************************************************************** */
+ */

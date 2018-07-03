@@ -1,5 +1,4 @@
-/** **********************************************************************************************************************
-
+/**
  * Problem: https://leetcode.com/problems/reverse-integer/
     Reverse digits of an integer.
 
@@ -14,7 +13,7 @@
 
  * Analysis: The difficulty for this problem is how to use js to reverse digits of each pos, while keep some edge case in mind.
 
-*********************************************************************************************************************** */
+ */
 
 
 export const reverseInt = {};
@@ -50,9 +49,8 @@ reverseInt.fn = (x) => {
 };
 
 
-/** **********************************************************************************************************************
-
+/**
  * Lessons:
    1. "%" and "/" are very useful in javaScript especially in number-related tasks; it's elegant yet powerful, unlike some js operators.
 
-*********************************************************************************************************************** */
+ */

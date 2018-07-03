@@ -1,5 +1,4 @@
-/** **********************************************************************************************************************
-
+/**
  * Problem: https://leetcode.com/problems/house-robber-iii/
     "all houses in this place forms a binary tree".
     It will automatically contact the police if two directly-linked houses were broken into on the same night.
@@ -26,7 +25,7 @@
 
  * Analysis: This problem needs to solve the sub-set values recusively.
 
-*********************************************************************************************************************** */
+ */
 
 
 import { TreeNode } from "../_.util/binaryTree";
@@ -105,10 +104,9 @@ houseRobberIII.recursion = (root) => {
 };
 
 
-/** **********************************************************************************************************************
-
+/**
  * Lessons:
    1. Dynamic programming idea to avoid overlapped subsets with memoization is used here.
    2. Using flag to mark the significant state is very helpful in solving the problem.
 
-*********************************************************************************************************************** */
+ */

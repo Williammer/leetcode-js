@@ -1,5 +1,4 @@
-/** **********************************************************************************************************************
-
+/**
  * Problem: https://leetcode.com/problems/remove-nth-node-from-end-of-list/
     Given a linked list, remove the nth node from the end of list and return its head.
 
@@ -14,7 +13,7 @@
 
  * Analysis: We don't know linkedList length, but we can get target node by trying to touch tail and track node with two pointers.
 
-*********************************************************************************************************************** */
+ */
 
 
 import { ListNode } from "../_.util/linkedList";
@@ -67,9 +66,8 @@ rmNthNodeFromEnd.touchTail = (head, n) => {
 };
 
 
-/** **********************************************************************************************************************
-
+/**
  * Lessons:
    1. Touch tail can serve the purpose of getting the length of linkedList.
 
-*********************************************************************************************************************** */
+ */

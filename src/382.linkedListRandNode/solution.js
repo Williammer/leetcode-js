@@ -1,5 +1,4 @@
-/** **********************************************************************************************************************
-
+/**
  * Problem: https://leetcode.com/problems/linked-list-random-node/
     Given a singly linked list, return a random node's value from the linked list.
      Each node must have the same probability of being chosen.
@@ -14,7 +13,7 @@
  * Analysis: Touch end to get length is my first thought,
   later I learnt about the Reservoir sampling approach which progressively rand each node.
 
-*********************************************************************************************************************** */
+ */
 
 
 export const linkedListRandNode = {};
@@ -33,7 +32,7 @@ linkedListRandNode.touchEnd = (head) => {
   let lastIndex = 0;
 
   while (head.next) {
-    lastIndex++;
+    lastIndex += 1;
     head = head.next;
   }
 
@@ -67,7 +66,7 @@ linkedListRandNode.reservoirSample = (head) => {
 
   let selectedVal = resultHead.val;
 
-  for (let i = 1; resultHead.next !== null; i++) {
+  for (let i = 1; resultHead.next !== null; i += 1) {
     const rand = getRand(0, i);
 
     if (rand === 0) {
@@ -80,11 +79,10 @@ linkedListRandNode.reservoirSample = (head) => {
 };
 
 
-/** **********************************************************************************************************************
-
+/**
  * Lessons:
    1. Probability can be an idea-helper to solve programming problems.
    2. [test] Testing for random could be done(approximately) by
     validating its distribution of large-scale input to be within acceptable deviation.
 
-*********************************************************************************************************************** */
+ */

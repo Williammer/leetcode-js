@@ -1,5 +1,4 @@
-/** **********************************************************************************************************************
-
+/**
  * Problem: https://leetcode.com/problems/invert-binary-tree/
 
  * Example 1:
@@ -22,7 +21,7 @@
 
  * Analysis: bfs is my first reaction when found the invert is done from top to bottom of the tree.
 
-*********************************************************************************************************************** */
+ */
 
 import { TreeNode, invertBTreeFn } from "../_.util/binaryTree";
 
@@ -72,9 +71,8 @@ invertBTree.recursion = (root) => {
 };
 
 
-/** **********************************************************************************************************************
-
+/**
  * Lessons:
    1. Observe the pattern then choose the proper way to solve, and always have the problem picture in mind.
 
-*********************************************************************************************************************** */
+ */

@@ -1,5 +1,4 @@
-/** **********************************************************************************************************************
-
+/**
  * Problem: https://leetcode.com/problems/maximum-depth-of-binary-tree/
     Given a binary tree, find its maximum depth.
     The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.
@@ -23,7 +22,7 @@
  * Analysis: Traverse is surely needed, dfs(pre-order traverse) and bfs(level-order traverse) are available options;
     another main problem to solve is record and calculate the maxDepth, so we can record each parentNode's depth before dfs into its sub trees.
 
-*********************************************************************************************************************** */
+ */
 
 
 import { TreeNode, bTreeMaxDepthFn } from "../_.util/binaryTree";
@@ -109,7 +108,7 @@ bTreeMaxDepth.bfs = (root) => {
 
     const lenThisDepth = _queue.length;
 
-    maxDepth++;
+    maxDepth += 1;
 
     // loop nodes of each depth
     while (i < lenThisDepth) {
@@ -122,7 +121,7 @@ bTreeMaxDepth.bfs = (root) => {
         _queue.push(curNode.right);
       }
 
-      i++;
+      i += 1;
     }
   }
 
@@ -130,10 +129,9 @@ bTreeMaxDepth.bfs = (root) => {
 };
 
 
-/** **********************************************************************************************************************
-
+/**
  * Lessons:
    1. Try to consider if it's possible to recursion the function itself with the basic pattern to achieve super simplicity.
    2. Dynamic programming with loop is powerful by making well-designed terminate conditions.
 
-*********************************************************************************************************************** */
+ */

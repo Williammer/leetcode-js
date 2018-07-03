@@ -1,5 +1,4 @@
-/** **********************************************************************************************************************
-
+/**
  * Problem: https://leetcode.com/problems/swap-nodes-in-pairs/
     Given a linked list, swap every two adjacent nodes and return its head.
 
@@ -13,7 +12,7 @@
  * Analysis: Swap in pair needs to change reference relations in linkedList;
     and since the head changed after swap, we need to have a dummyHead which points to head.
 
-*********************************************************************************************************************** */
+ */
 
 
 import { ListNode } from "../_.util/linkedList";
@@ -83,9 +82,8 @@ swapLinkedListPair.recursion = (head) => {
 };
 
 
-/** **********************************************************************************************************************
-
+/**
  * Lessons:
    1. Infinite loop may happen for LinkedList recursion, use enough var to avoid it during changing the references relation.
 
-*********************************************************************************************************************** */
+ */

@@ -1,5 +1,4 @@
-/** **********************************************************************************************************************
-
+/**
  * Problem: https://leetcode.com/problems/sum-of-two-integers/
     Calculate the sum of two integers a and b, but you are not allowed to use the operator + and -.
 
@@ -13,7 +12,7 @@
 
  * Analysis: Bitwise for sum. "&" can find a carry; "^" can find the different bit, which is the rest part of the sum besides the carry-related bits;
 
-*********************************************************************************************************************** */
+ */
 
 
 export const twoIntSum = {};
@@ -115,9 +114,8 @@ twoIntSubstract.iterate = (a, b) => {
 };
 
 
-/** **********************************************************************************************************************
-
+/**
  * Lessons:
 	1. Be patient, don't try to assume that the result can be achieved in one or two operation; think with iteration or recursion.
 
-*********************************************************************************************************************** */
+ */

@@ -1,5 +1,4 @@
-/** **********************************************************************************************************************
-
+/**
  * Problem: https://leetcode.com/problems/add-two-numbers-ii/
     You are given two non-empty linked lists representing two non-negative integers.
      The most significant digit comes first and each of their nodes contain a single digit.
@@ -18,7 +17,7 @@
  * Analysis: The sum is added start from the tail node of 2 nums, reversed the input list will turn it into 2.add2Nums.
     The other way to reverse is use stack(s) as helper.
 
-*********************************************************************************************************************** */
+ */
 
 
 import {
@@ -124,9 +123,8 @@ add2NumsII.stackHelper = (l1, l2) => {
 };
 
 
-/** **********************************************************************************************************************
-
+/**
  * Lessons:
    1. Although seems bit complex, introducing more than one helper data structure is effective for solving the problem.
 
-*********************************************************************************************************************** */
+ */

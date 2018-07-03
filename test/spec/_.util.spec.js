@@ -1,7 +1,7 @@
 import {
   ListNode, arrayToLinkedlist, linkedlistToArray, cloneLinkedlist, addToLinkedListFront,
 } from "../../src/_.util/linkedList";
-import { TreeNode, arrayToBinaryTree, binaryTreeToArray } from "../../src/_.util/binaryTree";
+import { arrayToBinaryTree, binaryTreeToArray } from "../../src/_.util/binaryTree";
 
 // # linkedList
 describe("[Util] linkedList - convert between array and linkedList.", () => {

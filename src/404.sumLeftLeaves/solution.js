@@ -1,5 +1,4 @@
-/** **********************************************************************************************************************
-
+/**
  * Problem: https://leetcode.com/problems/sum-of-left-leaves/
     Find the sum of all left leaves in a given binary tree.
 
@@ -17,7 +16,7 @@ There are two left leaves in the binary tree, with values 9 and 15 respectively.
 
  * Analysis: Easy to do it with bfs/dfs.
 
-*********************************************************************************************************************** */
+ */
 
 
 import { TreeNode } from "../_.util/binaryTree";
@@ -104,9 +103,8 @@ sumLeftLeaves.bfs = (root) => {
 };
 
 
-/** **********************************************************************************************************************
-
+/**
  * Lessons:
    1. Yet another bfs/dfs BT problem.
 
-*********************************************************************************************************************** */
+ */

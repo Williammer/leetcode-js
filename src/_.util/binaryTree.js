@@ -4,7 +4,8 @@
 export class TreeNode {
   constructor(val) {
     this.val = val;
-    this.left = this.right = null;
+    this.left = null;
+    this.right = null;
   }
 }
 
@@ -66,8 +67,8 @@ export const arrayToBinaryTree = (valArray) => {
           curParentNode.right = curNode;
         }
 
-        childNodesIndex++;
-        arrAnchorIndex++;
+        childNodesIndex += 1;
+        arrAnchorIndex += 1;
 
         // avoid in vain looping out of valArray's bound
         if (arrAnchorIndex >= valArray.length) {
@@ -75,7 +76,7 @@ export const arrayToBinaryTree = (valArray) => {
         }
       }
 
-      parentNodesIndex++;
+      parentNodesIndex += 1;
     }
   }
 
@@ -124,7 +125,7 @@ export const binaryTreeToArray = (root) => {
       nullChainCount = 0;
     } else {
       bTreeArray.push(null);
-      nullChainCount++;
+      nullChainCount += 1;
     }
 
     if (isNode(curNode.right)) {
@@ -134,7 +135,7 @@ export const binaryTreeToArray = (root) => {
       nullChainCount = 0;
     } else {
       bTreeArray.push(null);
-      nullChainCount++;
+      nullChainCount += 1;
     }
   }
 
@@ -186,7 +187,7 @@ export const binaryTreeToString = (root) => {
       nullChainCount = 0;
     } else {
       bTreeStr += ",";
-      nullChainCount++;
+      nullChainCount += 1;
     }
 
     if (isNode(curNode.right)) {
@@ -196,7 +197,7 @@ export const binaryTreeToString = (root) => {
       nullChainCount = 0;
     } else {
       bTreeStr += ",";
-      nullChainCount++;
+      nullChainCount += 1;
     }
   }
 
@@ -276,7 +277,7 @@ export const bTreeLvOrderTraversalFn = (root) => {
         _queue.push(curNode.right);
       }
 
-      i++;
+      i += 1;
     }
 
     result.push(arrayThisDepth);
@@ -466,11 +467,11 @@ export const bTreeMinDepthFn = (root) => {
       }
 
 
-      i++;
+      i += 1;
 
       // increase min depth at the end of bfs for this depth
       if (i === lengthThisDepth) {
-        minDepth++;
+        minDepth += 1;
       }
     }
   }

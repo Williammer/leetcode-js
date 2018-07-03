@@ -1,5 +1,4 @@
-/** **********************************************************************************************************************
-
+/**
  * Problem: https://leetcode.com/problems/binary-tree-postorder-traversal/
     Given a binary tree, return the post-order traversal of its nodes' values.
 
@@ -16,7 +15,7 @@
 
  * Analysis: In theory, postorder should still be DFS, so we can try that.
 
-*********************************************************************************************************************** */
+ */
 
 import { TreeNode, bTreePostOrderTraversalFn } from "../_.util/binaryTree";
 
@@ -68,9 +67,8 @@ bTreePostOrderTraversal.iterative = (root) => {
 };
 
 
-/** **********************************************************************************************************************
-
+/**
  * Lessons:
    1. post-order is basically dfs, and dfs is recursion.
 
-*********************************************************************************************************************** */
+ */

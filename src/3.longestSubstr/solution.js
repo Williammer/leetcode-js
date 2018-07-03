@@ -1,5 +1,4 @@
-/** **********************************************************************************************************************
-
+/**
  * Problem: https://leetcode.com/problems/longest-substring-without-repeating-characters/
     Given a string, find the length of the longest substring without repeating characters.
 
@@ -14,7 +13,7 @@
  * Analysis: Substring-related problems are classic! In this no-repeated longest substring problem, we can have substr by using sth like 'slide window' with (left, right),
     and to check the repeatness of each char to be extended into current 'slide window'.
 
-*********************************************************************************************************************** */
+ */
 
 
 export const longestSubstr = {};
@@ -52,10 +51,10 @@ longestSubstr.slideWin = (s) => {
     }
 
     if (isRepeat) {
-      idx++;
+      idx += 1;
       curLen = 1;
     } else {
-      curLen++;
+      curLen += 1;
       if (curLen > maxLen) {
         maxLen = curLen;
       }
@@ -82,7 +81,7 @@ longestSubstr.slideWinEnhanced = (s) => {
 
   maxLen = 0;
 
-  for (left = 0, right = 1; right < s.length; right++) {
+  for (left = 0, right = 1; right < s.length; right += 1) {
     i = s.lastIndexOf(s[right], right - 1);
     if (i >= 0) { // has repeated
       maxLen = Math.max(maxLen, right - left);
@@ -104,7 +103,7 @@ longestSubstr.hash = (s) => {
   const res = {}; let i; let left = 0; let
     maxLen = 0;
 
-  for (i = 0; i < s.length; i++) {
+  for (i = 0; i < s.length; i += 1) {
     if (res[s[i]] === undefined) {
       res[s[i]] = i; // {char : idx} pair
     } else {
@@ -137,8 +136,7 @@ longestSubstr.hashReduce = (s) => {
 };
 
 
-/** **********************************************************************************************************************
-
+/**
  * Lessons:
    1. 'Slide window' is a good perspective for handling sub array/string problems.
 
@@ -146,4 +144,4 @@ longestSubstr.hashReduce = (s) => {
 
    3. ES6's array reduce can loop array elegantly.
 
-*********************************************************************************************************************** */
+ */

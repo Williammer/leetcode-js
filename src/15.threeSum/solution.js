@@ -1,5 +1,4 @@
-/** **********************************************************************************************************************
-
+/**
  * Problem: https://leetcode.com/problems/3sum/
     Given an array S of n integers, are there elements a, b, c in S such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.
 
@@ -18,7 +17,7 @@
     Because this problem has strong requirement on sorting order, we need to sort the source array first; then with a sorted array, we can 2 pointer shrink to find.
     We may also use binarySearch for the 3rd pointer's search while having 2 anchor points, but it'll have N^2*logN complexity.
 
-*********************************************************************************************************************** */
+ */
 
 
 export const threeSum = {};
@@ -48,7 +47,7 @@ threeSum.sortedtwoPointers = (nums) => {
 
   const result = [];
 
-  for (let pAnchor = 0; pAnchor < len - 1; pAnchor++) {
+  for (let pAnchor = 0; pAnchor < len - 1; pAnchor += 1) {
     if (pAnchor === 0 || nums[pAnchor] !== nums[pAnchor - 1]) {
       pLeft = pAnchor + 1;
       pRight = len;
@@ -57,17 +56,17 @@ threeSum.sortedtwoPointers = (nums) => {
         if (nums[pAnchor] + nums[pLeft] + nums[pRight] > 0) {
           pRight--;
         } else if (nums[pAnchor] + nums[pLeft] + nums[pRight] < 0) {
-          pLeft++;
+          pLeft += 1;
         } else {
           // push the match at first time
           result.push([nums[pAnchor], nums[pLeft], nums[pRight]]);
 
           // avoid duplicated nums - sliding wipe
-          while (pLeft < pRight && nums[pLeft] === nums[pLeft + 1]) pLeft++;
+          while (pLeft < pRight && nums[pLeft] === nums[pLeft + 1]) pLeft += 1;
           while (pLeft < pRight && nums[pRight] === nums[pRight - 1]) pRight--;
 
           // go on to next compare
-          pLeft++;
+          pLeft += 1;
           pRight--;
         }
       }
@@ -175,8 +174,8 @@ threeSum.twoPointersHash = (nums) => {
     return result;
   }
 
-  for (pLeft = 0; pLeft < len; pLeft++) {
-    for (pRight = pLeft + 1; pRight < len + 1; pRight++) {
+  for (pLeft = 0; pLeft < len; pLeft += 1) {
+    for (pRight = pLeft + 1; pRight < len + 1; pRight += 1) {
       if (_hash[nums[pRight]] === false) { // got a desired num
         const _sortedArray = _getInnerSortedArray(pLeft, pRight);
 
@@ -198,10 +197,9 @@ threeSum.twoPointersHash = (nums) => {
 };
 
 
-/** **********************************************************************************************************************
-
+/**
  * Lessons:
    1. Handling sorting and duplication edge cases is so hard :(, which needs constant practice to be quicker and sharper.
    2. The use of while loop to slide-wipe the duplication is elegant.
 
-*********************************************************************************************************************** */
+ */

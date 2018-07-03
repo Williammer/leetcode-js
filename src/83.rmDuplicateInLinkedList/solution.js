@@ -1,5 +1,4 @@
-/** **********************************************************************************************************************
-
+/**
  * Problem: https://leetcode.com/problems/remove-duplicates-from-sorted-list/
     Given a sorted linked list, delete all duplicates such that each element appear only once.
 
@@ -14,7 +13,7 @@
  * Analysis: Remove duplicates in sorted (linked)list can easily achieved with iterative or recursion;
     use Set to remove duplicates in even the unsorted (linked)list.
 
-*********************************************************************************************************************** */
+ */
 
 
 import { ListNode } from "../_.util/linkedList";
@@ -94,10 +93,9 @@ rmDuplicateInLinkedList.useSet = (head) => {
 };
 
 
-/** **********************************************************************************************************************
-
+/**
  * Lessons:
    1. Handling 'next' pointer/reference of linkedList is so common that needs to be good at.
    2. Recursion can has getter and setter logics, think that way can help the implementation.
 
-*********************************************************************************************************************** */
+ */

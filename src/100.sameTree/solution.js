@@ -1,5 +1,4 @@
-/** **********************************************************************************************************************
-
+/**
  * Problem: https://leetcode.com/problems/same-tree/
     Given two binary trees, write a function to check if they are equal or not.
     Two binary trees are considered equal if they are structurally identical and the nodes have the same value.
@@ -11,8 +10,7 @@
 
  * Analysis: In order to compare the 2 bTrees, we need sth both tree shares, such as a pos pointer.
     Besides, it can be divided into smaller atom problem, which is suitable for recursion.
-
-*********************************************************************************************************************** */
+ */
 
 import { TreeNode, binaryTreeToArray, sameTreeFn } from "../_.util/binaryTree";
 
@@ -49,7 +47,7 @@ sameTree.toArray = (p, q) => {
         break;
       }
 
-      i++;
+      i += 1;
     }
   } else {
     isSameTree = false;
@@ -69,9 +67,8 @@ sameTree.toArray = (p, q) => {
 sameTree.recursion = sameTreeFn;
 
 
-/** **********************************************************************************************************************
-
+/**
  * Lessons:
    1. Recusion is beautiful, it's graceful for problem that can be divided into same atom.
 
-*********************************************************************************************************************** */
+ */

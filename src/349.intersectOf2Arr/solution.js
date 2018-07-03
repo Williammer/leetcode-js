@@ -1,5 +1,4 @@
-/** **********************************************************************************************************************
-
+/**
  * Problem: https://leetcode.com/problems/intersection-of-two-arrays/
     Given two arrays, write a function to compute their intersection.
 
@@ -16,7 +15,7 @@
 
  * Analysis: we can either use hash or sort the input array then apply 2pointers or binary search.
 
-*********************************************************************************************************************** */
+ */
 
 export const intersectOf2Arr = {};
 
@@ -103,7 +102,7 @@ intersectOf2Arr.sortedBSearch = (nums1, nums2) => {
   nums1.sort(ascSort);
   nums2.sort(ascSort);
 
-  for (let low1 = 0; low1 <= nums1Last; low1++) {
+  for (let low1 = 0; low1 <= nums1Last; low1 += 1) {
     // check edge
     if (nums1[low1] > nums2[nums2Last] || nums2[low2] > nums1[nums1Last]) {
       return result;
@@ -148,7 +147,7 @@ intersectOf2Arr.sorted2Pointer = (nums1, nums2) => {
 
   let lastTarget = null;
 
-  for (let low1 = 0; low1 <= nums1Last; low1++) {
+  for (let low1 = 0; low1 <= nums1Last; low1 += 1) {
     // check edge
     if (nums1[low1] > nums2[nums2Last] || nums2[low2] > nums1[nums1Last]) {
       return result;
@@ -159,7 +158,7 @@ intersectOf2Arr.sorted2Pointer = (nums1, nums2) => {
         result.push(nums1[low1]);
         lastTarget = nums1[low1];
       }
-      low2++;
+      low2 += 1;
     }
   }
 
@@ -167,9 +166,8 @@ intersectOf2Arr.sorted2Pointer = (nums1, nums2) => {
 };
 
 
-/** **********************************************************************************************************************
-
+/**
  * Lessons:
    1. 2-pointer is basically use index-pointers to loop over.
 
-*********************************************************************************************************************** */
+ */

@@ -1,5 +1,4 @@
-/** **********************************************************************************************************************
-
+/**
  * Problem: https://leetcode.com/problems/odd-even-linked-list/
     Given a singly linked list, group all odd nodes together followed by the even nodes.
     Please note here we are talking about the node number and not the value in the nodes.
@@ -15,7 +14,7 @@
 
  * Analysis: Group linkedlist by odd/even is mainly about changing its node references, and connect them back at last.
 
-*********************************************************************************************************************** */
+ */
 
 import { ListNode } from "../_.util/linkedList";
 
@@ -55,10 +54,9 @@ oddEvenLinkedlist.iterate = (head) => {
 };
 
 
-/** **********************************************************************************************************************
-
+/**
  * Lessons:
    1. LinkedList pointer handling is an under-estimated and error-prone work. Need to practice more.
    2. Pointers is easy to get confused, better use visualized way to think.
 
-*********************************************************************************************************************** */
+ */

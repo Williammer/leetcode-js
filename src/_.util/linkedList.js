@@ -51,7 +51,7 @@ export const arrayToLinkedlist = (arr) => {
   /*
     // 2. The asc way, with a refNode on 1st step.
     let curNode, newNode, refNode;
-    for (let i = 0; i < arr.length; i++) {
+    for (let i = 0; i < arr.length; i += 1) {
         newNode = new ListNode(arr[i]);
 
         if (curNode) {
@@ -205,7 +205,7 @@ export const makeCycle = (head, cycleHeadIndex, cycleTailIndex) => {
       break;
     }
     head = head.next;
-    index++;
+    index += 1;
   }
 
   return newHead;
