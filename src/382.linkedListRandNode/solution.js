@@ -37,7 +37,7 @@ linkedListRandNode.touchEnd = (head) => {
   let randIndex = Math.floor(Math.random() * (lastIndex + 1));
   while (randIndex > 0) {
     resultHead = resultHead.next;
-    randIndex--;
+    randIndex -= 1;
   }
 
   return resultHead.val;

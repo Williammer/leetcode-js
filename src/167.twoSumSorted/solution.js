@@ -103,7 +103,7 @@ twoSumSorted.twoPointer = (sortedNums, target) => {
 
   while (lo < hi) {
     if (sortedNums[lo] + sortedNums[hi] > target) {
-      hi--;
+      hi -= 1;
     } else if (sortedNums[lo] + sortedNums[hi] < target) {
       lo += 1;
     } else {

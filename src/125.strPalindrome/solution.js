@@ -49,7 +49,7 @@ strPalindrome.twoPointers = (s) => {
       pHead += 1;
     }
     while (!isAlphaNumeric(s[pTail]) && pHead < pTail) {
-      pTail--;
+      pTail -= 1;
     }
 
     if (s[pHead] !== s[pTail]) {
@@ -57,7 +57,7 @@ strPalindrome.twoPointers = (s) => {
     }
 
     pHead += 1;
-    pTail--;
+    pTail -= 1;
   }
 
   return true;
@@ -107,7 +107,7 @@ strPalindrome.twoPointersInsens = (s) => {
       pHead += 1;
     }
     while (!isAlphaNumeric(s[pTail]) && pHead < pTail) {
-      pTail--;
+      pTail -= 1;
     }
 
     if (!insensitiveCompare(s[pHead], s[pTail])) {
@@ -115,7 +115,7 @@ strPalindrome.twoPointersInsens = (s) => {
     }
 
     pHead += 1;
-    pTail--;
+    pTail -= 1;
   }
 
   return true;

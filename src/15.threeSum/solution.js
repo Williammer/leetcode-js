@@ -50,7 +50,7 @@ threeSum.sortedtwoPointers = (nums) => {
 
       while (pLeft < pRight) {
         if (nums[pAnchor] + nums[pLeft] + nums[pRight] > 0) {
-          pRight--;
+          pRight -= 1;
         } else if (nums[pAnchor] + nums[pLeft] + nums[pRight] < 0) {
           pLeft += 1;
         } else {
@@ -59,11 +59,11 @@ threeSum.sortedtwoPointers = (nums) => {
 
           // avoid duplicated nums - sliding wipe
           while (pLeft < pRight && nums[pLeft] === nums[pLeft + 1]) pLeft += 1;
-          while (pLeft < pRight && nums[pRight] === nums[pRight - 1]) pRight--;
+          while (pLeft < pRight && nums[pRight] === nums[pRight - 1]) pRight -= 1;
 
           // go on to next compare
           pLeft += 1;
-          pRight--;
+          pRight -= 1;
         }
       }
     }
