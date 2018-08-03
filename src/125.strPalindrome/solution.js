@@ -14,16 +14,14 @@
 
  */
 
-export const strPalindrome = {};
-
 /**
- * Solution 1: two pointers shrink, with tolowercase
+ * Solution 1: two pointers shrink, with toLowerCase
  *
  * "N" is the string length.
  * Time complexity: O(N)
  * Space complexity: O(1)
  */
-strPalindrome.twoPointers = (s) => {
+export const twoPointers = (s) => {
   const isAlphaNumeric = (s) => {
     const code = s.charCodeAt();
 
@@ -33,7 +31,6 @@ strPalindrome.twoPointers = (s) => {
   if (typeof s !== "string") {
     return false;
   }
-
   if (s.length === 0) {
     return true;
   }
@@ -41,7 +38,6 @@ strPalindrome.twoPointers = (s) => {
   s = s.toLowerCase();
 
   let pHead = 0;
-
   let pTail = s.length - 1;
 
   while (pHead < pTail) {
@@ -70,36 +66,31 @@ strPalindrome.twoPointers = (s) => {
  * Time complexity: O(N)
  * Space complexity: O(1)
  */
-strPalindrome.twoPointersInsens = (s) => {
+export const twoPointersInsensitive = (s) => {
   const isAlphaNumeric = (s) => {
     const code = s.charCodeAt();
-
     return (code >= 48 && code <= 57) || (code >= 65 && code <= 90) || (code >= 97 && code <= 122);
   };
-
   const insensitiveCompare = (a, b) => {
     const codeA = a.charCodeAt();
-
     const codeB = b.charCodeAt();
 
     return (
-      a === b
-      || (((codeA >= 65 && codeA <= 90) || (codeA >= 97 && codeA <= 122))
-        && ((codeB >= 65 && codeB <= 90) || (codeB >= 97 && codeB <= 122))
-        && Math.abs(codeA - codeB) === 32)
+      a === b ||
+      (((codeA >= 65 && codeA <= 90) || (codeA >= 97 && codeA <= 122)) &&
+        ((codeB >= 65 && codeB <= 90) || (codeB >= 97 && codeB <= 122)) &&
+        Math.abs(codeA - codeB) === 32)
     );
   };
 
   if (typeof s !== "string") {
     return false;
   }
-
   if (s.length === 0) {
     return true;
   }
 
   let pHead = 0;
-
   let pTail = s.length - 1;
 
   while (pHead < pTail) {
@@ -119,6 +110,58 @@ strPalindrome.twoPointersInsens = (s) => {
   }
 
   return true;
+};
+
+/**
+ * Solution 3: pre-process the string then check the palindrome.
+ *
+ * "N" is the string length.
+ * Time complexity: O(2N)
+ * Space complexity: O(1)
+ */
+export const twoPointersPreProcess = (s) => {
+  if (typeof s !== "string") {
+    return false;
+  }
+
+  s = s.replace(/\W/g, '').toLowerCase(); // process in advance
+
+  if (s.length === 0) {
+    return true;
+  }
+
+  const last = s.length - 1;
+  let i = 0;
+
+  while (last - i >= i) {
+    if (s[i] !== s[last - i]) {
+      return false;
+    }
+    i += 1;
+  }
+
+  return true;
+};
+
+/**
+ * Solution 4: Compare with reversed string
+ *
+ * "N" is the string length.
+ * Time complexity: O(3N)
+ * Space complexity: O(N)
+ */
+export const reverse = (s) => {
+  if (typeof s !== "string") {
+    return false;
+  }
+
+  s = s.replace(/\W/g, '').toLowerCase(); // process in advance
+
+  if (s.length === 0) {
+    return true;
+  }
+
+  return s === s.split("").reverse().join("");
 };
 
 /**
