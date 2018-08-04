@@ -14,7 +14,7 @@
 
  */
 
-import { ListNode, reverseLinkedListFn } from "../_.util/linkedList";
+import { ListNode, reverseLinkedListFn } from "../_.general/linkedList";
 
 export const reverseLinkedList = {};
 

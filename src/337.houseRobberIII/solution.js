@@ -27,7 +27,7 @@
 
  */
 
-import { TreeNode } from "../_.util/binaryTree";
+import { TreeNode } from "../_.general/binaryTree";
 
 export const houseRobberIII = {};
 
@@ -39,7 +39,7 @@ export const houseRobberIII = {};
  * Space complexity: O(N)
  */
 houseRobberIII.memo = (root) => {
-  const isNode = node => node instanceof TreeNode && node.val !== null;
+  const isNode = (node) => node instanceof TreeNode && node.val !== null;
 
   const dpRob = (root, weakMap) => {
     if (!isNode(root)) {
@@ -75,7 +75,7 @@ houseRobberIII.memo = (root) => {
  * Space complexity: O(N)
  */
 houseRobberIII.recursion = (root) => {
-  const isNode = node => node instanceof TreeNode && node.val !== null;
+  const isNode = (node) => node instanceof TreeNode && node.val !== null;
 
   const dpRob = (root) => {
     if (!isNode(root)) {

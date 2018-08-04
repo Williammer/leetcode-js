@@ -1,4 +1,4 @@
-import { arrayToBinaryTree } from "../../src/_.util/binaryTree";
+import { arrayToBinaryTree } from "../../src/_.general/binaryTree";
 import { sameTree } from "../../src/100.sameTree/solution";
 
 describe("# Problem 100 - check if two binary trees are equal or not.", () => {

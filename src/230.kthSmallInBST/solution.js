@@ -11,7 +11,7 @@
 
  */
 
-import { TreeNode } from "../_.util/binaryTree";
+import { TreeNode } from "../_.general/binaryTree";
 
 export const kthSmallInBST = {};
 
@@ -26,7 +26,7 @@ kthSmallInBST.inOrder = (root, k) => {
   let i = 1;
 
   let result;
-  const isNode = node => node instanceof TreeNode && node.val !== null;
+  const isNode = (node) => node instanceof TreeNode && node.val !== null;
 
   const dfsVal = (node) => {
     if (i > k) {
@@ -68,7 +68,7 @@ kthSmallInBST.inOrder = (root, k) => {
  * Space complexity: O(N)
  */
 kthSmallInBST.inOrderIter = (root, k) => {
-  const isNode = node => node instanceof TreeNode && node.val !== null;
+  const isNode = (node) => node instanceof TreeNode && node.val !== null;
 
   if (!isNode(root) || k <= 0) {
     return undefined;
@@ -104,7 +104,7 @@ kthSmallInBST.inOrderIter = (root, k) => {
  * Space complexity: O(logN)
  */
 kthSmallInBST.binarySearch = (root, k) => {
-  const isNode = node => node instanceof TreeNode && node.val !== null;
+  const isNode = (node) => node instanceof TreeNode && node.val !== null;
 
   const nodeCount = (node) => {
     if (!isNode(node)) {

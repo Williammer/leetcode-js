@@ -12,7 +12,7 @@
     Besides, it can be divided into smaller atom problem, which is suitable for recursion.
  */
 
-import { TreeNode, binaryTreeToArray, sameTreeFn } from "../_.util/binaryTree";
+import { TreeNode, binaryTreeToArray, sameTreeFn } from "../_.general/binaryTree";
 
 export const sameTree = {};
 
@@ -24,7 +24,7 @@ export const sameTree = {};
  * Space complexity: O(2N)
  */
 sameTree.toArray = (p, q) => {
-  const isNode = node => node instanceof TreeNode && node.val !== null;
+  const isNode = (node) => node instanceof TreeNode && node.val !== null;
 
   if (!isNode(p) || !isNode(q)) {
     return !!(!isNode(p) && !isNode(q));

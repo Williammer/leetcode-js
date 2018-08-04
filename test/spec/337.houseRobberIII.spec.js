@@ -1,4 +1,4 @@
-import { arrayToBinaryTree } from "../../src/_.util/binaryTree";
+import { arrayToBinaryTree } from "../../src/_.general/binaryTree";
 import { houseRobberIII } from "../../src/337.houseRobberIII/solution";
 
 describe("# Problem 337 - Max sum of unlinked nodes values in BT.", () => {

@@ -1,4 +1,4 @@
-import { ListNode, arrayToLinkedlist, linkedlistToArray } from "../../src/_.util/linkedList";
+import { ListNode, arrayToLinkedlist, linkedlistToArray } from "../../src/_.general/linkedList";
 import { rmDuplicateInLinkedList } from "../../src/83.rmDuplicateInLinkedList/solution";
 
 describe("# Problem 83 - remove duplicates in sorted linkedlist", () => {

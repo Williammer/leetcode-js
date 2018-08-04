@@ -17,7 +17,7 @@
 
  */
 
-import { TreeNode, binaryTreeToString, arrayToBinaryTree } from "../_.util/binaryTree";
+import { TreeNode, binaryTreeToString, arrayToBinaryTree } from "../_.general/binaryTree";
 
 export const serializeBT = {};
 
@@ -31,7 +31,7 @@ export const serializeBT = {};
 serializeBT.serialize = binaryTreeToString;
 
 serializeBT.deserialize = (data) => {
-  const inputArray = data.split(",").map(val => (val === "" ? null : Number(val)));
+  const inputArray = data.split(",").map((val) => (val === "" ? null : Number(val)));
 
   return arrayToBinaryTree(inputArray);
 };

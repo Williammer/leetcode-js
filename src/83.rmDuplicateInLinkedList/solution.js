@@ -15,7 +15,7 @@
 
  */
 
-import { ListNode } from "../_.util/linkedList";
+import { ListNode } from "../_.general/linkedList";
 
 export const rmDuplicateInLinkedList = {};
 
@@ -27,7 +27,7 @@ export const rmDuplicateInLinkedList = {};
  * Space complexity: O(1)
  */
 rmDuplicateInLinkedList.concise = (head) => {
-  const isNode = node => node instanceof ListNode && node.val !== null;
+  const isNode = (node) => node instanceof ListNode && node.val !== null;
 
   const result = head;
 
@@ -49,7 +49,7 @@ rmDuplicateInLinkedList.concise = (head) => {
  * Space complexity: O(N)
  */
 rmDuplicateInLinkedList.recursion = (head) => {
-  const isNode = node => node instanceof ListNode && node.val !== null;
+  const isNode = (node) => node instanceof ListNode && node.val !== null;
 
   // // 1. Termination condition
   if (!isNode(head) || !isNode(head.next)) {
@@ -71,7 +71,7 @@ rmDuplicateInLinkedList.recursion = (head) => {
 rmDuplicateInLinkedList.useSet = (head) => {
   const _record = new Set();
 
-  const isNode = node => node instanceof ListNode && node.val !== null;
+  const isNode = (node) => node instanceof ListNode && node.val !== null;
 
   const result = head;
 

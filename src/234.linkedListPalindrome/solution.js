@@ -15,7 +15,7 @@
 
  */
 
-import { ListNode, cloneLinkedlist, reverseLinkedListFn } from "../_.util/linkedList";
+import { ListNode, cloneLinkedlist, reverseLinkedListFn } from "../_.general/linkedList";
 
 export const linkedListPalindrome = {};
 

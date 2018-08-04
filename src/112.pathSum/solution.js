@@ -23,7 +23,7 @@
 
  */
 
-import { TreeNode } from "../_.util/binaryTree";
+import { TreeNode } from "../_.general/binaryTree";
 
 export const pathSum = {};
 
@@ -35,9 +35,9 @@ export const pathSum = {};
  * Space complexity: O(N)
  */
 pathSum.dfsReducer = (root, sum) => {
-  const isNode = node => node instanceof TreeNode && node.val !== null;
+  const isNode = (node) => node instanceof TreeNode && node.val !== null;
 
-  const isLeaf = node => isNode(node) && !isNode(node.left) && !isNode(node.right);
+  const isLeaf = (node) => isNode(node) && !isNode(node.left) && !isNode(node.right);
 
   const dfsVal = (node) => {
     if (isNode(node)) {
@@ -72,9 +72,9 @@ pathSum.dfsReducer = (root, sum) => {
  * Space complexity: O(N)
  */
 pathSum.dfs = (root, sum) => {
-  const isNode = node => node instanceof TreeNode && node.val !== null;
+  const isNode = (node) => node instanceof TreeNode && node.val !== null;
 
-  const isLeaf = node => isNode(node) && !isNode(node.left) && !isNode(node.right);
+  const isLeaf = (node) => isNode(node) && !isNode(node.left) && !isNode(node.right);
 
   if (!isNode(root)) {
     return false;

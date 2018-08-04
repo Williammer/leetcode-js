@@ -1,4 +1,4 @@
-import { arrayToBinaryTree } from "../../src/_.util/binaryTree";
+import { arrayToBinaryTree } from "../../src/_.general/binaryTree";
 import { bTreeInOrderTraversal } from "../../src/94.bTreeInOrderTraversal/solution";
 
 describe("# Problem 94 - return the Binary Tree In-order traversal of its nodes' values.", () => {

@@ -1,4 +1,4 @@
-import { arrayToBinaryTree } from "../../src/_.util/binaryTree";
+import { arrayToBinaryTree } from "../../src/_.general/binaryTree";
 import { sumLeftLeaves } from "../../src/404.sumLeftLeaves/solution";
 
 describe("# Problem 404 - Find the sum of all left leaves in a given binary tree..", () => {

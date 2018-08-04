@@ -1,4 +1,4 @@
-import { arrayToBinaryTree } from "../../src/_.util/binaryTree";
+import { arrayToBinaryTree } from "../../src/_.general/binaryTree";
 import { bTreeMinDepth } from "../../src/111.bTreeMinDepth/solution";
 
 describe("# Problem 111 - Given a binary tree, find its minimum depth..", () => {

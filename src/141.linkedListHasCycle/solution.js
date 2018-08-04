@@ -14,7 +14,7 @@
 
  */
 
-import { ListNode, linkedListHasCycleFn } from "../_.util/linkedList";
+import { ListNode, linkedListHasCycleFn } from "../_.general/linkedList";
 
 export const linkedListHasCycle = {};
 

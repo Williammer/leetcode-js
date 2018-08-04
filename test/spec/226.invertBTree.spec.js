@@ -1,4 +1,4 @@
-import { arrayToBinaryTree, binaryTreeToArray } from "../../src/_.util/binaryTree";
+import { arrayToBinaryTree, binaryTreeToArray } from "../../src/_.general/binaryTree";
 import { invertBTree } from "../../src/226.invertBTree/solution";
 
 describe("# Problem 226 - Invert a binary tree.", () => {

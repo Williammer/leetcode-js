@@ -24,7 +24,7 @@ import {
   isListNode,
   reverseLinkedListFn,
   addToLinkedListFront,
-} from "../_.util/linkedList";
+} from "../_.general/linkedList";
 import { add2Nums } from "../2.add2Nums/solution";
 
 export const add2NumsII = {};

@@ -18,7 +18,7 @@
 
  */
 
-import { ListNode, isListNode } from "../_.util/linkedList";
+import { ListNode, isListNode } from "../_.general/linkedList";
 
 export const add2Nums = {};
 /**

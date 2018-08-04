@@ -10,7 +10,7 @@
 
  */
 
-import { TreeNode, sortedArrayToBSTFn } from "../_.util/binaryTree";
+import { TreeNode, sortedArrayToBSTFn } from "../_.general/binaryTree";
 
 export const sortedArrayToBST = {};
 

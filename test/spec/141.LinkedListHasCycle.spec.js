@@ -1,4 +1,4 @@
-import { ListNode, arrayToLinkedlist, makeCycle } from "../../src/_.util/linkedList";
+import { ListNode, arrayToLinkedlist, makeCycle } from "../../src/_.general/linkedList";
 import { linkedListHasCycle } from "../../src/141.linkedListHasCycle/solution";
 
 describe("# Problem 141 - linkedList has cycle", () => {

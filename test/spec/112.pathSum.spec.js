@@ -1,4 +1,4 @@
-import { arrayToBinaryTree } from "../../src/_.util/binaryTree";
+import { arrayToBinaryTree } from "../../src/_.general/binaryTree";
 import { pathSum } from "../../src/112.pathSum/solution";
 
 describe("# Problem 112 - Has root2leaf path sum certain.", () => {

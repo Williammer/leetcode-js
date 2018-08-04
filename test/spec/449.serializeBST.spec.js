@@ -1,4 +1,4 @@
-import { arrayToBinaryTree, binaryTreeToArray } from "../../src/_.util/binaryTree";
+import { arrayToBinaryTree, binaryTreeToArray } from "../../src/_.general/binaryTree";
 import { serializeBST } from "../../src/449.serializeBST/solution";
 
 describe("# Problem 449 - serialize/deserialize BST.", () => {

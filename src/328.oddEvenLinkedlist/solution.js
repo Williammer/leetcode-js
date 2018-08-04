@@ -16,7 +16,7 @@
 
  */
 
-import { ListNode } from "../_.util/linkedList";
+import { ListNode } from "../_.general/linkedList";
 
 export const oddEvenLinkedlist = {};
 

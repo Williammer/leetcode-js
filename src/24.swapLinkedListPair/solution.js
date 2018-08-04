@@ -14,7 +14,7 @@
 
  */
 
-import { ListNode } from "../_.util/linkedList";
+import { ListNode } from "../_.general/linkedList";
 
 export const swapLinkedListPair = {};
 
@@ -26,7 +26,7 @@ export const swapLinkedListPair = {};
  * Space complexity: O(1)
  */
 swapLinkedListPair.iterate = (head) => {
-  const isNode = node => node instanceof ListNode && node.val !== null;
+  const isNode = (node) => node instanceof ListNode && node.val !== null;
 
   if (!isNode(head) || !isNode(head.next)) {
     return head;
@@ -58,7 +58,7 @@ swapLinkedListPair.iterate = (head) => {
  * Space complexity: O(N)
  */
 swapLinkedListPair.recursion = (head) => {
-  const isNode = node => node instanceof ListNode && node.val !== null;
+  const isNode = (node) => node instanceof ListNode && node.val !== null;
 
   const swap = (parentHead, head) => {
     if (!isNode(parentHead) || !isNode(head) || !isNode(head.next)) {

@@ -4,7 +4,7 @@ import {
   linkedlistToArray,
   cloneLinkedlist,
   addToLinkedListFront,
-} from "../../src/_.util/linkedList";
+} from "../../src/_.general/linkedList";
 
 describe("[Util] linkedList - convert between array and linkedList.", () => {
   it("arrayToLinkedlist return (0 -> 0) for [0,0]", () => {

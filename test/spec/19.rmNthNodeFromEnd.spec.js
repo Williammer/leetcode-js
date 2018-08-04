@@ -1,4 +1,4 @@
-import { ListNode, arrayToLinkedlist, linkedlistToArray } from "../../src/_.util/linkedList";
+import { ListNode, arrayToLinkedlist, linkedlistToArray } from "../../src/_.general/linkedList";
 import { rmNthNodeFromEnd } from "../../src/19.rmNthNodeFromEnd/solution";
 
 describe("# Problem 19 - rm Nth linkedList node count from list end", () => {

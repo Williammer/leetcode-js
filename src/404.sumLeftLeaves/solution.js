@@ -18,7 +18,7 @@ There are two left leaves in the binary tree, with values 9 and 15 respectively.
 
  */
 
-import { TreeNode } from "../_.util/binaryTree";
+import { TreeNode } from "../_.general/binaryTree";
 
 export const sumLeftLeaves = {};
 
@@ -30,9 +30,9 @@ export const sumLeftLeaves = {};
  * Space complexity: O(N)
  */
 sumLeftLeaves.dfs = (root) => {
-  const isNode = node => node instanceof TreeNode && node.val !== null;
+  const isNode = (node) => node instanceof TreeNode && node.val !== null;
 
-  const isLeaf = node => isNode(node) && !isNode(node.left) && !isNode(node.right);
+  const isLeaf = (node) => isNode(node) && !isNode(node.left) && !isNode(node.right);
 
   let sum = 0;
 
@@ -66,9 +66,9 @@ sumLeftLeaves.dfs = (root) => {
  * Space complexity: O(N)
  */
 sumLeftLeaves.bfs = (root) => {
-  const isNode = node => node instanceof TreeNode && node.val !== null;
+  const isNode = (node) => node instanceof TreeNode && node.val !== null;
 
-  const isLeaf = node => isNode(node) && !isNode(node.left) && !isNode(node.right);
+  const isLeaf = (node) => isNode(node) && !isNode(node.left) && !isNode(node.right);
 
   if (!isNode(root)) {
     return 0;

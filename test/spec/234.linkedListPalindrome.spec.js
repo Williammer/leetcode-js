@@ -1,4 +1,4 @@
-import { ListNode, arrayToLinkedlist } from "../../src/_.util/linkedList";
+import { ListNode, arrayToLinkedlist } from "../../src/_.general/linkedList";
 import { linkedListPalindrome } from "../../src/234.linkedListPalindrome/solution";
 
 describe("# Problem 234 - whether the given linkedList is palindrome.", () => {

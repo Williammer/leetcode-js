@@ -1,4 +1,4 @@
-import { ListNode, arrayToLinkedlist, linkedlistToArray } from "../../src/_.util/linkedList";
+import { ListNode, arrayToLinkedlist, linkedlistToArray } from "../../src/_.general/linkedList";
 import { reverseLinkedList } from "../../src/206.reverseLinkedList/solution";
 
 describe("# Problem 206 - reverse linkedlist", () => {

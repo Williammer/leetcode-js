@@ -1,4 +1,4 @@
-import { arrayToBinaryTree } from "../../src/_.util/binaryTree";
+import { arrayToBinaryTree } from "../../src/_.general/binaryTree";
 import { bTreePostOrderTraversal } from "../../src/145.bTreePostOrderTraversal/solution";
 
 describe("# Problem 145 - return the Binary Tree post-order traversal of its nodes' values.", () => {

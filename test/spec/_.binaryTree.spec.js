@@ -1,4 +1,4 @@
-import { arrayToBinaryTree, binaryTreeToArray } from "../../src/_.util/binaryTree";
+import { arrayToBinaryTree, binaryTreeToArray } from "../../src/_.general/binaryTree";
 
 describe("[Util] binaryTree - Generate binary tree base on node values array, the value evaluated as false will be considered null node.", () => {
   it("[1, null, null, 1, 2, 3, 4]", () => {

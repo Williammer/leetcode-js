@@ -24,7 +24,7 @@
 
  */
 
-import { TreeNode, bTreeMaxDepthFn } from "../_.util/binaryTree";
+import { TreeNode, bTreeMaxDepthFn } from "../_.general/binaryTree";
 
 export const bTreeMaxDepth = {};
 
@@ -36,7 +36,7 @@ export const bTreeMaxDepth = {};
  * Space complexity: O(N)
  */
 bTreeMaxDepth.dfsFat = (root) => {
-  const isNode = node => node instanceof TreeNode && node.val !== null;
+  const isNode = (node) => node instanceof TreeNode && node.val !== null;
 
   if (!isNode(root)) {
     return 0;
@@ -87,7 +87,7 @@ bTreeMaxDepth.dfs = bTreeMaxDepthFn;
  * Space complexity: O(N)
  */
 bTreeMaxDepth.bfs = (root) => {
-  const isNode = node => node instanceof TreeNode && node.val !== null;
+  const isNode = (node) => node instanceof TreeNode && node.val !== null;
 
   if (!isNode(root)) {
     return 0;

@@ -1,4 +1,4 @@
-import { arrayToBinaryTree } from "../../src/_.util/binaryTree";
+import { arrayToBinaryTree } from "../../src/_.general/binaryTree";
 import { bTreeMaxDepth } from "../../src/104.bTreeMaxDepth/solution";
 
 describe("# Problem 104 - Given a binary tree, find its maximum depth.", () => {

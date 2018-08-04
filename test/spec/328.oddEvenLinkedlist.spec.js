@@ -1,4 +1,4 @@
-import { ListNode, arrayToLinkedlist, linkedlistToArray } from "../../src/_.util/linkedList";
+import { ListNode, arrayToLinkedlist, linkedlistToArray } from "../../src/_.general/linkedList";
 import { oddEvenLinkedlist } from "../../src/328.oddEvenLinkedlist/solution";
 
 describe("# Problem 328 - Group odd/even linkedlist", () => {

@@ -17,7 +17,7 @@
 
  */
 
-import { TreeNode, bTreeInOrderTraversalFn } from "../_.util/binaryTree";
+import { TreeNode, bTreeInOrderTraversalFn } from "../_.general/binaryTree";
 
 export const bTreeInOrderTraversal = {};
 
@@ -38,7 +38,7 @@ bTreeInOrderTraversal.dfs = bTreeInOrderTraversalFn;
  * Space complexity: O(N)
  */
 bTreeInOrderTraversal.iterative = (root) => {
-  const isNode = node => node instanceof TreeNode && node.val !== null;
+  const isNode = (node) => node instanceof TreeNode && node.val !== null;
 
   const result = [];
 

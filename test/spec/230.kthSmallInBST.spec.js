@@ -1,4 +1,4 @@
-import { arrayToBinaryTree } from "../../src/_.util/binaryTree";
+import { arrayToBinaryTree } from "../../src/_.general/binaryTree";
 import { kthSmallInBST } from "../../src/230.kthSmallInBST/solution";
 
 describe("# Problem 230 - Find the kth smallest element in BST.", () => {

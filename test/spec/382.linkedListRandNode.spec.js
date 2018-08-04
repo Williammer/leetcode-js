@@ -1,4 +1,4 @@
-import { ListNode, arrayToLinkedlist } from "../../src/_.util/linkedList";
+import { ListNode, arrayToLinkedlist } from "../../src/_.general/linkedList";
 import { linkedListRandNode } from "../../src/382.linkedListRandNode/solution";
 
 describe("# Problem 382 - Get linkedList;s Random Node.", () => {
