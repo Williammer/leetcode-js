@@ -51,3 +51,42 @@ export function insertion(arr) {
   }
   return arr;
 }
+
+export function quickWithArray(arr) {
+  checkArray(arr);
+  if (arr.length < 2) {
+    return arr;
+  }
+
+  const [pivot, ...rest] = arr;
+  const larger = rest.filter((item) => item > pivot);
+  const smaller = rest.filter((item) => item <= pivot);
+
+  return [...quickWithArray(smaller), pivot, ...quickWithArray(larger)];
+}
+
+export function quick(arr, lo, hi) {
+  checkArray(arr);
+  lo = typeof lo === "number" ? lo : 0;
+  hi = typeof hi === "number" ? hi : arr.length;
+
+  if (hi <= lo) return arr;
+
+  let start = lo;
+  let end = hi;
+  const pivot = arr[lo];
+
+  while (start < end) {
+    while (arr[++start] <= pivot) if (start === hi) break;
+    while (arr[--end] >= pivot) if (end === lo) break;
+    if (start >= end) break;
+
+    swap(arr, start, end);
+  }
+  swap(arr, lo, end);
+
+  quick(arr, lo, end);
+  quick(arr, end + 1, hi);
+
+  return arr;
+}
