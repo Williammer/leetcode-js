@@ -12,7 +12,7 @@ function checkArray(arr) {
   }
 }
 
-export function bubble(arr) {
+export function bubbleSort(arr) {
   checkArray(arr);
   for (let i = arr.length - 1; i > 0; i--) {
     for (let j = 0; j < i; j++) {
@@ -24,7 +24,7 @@ export function bubble(arr) {
   return arr;
 }
 
-export function selection(arr) {
+export function selectionSort(arr) {
   checkArray(arr);
   for (let i = 0; i < arr.length - 1; i++) {
     let min = i;
@@ -38,7 +38,7 @@ export function selection(arr) {
   return arr;
 }
 
-export function insertion(arr) {
+export function insertionSort(arr) {
   checkArray(arr);
   for (let i = 1; i < arr.length; i++) {
     let cur = i;
@@ -52,7 +52,7 @@ export function insertion(arr) {
   return arr;
 }
 
-export function quickWithArray(arr) {
+export function quickSortWithArray(arr) {
   checkArray(arr);
   if (arr.length < 2) {
     return arr;
@@ -62,10 +62,10 @@ export function quickWithArray(arr) {
   const larger = rest.filter((item) => item > pivot);
   const smaller = rest.filter((item) => item <= pivot);
 
-  return [...quickWithArray(smaller), pivot, ...quickWithArray(larger)];
+  return [...quickSortWithArray(smaller), pivot, ...quickSortWithArray(larger)];
 }
 
-export function quick(arr, lo, hi) {
+export function quickSort(arr, lo, hi) {
   checkArray(arr);
   lo = typeof lo === "number" ? lo : 0;
   hi = typeof hi === "number" ? hi : arr.length;
@@ -85,8 +85,43 @@ export function quick(arr, lo, hi) {
   }
   swap(arr, lo, end);
 
-  quick(arr, lo, end);
-  quick(arr, end + 1, hi);
+  quickSort(arr, lo, end);
+  quickSort(arr, end + 1, hi);
 
   return arr;
+}
+
+export function mergeSort(arr) {
+  checkArray(arr);
+  if (arr.length < 2) {
+    return arr;
+  }
+  const merge = (arr1, arr2) => {
+    const result = [];
+    const arrLen1 = arr1.length;
+    const arrLen2 = arr2.length;
+    let pt1 = 0;
+    let pt2 = 0;
+
+    while (pt1 < arrLen1 && pt2 < arrLen2) {
+      if (arr1[pt1] === arr2[pt2]) {
+        result.push(arr1[pt1], arr2[pt2]);
+        pt1 += 1;
+        pt2 += 1;
+      } else if (arr1[pt1] > arr2[pt2]) {
+        result.push(arr2[pt2]);
+        pt2 += 1;
+      } else {
+        result.push(arr1[pt1]);
+        pt1 += 1;
+      }
+    }
+
+    return result.concat(arr1.slice(pt1)).concat(arr2.slice(pt2));
+  };
+  const mid = Math.floor(arr.length - 1 / 2);
+  const leftArr = arr.slice(0, mid);
+  const rightArr = arr.slice(mid);
+
+  return merge(mergeSort(leftArr), mergeSort(rightArr));
 }
