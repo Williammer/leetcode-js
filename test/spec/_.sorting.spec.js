@@ -27,6 +27,10 @@ describe("Array Sorting algorithms", () => {
       original: [3, 2, 5, 4, 1, 11, 9, 7, 2],
       sorted: [1, 2, 2, 3, 4, 5, 7, 9, 11],
     },
+    {
+      original: [1, 3, 2, 4, 5, 6, 7, 8, 9, 10, 13, 1, 4, 110],
+      sorted: [1, 1, 2, 3, 4, 4, 5, 6, 7, 8, 9, 10, 13, 110],
+    },
   ];
 
   testCases.forEach(({ original, sorted }) => {

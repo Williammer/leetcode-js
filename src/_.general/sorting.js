@@ -12,7 +12,8 @@ function checkArray(arr) {
   }
 }
 
-export function bubbleSort(arr) {
+export function bubbleSort(array) {
+  const arr = array.slice();
   checkArray(arr);
   for (let i = arr.length - 1; i > 0; i--) {
     for (let j = 0; j < i; j++) {
@@ -24,7 +25,8 @@ export function bubbleSort(arr) {
   return arr;
 }
 
-export function selectionSort(arr) {
+export function selectionSort(array) {
+  const arr = array.slice();
   checkArray(arr);
   for (let i = 0; i < arr.length - 1; i++) {
     let min = i;
@@ -38,7 +40,8 @@ export function selectionSort(arr) {
   return arr;
 }
 
-export function insertionSort(arr) {
+export function insertionSort(array) {
+  const arr = array.slice();
   checkArray(arr);
   for (let i = 1; i < arr.length; i++) {
     let cur = i;
@@ -52,7 +55,8 @@ export function insertionSort(arr) {
   return arr;
 }
 
-export function shellSort(arr, base = 3) {
+export function shellSort(array, base = 3) {
+  const arr = array.slice();
   const len = arr.length;
   let gap = 1;
 
@@ -74,7 +78,8 @@ export function shellSort(arr, base = 3) {
   return arr;
 }
 
-export function quickSortWithArray(arr) {
+export function quickSortWithArray(array) {
+  const arr = array.slice();
   checkArray(arr);
   if (arr.length < 2) {
     return arr;
@@ -113,7 +118,8 @@ export function quickSort(arr, lo, hi) {
   return arr;
 }
 
-export function mergeSort(arr) {
+export function mergeSort(array) {
+  const arr = array.slice();
   checkArray(arr);
   if (arr.length < 2) {
     return arr;
@@ -146,4 +152,34 @@ export function mergeSort(arr) {
   const rightArr = arr.slice(mid);
 
   return merge(mergeSort(leftArr), mergeSort(rightArr));
+}
+
+export function heapSort(array) {
+  const heap = array.slice();
+  checkArray(heap);
+  if (heap.length < 2) {
+    return heap;
+  }
+  const heapify = (arr, index, end = arr.length - 1) => {
+    const parentIndex = Math.ceil(index / 2) - 1;
+    if (index < 0 || parentIndex < 0) {
+      return;
+    }
+    const isLeft = index % 2 === 1;
+    const peerIndex = isLeft ? index + 1 : index - 1;
+
+    let largest = parentIndex;
+    if (arr[index] > arr[largest]) largest = index;
+    if (peerIndex <= end && arr[peerIndex] > arr[largest]) largest = peerIndex;
+    if (largest !== parentIndex) swap(arr, largest, parentIndex);
+
+    heapify(arr, index - 2, end);
+  };
+
+  for (let last = heap.length - 1; last > 0; last -= 1) {
+    heapify(heap, last, last);
+    swap(heap, 0, last);
+  }
+
+  return heap;
 }
