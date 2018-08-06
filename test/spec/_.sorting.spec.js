@@ -34,7 +34,7 @@ describe("Array Sorting algorithms", () => {
       const { name } = sortAlgorithm;
       it(`should sort ${arrStr(original)} to ${arrStr(sorted)} with "${name}" algorithm`, () => {
         // console.time(`----> [benchmark] sorted with ${sortAlgorithm.name}`);
-        expect(sortAlgorithm(original)).toEqual(sorted);
+        expect(sortAlgorithm(original.slice())).toEqual(sorted);
         // console.timeEnd(`----> [benchmark] sorted with ${sortAlgorithm.name}`);
       });
     });

@@ -52,6 +52,28 @@ export function insertionSort(arr) {
   return arr;
 }
 
+export function shellSort(arr, base = 3) {
+  const len = arr.length;
+  let gap = 1;
+
+  while (gap < len / base) {
+    gap = gap * base + 1;
+  }
+  while (gap > 0) {
+    for (let init = gap; init < len; init++) {
+      const tmp = arr[init];
+      let pos = init;
+      for (; pos >= gap && arr[pos - gap] > tmp; pos -= gap) {
+        arr[pos] = arr[pos - gap];
+      }
+      arr[pos] = tmp;
+    }
+    gap = Math.floor(gap / base);
+  }
+
+  return arr;
+}
+
 export function quickSortWithArray(arr) {
   checkArray(arr);
   if (arr.length < 2) {
