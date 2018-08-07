@@ -31,13 +31,13 @@ export const bTreePostOrderTraversal = {};
 bTreePostOrderTraversal.dfs = bTreePostOrderTraversalFn;
 
 /**
- * Solution 2: use iterative
+ * Solution 2: use iteration
  *
  * "N" is node count
  * Time complexity: O(N)
  * Space complexity: O(N)
  */
-bTreePostOrderTraversal.iterative = (root) => {
+bTreePostOrderTraversal.iteration = (root) => {
   const isNode = (node) => node instanceof TreeNode && node.val !== null;
 
   const result = [];

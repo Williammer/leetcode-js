@@ -67,12 +67,12 @@ describe("# Problem 145 - return the Binary Tree post-order traversal of its nod
     });
   });
 
-  describe("Solution 2: use iterative", () => {
+  describe("Solution 2: use iteration", () => {
     it("[] --> []", () => {
       const array = [];
       const tree = arrayToBinaryTree(array);
 
-      const result = bTreePostOrderTraversal.iterative(tree);
+      const result = bTreePostOrderTraversal.iteration(tree);
 
       expect(result).toEqual([]);
     });
@@ -81,7 +81,7 @@ describe("# Problem 145 - return the Binary Tree post-order traversal of its nod
       const array = [1];
       const tree = arrayToBinaryTree(array);
 
-      const result = bTreePostOrderTraversal.iterative(tree);
+      const result = bTreePostOrderTraversal.iteration(tree);
 
       expect(result).toEqual([1]);
     });
@@ -90,7 +90,7 @@ describe("# Problem 145 - return the Binary Tree post-order traversal of its nod
       const array = [1, null, null, 1, 2, 3, 4];
       const tree = arrayToBinaryTree(array);
 
-      const result = bTreePostOrderTraversal.iterative(tree);
+      const result = bTreePostOrderTraversal.iteration(tree);
 
       expect(result).toEqual([1]);
     });
@@ -99,7 +99,7 @@ describe("# Problem 145 - return the Binary Tree post-order traversal of its nod
       const array = [1, null, 2, 3];
       const tree = arrayToBinaryTree(array);
 
-      const result = bTreePostOrderTraversal.iterative(tree);
+      const result = bTreePostOrderTraversal.iteration(tree);
 
       expect(result).toEqual([3, 2, 1]);
     });
@@ -108,7 +108,7 @@ describe("# Problem 145 - return the Binary Tree post-order traversal of its nod
       const array = [1, 2, 3, null, 4, 5];
       const tree = arrayToBinaryTree(array);
 
-      const result = bTreePostOrderTraversal.iterative(tree);
+      const result = bTreePostOrderTraversal.iteration(tree);
 
       expect(result).toEqual([4, 2, 5, 3, 1]);
     });
@@ -117,7 +117,7 @@ describe("# Problem 145 - return the Binary Tree post-order traversal of its nod
       const array = [1, 2, 3, null, 4, 5, 6, 7];
       const tree = arrayToBinaryTree(array);
 
-      const result = bTreePostOrderTraversal.iterative(tree);
+      const result = bTreePostOrderTraversal.iteration(tree);
 
       expect(result).toEqual([7, 4, 2, 5, 6, 3, 1]);
     });
@@ -126,7 +126,7 @@ describe("# Problem 145 - return the Binary Tree post-order traversal of its nod
       const array = [1, 2, 3, null, 4, 5, null, 6, 7];
       const tree = arrayToBinaryTree(array);
 
-      const result = bTreePostOrderTraversal.iterative(tree);
+      const result = bTreePostOrderTraversal.iteration(tree);
 
       expect(result).toEqual([6, 7, 4, 2, 5, 3, 1]);
     });

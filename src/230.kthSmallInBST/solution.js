@@ -2,18 +2,14 @@
  * Problem: https://leetcode.com/problems/kth-smallest-element-in-a-bst/
     Given a binary search tree, write a function kthSmallest to find the kth smallest element in it.
 
-
  * @param {TreeNode} root
  * @param {number} k
  * @return {number}
 
  * Analysis: Try in-order, which traverse nodes in sorted order of values.
-
  */
 
 import { TreeNode } from "../_.general/binaryTree";
-
-export const kthSmallInBST = {};
 
 /**
  * Solution 1: use inOrder recusion
@@ -22,22 +18,17 @@ export const kthSmallInBST = {};
  * Time complexity: O(N)
  * Space complexity: O(N)
  */
-kthSmallInBST.inOrder = (root, k) => {
+export const inOrder = (root, k) => {
   let i = 1;
-
   let result;
   const isNode = (node) => node instanceof TreeNode && node.val !== null;
-
   const dfsVal = (node) => {
-    if (i > k) {
-      return;
-    }
+    if (i > k) return;
 
     if (isNode(node)) {
       if (isNode(node.left)) {
         dfsVal(node.left);
       }
-
       if (i === k) {
         result = node.val;
         i += 1;
@@ -54,20 +45,19 @@ kthSmallInBST.inOrder = (root, k) => {
   if (!isNode(root)) {
     return undefined;
   }
-
   dfsVal(root);
 
   return result;
 };
 
 /**
- * Solution 2: use inOrder iterative - stack can prevent the stackoverflow of recursion.
+ * Solution 2: use inOrder iteration - stack can prevent the stackoverflow of recursion.
  *
  * "N" is node count
  * Time complexity: O(N)
  * Space complexity: O(N)
  */
-kthSmallInBST.inOrderIter = (root, k) => {
+export const inOrderIter = (root, k) => {
   const isNode = (node) => node instanceof TreeNode && node.val !== null;
 
   if (!isNode(root) || k <= 0) {
@@ -103,8 +93,9 @@ kthSmallInBST.inOrderIter = (root, k) => {
  * Time complexity: O(logN)
  * Space complexity: O(logN)
  */
-kthSmallInBST.binarySearch = (root, k) => {
+export const binarySearch = (root, k) => {
   const isNode = (node) => node instanceof TreeNode && node.val !== null;
+  if (!isNode(root)) return;
 
   const nodeCount = (node) => {
     if (!isNode(node)) {
@@ -112,19 +103,15 @@ kthSmallInBST.binarySearch = (root, k) => {
     }
     return 1 + nodeCount(node.left) + nodeCount(node.right);
   };
-
-  if (!isNode(root)) {
-    return undefined;
-  }
-
   const leftCount = nodeCount(root.left);
+
   if (k <= leftCount) {
     // within left sub-tree
-    return kthSmallInBST.binarySearch(root.left, k);
+    return binarySearch(root.left, k);
   }
   if (k > leftCount + 1) {
     // within right sub-tree
-    return kthSmallInBST.binarySearch(root.right, k - leftCount - 1); // start from right sub-tree
+    return binarySearch(root.right, k - leftCount - 1); // start from right sub-tree
   }
 
   // within root
@@ -134,7 +121,7 @@ kthSmallInBST.binarySearch = (root, k) => {
 /**
  * Lessons:
    1. in-order for BST will traverse the tree in sorted order.
-   2. the iterative in-order traverse is delicated, with using 'while' and 'stack' to full power to fullfill recursion.
+   2. the iteration in-order traverse is delicated, with using 'while' and 'stack' to full power to
+    fullfill recursion.
    3. the count of a node & its child is a useful derived data.
-
  */

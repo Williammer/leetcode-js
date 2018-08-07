@@ -10,14 +10,12 @@
  * @param {ListNode} head
  * @return {boolean}
 
- * Analysis: LinkedList looks bit different than string/array or number, we can create a reversed linkedList and compare.
+ * Analysis: LinkedList looks bit different than string/array or number, we can create a reversed
+    linkedList and compare.
     We can also try to reverse only half of the list with fast/slow pointers.
-
  */
 
-import { ListNode, clone, reverse } from "../_.general/linkedList";
-
-export const linkedListPalindrome = {};
+import { clone, reverse } from "../_.general/linkedList";
 
 /**
  * Solution 1: reverse list then compare
@@ -26,7 +24,7 @@ export const linkedListPalindrome = {};
  * Time complexity: O(3N)
  * Space complexity: O(2N)
  */
-linkedListPalindrome.reverseAll = (head) => {
+export const reverseAll = (head) => {
   if (!head || !head.next) {
     return true;
   }
@@ -51,7 +49,7 @@ linkedListPalindrome.reverseAll = (head) => {
  * Time complexity: O(N)
  * Space complexity: O(1)
  */
-linkedListPalindrome.reverseHalf = (head) => {
+export const reverseHalf = (head) => {
   if (!head || !head.next) {
     return true;
   }
@@ -64,7 +62,6 @@ linkedListPalindrome.reverseHalf = (head) => {
     slow = slow.next;
     fast = fast.next.next;
   }
-
   if (fast) {
     slow = slow.next;
   }
@@ -76,7 +73,6 @@ linkedListPalindrome.reverseHalf = (head) => {
     if (reversedHead.val !== fast.val) {
       return false;
     }
-
     reversedHead = reversedHead.next;
     fast = fast.next;
   }

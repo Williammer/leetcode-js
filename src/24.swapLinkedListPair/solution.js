@@ -5,40 +5,31 @@
  * Example:
     Given 1->2->3->4, you should return the list as 2->1->4->3.
 
-
  * @param {ListNode} head
  * @return {ListNode}
 
  * Analysis: Swap in pair needs to change reference relations in linkedList;
     and since the head changed after swap, we need to have a dummyHead which points to head.
-
  */
 
-import { ListNode } from "../_.general/linkedList";
-
-export const swapLinkedListPair = {};
+import { isListNode, ListNode } from "../_.general/linkedList";
 
 /**
- * Solution 1: normal iterative
+ * Solution 1: normal iteration
  *
  * "N" is linkedList length
  * Time complexity: O(N)
  * Space complexity: O(1)
  */
-swapLinkedListPair.iterate = (head) => {
-  const isNode = (node) => node instanceof ListNode && node.val !== null;
-
-  if (!isNode(head) || !isNode(head.next)) {
+export const iteration = (head) => {
+  if (!isListNode(head) || !isListNode(head.next)) {
     return head;
   }
-
   const dummyHead = new ListNode(-1);
-
   let parentHead = dummyHead;
-
   dummyHead.next = head;
 
-  while (isNode(parentHead) && isNode(head) && isNode(head.next)) {
+  while (isListNode(parentHead) && isListNode(head) && isListNode(head.next)) {
     parentHead.next = head.next;
     head.next = head.next.next;
     parentHead.next.next = head;
@@ -46,7 +37,6 @@ swapLinkedListPair.iterate = (head) => {
     parentHead = parentHead.next.next;
     head = parentHead.next;
   }
-
   return dummyHead.next;
 };
 
@@ -57,17 +47,14 @@ swapLinkedListPair.iterate = (head) => {
  * Time complexity: O(N)
  * Space complexity: O(N)
  */
-swapLinkedListPair.recursion = (head) => {
-  const isNode = (node) => node instanceof ListNode && node.val !== null;
-
-  const swap = (parentHead, head) => {
-    if (!isNode(parentHead) || !isNode(head) || !isNode(head.next)) {
+export const recursion = (head) => {
+  const swap = (parentHead, childHead) => {
+    if (!isListNode(parentHead) || !isListNode(childHead) || !isListNode(childHead.next)) {
       return parentHead;
     }
-
-    parentHead.next = head.next;
-    head.next = head.next.next;
-    parentHead.next.next = swap(head, head.next);
+    parentHead.next = childHead.next;
+    childHead.next = childHead.next.next;
+    parentHead.next.next = swap(childHead, childHead.next);
 
     return parentHead;
   };
@@ -80,6 +67,6 @@ swapLinkedListPair.recursion = (head) => {
 
 /**
  * Lessons:
-   1. Infinite loop may happen for LinkedList recursion, use enough var to avoid it during changing the references relation.
-
+   1. Infinite loop may happen for LinkedList recursion, use enough variable to avoid it while
+    changing the references relation.
  */

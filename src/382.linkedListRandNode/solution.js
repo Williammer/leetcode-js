@@ -6,16 +6,12 @@
  * Example 1:
     '1 -> 2 -> 3' should return either 1, 2, or 3 randomly
 
-
  * @param {ListNode} head
  * @return {number}
 
  * Analysis: Touch end to get length is my first thought,
   later I learnt about the Reservoir sampling approach which progressively rand each node.
-
  */
-
-export const linkedListRandNode = {};
 
 /**
  * Solution 1: Touch head's end to get its length, then generate a rand num for the node.
@@ -24,9 +20,8 @@ export const linkedListRandNode = {};
  * Time complexity: O(2N)
  * Space complexity: O(N)
  */
-linkedListRandNode.touchEnd = (head) => {
+export const touchEnd = (head) => {
   let resultHead = head;
-
   let lastIndex = 0;
 
   while (head.next) {
@@ -39,7 +34,6 @@ linkedListRandNode.touchEnd = (head) => {
     resultHead = resultHead.next;
     randIndex -= 1;
   }
-
   return resultHead.val;
 };
 
@@ -50,28 +44,19 @@ linkedListRandNode.touchEnd = (head) => {
  * Time complexity: O(N)
  * Space complexity: O(1)
  */
-linkedListRandNode.reservoirSample = (head) => {
-  if (!head.next) {
-    return head.val;
-  }
+export const reservoirSample = (head) => {
+  if (!head.next) return head.val;
 
-  const getRand = function (min, max) {
-    return min + Math.floor(Math.random() * (max - min + 1));
-  };
-
+  const getRand = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
   let resultHead = head;
-
   let selectedVal = resultHead.val;
 
   for (let i = 1; resultHead.next !== null; i += 1) {
-    const rand = getRand(0, i);
-
-    if (rand === 0) {
+    if (getRand(0, i) === 0) {
       selectedVal = resultHead.next.val;
     }
     resultHead = resultHead.next;
   }
-
   return selectedVal;
 };
 
@@ -80,5 +65,4 @@ linkedListRandNode.reservoirSample = (head) => {
    1. Probability can be an idea-helper to solve programming problems.
    2. [test] Testing for random could be done(approximately) by
     validating its distribution of large-scale input to be within acceptable deviation.
-
  */

@@ -36,6 +36,7 @@ export const arrayToLinkedlist = (arr) => {
   // 1. The desc way, relative more concise.
   let curNode;
   let newNode;
+
   for (let i = arr.length - 1; i >= 0; i--) {
     newNode = new ListNode(arr[i]);
     if (curNode) {
@@ -43,7 +44,6 @@ export const arrayToLinkedlist = (arr) => {
     }
     curNode = newNode;
   }
-
   return newNode;
 
   /*
@@ -78,11 +78,11 @@ export const arrayToLinkedlist = (arr) => {
 export const linkedlistToArray = (lList) => {
   const arr = [];
   let curNode = lList;
+
   while (curNode) {
     arr.push(curNode.val);
     curNode = curNode.next;
   }
-
   return arr;
 };
 
@@ -100,13 +100,13 @@ export const linkedlistToArray = (lList) => {
 export const clone = (lList) => {
   const newList = new ListNode(-1);
   let curNode = newList;
+
   while (lList) {
     curNode.next = new ListNode(lList.val);
 
     lList = lList.next;
     curNode = curNode.next;
   }
-
   return newList.next;
 };
 
@@ -144,16 +144,34 @@ export const prepend = (val, lList) => {
 export const reverse = (head) => {
   let newHead = null;
   let next = null;
+
   while (head) {
     next = head.next;
     head.next = newHead;
     newHead = head;
     head = next;
   }
-
   return newHead;
 };
 
+/**
+ * Remove nodes of duplicate value from the linkedList
+ *
+ * "N" is linkedList length
+ * Time complexity: O(N)
+ * Space complexity: O(1)
+ */
+export const removeDuplicate = (head) => {
+  const result = head;
+
+  while (isListNode(head) && isListNode(head.next)) {
+    while (isListNode(head.next) && head.val === head.next.val) {
+      head.next = head.next.next;
+    }
+    head = head.next;
+  }
+  return result;
+};
 /**
  * Cycle a linkedList
  *
@@ -179,7 +197,6 @@ export const makeCycle = (head, cycleHeadIndex, cycleTailIndex) => {
     if (cycleHeadIndex === index) {
       cycleHead = head;
     }
-
     // create cycle by connecting cycleTail to cycleHead
     if (!head.next || cycleTailIndex === index) {
       head.next = cycleHead;
@@ -188,7 +205,6 @@ export const makeCycle = (head, cycleHeadIndex, cycleTailIndex) => {
     head = head.next;
     index += 1;
   }
-
   return newHead;
 };
 
@@ -215,6 +231,5 @@ export const hasCycle = (head) => {
       return true;
     }
   }
-
   return false;
 };

@@ -6,40 +6,23 @@
     Given 1->1->2, return 1->2.
     Given 1->1->2->3->3, return 1->2->3.
 
-
  * @param {ListNode} head
  * @return {ListNode}
 
- * Analysis: Remove duplicates in sorted (linked)list can easily achieved with iterative or recursion;
-    use Set to remove duplicates in even the unsorted (linked)list.
-
+ * Analysis: Remove duplicates in sorted (linked)list can easily achieved with iteration or
+    recursion; use Set to remove duplicates in even the unsorted (linked)list.
  */
 
-import { ListNode } from "../_.general/linkedList";
-
-export const rmDuplicateInLinkedList = {};
+import { isListNode, removeDuplicate } from "../_.general/linkedList";
 
 /**
- * Solution 1: concise
+ * Solution 1: iteration
  *
  * "N" is linkedList length
  * Time complexity: O(N)
  * Space complexity: O(1)
  */
-rmDuplicateInLinkedList.concise = (head) => {
-  const isNode = (node) => node instanceof ListNode && node.val !== null;
-
-  const result = head;
-
-  while (isNode(head) && isNode(head.next)) {
-    while (isNode(head.next) && head.val === head.next.val) {
-      head.next = head.next.next;
-    }
-    head = head.next;
-  }
-
-  return result;
-};
+export const iteration = removeDuplicate;
 
 /**
  * Solution 2: recursion
@@ -48,17 +31,14 @@ rmDuplicateInLinkedList.concise = (head) => {
  * Time complexity: O(N)
  * Space complexity: O(N)
  */
-rmDuplicateInLinkedList.recursion = (head) => {
-  const isNode = (node) => node instanceof ListNode && node.val !== null;
-
-  // // 1. Termination condition
-  if (!isNode(head) || !isNode(head.next)) {
-    return head; // [getter]
+export const recursion = (head) => {
+  // 1. Termination condition
+  if (!isListNode(head) || !isListNode(head.next)) {
+    return head;
   }
-
   // 2. recursion occurence
-  head.next = rmDuplicateInLinkedList.recursion(head.next); // [setter] update next, trigger next recursion
-  return head.val === head.next.val ? head.next : head; // [getter] return node base on duplicate condition.
+  head.next = recursion(head.next);
+  return head.val === head.next.val ? head.next : head;
 };
 
 /**
@@ -68,29 +48,26 @@ rmDuplicateInLinkedList.recursion = (head) => {
  * Time complexity: O(N)
  * Space complexity: O(N)
  */
-rmDuplicateInLinkedList.useSet = (head) => {
-  const _record = new Set();
-
-  const isNode = (node) => node instanceof ListNode && node.val !== null;
-
+export const useSet = (head) => {
+  const nodeSets = new Set();
   const result = head;
 
-  isNode(head) && _record.add(head.val);
-  while (isNode(head) && isNode(head.next)) {
-    if (_record.has(head.next.val)) {
+  if (isListNode(head)) {
+    nodeSets.add(head.val);
+  }
+  while (isListNode(head) && isListNode(head.next)) {
+    if (nodeSets.has(head.next.val)) {
       head.next = head.next.next;
     } else {
-      _record.add(head.next.val);
+      nodeSets.add(head.next.val);
       head = head.next;
     }
   }
-
   return result;
 };
 
 /**
  * Lessons:
-   1. Handling 'next' pointer/reference of linkedList is so common that needs to be good at.
-   2. Recursion can has getter and setter logics, think that way can help the implementation.
-
+   1. Handling 'next' pointer/reference of linkedList is so common.
+   2. Recursion is mostly about the termination condition and recursive occurence.
  */

@@ -1,7 +1,7 @@
-import { ListNode, arrayToLinkedlist } from "../../src/_.general/linkedList";
-import { linkedListRandNode } from "../../src/382.linkedListRandNode/solution";
+import { arrayToLinkedlist } from "../../src/_.general/linkedList";
+import * as linkedListRandNode from "../../src/382.linkedListRandNode/solution";
 
-describe("# Problem 382 - Get linkedList;s Random Node.", () => {
+describe("# Problem 382 - Get linkedList's Random Node.", () => {
   const randValCollector = (func, times, args) => {
     const result = {};
     while (times > 0) {
@@ -69,9 +69,9 @@ describe("# Problem 382 - Get linkedList;s Random Node.", () => {
       const prob3 = result[3] / 10000;
       const baseDeviation = 1;
 
-      console.log(`result[1]: ${result[1]} | prob1: ${prob1}`);
-      console.log(`result[2]: ${result[2]} | prob2: ${prob2}`);
-      console.log(`result[3]: ${result[3]} | prob3: ${prob3}`);
+      // console.log(`result[1]: ${result[1]} | prob1: ${prob1}`);
+      // console.log(`result[2]: ${result[2]} | prob2: ${prob2}`);
+      // console.log(`result[3]: ${result[3]} | prob3: ${prob3}`);
 
       expect(prob1).toBeCloseTo(baseDeviation, 1);
       expect(prob2).toBeCloseTo(baseDeviation, 1);
@@ -135,9 +135,9 @@ describe("# Problem 382 - Get linkedList;s Random Node.", () => {
       const prob3 = result[3] / 10000;
       const baseDeviation = 1;
 
-      console.log(`result[1]: ${result[1]} | prob1: ${prob1}`);
-      console.log(`result[2]: ${result[2]} | prob2: ${prob2}`);
-      console.log(`result[3]: ${result[3]} | prob3: ${prob3}`);
+      // console.log(`result[1]: ${result[1]} | prob1: ${prob1}`);
+      // console.log(`result[2]: ${result[2]} | prob2: ${prob2}`);
+      // console.log(`result[3]: ${result[3]} | prob3: ${prob3}`);
 
       expect(prob1).toBeCloseTo(baseDeviation, 1);
       expect(prob2).toBeCloseTo(baseDeviation, 1);

@@ -67,12 +67,12 @@ describe("# Problem 94 - return the Binary Tree In-order traversal of its nodes'
     });
   });
 
-  describe("Solution 2: use iterative", () => {
+  describe("Solution 2: use iteration", () => {
     it("[] --> []", () => {
       const array = [];
       const tree = arrayToBinaryTree(array);
 
-      const result = bTreeInOrderTraversal.iterative(tree);
+      const result = bTreeInOrderTraversal.iteration(tree);
 
       expect(result).toEqual([]);
     });
@@ -81,7 +81,7 @@ describe("# Problem 94 - return the Binary Tree In-order traversal of its nodes'
       const array = [1];
       const tree = arrayToBinaryTree(array);
 
-      const result = bTreeInOrderTraversal.iterative(tree);
+      const result = bTreeInOrderTraversal.iteration(tree);
 
       expect(result).toEqual([1]);
     });
@@ -90,7 +90,7 @@ describe("# Problem 94 - return the Binary Tree In-order traversal of its nodes'
       const array = [1, null, null, 1, 2, 3, 4];
       const tree = arrayToBinaryTree(array);
 
-      const result = bTreeInOrderTraversal.iterative(tree);
+      const result = bTreeInOrderTraversal.iteration(tree);
 
       expect(result).toEqual([1]);
     });
@@ -99,7 +99,7 @@ describe("# Problem 94 - return the Binary Tree In-order traversal of its nodes'
       const array = [1, null, 2, 3];
       const tree = arrayToBinaryTree(array);
 
-      const result = bTreeInOrderTraversal.iterative(tree);
+      const result = bTreeInOrderTraversal.iteration(tree);
 
       expect(result).toEqual([1, 3, 2]);
     });
@@ -108,7 +108,7 @@ describe("# Problem 94 - return the Binary Tree In-order traversal of its nodes'
       const array = [1, 2, 3, null, 4, 5];
       const tree = arrayToBinaryTree(array);
 
-      const result = bTreeInOrderTraversal.iterative(tree);
+      const result = bTreeInOrderTraversal.iteration(tree);
 
       expect(result).toEqual([2, 4, 1, 5, 3]);
     });
@@ -117,7 +117,7 @@ describe("# Problem 94 - return the Binary Tree In-order traversal of its nodes'
       const array = [1, 2, 3, null, 4, 5, 6, 7];
       const tree = arrayToBinaryTree(array);
 
-      const result = bTreeInOrderTraversal.iterative(tree);
+      const result = bTreeInOrderTraversal.iteration(tree);
 
       expect(result).toEqual([2, 7, 4, 1, 5, 3, 6]);
     });
@@ -126,7 +126,7 @@ describe("# Problem 94 - return the Binary Tree In-order traversal of its nodes'
       const array = [1, 2, 3, null, 4, 5, null, 6, 7];
       const tree = arrayToBinaryTree(array);
 
-      const result = bTreeInOrderTraversal.iterative(tree);
+      const result = bTreeInOrderTraversal.iteration(tree);
 
       expect(result).toEqual([2, 6, 4, 7, 1, 5, 3]);
     });

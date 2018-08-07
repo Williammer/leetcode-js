@@ -6,26 +6,22 @@
     Input: (2 -> 4 -> 3)
     Output: (3 -> 4 -> 2)
 
-
  * @param {ListNode} head
  * @return {ListNode}
 
  * Analysis: Reverse is to break the old listNode's reference and point it to new listNode.
-
  */
 
-import { ListNode, reverse } from "../_.general/linkedList";
-
-export const reverseLinkedList = {};
+import { reverse } from "../_.general/linkedList";
 
 /**
- * Solution 1: normal iterative
+ * Solution 1: normal iteration
  *
  * "N" is linkedList length
  * Time complexity: O(N)
  * Space complexity: O(1)
  */
-reverseLinkedList.iterate = reverse;
+export const iteration = reverse;
 
 /**
  * Solution 2: Recursion.
@@ -34,22 +30,19 @@ reverseLinkedList.iterate = reverse;
  * Time complexity: O(N)
  * Space complexity: O(N)
  */
-reverseLinkedList.recursion = (head) => {
-  const reverse = (head, newHead) => {
-    if (!head) {
-      return newHead;
-    }
-    const next = head.next;
-    head.next = newHead;
+export const recursion = (head) => {
+  const innerReverse = (oldHead, newHead) => {
+    if (!oldHead) return newHead;
+    const { next } = oldHead;
+    oldHead.next = newHead;
 
-    return reverse(next, head);
+    return innerReverse(next, oldHead);
   };
-
-  return reverse(head, null);
+  return innerReverse(head, null);
 };
 
 /**
  * Lessons:
-   1. LinkedList handling on the code(such as those assignments) is a bit abstract, better think in the visualized way.
-
+   1. LinkedList handling on the code(such as those assignments) is a bit abstract, better think in
+    the visualized way.
  */

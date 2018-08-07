@@ -1,19 +1,14 @@
 import { arrayToLinkedlist, linkedlistToArray } from "../../src/_.general/linkedList";
-import { add2NumsII } from "../../src/445.add2NumsII/solution";
+import * as add2NumsII from "../../src/445.add2NumsII/solution";
 
 describe("# Problem 445 - Add two non-negative numbers represented by two linked lists into a number represented by a linked list too", () => {
   describe("Solution 1: js reference. Utilized js object reference change feature", () => {
     it("return null if 2 nums are both invalid: null+null => null", () => {
       const foo = 42;
-
       const bar = "baz";
-
       const wow = undefined;
-
       const much = {};
-
       const fn = () => {};
-
       const test = null;
 
       const result2 = add2NumsII.reverseInput(foo, bar);
@@ -52,15 +47,10 @@ describe("# Problem 445 - Add two non-negative numbers represented by two linked
     it("invalid input num be regarded as 0: [2, 4, 3]+null => [2, 4, 3]", () => {
       const l1 = arrayToLinkedlist([2, 4, 3]);
       const foo = 42;
-
       const bar = "baz";
-
       const wow = undefined;
-
       const much = {};
-
       const fn = () => {};
-
       const test = null;
 
       const result1 = add2NumsII.reverseInput(l1, foo);
@@ -138,15 +128,10 @@ describe("# Problem 445 - Add two non-negative numbers represented by two linked
   describe("Solution 2: Use 2 stack for reverse input lists", () => {
     it("return null if 2 nums are both invalid: null+null => null", () => {
       const foo = 42;
-
       const bar = "baz";
-
       const wow = undefined;
-
       const much = {};
-
       const fn = () => {};
-
       const test = null;
 
       const result2 = add2NumsII.stackHelper(foo, bar);
@@ -185,15 +170,10 @@ describe("# Problem 445 - Add two non-negative numbers represented by two linked
     it("invalid input num be regarded as 0: [2, 4, 3]+null => [2, 4, 3]", () => {
       const l1 = arrayToLinkedlist([2, 4, 3]);
       const foo = 42;
-
       const bar = "baz";
-
       const wow = undefined;
-
       const much = {};
-
       const fn = () => {};
-
       const test = null;
 
       const result1 = add2NumsII.stackHelper(l1, foo);
