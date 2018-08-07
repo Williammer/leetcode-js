@@ -13,9 +13,9 @@ function checkArray(arr) {
 }
 
 /**
- * Bubble sort, sorted by swapping array item pairs to desired order from the array start to the end.
- * First round will have a min item swapped to the array end, and second round will have the
- * second min item swapped to array end minus one position, and so on until all items are sorted.
+ * Bubble sort, sorted by swapping item pairs(if needed) from the start postion to the end of the array.
+ * First round will have a largest item swapped to the array end, and second round will have the
+ * second largest item swapped to array end minus one position, and so on until all items are sorted.
  *
  * Time complexity: O(N, N^2)
  * Space complexity: O(1)
@@ -38,7 +38,7 @@ export function bubbleSort(array) {
 }
 
 /**
- * Selection sort, sorted by searching items from min to max for array start to the end position.
+ * Selection sort, sorted by selecting min to max items for the start to the end position of the array.
  *
  * Time complexity: O(N^2)
  * Space complexity: O(1)
@@ -64,10 +64,10 @@ export function selectionSort(array) {
 
 /**
  * Insertion sort, sorted by inserting each item into a proper position of the sorted part of the
- * array range before it.
+ * array before it.
  * The second item is the first one to insert, this carries on until the last item is inserted into
- * the sorted array before it.
- * Insertion sort is fast when the array to sort is small, or is partially sorted.
+ * the sorted part of the array before it.
+ * Insertion sort is extra fast when the array to sort is small, or is partially sorted.
  *
  * Time complexity: O(N, N^2)
  * Space complexity: O(1)
@@ -93,7 +93,7 @@ export function insertionSort(array) {
 
 /**
  * Shell sort, a type of insertion sort, sorted by swapping each gapped array items. The gap reduces
- * after the gapped array items are sorted.
+ * after the gapped array items are sorted. This goes on until the array is sorted.
  * The gap number is determined by a base number, for example, if the base number is 2, then for an
  * array of 16 items, its gap range will be 7, 3, 1.
  *
@@ -196,8 +196,8 @@ export function quickSort(arr, lo, hi) {
 }
 
 /**
- * Merge sort, sorted by recursively dividing the array into two sub-array and merging corresponding
- * parts back into a sorted array. The merge process ensures that the merged array is sorted.
+ * Merge sort, sorted by recursively dividing the array into two sub-arrays and merging corresponding
+ * sub-arrays back into a sorted array. The merge process ensures that the merged array is sorted.
  *
  * Time complexity: O(NlogN)
  * Space complexity: O(N)
@@ -245,10 +245,10 @@ export function mergeSort(array) {
 /**
  * Heap sort, sorted by using the heapify process of the Heap data structure.
  * The Heap data structure looks like a binary tree, but there cannot be `null` gap within it.
- * A proper Heap should have the property that all parent node are larger than or equal to its child
+ * A proper Heap should have the property that all parent nodes are larger than or equal to its child
  * nodes.
- * The heapify process can find the largest item of the heap at a time, and then swap the largest
- * item to the end of the array. This process is repeated until the array become sorted.
+ * The heapify process can find the largest item of the array at a time, and then swap the largest
+ * item to the end of the array. This process is repeated until all the array become sorted.
  *
  * Time complexity: O(NlogN)
  * Space complexity: O(1)
