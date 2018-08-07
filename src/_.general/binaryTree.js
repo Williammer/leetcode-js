@@ -30,25 +30,20 @@ export const arrayToBinaryTree = (valArray) => {
   }
 
   const rootNode = new TreeNode(valArray[0]);
-
   let arrAnchorIndex = 1;
-
   const parentNodes = [rootNode];
 
   while (parentNodes.length > 0 && arrAnchorIndex < valArray.length) {
     let parentNodesIndex = 0;
-
     const curDepthLength = parentNodes.length;
 
     // assign children for parentNodes
     while (parentNodesIndex < curDepthLength) {
       const curParentNode = parentNodes.shift();
-
       let childNodesIndex = 0;
 
       while (childNodesIndex < 2) {
         const val = valArray[arrAnchorIndex];
-
         let curNode = null;
 
         if (val !== null) {
@@ -70,11 +65,9 @@ export const arrayToBinaryTree = (valArray) => {
           return rootNode;
         }
       }
-
       parentNodesIndex += 1;
     }
   }
-
   return rootNode;
 };
 
@@ -93,27 +86,21 @@ export const arrayToBinaryTree = (valArray) => {
  *
  */
 export const binaryTreeToArray = (root) => {
-  const isNode = node => node instanceof TreeNode && node.val !== null;
-
+  const isNode = (node) => node instanceof TreeNode && node.val !== null;
   if (!isNode(root)) {
     return [];
   }
 
   const _queue = [root];
-
   let bTreeArray = [root.val];
-
   let nullChainCount = 0;
 
   while (_queue.length > 0) {
-    const curDepthLength = _queue.length;
-
     const curNode = _queue.shift();
 
     if (isNode(curNode.left)) {
       bTreeArray.push(curNode.left.val);
       _queue.push(curNode.left);
-
       nullChainCount = 0;
     } else {
       bTreeArray.push(null);
@@ -123,7 +110,6 @@ export const binaryTreeToArray = (root) => {
     if (isNode(curNode.right)) {
       bTreeArray.push(curNode.right.val);
       _queue.push(curNode.right);
-
       nullChainCount = 0;
     } else {
       bTreeArray.push(null);
@@ -132,9 +118,9 @@ export const binaryTreeToArray = (root) => {
   }
 
   if (nullChainCount > 0) {
-    bTreeArray = bTreeArray.slice(0, -nullChainCount); // any ways to optimize this? O(n) time complexity here
+    bTreeArray = bTreeArray.slice(0, -nullChainCount);
+    // any ways to optimize this? O(n) time complexity here
   }
-
   return bTreeArray;
 };
 
@@ -152,27 +138,21 @@ export const binaryTreeToArray = (root) => {
  *
  */
 export const binaryTreeToString = (root) => {
-  const isNode = node => node instanceof TreeNode && node.val !== null;
-
+  const isNode = (node) => node instanceof TreeNode && node.val !== null;
   if (!isNode(root)) {
     return "";
   }
 
   const _queue = [root];
-
   let bTreeStr = `${root.val}`;
-
   let nullChainCount = 0;
 
   while (_queue.length > 0) {
-    const curDepthLength = _queue.length;
-
     const curNode = _queue.shift();
 
     if (isNode(curNode.left)) {
       bTreeStr += `,${curNode.left.val}`;
       _queue.push(curNode.left);
-
       nullChainCount = 0;
     } else {
       bTreeStr += ",";
@@ -182,7 +162,6 @@ export const binaryTreeToString = (root) => {
     if (isNode(curNode.right)) {
       bTreeStr += `,${curNode.right.val}`;
       _queue.push(curNode.right);
-
       nullChainCount = 0;
     } else {
       bTreeStr += ",";
@@ -193,7 +172,6 @@ export const binaryTreeToString = (root) => {
   if (nullChainCount > 0) {
     bTreeStr = bTreeStr.slice(0, -nullChainCount);
   }
-
   return bTreeStr;
 };
 
@@ -211,7 +189,7 @@ export const binaryTreeToString = (root) => {
  *
  */
 export const sameTreeFn = (p, q) => {
-  const isNode = node => node instanceof TreeNode && node.val !== null;
+  const isNode = (node) => node instanceof TreeNode && node.val !== null;
 
   if (isNode(p) && isNode(q)) {
     return p.val === q.val ? sameTreeFn(p.left, q.left) && sameTreeFn(p.right, q.right) : false;
@@ -233,23 +211,19 @@ export const sameTreeFn = (p, q) => {
  *
  */
 export const bTreeLvOrderTraversalFn = (root) => {
-  const isNode = node => node instanceof TreeNode && node.val !== null;
-
+  const isNode = (node) => node instanceof TreeNode && node.val !== null;
   if (!isNode(root)) {
     return [];
   }
 
   const result = [];
-
   const _queue = [];
 
   _queue.push(root);
 
   while (_queue.length > 0) {
     let i = 0;
-
     const lengthThisDepth = _queue.length;
-
     const arrayThisDepth = [];
 
     while (i < lengthThisDepth) {
@@ -265,10 +239,8 @@ export const bTreeLvOrderTraversalFn = (root) => {
 
       i += 1;
     }
-
     result.push(arrayThisDepth);
   }
-
   return result;
 };
 
@@ -286,10 +258,8 @@ export const bTreeLvOrderTraversalFn = (root) => {
  *
  */
 export const bTreePreOrderTraversalFn = (root) => {
-  const isNode = node => node instanceof TreeNode && node.val !== null;
-
+  const isNode = (node) => node instanceof TreeNode && node.val !== null;
   const result = [];
-
   const dfsVal = (node) => {
     if (isNode(node)) {
       result.push(node.val);
@@ -304,7 +274,6 @@ export const bTreePreOrderTraversalFn = (root) => {
   };
 
   dfsVal(root);
-
   return result;
 };
 
@@ -322,10 +291,8 @@ export const bTreePreOrderTraversalFn = (root) => {
  *
  */
 export const bTreePostOrderTraversalFn = (root) => {
-  const isNode = node => node instanceof TreeNode && node.val !== null;
-
+  const isNode = (node) => node instanceof TreeNode && node.val !== null;
   const result = [];
-
   const dfsVal = (node) => {
     if (isNode(node)) {
       if (isNode(node.left)) {
@@ -340,7 +307,6 @@ export const bTreePostOrderTraversalFn = (root) => {
   };
 
   dfsVal(root);
-
   return result;
 };
 
@@ -358,10 +324,8 @@ export const bTreePostOrderTraversalFn = (root) => {
  *
  */
 export const bTreeInOrderTraversalFn = (root) => {
-  const isNode = node => node instanceof TreeNode && node.val !== null;
-
+  const isNode = (node) => node instanceof TreeNode && node.val !== null;
   const result = [];
-
   const dfsVal = (node) => {
     if (isNode(node)) {
       if (isNode(node.left)) {
@@ -377,7 +341,6 @@ export const bTreeInOrderTraversalFn = (root) => {
   };
 
   dfsVal(root);
-
   return result;
 };
 
@@ -395,13 +358,12 @@ export const bTreeInOrderTraversalFn = (root) => {
  *
  */
 export const bTreeMaxDepthFn = (root) => {
-  const isNode = node => node instanceof TreeNode && node.val !== null;
-
+  const isNode = (node) => node instanceof TreeNode && node.val !== null;
   if (!isNode(root)) {
     return 0;
   }
-
-  return Math.max(bTreeMaxDepthFn(root.left), bTreeMaxDepthFn(root.right)) + 1; // basic recursion pattern, this '+1' is the key.
+  // basic recursion pattern, this '+1' is the key.
+  return Math.max(bTreeMaxDepthFn(root.left), bTreeMaxDepthFn(root.right)) + 1;
 };
 
 /**
@@ -418,14 +380,12 @@ export const bTreeMaxDepthFn = (root) => {
  *
  */
 export const bTreeMinDepthFn = (root) => {
-  const isNode = node => node instanceof TreeNode && node.val !== null;
-
+  const isNode = (node) => node instanceof TreeNode && node.val !== null;
   if (!isNode(root)) {
     return 0;
   }
 
   const _queue = [root];
-
   let minDepth = 1;
 
   while (_queue.length > 0) {
@@ -446,14 +406,12 @@ export const bTreeMinDepthFn = (root) => {
       }
 
       i += 1;
-
       // increase min depth at the end of bfs for this depth
       if (i === lengthThisDepth) {
         minDepth += 1;
       }
     }
   }
-
   return minDepth;
 };
 
@@ -471,18 +429,14 @@ export const bTreeMinDepthFn = (root) => {
  *
  */
 export const invertBTreeFn = (root) => {
-  const isNode = node => node instanceof TreeNode && node.val !== null;
-
+  const isNode = (node) => node instanceof TreeNode && node.val !== null;
   if (!isNode(root)) {
     return [];
   }
 
   const _queue = [root];
-
   while (_queue.length > 0) {
     const curNode = _queue.shift();
-
-    let tmp;
 
     if (isNode(curNode.left) || isNode(curNode.right)) {
       // invert left, right child of each Node
@@ -496,7 +450,6 @@ export const invertBTreeFn = (root) => {
       }
     }
   }
-
   return root;
 };
 
@@ -514,21 +467,15 @@ export const invertBTreeFn = (root) => {
  *
  */
 export const sortedArrayToBSTFn = (nums) => {
-  const createNode = val => (typeof val === "number" ? new TreeNode(val) : null);
-
+  const createNode = (val) => (typeof val === "number" ? new TreeNode(val) : null);
   const splitArray = (array) => {
     if (!(array && array.length > 0)) {
       return null;
     }
-
     const arrLen = array.length;
-
     const lastIdx = arrLen - 1;
-
     const midIdx = Math.floor(lastIdx / 2);
-
     const leftArr = arrLen > 2 ? array.slice(0, midIdx) : null;
-
     const rightArr = arrLen > 1 ? array.slice(midIdx + 1, lastIdx + 1) : null;
 
     return {
