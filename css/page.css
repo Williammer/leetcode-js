@@ -4,53 +4,62 @@ by Matt Graham
 */
 
 @font-face {
-  font-family: 'Quattrocento Sans';
+  font-family: "Quattrocento Sans";
   src: url("../fonts/quattrocentosans-bold-webfont.eot");
-  src: url("../fonts/quattrocentosans-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/quattrocentosans-bold-webfont.woff") format("woff"), url("../fonts/quattrocentosans-bold-webfont.ttf") format("truetype"), url("../fonts/quattrocentosans-bold-webfont.svg#QuattrocentoSansBold") format("svg");
+  src: url("../fonts/quattrocentosans-bold-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/quattrocentosans-bold-webfont.woff") format("woff"),
+    url("../fonts/quattrocentosans-bold-webfont.ttf") format("truetype"),
+    url("../fonts/quattrocentosans-bold-webfont.svg#QuattrocentoSansBold")
+      format("svg");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Quattrocento Sans';
+  font-family: "Quattrocento Sans";
   src: url("../fonts/quattrocentosans-bolditalic-webfont.eot");
-  src: url("../fonts/quattrocentosans-bolditalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/quattrocentosans-bolditalic-webfont.woff") format("woff"), url("../fonts/quattrocentosans-bolditalic-webfont.ttf") format("truetype"), url("../fonts/quattrocentosans-bolditalic-webfont.svg#QuattrocentoSansBoldItalic") format("svg");
+  src: url("../fonts/quattrocentosans-bolditalic-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/quattrocentosans-bolditalic-webfont.woff") format("woff"),
+    url("../fonts/quattrocentosans-bolditalic-webfont.ttf") format("truetype"),
+    url("../fonts/quattrocentosans-bolditalic-webfont.svg#QuattrocentoSansBoldItalic")
+      format("svg");
   font-weight: bold;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'Quattrocento Sans';
+  font-family: "Quattrocento Sans";
   src: url("../fonts/quattrocentosans-italic-webfont.eot");
-  src: url("../fonts/quattrocentosans-italic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/quattrocentosans-italic-webfont.woff") format("woff"), url("../fonts/quattrocentosans-italic-webfont.ttf") format("truetype"), url("../fonts/quattrocentosans-italic-webfont.svg#QuattrocentoSansItalic") format("svg");
+  src: url("../fonts/quattrocentosans-italic-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/quattrocentosans-italic-webfont.woff") format("woff"),
+    url("../fonts/quattrocentosans-italic-webfont.ttf") format("truetype"),
+    url("../fonts/quattrocentosans-italic-webfont.svg#QuattrocentoSansItalic")
+      format("svg");
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'Quattrocento Sans';
+  font-family: "Quattrocento Sans";
   src: url("../fonts/quattrocentosans-regular-webfont.eot");
-  src: url("../fonts/quattrocentosans-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/quattrocentosans-regular-webfont.woff") format("woff"), url("../fonts/quattrocentosans-regular-webfont.ttf") format("truetype"), url("../fonts/quattrocentosans-regular-webfont.svg#QuattrocentoSansRegular") format("svg");
+  src: url("../fonts/quattrocentosans-regular-webfont.eot?#iefix")
+      format("embedded-opentype"),
+    url("../fonts/quattrocentosans-regular-webfont.woff") format("woff"),
+    url("../fonts/quattrocentosans-regular-webfont.ttf") format("truetype"),
+    url("../fonts/quattrocentosans-regular-webfont.svg#QuattrocentoSansRegular")
+      format("svg");
   font-weight: normal;
   font-style: normal;
 }
-
-@font-face {
-  font-family: 'Copse';
-  src: url("../fonts/copse-regular-webfont.eot");
-  src: url("../fonts/copse-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/copse-regular-webfont.woff") format("woff"), url("../fonts/copse-regular-webfont.ttf") format("truetype"), url("../fonts/copse-regular-webfont.svg#CopseRegular") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
 
 /* normalize.css 2012-02-07T12:37 UTC - https://github.com/necolas/normalize.css */
-
 
 /* =============================================================================
    HTML5 display definitions
    ========================================================================== */
-
 
 /*
  * Corrects block display not defined in IE6/7/8/9 & FF3
@@ -70,7 +79,6 @@ summary {
   display: block;
 }
 
-
 /*
  * Corrects inline-block display not defined in IE6/7/8/9 & FF3
  */
@@ -83,7 +91,6 @@ video {
   *zoom: 1;
 }
 
-
 /*
  * Prevents modern browsers from displaying 'audio' without controls
  */
@@ -91,7 +98,6 @@ video {
 audio:not([controls]) {
   display: none;
 }
-
 
 /*
  * Addresses styling for 'hidden' attribute not present in IE7/8/9, FF3, S4
@@ -102,11 +108,9 @@ audio:not([controls]) {
   display: none;
 }
 
-
 /* =============================================================================
    Base
    ========================================================================== */
-
 
 /*
  * 1. Corrects text resizing oddly in IE6/7 when body font-size is set using em units
@@ -124,7 +128,6 @@ html {
   /* 2 */
 }
 
-
 /*
  * Addresses font-family inconsistency between 'textarea' and other form elements.
  */
@@ -137,7 +140,6 @@ textarea {
   font-family: sans-serif;
 }
 
-
 /*
  * Addresses margins handled incorrectly in IE6/7
  */
@@ -146,11 +148,9 @@ body {
   margin: 0;
 }
 
-
 /* =============================================================================
    Links
    ========================================================================== */
-
 
 /*
  * Addresses outline displayed oddly in Chrome
@@ -159,7 +159,6 @@ body {
 a:focus {
   outline: thin dotted;
 }
-
 
 /*
  * Improves readability when focused and also mouse hovered in all browsers
@@ -171,11 +170,9 @@ a:active {
   outline: 0;
 }
 
-
 /* =============================================================================
    Typography
    ========================================================================== */
-
 
 /*
  * Addresses font sizes and margins set differently in IE6/7
@@ -212,7 +209,6 @@ h6 {
   margin: 2.33em 0;
 }
 
-
 /*
  * Addresses styling not present in IE7/8/9, S5, Chrome
  */
@@ -220,7 +216,6 @@ h6 {
 abbr[title] {
   border-bottom: 1px dotted;
 }
-
 
 /*
  * Addresses style set to 'bolder' in FF3+, S4/5, Chrome
@@ -235,7 +230,6 @@ blockquote {
   margin: 1em 40px;
 }
 
-
 /*
  * Addresses styling not present in S5, Chrome
  */
@@ -243,7 +237,6 @@ blockquote {
 dfn {
   font-style: italic;
 }
-
 
 /*
  * Addresses styling not present in IE6/7/8/9
@@ -254,7 +247,6 @@ mark {
   color: #000;
 }
 
-
 /*
  * Addresses margins set differently in IE6/7
  */
@@ -263,7 +255,6 @@ p,
 pre {
   margin: 1em 0;
 }
-
 
 /*
  * Corrects font family set oddly in IE6, S4/5, Chrome
@@ -275,16 +266,14 @@ code,
 kbd,
 samp {
   font-family: monospace, serif;
-  _font-family: 'courier new', monospace;
+  _font-family: "courier new", monospace;
   font-size: 1em;
 }
-
 
 /*
  * 1. Addresses CSS quotes not supported in IE6/7
  * 2. Addresses quote property not supported in S4
  */
-
 
 /* 1 */
 
@@ -292,19 +281,17 @@ q {
   quotes: none;
 }
 
-
 /* 2 */
 
 q:before,
 q:after {
-  content: '';
+  content: "";
   content: none;
 }
 
 small {
   font-size: 75%;
 }
-
 
 /*
  * Prevents sub and sup affecting line-height in all browsers
@@ -327,11 +314,9 @@ sub {
   bottom: -0.25em;
 }
 
-
 /* =============================================================================
    Lists
    ========================================================================== */
-
 
 /*
  * Addresses margins set differently in IE6/7
@@ -348,7 +333,6 @@ dd {
   margin: 0 0 0 40px;
 }
 
-
 /*
  * Addresses paddings set differently in IE6/7
  */
@@ -358,7 +342,6 @@ ol,
 ul {
   padding: 0 0 0 40px;
 }
-
 
 /*
  * Corrects list images handled incorrectly in IE7
@@ -370,11 +353,9 @@ nav ol {
   list-style-image: none;
 }
 
-
 /* =============================================================================
    Embedded content
    ========================================================================== */
-
 
 /*
  * 1. Removes border when inside 'a' element in IE6/7/8/9, FF3
@@ -389,7 +370,6 @@ img {
   /* 2 */
 }
 
-
 /*
  * Corrects overflow displayed oddly in IE9
  */
@@ -398,11 +378,9 @@ svg:not(:root) {
   overflow: hidden;
 }
 
-
 /* =============================================================================
    Figures
    ========================================================================== */
-
 
 /*
  * Addresses margin not present in IE6/7/8/9, S5, O11
@@ -412,11 +390,9 @@ figure {
   margin: 0;
 }
 
-
 /* =============================================================================
    Forms
    ========================================================================== */
-
 
 /*
  * Corrects margin displayed oddly in IE6/7
@@ -425,7 +401,6 @@ figure {
 form {
   margin: 0;
 }
-
 
 /*
  * Define consistent border, margin, and padding
@@ -436,7 +411,6 @@ fieldset {
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
-
 
 /*
  * 1. Corrects color not being inherited in IE6/7/8/9
@@ -453,7 +427,6 @@ legend {
   *margin-left: -7px;
   /* 3 */
 }
-
 
 /*
  * 1. Corrects font size not being inherited in all browsers
@@ -475,7 +448,6 @@ textarea {
   /* 3 */
 }
 
-
 /*
  * Addresses FF3/4 setting line-height on 'input' using !important in the UA stylesheet
  */
@@ -485,7 +457,6 @@ input {
   line-height: normal;
   /* 1 */
 }
-
 
 /*
  * 1. Improves usability and consistency of cursor style between image-type 'input' and others
@@ -506,7 +477,6 @@ input[type="submit"] {
   /* 3 */
 }
 
-
 /*
  * Re-set default cursor for disabled elements
  */
@@ -515,7 +485,6 @@ button[disabled],
 input[disabled] {
   cursor: default;
 }
-
 
 /*
  * 1. Addresses box sizing set to content-box in IE8/9
@@ -536,7 +505,6 @@ input[type="radio"] {
   /* 3 */
 }
 
-
 /*
  * 1. Addresses appearance set to searchfield in S5, Chrome
  * 2. Addresses box-sizing set to border-box in S5, Chrome (include -moz to future-proof)
@@ -551,7 +519,6 @@ input[type="search"] {
   box-sizing: content-box;
 }
 
-
 /*
  * Removes inner padding and search cancel button in S5, Chrome on OS X
  */
@@ -560,7 +527,6 @@ input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button {
   -webkit-appearance: none;
 }
-
 
 /*
  * Removes inner padding and border in FF3+
@@ -572,7 +538,6 @@ input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
-
 
 /*
  * 1. Removes default vertical scrollbar in IE6/7/8/9
@@ -586,11 +551,9 @@ textarea {
   /* 2 */
 }
 
-
 /* =============================================================================
    Tables
    ========================================================================== */
-
 
 /*
  * Remove most spacing between table cells
@@ -602,7 +565,8 @@ table {
 }
 
 body {
-  font: 14px/22px "Quattrocento Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 14px/22px "Quattrocento Sans", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
   color: #666;
   font-weight: 300;
   margin: 0px;
@@ -696,7 +660,8 @@ blockquote {
 }
 
 code {
-  font-family: "Lucida Sans", Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
+  font-family: "Lucida Sans", Monaco, Bitstream Vera Sans Mono, Lucida Console,
+    Terminal;
   font-size: 13px;
   color: #efefef;
   text-shadow: 0px 1px 0px #000;
@@ -744,11 +709,11 @@ th {
 td {
   text-align: left;
   padding: 5px 10px;
-  border-right: 1px solid rgba(34, 36, 38, .1);
+  border-right: 1px solid rgba(34, 36, 38, 0.1);
 }
 
 td:first-child {
-  border-left: 1px solid rgba(34, 36, 38, .1);
+  border-left: 1px solid rgba(34, 36, 38, 0.1);
 }
 
 hr {
@@ -823,10 +788,18 @@ section {
   -khtml-border-radius: 3px;
   border-radius: 3px;
   border: 1px solid #cbcbcb;
-  -moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.09), inset 0px 0px 2px 2px rgba(255, 255, 255, 0.5), inset 0 0 5px 5px rgba(255, 255, 255, 0.4);
-  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.09), inset 0px 0px 2px 2px rgba(255, 255, 255, 0.5), inset 0 0 5px 5px rgba(255, 255, 255, 0.4);
-  -o-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.09), inset 0px 0px 2px 2px rgba(255, 255, 255, 0.5), inset 0 0 5px 5px rgba(255, 255, 255, 0.4);
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.09), inset 0px 0px 2px 2px rgba(255, 255, 255, 0.5), inset 0 0 5px 5px rgba(255, 255, 255, 0.4);
+  -moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.09),
+    inset 0px 0px 2px 2px rgba(255, 255, 255, 0.5),
+    inset 0 0 5px 5px rgba(255, 255, 255, 0.4);
+  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.09),
+    inset 0px 0px 2px 2px rgba(255, 255, 255, 0.5),
+    inset 0 0 5px 5px rgba(255, 255, 255, 0.4);
+  -o-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.09),
+    inset 0px 0px 2px 2px rgba(255, 255, 255, 0.5),
+    inset 0 0 5px 5px rgba(255, 255, 255, 0.4);
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.09),
+    inset 0px 0px 2px 2px rgba(255, 255, 255, 0.5),
+    inset 0 0 5px 5px rgba(255, 255, 255, 0.4);
 }
 
 small {
@@ -845,8 +818,7 @@ footer {
   width: auto;
 }
 
-@media print,
-screen and (max-width: 870px) {
+@media print, screen and (max-width: 870px) {
   body {
     word-wrap: break-word;
   }

@@ -17,7 +17,7 @@
   -ms-transition: 1ms opacity ease;
   -o-transition: 1ms opacity ease;
   transition: 1ms opacity ease;
-  background: rgba(0, 0, 0, .6);
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .scotch-modal {
@@ -61,7 +61,9 @@
   opacity: 1;
 }
 
-
+.scotch-content code[class*="language-"] {
+  font-family: Source Code Pro, monospace;
+}
 /* Close Button */
 
 .scotch-close {
@@ -83,7 +85,6 @@
 .scotch-close:hover {
   background: #c0392b;
 }
-
 
 /* Default Animation */
 
@@ -145,7 +146,6 @@
   -o-transition: 500ms opacity 500ms ease;
   transition: 500ms opacity 500ms ease;
 }
-
 
 /* Demo Styles */
 
