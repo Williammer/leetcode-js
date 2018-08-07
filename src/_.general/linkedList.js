@@ -15,7 +15,7 @@ export class ListNode {
  * @return {boolean}
  *
  */
-export const isListNode = node => node instanceof ListNode && node.val !== null;
+export const isListNode = (node) => node instanceof ListNode && node.val !== null;
 
 /**
  * Convert array to linkedList
@@ -38,11 +38,9 @@ export const arrayToLinkedlist = (arr) => {
   let newNode;
   for (let i = arr.length - 1; i >= 0; i--) {
     newNode = new ListNode(arr[i]);
-
     if (curNode) {
       newNode.next = curNode;
     }
-
     curNode = newNode;
   }
 
@@ -78,13 +76,10 @@ export const arrayToLinkedlist = (arr) => {
  *
  */
 export const linkedlistToArray = (lList) => {
-  let curNode = lList;
-
   const arr = [];
-
-  while (curNode && typeof curNode.val === "number") {
+  let curNode = lList;
+  while (curNode) {
     arr.push(curNode.val);
-
     curNode = curNode.next;
   }
 
@@ -104,9 +99,7 @@ export const linkedlistToArray = (lList) => {
  */
 export const cloneLinkedlist = (lList) => {
   const newList = new ListNode(-1);
-
   let curNode = newList;
-
   while (lList) {
     curNode.next = new ListNode(lList.val);
 
@@ -118,7 +111,7 @@ export const cloneLinkedlist = (lList) => {
 };
 
 /**
- * Add Node to List front
+ * Prepend Node to List
  *
  * "N" is item count
  * Time complexity: O(1)
@@ -128,10 +121,7 @@ export const cloneLinkedlist = (lList) => {
  * @return {ListNode}
  *
  */
-export const addToLinkedListFront = (val, lList) => {
-  if (typeof val !== "number") {
-    return lList;
-  }
+export const prependToLinkedlist = (val, lList) => {
   const newHead = new ListNode(val);
   newHead.next = lList;
 
@@ -151,11 +141,9 @@ export const addToLinkedListFront = (val, lList) => {
  * More on 206.reverseLinkedList
  *
  */
-export const reverseLinkedListFn = function (head) {
+export const reverseLinkedListFn = (head) => {
   let newHead = null;
-
   let next = null;
-
   while (head) {
     next = head.next;
     head.next = newHead;
@@ -181,9 +169,7 @@ export const reverseLinkedListFn = function (head) {
  */
 export const makeCycle = (head, cycleHeadIndex, cycleTailIndex) => {
   const newHead = head;
-
   let index = 0;
-
   let cycleHead;
 
   cycleHeadIndex = cycleHeadIndex || 0;
@@ -219,15 +205,12 @@ export const makeCycle = (head, cycleHeadIndex, cycleTailIndex) => {
  * More on 141.linkedListHasCycle
  *
  */
-export const linkedListHasCycleFn = function (head) {
+export const linkedListHasCycleFn = (head) => {
   let walk = head;
-
   let run = head;
-
   while (walk && run && run.next) {
     walk = walk.next;
     run = run.next.next;
-
     if (walk === run) {
       return true;
     }

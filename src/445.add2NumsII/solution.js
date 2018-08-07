@@ -23,7 +23,7 @@ import {
   ListNode,
   isListNode,
   reverseLinkedListFn,
-  addToLinkedListFront,
+  prependToLinkedlist,
 } from "../_.general/linkedList";
 import { add2Nums } from "../2.add2Nums/solution";
 
@@ -110,7 +110,7 @@ add2NumsII.stackHelper = (l1, l2) => {
     carry = Math.floor(curSum / 10);
     curSum %= 10;
 
-    result = !result ? new ListNode(curSum) : addToLinkedListFront(curSum, result);
+    result = !result ? new ListNode(curSum) : prependToLinkedlist(curSum, result);
     curSum = carry;
   }
 

@@ -3,7 +3,7 @@ import {
   arrayToLinkedlist,
   linkedlistToArray,
   cloneLinkedlist,
-  addToLinkedListFront,
+  prependToLinkedlist,
 } from "../../src/_.general/linkedList";
 
 describe("[Util] linkedList - convert between array and linkedList.", () => {
@@ -49,7 +49,6 @@ describe("[Util] linkedList - convert between array and linkedList.", () => {
 describe("[Util] linkedList - clone Linkedlist.", () => {
   it("(0 -> 0)", () => {
     const testlList = arrayToLinkedlist([0, 0]);
-
     const result = cloneLinkedlist(testlList);
     expect(linkedlistToArray(testlList)).toEqual([0, 0]);
     expect(linkedlistToArray(result)).toEqual([0, 0]);
@@ -68,7 +67,7 @@ describe("[Util] linkedList - add node to Linkedlist front.", () => {
   it("1, [2,3] -> [1,2,3]", () => {
     const testlList = arrayToLinkedlist([2, 3]);
 
-    const result = addToLinkedListFront(1, testlList);
+    const result = prependToLinkedlist(1, testlList);
     expect(linkedlistToArray(result)).toEqual([1, 2, 3]);
     expect(linkedlistToArray(testlList)).toEqual([2, 3]);
   });
