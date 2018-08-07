@@ -6,6 +6,7 @@ function swap(arr, i, j) {
   arr[i] = arr[j];
   arr[j] = tmp;
 }
+
 function checkArray(arr) {
   if (!Array.isArray(arr)) {
     throw new Error("Expect input to be an array.");
@@ -148,7 +149,6 @@ export function quickSortWithArray(array) {
   if (arr.length < 2) {
     return arr;
   }
-
   const [pivot, ...rest] = arr;
   const larger = rest.filter((item) => item > pivot);
   const smaller = rest.filter((item) => item <= pivot);
@@ -184,7 +184,6 @@ export function quickSort(arr, lo, hi) {
     while (arr[++start] <= pivot) if (start === hi) break;
     while (arr[--end] >= pivot) if (end === lo) break;
     if (start >= end) break;
-
     swap(arr, start, end);
   }
   swap(arr, lo, end);
