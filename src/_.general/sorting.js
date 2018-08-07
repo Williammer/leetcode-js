@@ -12,6 +12,18 @@ function checkArray(arr) {
   }
 }
 
+/**
+ * Bubble sort, sorted by swapping array item pairs to desired order from the array start to the end.
+ * First round will have a min item swapped to the array end, and second round will have the
+ * second min item swapped to array end minus one position, and so on until all items are sorted.
+ *
+ * Time complexity: O(N, N^2)
+ * Space complexity: O(1)
+ *
+ * @param {Array} array
+ * @return {Array}
+ *
+ */
 export function bubbleSort(array) {
   const arr = array.slice();
   checkArray(arr);
@@ -25,6 +37,16 @@ export function bubbleSort(array) {
   return arr;
 }
 
+/**
+ * Selection sort, sorted by searching items from min to max for array start to the end position.
+ *
+ * Time complexity: O(N^2)
+ * Space complexity: O(1)
+ *
+ * @param {Array} array
+ * @return {Array}
+ *
+ */
 export function selectionSort(array) {
   const arr = array.slice();
   checkArray(arr);
@@ -40,6 +62,20 @@ export function selectionSort(array) {
   return arr;
 }
 
+/**
+ * Insertion sort, sorted by inserting each item into a proper position of the sorted part of the
+ * array range before it.
+ * The second item is the first one to insert, this carries on until the last item is inserted into
+ * the sorted array before it.
+ * Insertion sort is fast when the array to sort is small, or is partially sorted.
+ *
+ * Time complexity: O(N, N^2)
+ * Space complexity: O(1)
+ *
+ * @param {Array} array
+ * @return {Array}
+ *
+ */
 export function insertionSort(array) {
   const arr = array.slice();
   checkArray(arr);
@@ -55,6 +91,19 @@ export function insertionSort(array) {
   return arr;
 }
 
+/**
+ * Shell sort, a type of insertion sort, sorted by swapping each gapped array items. The gap reduces
+ * after the gapped array items are sorted.
+ * The gap number is determined by a base number, for example, if the base number is 2, then for an
+ * array of 16 items, its gap range will be 7, 3, 1.
+ *
+ * Time complexity: O(NlogN, N(logN)^2)
+ * Space complexity: O(1)
+ *
+ * @param {Array} array
+ * @return {Array}
+ *
+ */
 export function shellSort(array, base = 3) {
   const arr = array.slice();
   const len = arr.length;
@@ -78,6 +127,21 @@ export function shellSort(array, base = 3) {
   return arr;
 }
 
+/**
+ * Quick sort, sorted by performing a partition process for a chosen pivot item, and the same is done
+ * for the left/right partitioned parts, and so on.
+ * The partition process will swap pairs of items until the left part are all smaller than pivot,
+ * and right part are all larger.
+ * This function implemented it by creating extra partitioned array upon each partition process.
+ * It's concise and easy to read, but has extra space complexity than quickSort implementation below.
+ *
+ * Time complexity: O(NlogN, N^2)
+ * Space complexity: O(N)
+ *
+ * @param {Array} array
+ * @return {Array}
+ *
+ */
 export function quickSortWithArray(array) {
   const arr = array.slice();
   checkArray(arr);
@@ -92,6 +156,19 @@ export function quickSortWithArray(array) {
   return [...quickSortWithArray(smaller), pivot, ...quickSortWithArray(larger)];
 }
 
+/**
+ * Quick sort, sorted by performing a partition process for a chosen pivot item, and the same is done
+ * for the left/right partitioned parts, and so on.
+ * The partition process will swap pairs of items until the left part are all smaller than pivot,
+ * and right part are all larger.
+ *
+ * Time complexity: O(NlogN, N^2)
+ * Space complexity: O(logN)
+ *
+ * @param {Array} array
+ * @return {Array}
+ *
+ */
 export function quickSort(arr, lo, hi) {
   checkArray(arr);
   lo = typeof lo === "number" ? lo : 0;
@@ -118,6 +195,17 @@ export function quickSort(arr, lo, hi) {
   return arr;
 }
 
+/**
+ * Merge sort, sorted by recursively dividing the array into two sub-array and merging corresponding
+ * parts back into a sorted array. The merge process ensures that the merged array is sorted.
+ *
+ * Time complexity: O(NlogN)
+ * Space complexity: O(N)
+ *
+ * @param {Array} array
+ * @return {Array}
+ *
+ */
 export function mergeSort(array) {
   const arr = array.slice();
   checkArray(arr);
@@ -154,13 +242,28 @@ export function mergeSort(array) {
   return merge(mergeSort(leftArr), mergeSort(rightArr));
 }
 
+/**
+ * Heap sort, sorted by using the heapify process of the Heap data structure.
+ * The Heap data structure looks like a binary tree, but there cannot be `null` gap within it.
+ * A proper Heap should have the property that all parent node are larger than or equal to its child
+ * nodes.
+ * The heapify process can find the largest item of the heap at a time, and then swap the largest
+ * item to the end of the array. This process is repeated until the array become sorted.
+ *
+ * Time complexity: O(NlogN)
+ * Space complexity: O(1)
+ *
+ * @param {Array} array
+ * @return {Array}
+ *
+ */
 export function heapSort(array) {
-  const heap = array.slice();
-  checkArray(heap);
-  if (heap.length < 2) {
-    return heap;
+  const arr = array.slice();
+  checkArray(arr);
+  if (arr.length < 2) {
+    return arr;
   }
-  const heapify = (arr, index, end = arr.length - 1) => {
+  const heapify = (list, index, end = list.length - 1) => {
     const parentIndex = Math.ceil(index / 2) - 1;
     if (index < 0 || parentIndex < 0) {
       return;
@@ -169,17 +272,17 @@ export function heapSort(array) {
     const peerIndex = isLeft ? index + 1 : index - 1;
 
     let largest = parentIndex;
-    if (arr[index] > arr[largest]) largest = index;
-    if (peerIndex <= end && arr[peerIndex] > arr[largest]) largest = peerIndex;
-    if (largest !== parentIndex) swap(arr, largest, parentIndex);
+    if (list[index] > list[largest]) largest = index;
+    if (peerIndex <= end && list[peerIndex] > list[largest]) largest = peerIndex;
+    if (largest !== parentIndex) swap(list, largest, parentIndex);
 
-    heapify(arr, index - 2, end);
+    heapify(list, index - 2, end);
   };
 
-  for (let last = heap.length - 1; last > 0; last -= 1) {
-    heapify(heap, last, last);
-    swap(heap, 0, last);
+  for (let last = arr.length - 1; last > 0; last -= 1) {
+    heapify(arr, last, last);
+    swap(arr, 0, last);
   }
 
-  return heap;
+  return arr;
 }
