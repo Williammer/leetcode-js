@@ -19,12 +19,7 @@
 
  */
 
-import {
-  ListNode,
-  isListNode,
-  reverseLinkedListFn,
-  prependToLinkedlist,
-} from "../_.general/linkedList";
+import { ListNode, isListNode, reverse, prepend } from "../_.general/linkedList";
 import { add2Nums } from "../2.add2Nums/solution";
 
 export const add2NumsII = {};
@@ -47,13 +42,13 @@ add2NumsII.reverseInput = (l1, l2) => {
     return l1;
   }
 
-  const rl1 = reverseLinkedListFn(l1);
+  const rl1 = reverse(l1);
 
-  const rl2 = reverseLinkedListFn(l2);
+  const rl2 = reverse(l2);
 
   const rSum = add2Nums.reference(rl1, rl2);
 
-  return reverseLinkedListFn(rSum);
+  return reverse(rSum);
 };
 
 /**
@@ -110,7 +105,7 @@ add2NumsII.stackHelper = (l1, l2) => {
     carry = Math.floor(curSum / 10);
     curSum %= 10;
 
-    result = !result ? new ListNode(curSum) : prependToLinkedlist(curSum, result);
+    result = !result ? new ListNode(curSum) : prepend(curSum, result);
     curSum = carry;
   }
 

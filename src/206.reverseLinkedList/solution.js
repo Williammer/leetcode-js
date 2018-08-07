@@ -14,7 +14,7 @@
 
  */
 
-import { ListNode, reverseLinkedListFn } from "../_.general/linkedList";
+import { ListNode, reverse } from "../_.general/linkedList";
 
 export const reverseLinkedList = {};
 
@@ -25,7 +25,7 @@ export const reverseLinkedList = {};
  * Time complexity: O(N)
  * Space complexity: O(1)
  */
-reverseLinkedList.iterate = reverseLinkedListFn;
+reverseLinkedList.iterate = reverse;
 
 /**
  * Solution 2: Recursion.

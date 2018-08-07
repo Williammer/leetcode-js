@@ -15,7 +15,7 @@
 
  */
 
-import { ListNode, cloneLinkedlist, reverseLinkedListFn } from "../_.general/linkedList";
+import { ListNode, clone, reverse } from "../_.general/linkedList";
 
 export const linkedListPalindrome = {};
 
@@ -30,10 +30,8 @@ linkedListPalindrome.reverseAll = (head) => {
   if (!head || !head.next) {
     return true;
   }
-
-  const cloneHead = cloneLinkedlist(head);
-
-  let reversedHead = reverseLinkedListFn(cloneHead);
+  const cloneHead = clone(head);
+  let reversedHead = reverse(cloneHead);
 
   while (head) {
     if (head.val !== reversedHead.val) {
@@ -43,7 +41,6 @@ linkedListPalindrome.reverseAll = (head) => {
     head = head.next;
     reversedHead = reversedHead.next;
   }
-
   return true;
 };
 
@@ -60,10 +57,8 @@ linkedListPalindrome.reverseHalf = (head) => {
   }
 
   let fast = head;
-
   let slow = head;
-
-  let reverse;
+  let reversedHead;
 
   while (fast && fast.next) {
     slow = slow.next;
@@ -74,15 +69,15 @@ linkedListPalindrome.reverseHalf = (head) => {
     slow = slow.next;
   }
 
-  reverse = reverseLinkedListFn(slow);
+  reversedHead = reverse(slow);
   fast = head;
 
-  while (reverse) {
-    if (reverse.val !== fast.val) {
+  while (reversedHead) {
+    if (reversedHead.val !== fast.val) {
       return false;
     }
 
-    reverse = reverse.next;
+    reversedHead = reversedHead.next;
     fast = fast.next;
   }
   return true;
@@ -92,5 +87,4 @@ linkedListPalindrome.reverseHalf = (head) => {
  * Lessons:
    1. palindrome problems can normally be handled by 2pointer shrink or half/all reverse compare.
    2. linkedList's fast/slow pointers can help decide middle position.
-
  */

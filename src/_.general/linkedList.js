@@ -97,7 +97,7 @@ export const linkedlistToArray = (lList) => {
  * @return {ListNode}
  *
  */
-export const cloneLinkedlist = (lList) => {
+export const clone = (lList) => {
   const newList = new ListNode(-1);
   let curNode = newList;
   while (lList) {
@@ -111,7 +111,7 @@ export const cloneLinkedlist = (lList) => {
 };
 
 /**
- * Prepend Node to List
+ * Prepend Node to linkedList
  *
  * "N" is item count
  * Time complexity: O(1)
@@ -121,7 +121,7 @@ export const cloneLinkedlist = (lList) => {
  * @return {ListNode}
  *
  */
-export const prependToLinkedlist = (val, lList) => {
+export const prepend = (val, lList) => {
   const newHead = new ListNode(val);
   newHead.next = lList;
 
@@ -141,7 +141,7 @@ export const prependToLinkedlist = (val, lList) => {
  * More on 206.reverseLinkedList
  *
  */
-export const reverseLinkedListFn = (head) => {
+export const reverse = (head) => {
   let newHead = null;
   let next = null;
   while (head) {
@@ -193,7 +193,7 @@ export const makeCycle = (head, cycleHeadIndex, cycleTailIndex) => {
 };
 
 /**
- * Has cycle
+ * Whether a linkedList has cycle
  *
  * "N" is item count
  * Time complexity: O(N)
@@ -205,7 +205,7 @@ export const makeCycle = (head, cycleHeadIndex, cycleTailIndex) => {
  * More on 141.linkedListHasCycle
  *
  */
-export const linkedListHasCycleFn = (head) => {
+export const hasCycle = (head) => {
   let walk = head;
   let run = head;
   while (walk && run && run.next) {
