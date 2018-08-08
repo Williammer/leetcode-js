@@ -1,5 +1,5 @@
 import { binaryTreeToArray } from "../../src/_.general/binaryTree";
-import { sortedArrayToBST } from "../../src/108.sortedArrayToBST/solution";
+import * as sortedArrayToBST from "../../src/108.sortedArrayToBST/solution";
 
 describe("# Problem 108 - convert sorted array to a height balanced BST.", () => {
   describe("Solution 1: use dfs", () => {

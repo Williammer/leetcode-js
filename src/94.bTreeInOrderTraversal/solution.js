@@ -14,12 +14,9 @@
  * @return {number[]}
 
  * Analysis: In theory, inorder should still be DFS, so we can try that.
-
  */
 
-import { TreeNode, bTreeInOrderTraversalFn } from "../_.general/binaryTree";
-
-export const bTreeInOrderTraversal = {};
+import { isTreeNode, inOrderTraversal } from "../_.general/binaryTree";
 
 /**
  * Solution 1: use dfs
@@ -28,7 +25,7 @@ export const bTreeInOrderTraversal = {};
  * Time complexity: O(N)
  * Space complexity: O(N)
  */
-bTreeInOrderTraversal.dfs = bTreeInOrderTraversalFn;
+export const dfs = inOrderTraversal;
 
 /**
  * Solution 2: use iteration
@@ -37,29 +34,22 @@ bTreeInOrderTraversal.dfs = bTreeInOrderTraversalFn;
  * Time complexity: O(N)
  * Space complexity: O(N)
  */
-bTreeInOrderTraversal.iteration = (root) => {
-  const isNode = (node) => node instanceof TreeNode && node.val !== null;
-
+export const iteration = (root) => {
   const result = [];
-
-  const _stack = [];
-
+  const nodeStack = [];
   let curNode = root;
 
-  let newNode;
-
-  while (isNode(curNode) || _stack.length > 0) {
-    if (isNode(curNode)) {
-      _stack.push(curNode);
+  while (isTreeNode(curNode) || nodeStack.length > 0) {
+    if (isTreeNode(curNode)) {
+      nodeStack.push(curNode);
       curNode = curNode.left;
     } else {
       // process a node in stack
-      newNode = _stack.pop();
-      result.push(newNode.val);
-      curNode = newNode.right;
+      const { val, right } = nodeStack.pop();
+      result.push(val);
+      curNode = right;
     }
   }
-
   return result;
 };
 
@@ -67,5 +57,4 @@ bTreeInOrderTraversal.iteration = (root) => {
  * Lessons:
    1. In-order is basically dfs, and dfs is recursion.
    2. One thing to note is that in-order for BST will traverse the tree in sorted order.
-
  */

@@ -1,8 +1,8 @@
 /**
  * Problem: https://leetcode.com/problems/same-tree/
     Given two binary trees, write a function to check if they are equal or not.
-    Two binary trees are considered equal if they are structurally identical and the nodes have the same value.
-
+    Two binary trees are considered equal if they are structurally identical and the nodes have the
+      same value.
 
  * @param {TreeNode} p
  * @param {TreeNode} q
@@ -12,9 +12,7 @@
     Besides, it can be divided into smaller atom problem, which is suitable for recursion.
  */
 
-import { TreeNode, binaryTreeToArray, sameTreeFn } from "../_.general/binaryTree";
-
-export const sameTree = {};
+import { isTreeNode, binaryTreeToArray, isSameTree } from "../_.general/binaryTree";
 
 /**
  * Solution 1: use convert to array util to compare 2 array.
@@ -23,35 +21,15 @@ export const sameTree = {};
  * Time complexity: O(3N)
  * Space complexity: O(2N)
  */
-sameTree.toArray = (p, q) => {
-  const isNode = (node) => node instanceof TreeNode && node.val !== null;
-
-  if (!isNode(p) || !isNode(q)) {
-    return !!(!isNode(p) && !isNode(q));
-  }
+export const toArray = (p, q) => {
+  if (!isTreeNode(p) || !isTreeNode(q)) return !isTreeNode(p) && !isTreeNode(q);
 
   const pArr = binaryTreeToArray(p);
-
   const qArr = binaryTreeToArray(q);
-
-  let isSameTree = true;
-
-  if (pArr.length === qArr.length) {
-    let i = 0;
-
-    while (i < pArr.length) {
-      if (pArr[i] !== qArr[i]) {
-        isSameTree = false;
-        break;
-      }
-
-      i += 1;
-    }
-  } else {
-    isSameTree = false;
+  if (pArr.length !== qArr.length) {
+    return false;
   }
-
-  return isSameTree;
+  return pArr.every((item, i) => item === qArr[i]);
 };
 
 /**
@@ -61,10 +39,9 @@ sameTree.toArray = (p, q) => {
  * Time complexity: O(N)
  * Space complexity: O(N)
  */
-sameTree.recursion = sameTreeFn;
+export const recursion = isSameTree;
 
 /**
  * Lessons:
    1. Recusion is beautiful, it's graceful for problem that can be divided into same atom.
-
  */

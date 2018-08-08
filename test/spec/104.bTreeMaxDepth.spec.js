@@ -1,5 +1,5 @@
 import { arrayToBinaryTree } from "../../src/_.general/binaryTree";
-import { bTreeMaxDepth } from "../../src/104.bTreeMaxDepth/solution";
+import * as bTreeMaxDepth from "../../src/104.bTreeMaxDepth/solution";
 
 describe("# Problem 104 - Given a binary tree, find its maximum depth.", () => {
   describe("Solution 1: Use dfs/preorder traversal and record the depth of each node before recursion to its sub trees.", () => {

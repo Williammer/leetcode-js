@@ -1,7 +1,8 @@
 /**
  * Problem: https://leetcode.com/problems/maximum-depth-of-binary-tree/
     Given a binary tree, find its maximum depth.
-    The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.
+    The maximum depth is the number of nodes along the longest path from the root node down to the
+      farthest leaf node.
 
  * Definition for a binary tree node:
     function TreeNode(val) {
@@ -19,55 +20,48 @@
  * @param {TreeNode} root
  * @return {number}
 
- * Analysis: Traverse is surely needed, dfs(pre-order traverse) and bfs(level-order traverse) are available options;
-    another main problem to solve is record and calculate the maxDepth, so we can record each parentNode's depth before dfs into its sub trees.
-
+ * Analysis: Traverse is surely needed, dfs(pre-order traverse) and bfs(level-order traverse) are
+    available options; another main problem to solve is record and calculate the maxDepth, so we can
+    record each parentNode's depth before dfs into its sub trees.
  */
 
-import { TreeNode, bTreeMaxDepthFn } from "../_.general/binaryTree";
-
-export const bTreeMaxDepth = {};
+import { isTreeNode, maxDepth } from "../_.general/binaryTree";
 
 /**
- * Solution 1: Use dfs/preorder traversal and record the depth of each node before recursion to its sub trees.
+ * Solution 1: Use dfs/preorder traversal and record the depth of each node before recursion to its
+ *  sub trees.
  *
  * "N" is node count
  * Time complexity: O(N)
  * Space complexity: O(N)
  */
-bTreeMaxDepth.dfsFat = (root) => {
-  const isNode = (node) => node instanceof TreeNode && node.val !== null;
-
-  if (!isNode(root)) {
-    return 0;
-  }
+export const dfsFat = (root) => {
+  if (!isTreeNode(root)) return 0;
 
   const nodeDepths = new WeakMap();
-
-  let maxDepth = 1;
+  let max = 1;
 
   const dfs = (node) => {
     const curDepth = nodeDepths.get(node);
 
-    if (isNode(node.left) || isNode(node.right)) {
-      if (isNode(node.left)) {
+    if (isTreeNode(node.left) || isTreeNode(node.right)) {
+      if (isTreeNode(node.left)) {
         nodeDepths.set(node.left, curDepth + 1);
         dfs(node.left);
       }
 
-      if (isNode(node.right)) {
+      if (isTreeNode(node.right)) {
         nodeDepths.set(node.right, curDepth + 1);
         dfs(node.right);
       }
-    } else if (maxDepth < curDepth) {
-      maxDepth = curDepth;
+    } else if (max < curDepth) {
+      max = curDepth;
     }
   };
-
-  nodeDepths.set(root, maxDepth);
+  nodeDepths.set(root, max);
   dfs(root);
 
-  return maxDepth;
+  return max;
 };
 
 /**
@@ -77,7 +71,7 @@ bTreeMaxDepth.dfsFat = (root) => {
  * Time complexity: O(N)
  * Space complexity: O(N)
  */
-bTreeMaxDepth.dfs = bTreeMaxDepthFn;
+export const dfs = maxDepth;
 
 /**
  * Solution 3: Use bfs/level-order traversal
@@ -86,47 +80,32 @@ bTreeMaxDepth.dfs = bTreeMaxDepthFn;
  * Time complexity: O(N)
  * Space complexity: O(N)
  */
-bTreeMaxDepth.bfs = (root) => {
-  const isNode = (node) => node instanceof TreeNode && node.val !== null;
+export const bfs = (root) => {
+  if (!isTreeNode(root)) return 0;
 
-  if (!isNode(root)) {
-    return 0;
-  }
+  let max = 0;
+  const nodeQueue = [];
+  nodeQueue.push(root);
 
-  const _queue = [];
-
-  let maxDepth = 0;
-
-  _queue.push(root);
-
-  while (_queue.length > 0) {
+  while (nodeQueue.length > 0) {
     let i = 0;
-
-    const lenThisDepth = _queue.length;
-
-    maxDepth += 1;
+    max += 1;
+    const lenThisDepth = nodeQueue.length;
 
     // loop nodes of each depth
     while (i < lenThisDepth) {
-      const curNode = _queue.shift();
-
-      if (isNode(curNode.left)) {
-        _queue.push(curNode.left);
-      }
-      if (isNode(curNode.right)) {
-        _queue.push(curNode.right);
-      }
-
+      const curNode = nodeQueue.shift();
+      if (isTreeNode(curNode.left)) nodeQueue.push(curNode.left);
+      if (isTreeNode(curNode.right)) nodeQueue.push(curNode.right);
       i += 1;
     }
   }
-
-  return maxDepth;
+  return max;
 };
 
 /**
  * Lessons:
-   1. Try to consider if it's possible to recursion the function itself with the basic pattern to achieve super simplicity.
+   1. Try to consider if it's possible to recursion the function itself with the basic pattern to
+    achieve super simplicity.
    2. Dynamic programming with loop is powerful by making well-designed terminate conditions.
-
  */

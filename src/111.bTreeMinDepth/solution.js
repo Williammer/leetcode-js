@@ -1,6 +1,7 @@
 /**
  * Problem: https://leetcode.com/problems/minimum-depth-of-binary-tree/
-    Given a binary tree, find its minimum depth. The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.
+    Given a binary tree, find its minimum depth. The minimum depth is the number of nodes along the
+    shortest path from the root node down to the nearest leaf node.
 
  * Example 1:    root
                 /  \
@@ -12,13 +13,12 @@
  * @param {TreeNode} root
  * @return {number}
 
- * Analysis: we need to traverse tree until a leaf node that has shortest path from root is found, which is essentially a shortest-path problem. So apparently bfs is more suitable and efficient to handle it.
-
+ * Analysis: we need to traverse tree until a leaf node that has shortest path from root is found,
+ *  which is essentially a shortest-path problem. So apparently bfs is more suitable and efficient
+ *  to handle it.
  */
 
-import { TreeNode, bTreeMinDepthFn } from "../_.general/binaryTree";
-
-export const bTreeMinDepth = {};
+import { isTreeNode, minDepth } from "../_.general/binaryTree";
 
 /**
  * Solution 1: Use bfs/level-order traveral to find
@@ -27,7 +27,30 @@ export const bTreeMinDepth = {};
  * Time complexity: O(1 ~ N)
  * Space complexity: O(1 ~ N)
  */
-bTreeMinDepth.bfs = bTreeMinDepthFn;
+export const bfs = (root) => {
+  if (!isTreeNode(root)) return 0;
+
+  const nodeQueue = [root];
+  let min = 1;
+
+  while (nodeQueue.length > 0) {
+    let i = 0;
+    const lengthThisDepth = nodeQueue.length;
+
+    while (i < lengthThisDepth) {
+      const curNode = nodeQueue.shift();
+
+      if (!isTreeNode(curNode.left) && !isTreeNode(curNode.right)) return min;
+      if (isTreeNode(curNode.left)) nodeQueue.push(curNode.left);
+      if (isTreeNode(curNode.right)) nodeQueue.push(curNode.right);
+
+      i += 1;
+      // increase min depth at the end of bfs for this depth
+      if (i === lengthThisDepth) min += 1;
+    }
+  }
+  return min;
+};
 
 /**
  * Solution 2: Use dfs/pre-order traveral to find
@@ -36,21 +59,9 @@ bTreeMinDepth.bfs = bTreeMinDepthFn;
  * Time complexity: O(N)
  * Space complexity: O(N)
  */
-bTreeMinDepth.dfs = (root) => {
-  const isNode = (node) => node instanceof TreeNode && node.val !== null;
-
-  if (!isNode(root)) {
-    return 0;
-  }
-
-  if (root.left && isNode(root.left) && root.right && isNode(root.right)) {
-    return Math.min(bTreeMinDepth.dfs(root.left), bTreeMinDepth.dfs(root.right)) + 1;
-  }
-  return Math.max(bTreeMinDepth.dfs(root.left), bTreeMinDepth.dfs(root.right)) + 1;
-};
+export const dfs = minDepth;
 
 /**
  * Lessons:
    1. bfs is useful in shortest-path problems, it's beneficial to master it.
-
  */

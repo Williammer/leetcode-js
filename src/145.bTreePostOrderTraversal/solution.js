@@ -14,12 +14,9 @@
  * @return {number[]}
 
  * Analysis: In theory, postorder should still be DFS, so we can try that.
-
  */
 
-import { TreeNode, bTreePostOrderTraversalFn } from "../_.general/binaryTree";
-
-export const bTreePostOrderTraversal = {};
+import { isTreeNode, postOrderTraversal } from "../_.general/binaryTree";
 
 /**
  * Solution 1: use dfs
@@ -28,7 +25,7 @@ export const bTreePostOrderTraversal = {};
  * Time complexity: O(N)
  * Space complexity: O(N)
  */
-bTreePostOrderTraversal.dfs = bTreePostOrderTraversalFn;
+export const dfs = postOrderTraversal;
 
 /**
  * Solution 2: use iteration
@@ -37,34 +34,25 @@ bTreePostOrderTraversal.dfs = bTreePostOrderTraversalFn;
  * Time complexity: O(N)
  * Space complexity: O(N)
  */
-bTreePostOrderTraversal.iteration = (root) => {
-  const isNode = (node) => node instanceof TreeNode && node.val !== null;
-
+export const iteration = (root) => {
   const result = [];
-
-  const _stack = [];
-
+  const nodeStack = [];
   let curNode = root;
 
-  let newNode;
-
-  while (isNode(curNode) || _stack.length > 0) {
-    if (isNode(curNode)) {
-      _stack.push(curNode);
+  while (isTreeNode(curNode) || nodeStack.length > 0) {
+    if (isTreeNode(curNode)) {
+      nodeStack.push(curNode);
       result.unshift(curNode.val);
       curNode = curNode.right;
     } else {
       // process a node in stack
-      newNode = _stack.pop();
-      curNode = newNode.left;
+      curNode = nodeStack.pop().left;
     }
   }
-
   return result;
 };
 
 /**
  * Lessons:
    1. post-order is basically dfs, and dfs is recursion.
-
  */

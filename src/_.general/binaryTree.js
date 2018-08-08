@@ -9,6 +9,9 @@ export class TreeNode {
   }
 }
 
+export const isTreeNode = (node) => node instanceof TreeNode;
+export const isNonEmptyNode = (node) => isTreeNode(node) && node.val !== null;
+
 /**
  * Generate binaryTree base on node values array.
  * Basic idea:
@@ -86,30 +89,29 @@ export const arrayToBinaryTree = (valArray) => {
  *
  */
 export const binaryTreeToArray = (root) => {
-  const isNode = (node) => node instanceof TreeNode && node.val !== null;
-  if (!isNode(root)) {
+  if (!isTreeNode(root)) {
     return [];
   }
 
-  const _queue = [root];
+  const nodeQueue = [root];
   let bTreeArray = [root.val];
   let nullChainCount = 0;
 
-  while (_queue.length > 0) {
-    const curNode = _queue.shift();
+  while (nodeQueue.length > 0) {
+    const curNode = nodeQueue.shift();
 
-    if (isNode(curNode.left)) {
+    if (isTreeNode(curNode.left)) {
       bTreeArray.push(curNode.left.val);
-      _queue.push(curNode.left);
+      nodeQueue.push(curNode.left);
       nullChainCount = 0;
     } else {
       bTreeArray.push(null);
       nullChainCount += 1;
     }
 
-    if (isNode(curNode.right)) {
+    if (isTreeNode(curNode.right)) {
       bTreeArray.push(curNode.right.val);
-      _queue.push(curNode.right);
+      nodeQueue.push(curNode.right);
       nullChainCount = 0;
     } else {
       bTreeArray.push(null);
@@ -138,30 +140,29 @@ export const binaryTreeToArray = (root) => {
  *
  */
 export const binaryTreeToString = (root) => {
-  const isNode = (node) => node instanceof TreeNode && node.val !== null;
-  if (!isNode(root)) {
+  if (!isTreeNode(root)) {
     return "";
   }
 
-  const _queue = [root];
+  const nodeQueue = [root];
   let bTreeStr = `${root.val}`;
   let nullChainCount = 0;
 
-  while (_queue.length > 0) {
-    const curNode = _queue.shift();
+  while (nodeQueue.length > 0) {
+    const curNode = nodeQueue.shift();
 
-    if (isNode(curNode.left)) {
+    if (isTreeNode(curNode.left)) {
       bTreeStr += `,${curNode.left.val}`;
-      _queue.push(curNode.left);
+      nodeQueue.push(curNode.left);
       nullChainCount = 0;
     } else {
       bTreeStr += ",";
       nullChainCount += 1;
     }
 
-    if (isNode(curNode.right)) {
+    if (isTreeNode(curNode.right)) {
       bTreeStr += `,${curNode.right.val}`;
-      _queue.push(curNode.right);
+      nodeQueue.push(curNode.right);
       nullChainCount = 0;
     } else {
       bTreeStr += ",";
@@ -188,17 +189,15 @@ export const binaryTreeToString = (root) => {
  * More on: 100.sameTree
  *
  */
-export const sameTreeFn = (p, q) => {
-  const isNode = (node) => node instanceof TreeNode && node.val !== null;
-
-  if (isNode(p) && isNode(q)) {
-    return p.val === q.val ? sameTreeFn(p.left, q.left) && sameTreeFn(p.right, q.right) : false;
+export const isSameTree = (p, q) => {
+  if (isTreeNode(p) && isTreeNode(q)) {
+    return p.val === q.val ? isSameTree(p.left, q.left) && isSameTree(p.right, q.right) : false;
   }
-  return !!(!isNode(p) && !isNode(q));
+  return !isTreeNode(p) && !isTreeNode(q);
 };
 
 /**
- * traversal - level order
+ * traversal - level order, this solution is using DFS
  *
  * "N" is node count
  * Time complexity: O(N)
@@ -207,45 +206,29 @@ export const sameTreeFn = (p, q) => {
  * @param {TreeNode} root
  * @return {Array}
  *
- * More on: 102.bTreeLvOrderTraversal
+ * More on: 102.bTreelvOrderTraversal
  *
  */
-export const bTreeLvOrderTraversalFn = (root) => {
-  const isNode = (node) => node instanceof TreeNode && node.val !== null;
-  if (!isNode(root)) {
-    return [];
-  }
+export const lvOrderTraversal = (root) => {
+  if (!isTreeNode(root)) return [];
 
   const result = [];
-  const _queue = [];
-
-  _queue.push(root);
-
-  while (_queue.length > 0) {
-    let i = 0;
-    const lengthThisDepth = _queue.length;
-    const arrayThisDepth = [];
-
-    while (i < lengthThisDepth) {
-      const curNode = _queue.shift();
-      arrayThisDepth.push(curNode.val);
-
-      if (isNode(curNode.left)) {
-        _queue.push(curNode.left);
-      }
-      if (isNode(curNode.right)) {
-        _queue.push(curNode.right);
-      }
-
-      i += 1;
+  const innerDfs = (node, depth) => {
+    if (result.length === depth) {
+      result.push([]);
     }
-    result.push(arrayThisDepth);
-  }
+    result[depth].push(node.val);
+
+    if (isTreeNode(node.left)) innerDfs(node.left, depth + 1);
+    if (isTreeNode(node.right)) innerDfs(node.right, depth + 1);
+  };
+
+  innerDfs(root, 0);
   return result;
 };
 
 /**
- * traversal - pre order
+ * traversal - pre order, this solution is using DFS
  *
  * "N" is node count
  * Time complexity: O(N)
@@ -257,61 +240,22 @@ export const bTreeLvOrderTraversalFn = (root) => {
  * More on: 144.bTreePreOrderTraversal
  *
  */
-export const bTreePreOrderTraversalFn = (root) => {
-  const isNode = (node) => node instanceof TreeNode && node.val !== null;
+export const preOrderTraversal = (root) => {
   const result = [];
-  const dfsVal = (node) => {
-    if (isNode(node)) {
-      result.push(node.val);
+  const innerDfs = (node) => {
+    if (!isTreeNode(node)) return;
 
-      if (isNode(node.left)) {
-        dfsVal(node.left);
-      }
-      if (isNode(node.right)) {
-        dfsVal(node.right);
-      }
-    }
+    result.push(node.val);
+    if (isTreeNode(node.left)) innerDfs(node.left);
+    if (isTreeNode(node.right)) innerDfs(node.right);
   };
 
-  dfsVal(root);
+  innerDfs(root);
   return result;
 };
 
 /**
- * traversal - post order
- *
- * "N" is node count
- * Time complexity: O(N)
- * Space complexity: O(N)
- *
- * @param {TreeNode} root
- * @return {Array}
- *
- * More on: 145.bTreePostOrderTraversal
- *
- */
-export const bTreePostOrderTraversalFn = (root) => {
-  const isNode = (node) => node instanceof TreeNode && node.val !== null;
-  const result = [];
-  const dfsVal = (node) => {
-    if (isNode(node)) {
-      if (isNode(node.left)) {
-        dfsVal(node.left);
-      }
-      if (isNode(node.right)) {
-        dfsVal(node.right);
-      }
-
-      result.push(node.val);
-    }
-  };
-
-  dfsVal(root);
-  return result;
-};
-
-/**
- * traversal - in order
+ * traversal - in order, using DFS
  *
  * "N" is node count
  * Time complexity: O(N)
@@ -323,24 +267,44 @@ export const bTreePostOrderTraversalFn = (root) => {
  * More on: 94.bTreeInOrderTraversal
  *
  */
-export const bTreeInOrderTraversalFn = (root) => {
-  const isNode = (node) => node instanceof TreeNode && node.val !== null;
+export const inOrderTraversal = (root) => {
   const result = [];
-  const dfsVal = (node) => {
-    if (isNode(node)) {
-      if (isNode(node.left)) {
-        dfsVal(node.left);
-      }
+  const innerDfs = (node) => {
+    if (!isTreeNode(node)) return;
 
-      result.push(node.val);
-
-      if (isNode(node.right)) {
-        dfsVal(node.right);
-      }
-    }
+    if (isTreeNode(node.left)) innerDfs(node.left);
+    result.push(node.val);
+    if (isTreeNode(node.right)) innerDfs(node.right);
   };
 
-  dfsVal(root);
+  innerDfs(root);
+  return result;
+};
+
+/**
+ * traversal - post order, using DFS
+ *
+ * "N" is node count
+ * Time complexity: O(N)
+ * Space complexity: O(N)
+ *
+ * @param {TreeNode} root
+ * @return {Array}
+ *
+ * More on: 145.bTreePostOrderTraversal
+ *
+ */
+export const postOrderTraversal = (root) => {
+  const result = [];
+  const innerDfs = (node) => {
+    if (!isTreeNode(node)) return;
+
+    if (isTreeNode(node.left)) innerDfs(node.left);
+    if (isTreeNode(node.right)) innerDfs(node.right);
+    result.push(node.val);
+  };
+
+  innerDfs(root);
   return result;
 };
 
@@ -357,17 +321,14 @@ export const bTreeInOrderTraversalFn = (root) => {
  * More on: 104.bTreeMaxDepth
  *
  */
-export const bTreeMaxDepthFn = (root) => {
-  const isNode = (node) => node instanceof TreeNode && node.val !== null;
-  if (!isNode(root)) {
-    return 0;
-  }
+export const maxDepth = (root) => {
+  if (!isTreeNode(root)) return 0;
   // basic recursion pattern, this '+1' is the key.
-  return Math.max(bTreeMaxDepthFn(root.left), bTreeMaxDepthFn(root.right)) + 1;
+  return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
 };
 
 /**
- * binaryTree get min depth
+ * binaryTree get min depth, using recursion.
  *
  * "N" is node count
  * Time complexity: O(N)
@@ -379,40 +340,13 @@ export const bTreeMaxDepthFn = (root) => {
  * More on: 111.bTreeMinDepth
  *
  */
-export const bTreeMinDepthFn = (root) => {
-  const isNode = (node) => node instanceof TreeNode && node.val !== null;
-  if (!isNode(root)) {
-    return 0;
+export const minDepth = (root) => {
+  if (!isTreeNode(root)) return 0;
+
+  if (isTreeNode(root.left) && isTreeNode(root.right)) {
+    return Math.min(minDepth(root.left), minDepth(root.right)) + 1;
   }
-
-  const _queue = [root];
-  let minDepth = 1;
-
-  while (_queue.length > 0) {
-    const lengthThisDepth = _queue.length;
-    let i = 0;
-
-    while (i < lengthThisDepth) {
-      const curNode = _queue.shift();
-
-      if (!isNode(curNode.left) && !isNode(curNode.right)) {
-        return minDepth;
-      }
-      if (isNode(curNode.left)) {
-        _queue.push(curNode.left);
-      }
-      if (isNode(curNode.right)) {
-        _queue.push(curNode.right);
-      }
-
-      i += 1;
-      // increase min depth at the end of bfs for this depth
-      if (i === lengthThisDepth) {
-        minDepth += 1;
-      }
-    }
-  }
-  return minDepth;
+  return Math.max(minDepth(root.left), minDepth(root.right)) + 1;
 };
 
 /**
@@ -428,28 +362,18 @@ export const bTreeMinDepthFn = (root) => {
  * More on: 226.invertBTree
  *
  */
-export const invertBTreeFn = (root) => {
-  const isNode = (node) => node instanceof TreeNode && node.val !== null;
-  if (!isNode(root)) {
-    return [];
+export const invert = (root) => {
+  if (!isTreeNode(root)) return [];
+
+  if (isTreeNode(root.left) || isTreeNode(root.right)) {
+    // invert left, right child of each Node
+    const tmp = root.left;
+    root.left = root.right;
+    root.right = tmp;
   }
+  if (isTreeNode(root.left)) invert(root.left);
+  if (isTreeNode(root.right)) invert(root.right);
 
-  const _queue = [root];
-  while (_queue.length > 0) {
-    const curNode = _queue.shift();
-
-    if (isNode(curNode.left) || isNode(curNode.right)) {
-      // invert left, right child of each Node
-      [curNode.left, curNode.right] = [curNode.right, curNode.left];
-
-      if (isNode(curNode.left)) {
-        _queue.push(curNode.left);
-      }
-      if (isNode(curNode.right)) {
-        _queue.push(curNode.right);
-      }
-    }
-  }
   return root;
 };
 
@@ -466,17 +390,15 @@ export const invertBTreeFn = (root) => {
  * More on: 108.sortedArrayToBST
  *
  */
-export const sortedArrayToBSTFn = (nums) => {
+export const sortedArrayToBST = (nums) => {
   const createNode = (val) => (typeof val === "number" ? new TreeNode(val) : null);
   const splitArray = (array) => {
-    if (!(array && array.length > 0)) {
-      return null;
-    }
+    if (!(array && array.length > 0)) return null;
+
     const arrLen = array.length;
-    const lastIdx = arrLen - 1;
-    const midIdx = Math.floor(lastIdx / 2);
+    const midIdx = Math.floor((arrLen - 1) / 2);
     const leftArr = arrLen > 2 ? array.slice(0, midIdx) : null;
-    const rightArr = arrLen > 1 ? array.slice(midIdx + 1, lastIdx + 1) : null;
+    const rightArr = arrLen > 1 ? array.slice(midIdx + 1) : null;
 
     return {
       midVal: array[midIdx],
@@ -486,18 +408,11 @@ export const sortedArrayToBSTFn = (nums) => {
   };
 
   const splittedArrObject = splitArray(nums);
-  if (!splittedArrObject) {
-    return null;
-  }
+  if (!splittedArrObject) return null;
 
   const rootNode = createNode(splittedArrObject.midVal);
-
-  if (splittedArrObject.leftArr) {
-    rootNode.left = sortedArrayToBSTFn(splittedArrObject.leftArr);
-  }
-  if (splittedArrObject.rightArr) {
-    rootNode.right = sortedArrayToBSTFn(splittedArrObject.rightArr);
-  }
+  if (splittedArrObject.leftArr) rootNode.left = sortedArrayToBST(splittedArrObject.leftArr);
+  if (splittedArrObject.rightArr) rootNode.right = sortedArrayToBST(splittedArrObject.rightArr);
 
   return rootNode;
 };

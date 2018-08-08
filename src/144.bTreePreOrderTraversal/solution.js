@@ -16,7 +16,7 @@
  * Analysis: In theory, preorder should be DFS, so we can try that.
  */
 
-import { TreeNode, bTreePreOrderTraversalFn } from "../_.general/binaryTree";
+import { isTreeNode, preOrderTraversal } from "../_.general/binaryTree";
 
 /**
  * Solution 1: use dfs
@@ -25,7 +25,7 @@ import { TreeNode, bTreePreOrderTraversalFn } from "../_.general/binaryTree";
  * Time complexity: O(N)
  * Space complexity: O(N)
  */
-export const dfs = bTreePreOrderTraversalFn;
+export const dfs = preOrderTraversal;
 
 /**
  * Solution 2: use iteration
@@ -35,32 +35,24 @@ export const dfs = bTreePreOrderTraversalFn;
  * Space complexity: O(N)
  */
 export const iteration = (root) => {
-  const isNode = (node) => node instanceof TreeNode && node.val !== null;
-
   const result = [];
-
-  const _stack = [];
-
+  const nodeStack = [];
   let curNode = root;
 
-  let newNode;
-
-  while (isNode(curNode) || _stack.length > 0) {
-    if (isNode(curNode)) {
-      _stack.push(curNode);
+  while (isTreeNode(curNode) || nodeStack.length > 0) {
+    if (isTreeNode(curNode)) {
+      nodeStack.push(curNode);
       result.push(curNode.val);
       curNode = curNode.left;
     } else {
       // process a node in stack
-      newNode = _stack.pop();
-      curNode = newNode.right;
+      curNode = nodeStack.pop().right;
     }
   }
-
   return result;
 };
 
 /**
  * Lessons:
-   1. preorder is basically dfs, and dfs is recursion.
+   1. preorder is basically dfs, and dfs is basically recursion.
  */
