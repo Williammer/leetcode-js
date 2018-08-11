@@ -4,13 +4,11 @@
 
  * Example 1:
 
-
  * @param {}
  * @param {}
  * @return {}
 
  * Analysis:
-
  */
 
 /**
@@ -25,5 +23,4 @@ export function normal() {}
 /**
  * Lessons:
    1.
-
  */
