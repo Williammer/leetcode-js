@@ -1,5 +1,5 @@
-import { arrayToBinaryTree } from "../../src/_.general/binaryTree";
-import { pathSum } from "../../src/112.pathSum/112.pathSum";
+import { arrayToBinaryTree } from "../_.general/binaryTree";
+import { pathSum } from "./112.pathSum";
 
 describe("# Problem 112 - Has root2leaf path sum certain.", () => {
   describe("Solution 1: use dfs and reduce node values from root to leaf", () => {

@@ -1,4 +1,4 @@
-import { threeSum } from "../../src/15.threeSum/15.threeSum";
+import { threeSum } from "./15.threeSum";
 
 describe("# Problem 15 - Find all unique triplets in the array which gives the sum of zero..", () => {
   describe("Solution 2: Sort the src array first then use two Pointers to shrink.", () => {

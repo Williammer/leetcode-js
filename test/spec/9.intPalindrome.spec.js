@@ -1,4 +1,4 @@
-import { intPalindrome } from "../../src/9.intPalindrome/9.intPalindrome";
+import { intPalindrome } from "./9.intPalindrome";
 
 describe("# Problem 9 - whether the given number is palindrome.", () => {
   describe("Solution 1: two pointers shrink.", () => {

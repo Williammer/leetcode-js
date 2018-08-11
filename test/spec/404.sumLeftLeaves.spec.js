@@ -1,5 +1,5 @@
-import { arrayToBinaryTree } from "../../src/_.general/binaryTree";
-import { sumLeftLeaves } from "../../src/404.sumLeftLeaves/404.sumLeftLeaves";
+import { arrayToBinaryTree } from "../_.general/binaryTree";
+import { sumLeftLeaves } from "./404.sumLeftLeaves";
 
 describe("# Problem 404 - Find the sum of all left leaves in a given binary tree..", () => {
   describe("Solution 1: Use dfs traversal", () => {

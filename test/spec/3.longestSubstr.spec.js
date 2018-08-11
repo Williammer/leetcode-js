@@ -1,4 +1,4 @@
-import { longestSubstr } from "../../src/3.longestSubstr/3.longestSubstr";
+import { longestSubstr } from "./3.longestSubstr";
 
 describe("# Problem 3 - Given a string, find the length of the longest substring without repeating characters.", () => {
   describe("Solution 1: Slide Window, using substring and lastIndexOf to check if repeated", () => {

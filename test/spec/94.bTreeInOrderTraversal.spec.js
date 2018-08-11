@@ -1,5 +1,5 @@
-import { arrayToBinaryTree } from "../../src/_.general/binaryTree";
-import * as bTreeInOrderTraversal from "../../src/94.bTreeInOrderTraversal/94.bTreeInOrderTraversal";
+import { arrayToBinaryTree } from "../_.general/binaryTree";
+import * as bTreeInOrderTraversal from "./94.bTreeInOrderTraversal";
 
 describe("# Problem 94 - return the Binary Tree In-order traversal of its nodes' values.", () => {
   describe("Solution 1: use dfs", () => {

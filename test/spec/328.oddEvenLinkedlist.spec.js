@@ -1,5 +1,5 @@
-import { arrayToLinkedlist, linkedlistToArray } from "../../src/_.general/linkedList";
-import * as oddEvenLinkedlist from "../../src/328.oddEvenLinkedlist/328.oddEvenLinkedlist";
+import { arrayToLinkedlist, linkedlistToArray } from "../_.general/linkedList";
+import * as oddEvenLinkedlist from "./328.oddEvenLinkedlist";
 
 describe("# Problem 328 - Group odd/even linkedlist", () => {
   describe("Solution 1: iteration", () => {

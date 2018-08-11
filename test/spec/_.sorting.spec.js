@@ -1,4 +1,4 @@
-import * as sorting from "../../src/_.general/sorting";
+import * as sorting from "./sorting";
 
 describe("Array Sorting algorithms", () => {
   const arrStr = JSON.stringify;

@@ -1,5 +1,5 @@
-import { arrayToBinaryTree } from "../../src/_.general/binaryTree";
-import * as bTreeLvOrderTraversal from "../../src/102.bTreeLvOrderTraversal/102.bTreeLvOrderTraversal";
+import { arrayToBinaryTree } from "../_.general/binaryTree";
+import * as bTreeLvOrderTraversal from "./102.bTreeLvOrderTraversal";
 
 describe("# Problem 102 - Given a binary tree, return the level order traversal of its nodes' values..", () => {
   describe("Solution 1: Use bfs to traverse.", () => {

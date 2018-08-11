@@ -1,5 +1,5 @@
-import { arrayToBinaryTree, binaryTreeToArray } from "../../src/_.general/binaryTree";
-import { serializeBT } from "../../src/297.serializeBT/297.serializeBT";
+import { arrayToBinaryTree, binaryTreeToArray } from "../_.general/binaryTree";
+import { serializeBT } from "./297.serializeBT";
 
 describe("# Problem 297 - serialize/deserialize BinaryTree.", () => {
   describe("Solution 1: Just convert it to string", () => {

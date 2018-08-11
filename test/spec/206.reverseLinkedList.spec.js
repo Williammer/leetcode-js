@@ -1,5 +1,5 @@
-import { arrayToLinkedlist, linkedlistToArray } from "../../src/_.general/linkedList";
-import * as reverseLinkedList from "../../src/206.reverseLinkedList/206.reverseLinkedList";
+import { arrayToLinkedlist, linkedlistToArray } from "../_.general/linkedList";
+import * as reverseLinkedList from "./206.reverseLinkedList";
 
 describe("# Problem 206 - reverse linkedlist", () => {
   describe("Solution 1: iteration", () => {

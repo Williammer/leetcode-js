@@ -1,4 +1,4 @@
-import * as strPalindrome from "../../src/125.strPalindrome/125.strPalindrome";
+import * as strPalindrome from "./125.strPalindrome";
 
 describe("# Problem 125 - whether the given string is palindrome. Only consider case-insensitive alphanumeric.", () => {
   const testSets = [{

@@ -1,5 +1,5 @@
-import { arrayToBinaryTree } from "../../src/_.general/binaryTree";
-import * as bTreeMinDepth from "../../src/111.bTreeMinDepth/111.bTreeMinDepth";
+import { arrayToBinaryTree } from "../_.general/binaryTree";
+import * as bTreeMinDepth from "./111.bTreeMinDepth";
 
 describe("# Problem 111 - Given a binary tree, find its minimum depth..", () => {
   describe("Solution 1: Use bfs/level-order traversal", () => {

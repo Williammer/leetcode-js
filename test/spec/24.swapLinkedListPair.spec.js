@@ -1,5 +1,5 @@
-import { arrayToLinkedlist, linkedlistToArray } from "../../src/_.general/linkedList";
-import * as swapLinkedListPair from "../../src/24.swapLinkedListPair/24.swapLinkedListPair";
+import { arrayToLinkedlist, linkedlistToArray } from "../_.general/linkedList";
+import * as swapLinkedListPair from "./24.swapLinkedListPair";
 
 describe("# Problem 24 - swap linkedlist in pair.", () => {
   describe("Solution 1: iteration", () => {

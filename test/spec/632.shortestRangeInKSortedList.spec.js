@@ -1,4 +1,4 @@
-import { normal } from "../../src/632.shortestRangeInKSortedList/632.shortestRangeInKSortedList";
+import { normal } from "./632.shortestRangeInKSortedList";
 
 describe("# Problem 632 - Shortest range for K sorted lists.", () => {
   const dataSets = [

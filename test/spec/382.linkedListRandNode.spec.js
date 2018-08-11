@@ -1,5 +1,5 @@
-import { arrayToLinkedlist } from "../../src/_.general/linkedList";
-import * as linkedListRandNode from "../../src/382.linkedListRandNode/382.linkedListRandNode";
+import { arrayToLinkedlist } from "../_.general/linkedList";
+import * as linkedListRandNode from "./382.linkedListRandNode";
 
 describe("# Problem 382 - Get linkedList's Random Node.", () => {
   const randValCollector = (func, times, args) => {

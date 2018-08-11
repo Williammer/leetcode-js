@@ -1,5 +1,5 @@
-import { arrayToBinaryTree, binaryTreeToArray } from "../../src/_.general/binaryTree";
-import * as invertBTree from "../../src/226.invertBTree/226.invertBTree";
+import { arrayToBinaryTree, binaryTreeToArray } from "../_.general/binaryTree";
+import * as invertBTree from "./226.invertBTree";
 
 describe("# Problem 226 - Invert a binary tree.", () => {
   describe("Solution 1: invert from top to bottom by bfs.", () => {
