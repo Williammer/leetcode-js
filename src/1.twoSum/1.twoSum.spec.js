@@ -1,5 +1,5 @@
 import { twoSum } from "./1.twoSum";
-import { runSuites } from "../helper.js";
+import { runSuites } from "./helper";
 
 describe("# Problem 1 - Two sum (assume that each input would have exactly one solution)", () => {
   const solutions = ["brutal", "hash"];
