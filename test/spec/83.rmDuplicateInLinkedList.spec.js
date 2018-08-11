@@ -1,5 +1,5 @@
 import { arrayToLinkedlist, linkedlistToArray } from "../../src/_.general/linkedList";
-import * as rmDuplicateInLinkedList from "../../src/83.rmDuplicateInLinkedList/solution";
+import * as rmDuplicateInLinkedList from "../../src/83.rmDuplicateInLinkedList/83.rmDuplicateInLinkedList";
 
 describe("# Problem 83 - remove duplicates in sorted linkedlist", () => {
   describe("Solution 1: concise", () => {

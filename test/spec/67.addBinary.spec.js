@@ -1,4 +1,4 @@
-import * as addBinary from "../../src/67.addBinary/solution";
+import * as addBinary from "../../src/67.addBinary/67.addBinary";
 
 describe("# Problem 67 - Calc the sum of two binary strings.", () => {
   describe("Solution 1: Loop over each num and handle the carry.", () => {

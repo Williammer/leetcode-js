@@ -1,5 +1,5 @@
 import { arrayToLinkedlist } from "../../src/_.general/linkedList";
-import * as linkedListPalindrome from "../../src/234.linkedListPalindrome/solution";
+import * as linkedListPalindrome from "../../src/234.linkedListPalindrome/234.linkedListPalindrome";
 
 describe("# Problem 234 - whether the given linkedList is palindrome.", () => {
   describe("Solution 1: reverse list then compare.", () => {

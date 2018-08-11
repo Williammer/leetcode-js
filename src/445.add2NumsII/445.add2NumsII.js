@@ -18,7 +18,7 @@
  */
 
 import { ListNode, isListNode, reverse, prepend } from "../_.general/linkedList";
-import * as add2Nums from "../2.add2Nums/solution";
+import * as add2Nums from "../2.add2Nums/2.add2Nums";
 
 /**
  * Solution 1: reverse input list then use #2.add2Nums.

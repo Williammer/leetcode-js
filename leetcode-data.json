@@ -29,7 +29,7 @@
     "tags": "Array, Hash",
     "level": "low",
     "solution.js":
-      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/1.twoSum/solution.js"
+      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/1.twoSum/1.twoSum.js"
   },
   {
     "num": 2,
@@ -37,7 +37,7 @@
     "tags": "LinkedList, Recusion",
     "level": "mid",
     "solution.js":
-      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/2.add2Nums/solution.js"
+      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/2.add2Nums/2.add2Nums.js"
   },
   {
     "num": 3,
@@ -45,7 +45,7 @@
     "tags": "Hash, 2pointer",
     "level": "mid",
     "solution.js":
-      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/3.longestSubstr/solution.js"
+      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/3.longestSubstr/3.longestSubstr.js"
   },
   {
     "num": 7,
@@ -53,7 +53,7 @@
     "tags": "Math",
     "level": "low",
     "solution.js":
-      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/7.reverseInt/solution.js"
+      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/7.reverseInt/7.reverseInt.js"
   },
   {
     "num": 8,
@@ -61,7 +61,7 @@
     "tags": "String",
     "level": "low",
     "solution.js":
-      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/8.atoi/solution.js"
+      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/8.atoi/8.atoi.js"
   },
   {
     "num": 9,
@@ -69,7 +69,7 @@
     "tags": "Math, 2pointer",
     "level": "low",
     "solution.js":
-      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/9.intPalindrome/solution.js"
+      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/9.intPalindrome/9.intPalindrome.js"
   },
   {
     "num": 15,
@@ -77,7 +77,7 @@
     "tags": "Array, 2pointer, Hash",
     "level": "mid",
     "solution.js":
-      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/15.threeSum/solution.js"
+      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/15.threeSum/15.threeSum.js"
   },
   {
     "num": 19,
@@ -85,7 +85,7 @@
     "tags": "LinkedList",
     "level": "low",
     "solution.js":
-      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/19.rmNthNodeFromEnd/solution.js"
+      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/19.rmNthNodeFromEnd/19.rmNthNodeFromEnd.js"
   },
   {
     "num": 24,
@@ -93,7 +93,7 @@
     "tags": "LinkedList",
     "level": "low",
     "solution.js":
-      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/24.swapLinkedListPair/solution.js"
+      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/24.swapLinkedListPair/24.swapLinkedListPair.js"
   },
   {
     "num": 67,
@@ -101,7 +101,7 @@
     "tags": "String, Math",
     "level": "low",
     "solution.js":
-      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/67.addBinary/solution.js"
+      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/67.addBinary/67.addBinary.js"
   },
   {
     "num": 83,
@@ -109,7 +109,7 @@
     "tags": "LinkedList",
     "level": "low",
     "solution.js":
-      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/83.rmDuplicateInLinkedList/solution.js"
+      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/83.rmDuplicateInLinkedList/83.rmDuplicateInLinkedList.js"
   },
   {
     "num": 94,
@@ -117,7 +117,7 @@
     "tags": "Tree, DFS",
     "level": "low",
     "solution.js":
-      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/94.bTreeInOrderTraversal/solution.js"
+      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/94.bTreeInOrderTraversal/94.bTreeInOrderTraversal.js"
   },
   {
     "num": 100,
@@ -125,7 +125,7 @@
     "tags": "Tree, DFS",
     "level": "low",
     "solution.js":
-      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/100.sameTree/solution.js"
+      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/100.sameTree/100.sameTree.js"
   },
   {
     "num": 102,
@@ -133,7 +133,7 @@
     "tags": "Tree, BFS, DFS",
     "level": "low",
     "solution.js":
-      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/102.bTreeLvOrderTraversal/solution.js"
+      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/102.bTreeLvOrderTraversal/102.bTreeLvOrderTraversal.js"
   },
   {
     "num": 104,
@@ -141,7 +141,7 @@
     "tags": "Tree, BFS, DFS",
     "level": "low",
     "solution.js":
-      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/104.bTreeMaxDepth/solution.js"
+      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/104.bTreeMaxDepth/104.bTreeMaxDepth.js"
   },
   {
     "num": 108,
@@ -149,7 +149,7 @@
     "tags": "Tree, BST, DFS",
     "level": "low",
     "solution.js":
-      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/108.sortedArrayToBST/solution.js"
+      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/108.sortedArrayToBST/108.sortedArrayToBST.js"
   },
   {
     "num": 111,
@@ -157,7 +157,7 @@
     "tags": "Tree, BFS, DFS",
     "level": "low",
     "solution.js":
-      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/111.bTreeMinDepth/solution.js"
+      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/111.bTreeMinDepth/111.bTreeMinDepth.js"
   },
   {
     "num": 112,
@@ -165,7 +165,7 @@
     "tags": "Tree, BinaryTree, DFS",
     "level": "low",
     "solution.js":
-      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/112.pathSum/solution.js"
+      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/112.pathSum/112.pathSum.js"
   },
   {
     "num": 125,
@@ -173,7 +173,7 @@
     "tags": "String, 2pointer",
     "level": "low",
     "solution.js":
-      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/125.strPalindrome/solution.js"
+      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/125.strPalindrome/125.strPalindrome.js"
   },
   {
     "num": 136,
@@ -181,7 +181,7 @@
     "tags": "Array, Bit",
     "level": "low",
     "solution.js":
-      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/136.singleNum/solution.js"
+      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/136.singleNum/136.singleNum.js"
   },
   {
     "num": 141,
@@ -189,7 +189,7 @@
     "tags": "LinkedList",
     "level": "low",
     "solution.js":
-      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/141.linkedListHasCycle/solution.js"
+      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/141.linkedListHasCycle/141.linkedListHasCycle.js"
   },
   {
     "num": 144,
@@ -197,7 +197,7 @@
     "tags": "Tree, DFS",
     "level": "low",
     "solution.js":
-      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/144.bTreePreOrderTraversal/solution.js"
+      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/144.bTreePreOrderTraversal/144.bTreePreOrderTraversal.js"
   },
   {
     "num": 145,
@@ -205,7 +205,7 @@
     "tags": "Tree, DFS",
     "level": "low",
     "solution.js":
-      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/145.bTreePostOrderTraversal/solution.js"
+      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/145.bTreePostOrderTraversal/145.bTreePostOrderTraversal.js"
   },
   {
     "num": 167,
@@ -213,7 +213,7 @@
     "tags": "Array, 2pointer, BinarySearch",
     "level": "low",
     "solution.js":
-      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/167.twoSumSorted/solution.js"
+      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/167.twoSumSorted/167.twoSumSorted.js"
   },
   {
     "num": 206,
@@ -221,7 +221,7 @@
     "tags": "LinkedList",
     "level": "low",
     "solution.js":
-      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/206.reverseLinkedList/solution.js"
+      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/206.reverseLinkedList/206.reverseLinkedList.js"
   },
   {
     "num": 226,
@@ -229,7 +229,7 @@
     "tags": "Tree, BFS, Recusion",
     "level": "low",
     "solution.js":
-      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/226.invertBTree/solution.js"
+      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/226.invertBTree/226.invertBTree.js"
   },
   {
     "num": 234,
@@ -237,7 +237,7 @@
     "tags": "LinkedList",
     "level": "mid",
     "solution.js":
-      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/234.linkedListPalindrome/solution.js"
+      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/234.linkedListPalindrome/234.linkedListPalindrome.js"
   },
   {
     "num": 242,
@@ -245,7 +245,7 @@
     "tags": "Array, Sort, Hash",
     "level": "low",
     "solution.js":
-      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/242.validAnagram/solution.js"
+      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/242.validAnagram/242.validAnagram.js"
   },
   {
     "num": 230,
@@ -253,7 +253,7 @@
     "tags": "Tree, DFS, BST, BinarySearch",
     "level": "mid",
     "solution.js":
-      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/230.kthSmallInBST/solution.js"
+      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/230.kthSmallInBST/230.kthSmallInBST.js"
   },
   {
     "num": 297,
@@ -261,7 +261,7 @@
     "tags": "Tree, Compression",
     "level": "mid",
     "solution.js":
-      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/297.serializeBT/solution.js"
+      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/297.serializeBT/297.serializeBT.js"
   },
   {
     "num": 328,
@@ -269,7 +269,7 @@
     "tags": "LinkedList",
     "level": "mid",
     "solution.js":
-      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/328.oddEvenLinkedlist/solution.js"
+      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/328.oddEvenLinkedlist/328.oddEvenLinkedlist.js"
   },
   {
     "num": 337,
@@ -277,7 +277,7 @@
     "tags": "BinaryTree, DFS, DP",
     "level": "mid",
     "solution.js":
-      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/337.houseRobberIII/solution.js"
+      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/337.houseRobberIII/337.houseRobberIII.js"
   },
   {
     "num": 349,
@@ -285,7 +285,7 @@
     "tags": "Array, Sort, 2pointer, Hash, BinarySearch",
     "level": "low",
     "solution.js":
-      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/349.intersectOf2Arr/solution.js"
+      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/349.intersectOf2Arr/349.intersectOf2Arr.js"
   },
   {
     "num": 371,
@@ -293,7 +293,7 @@
     "tags": "Bit",
     "level": "low",
     "solution.js":
-      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/371.twoIntSum/solution.js"
+      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/371.twoIntSum/371.twoIntSum.js"
   },
   {
     "num": 382,
@@ -301,7 +301,7 @@
     "tags": "LinkedList, ReservoirSample",
     "level": "mid",
     "solution.js":
-      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/382.linkedListRandNode/solution.js"
+      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/382.linkedListRandNode/382.linkedListRandNode.js"
   },
   {
     "num": 404,
@@ -309,7 +309,7 @@
     "tags": "Tree, BFS, DFS",
     "level": "low",
     "solution.js":
-      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/404.sumLeftLeaves/solution.js"
+      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/404.sumLeftLeaves/404.sumLeftLeaves.js"
   },
   {
     "num": 445,
@@ -317,7 +317,7 @@
     "tags": "LinkedList, Stack",
     "level": "mid",
     "solution.js":
-      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/445.add2NumsII/solution.js"
+      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/445.add2NumsII/445.add2NumsII.js"
   },
   {
     "num": 449,
@@ -325,7 +325,7 @@
     "tags": "Tree, BST, Compression",
     "level": "mid",
     "solution.js":
-      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/449.serializeBST/solution.js"
+      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/449.serializeBST/449.serializeBST.js"
   },
   {
     "num": 632,
@@ -333,6 +333,6 @@
     "tags": "Array, Sort, Pointer",
     "level": "mid",
     "solution.js":
-      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/632.shortestRangeInKSortedList/solution.js"
+      "https://raw.githubusercontent.com/Williammer/leetcode-js/master/src/632.shortestRangeInKSortedList/632.shortestRangeInKSortedList.js"
   }
 ]

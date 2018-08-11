@@ -1,5 +1,5 @@
 import { arrayToLinkedlist, linkedlistToArray } from "../../src/_.general/linkedList";
-import * as add2NumsII from "../../src/445.add2NumsII/solution";
+import * as add2NumsII from "../../src/445.add2NumsII/445.add2NumsII";
 
 describe("# Problem 445 - Add two non-negative numbers represented by two linked lists into a number represented by a linked list too", () => {
   describe("Solution 1: js reference. Utilized js object reference change feature", () => {

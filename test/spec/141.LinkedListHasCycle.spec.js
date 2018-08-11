@@ -1,5 +1,5 @@
 import { arrayToLinkedlist, makeCycle } from "../../src/_.general/linkedList";
-import * as linkedListHasCycle from "../../src/141.linkedListHasCycle/solution";
+import * as linkedListHasCycle from "../../src/141.linkedListHasCycle/141.linkedListHasCycle";
 
 describe("# Problem 141 - linkedList has cycle", () => {
   describe("Solution 1: twoPointers", () => {

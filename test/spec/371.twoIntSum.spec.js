@@ -1,4 +1,4 @@
-import { twoIntSum, twoIntSubstract } from "../../src/371.twoIntSum/solution";
+import { twoIntSum, twoIntSubstract } from "../../src/371.twoIntSum/371.twoIntSum";
 
 describe("# Problem 371 - Calculate the sum of two integers without operator + and -.", () => {
   describe("Solution 1: use ^, & and << in recursion way.", () => {

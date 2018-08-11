@@ -1,4 +1,4 @@
-import { reverseInt } from "../../src/7.reverseInt/solution";
+import { reverseInt } from "../../src/7.reverseInt/7.reverseInt";
 
 describe("# Problem 7 - Reverse digits of an integer.", () => {
   describe("Solution 1: use while loop and '%', '/' to reverse digits of each postion.", () => {

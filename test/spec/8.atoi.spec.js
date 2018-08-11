@@ -1,4 +1,4 @@
-import { atoi } from "../../src/8.atoi/solution";
+import { atoi } from "../../src/8.atoi/8.atoi";
 
 describe("# Problem 8 - Implement atoi to convert a string to an integer.", () => {
   describe("Solution 1: traverse string from 1st char to find and convert", () => {

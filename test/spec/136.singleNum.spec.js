@@ -1,4 +1,4 @@
-import { singleNum } from "../../src/136.singleNum/solution";
+import { singleNum } from "../../src/136.singleNum/136.singleNum";
 
 describe("# Problem 136 - Given an array of integers, every element appears twice except for one. Find that single one.", () => {
   describe("Solution 1: Use hash to keep track of each num.", () => {

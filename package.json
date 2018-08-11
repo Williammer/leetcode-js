@@ -1,8 +1,7 @@
 {
   "name": "leetcode-js",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "my leetcode solutions in javaScript",
-  "main": "*/solution.js",
   "scripts": {
     "do": "node cli.js",
     "lint": "eslint src/*/**.js",
@@ -32,13 +31,13 @@
     "babel-preset-env": "^1.7.0",
     "benchmark": "^2.1.4",
     "codecov": "^3.0.4",
-    "eslint": "^5.2.0",
+    "eslint": "^5.3.0",
     "eslint-config-airbnb-base": "^13.0.0",
     "eslint-plugin-import": "^2.13.0",
     "fs-extra": "^7.0.0",
-    "jest": "^23.4.1",
+    "jest": "^23.5.0",
     "jest-html-reporter": "^2.4.2",
-    "prettier": "^1.13.7"
+    "prettier": "^1.14.2"
   },
   "jest-html-reporter": {
     "pageTitle": "leetcode-js test suite",

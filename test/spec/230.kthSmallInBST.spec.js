@@ -1,5 +1,5 @@
 import { arrayToBinaryTree } from "../../src/_.general/binaryTree";
-import * as kthSmallInBST from "../../src/230.kthSmallInBST/solution";
+import * as kthSmallInBST from "../../src/230.kthSmallInBST/230.kthSmallInBST";
 
 describe("# Problem 230 - Find the kth smallest element in BST.", () => {
   describe("Solution 1: use inOrder", () => {

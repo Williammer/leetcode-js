@@ -1,4 +1,4 @@
-import { intersectOf2Arr } from "../../src/349.intersectOf2Arr/solution";
+import { intersectOf2Arr } from "../../src/349.intersectOf2Arr/349.intersectOf2Arr";
 
 describe("# Problem 349 - Given two arrays, write a function to compute their intersection.", () => {
   describe("Solution 1: use hash.", () => {

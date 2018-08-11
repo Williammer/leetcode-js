@@ -1,5 +1,5 @@
 import { arrayToLinkedlist, linkedlistToArray } from "../../src/_.general/linkedList";
-import * as rmNthNodeFromEnd from "../../src/19.rmNthNodeFromEnd/solution";
+import * as rmNthNodeFromEnd from "../../src/19.rmNthNodeFromEnd/19.rmNthNodeFromEnd";
 
 describe("# Problem 19 - rm Nth linkedList node count from list end", () => {
   describe("Solution 1: use two parent pointers to touch tail", () => {

@@ -1,4 +1,4 @@
-import { twoSumSorted } from "../../src/167.twoSumSorted/solution";
+import { twoSumSorted } from "../../src/167.twoSumSorted/167.twoSumSorted";
 
 describe("# Problem 167 - Find 2 indexes of nums from a sorted array which adds up to certain target num.", () => {
   describe("Solution 1: one pointer as anchor, the other area with binary Search.", () => {

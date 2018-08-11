@@ -1,4 +1,4 @@
-import { validAnagram } from "../../src/242.validAnagram/solution";
+import { validAnagram } from "../../src/242.validAnagram/242.validAnagram";
 
 describe("# Problem 242 - Given two strings s and t, write a function to determine if t is an anagram of s..", () => {
   describe("Solution 1: use hash to compare", () => {

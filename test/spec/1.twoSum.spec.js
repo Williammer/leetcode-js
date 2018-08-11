@@ -1,4 +1,4 @@
-import { twoSum } from "../../src/1.twoSum/solution";
+import { twoSum } from "../../src/1.twoSum/1.twoSum";
 import { runSuites } from "../helper.js";
 
 describe("# Problem 1 - Two sum (assume that each input would have exactly one solution)", () => {

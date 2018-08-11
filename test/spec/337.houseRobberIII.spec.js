@@ -1,5 +1,5 @@
 import { arrayToBinaryTree } from "../../src/_.general/binaryTree";
-import { houseRobberIII } from "../../src/337.houseRobberIII/solution";
+import { houseRobberIII } from "../../src/337.houseRobberIII/337.houseRobberIII";
 
 describe("# Problem 337 - Max sum of unlinked nodes values in BT.", () => {
   describe("Solution 1: use DP memoization", () => {

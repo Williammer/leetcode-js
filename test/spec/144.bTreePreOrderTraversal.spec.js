@@ -1,5 +1,5 @@
 import { arrayToBinaryTree } from "../../src/_.general/binaryTree";
-import * as bTreePreOrderTraversal from "../../src/144.bTreePreOrderTraversal/solution";
+import * as bTreePreOrderTraversal from "../../src/144.bTreePreOrderTraversal/144.bTreePreOrderTraversal";
 
 describe("# Problem 144 - return the Binary Tree preorder traversal of its nodes' values.", () => {
   describe("Solution 1: use dfs", () => {
