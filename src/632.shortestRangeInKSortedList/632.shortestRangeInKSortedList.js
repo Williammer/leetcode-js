@@ -26,7 +26,6 @@ export function normal(nums) {
   if (!Array.isArray(nums) || nums.length <= 0) {
     throw new Error("Invalid lists input provided");
   }
-
   const pointers = nums.map(() => 0);
   let minIndex = 0;
   let result = [null, null];
@@ -59,18 +58,15 @@ export function normal(nums) {
         maxValue = value;
       }
     }
-
     if (result[0] === null || result[1] === null || maxValue - minValue < result[1] - result[0]) {
       result = [minValue, maxValue];
     }
-
     if (maxValue === minValue) {
       break;
     }
 
     pointers[minIndex] += 1;
   }
-
   return result;
 }
 
