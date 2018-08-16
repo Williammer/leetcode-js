@@ -1,6 +1,4 @@
-import {
-  ListNode, arrayToLinkedlist, linkedlistToArray, clone, prepend,
-} from "./linkedList";
+import { ListNode, arrayToLinkedlist, linkedlistToArray, clone, prepend } from "./linkedList";
 
 describe("[Util] linkedList - convert between array and linkedList.", () => {
   it("arrayToLinkedlist return (0 -> 0) for [0,0]", () => {

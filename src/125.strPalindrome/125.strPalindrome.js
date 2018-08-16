@@ -76,10 +76,10 @@ export const twoPointersInsensitive = (s) => {
     const codeB = b.charCodeAt();
 
     return (
-      a === b
-      || (((codeA >= 65 && codeA <= 90) || (codeA >= 97 && codeA <= 122))
-        && ((codeB >= 65 && codeB <= 90) || (codeB >= 97 && codeB <= 122))
-        && Math.abs(codeA - codeB) === 32)
+      a === b ||
+      (((codeA >= 65 && codeA <= 90) || (codeA >= 97 && codeA <= 122)) &&
+        ((codeB >= 65 && codeB <= 90) || (codeB >= 97 && codeB <= 122)) &&
+        Math.abs(codeA - codeB) === 32)
     );
   };
 
@@ -161,7 +161,13 @@ export const reverse = (s) => {
     return true;
   }
 
-  return s === s.split("").reverse().join("");
+  return (
+    s ===
+    s
+      .split("")
+      .reverse()
+      .join("")
+  );
 };
 
 /**

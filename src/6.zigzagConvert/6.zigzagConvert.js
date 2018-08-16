@@ -29,7 +29,7 @@ zigzagConvert.array2D = (s, numRows) => {
 
   const strLen = s.length;
 
-  const isEven = row => row % 2 === 0;
+  const isEven = (row) => row % 2 === 0;
 
   const mod = (num, n) => ((num % n) + n) % n;
 

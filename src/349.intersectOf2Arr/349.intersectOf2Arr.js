@@ -29,12 +29,12 @@ export const intersectOf2Arr = {};
 intersectOf2Arr.hash = (nums1, nums2) => {
   if (
     !(
-      nums1
-      && nums2
-      && typeof nums1 === "object"
-      && typeof nums2 === "object"
-      && nums1.length > 0
-      && nums2.length > 0
+      nums1 &&
+      nums2 &&
+      typeof nums1 === "object" &&
+      typeof nums2 === "object" &&
+      nums1.length > 0 &&
+      nums2.length > 0
     )
   ) {
     return [];
@@ -67,12 +67,12 @@ intersectOf2Arr.hash = (nums1, nums2) => {
 intersectOf2Arr.sortedBSearch = (nums1, nums2) => {
   if (
     !(
-      nums1
-      && nums2
-      && typeof nums1 === "object"
-      && typeof nums2 === "object"
-      && nums1.length > 0
-      && nums2.length > 0
+      nums1 &&
+      nums2 &&
+      typeof nums1 === "object" &&
+      typeof nums2 === "object" &&
+      nums1.length > 0 &&
+      nums2.length > 0
     )
   ) {
     return [];
@@ -137,12 +137,12 @@ intersectOf2Arr.sortedBSearch = (nums1, nums2) => {
 intersectOf2Arr.sorted2Pointer = (nums1, nums2) => {
   if (
     !(
-      nums1
-      && nums2
-      && typeof nums1 === "object"
-      && typeof nums2 === "object"
-      && nums1.length > 0
-      && nums2.length > 0
+      nums1 &&
+      nums2 &&
+      typeof nums1 === "object" &&
+      typeof nums2 === "object" &&
+      nums1.length > 0 &&
+      nums2.length > 0
     )
   ) {
     return [];

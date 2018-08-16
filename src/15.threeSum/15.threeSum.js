@@ -85,7 +85,7 @@ threeSum.twoPointersHash = (nums) => {
     return [];
   }
 
-  const isUndefined = obj => typeof obj === "undefined";
+  const isUndefined = (obj) => typeof obj === "undefined";
 
   const get3rdNum = (p1, p2) => (nums[p1] + nums[p2] !== 0 ? -(nums[p1] + nums[p2]) : 0);
 
@@ -125,9 +125,11 @@ threeSum.twoPointersHash = (nums) => {
     return innerArr;
   };
 
-  const _resultContains = (result, _sortedArray) => result.some(
-    innerArr => innerArr.length === _sortedArray.length && innerArr.every((v, i) => v === _sortedArray[i]),
-  );
+  const _resultContains = (result, _sortedArray) =>
+    result.some(
+      (innerArr) =>
+        innerArr.length === _sortedArray.length && innerArr.every((v, i) => v === _sortedArray[i]),
+    );
 
   const _markAllMatches = (_hash, pLeft, pRight) => {
     const num1 = nums[pLeft];

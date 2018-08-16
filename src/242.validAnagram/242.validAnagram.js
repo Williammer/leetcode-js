@@ -72,7 +72,7 @@ validAnagram.sort = (s, t) => {
     return false;
   }
 
-  const sortStr = str => str.split("").sort();
+  const sortStr = (str) => str.split("").sort();
 
   const compareArr = (arr, arr2) => {
     if (arr.length !== arr2.length) {
@@ -120,7 +120,7 @@ validAnagram.alphaTable = (s, t) => {
     }
   }
 
-  return alphaTable.every(val => !val);
+  return alphaTable.every((val) => !val);
 };
 
 /**
