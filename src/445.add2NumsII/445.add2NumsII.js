@@ -17,7 +17,9 @@
     it into 2.add2Nums. The other way to reverse is use stack(s) as helper.
  */
 
-import { ListNode, isListNode, reverse, prepend } from "../_.general/linkedList";
+import {
+  ListNode, isListNode, reverse, prepend,
+} from "../_.general/linkedList";
 import * as add2Nums from "../2.add2Nums/2.add2Nums";
 
 /**

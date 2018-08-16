@@ -3,47 +3,47 @@ import * as strPalindrome from "./125.strPalindrome";
 describe("# Problem 125 - whether the given string is palindrome. Only consider case-insensitive alphanumeric.", () => {
   const testSets = [{
     input: "",
-    output: true
+    output: true,
   }, {
     input: ";:|{><?",
-    output: true
+    output: true,
   }, {
     input: "a",
-    output: true
+    output: true,
   }, {
     input: "aA",
-    output: true
+    output: true,
   }, {
     input: ".;:|a.;:|{><?a><?",
-    output: true
+    output: true,
   }, {
     input: "ab",
-    output: false
+    output: false,
   }, {
     input: "race a car",
-    output: false
+    output: false,
   }, {
     input: "raceacar",
-    output: false
+    output: false,
   }, {
     input: "abcdcba",
-    output: true
+    output: true,
   }, {
     input: "abccdcba",
-    output: false
+    output: false,
   }, {
     input: "A man, a plan, a canal: Panama",
-    output: true
+    output: true,
   }, {
     input: ",; W;:GlG:;l ;,",
-    output: false
+    output: false,
   }];
 
   Object.entries(strPalindrome).forEach(([name, solution]) => {
     describe(`Solution: ${name}`, () => {
       testSets.forEach(({
         input,
-        output
+        output,
       }) => {
         it(`${input} -> ${output}`, () => {
           expect(solution(input)).toEqual(output);

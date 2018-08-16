@@ -42,7 +42,7 @@ describe("# Problem 632 - Shortest range for K sorted lists.", () => {
         it("the range should contain at least one item from each list", () => {
           const [start, end] = normal(lists);
           const allListInRange = lists.every(
-            (list) => list.find((item) => item >= start && item <= end) !== undefined
+            (list) => list.find((item) => item >= start && item <= end) !== undefined,
           );
           expect(allListInRange).toBe(true);
         });

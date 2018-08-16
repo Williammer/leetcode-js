@@ -44,16 +44,15 @@ describe("# Problem 382 - Get linkedList's Random Node.", () => {
       const num_9 = linkedListRandNode.touchEnd(list);
       const num_10 = linkedListRandNode.touchEnd(list);
 
-      const result =
-        num_1 === num_10 &&
-        num_1 === num_2 &&
-        num_1 === num_3 &&
-        num_1 === num_4 &&
-        num_1 === num_5 &&
-        num_1 === num_6 &&
-        num_1 === num_7 &&
-        num_1 === num_8 &&
-        num_1 === num_9;
+      const result = num_1 === num_10
+        && num_1 === num_2
+        && num_1 === num_3
+        && num_1 === num_4
+        && num_1 === num_5
+        && num_1 === num_6
+        && num_1 === num_7
+        && num_1 === num_8
+        && num_1 === num_9;
 
       expect(result).toEqual(false);
     });
@@ -110,16 +109,15 @@ describe("# Problem 382 - Get linkedList's Random Node.", () => {
       const num_9 = linkedListRandNode.reservoirSample(list);
       const num_10 = linkedListRandNode.reservoirSample(list);
 
-      const result =
-        num_1 === num_10 &&
-        num_1 === num_2 &&
-        num_1 === num_3 &&
-        num_1 === num_4 &&
-        num_1 === num_5 &&
-        num_1 === num_6 &&
-        num_1 === num_7 &&
-        num_1 === num_8 &&
-        num_1 === num_9;
+      const result = num_1 === num_10
+        && num_1 === num_2
+        && num_1 === num_3
+        && num_1 === num_4
+        && num_1 === num_5
+        && num_1 === num_6
+        && num_1 === num_7
+        && num_1 === num_8
+        && num_1 === num_9;
 
       expect(result).toEqual(false);
     });
