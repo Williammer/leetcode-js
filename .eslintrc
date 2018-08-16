@@ -1,8 +1,10 @@
 {
-  "extends": "airbnb-base",
+  "extends": ["airbnb-base", "plugin:jest/recommended"],
+  "plugins": ["jest"],
   "rules": {
     "max-len": 1,
     "quotes": [1, "double"],
+    "object-curly-newline": 1,
     "arrow-parens": 0,
     "no-underscore-dangle": 0,
     "import/prefer-default-export": 0,
