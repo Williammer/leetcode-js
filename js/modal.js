@@ -11,7 +11,7 @@
     this.transitionEnd = transitionSelect();
 
     // Define option defaults
-    var defaults = {
+    const defaults = {
       autoOpen: false,
       className: 'fade-and-drop',
       closeButton: true,
@@ -32,15 +32,15 @@
   // Public Methods
 
   Modal.prototype.close = function() {
-    var _ = this;
+    const _ = this;
     this.modal.className = this.modal.className.replace(" scotch-open", "");
-    this.modal.addEventListener(this.transitionEnd, function() {
+    this.modal.addEventListener(this.transitionEnd, () => {
       _.modal.parentNode.removeChild(_.modal);
     });
 
     if (this.overlay) {
       this.overlay.className = this.overlay.className.replace(" scotch-open", "");
-      this.overlay.addEventListener(this.transitionEnd, function() {
+      this.overlay.addEventListener(this.transitionEnd, () => {
         if (_.overlay.parentNode) _.overlay.parentNode.removeChild(_.overlay);
       });
     }
@@ -66,7 +66,7 @@
 
   // Private Methods
   function buildOut() {
-    var content, contentHolder, docFrag;
+    let content;
 
     /*
      * If content is an HTML string, append the HTML string.
@@ -80,7 +80,7 @@
     }
 
     // Create a DocumentFragment to build with
-    docFrag = document.createDocumentFragment();
+    const docFrag = document.createDocumentFragment();
 
     // Create modal element
     this.modal = document.createElement("div");
@@ -104,7 +104,7 @@
     }
 
     // Create content area and append to modal
-    contentHolder = document.createElement("div");
+    const contentHolder = document.createElement("div");
     contentHolder.className = "scotch-content";
     contentHolder.innerHTML = content;
     this.modal.appendChild(contentHolder);
