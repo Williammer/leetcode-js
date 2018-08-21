@@ -1,7 +1,7 @@
 [
   {
     "num": 0.1,
-    "title": "LinkedList",
+    "title": "LinkedList functions",
     "tags": "LinkedList",
     "level": "_",
     "solution.js":
@@ -9,7 +9,7 @@
   },
   {
     "num": 0.2,
-    "title": "BinaryTree",
+    "title": "BinaryTree functions",
     "tags": "BinaryTree",
     "level": "_",
     "solution.js":
