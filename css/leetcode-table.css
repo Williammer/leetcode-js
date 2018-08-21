@@ -36,7 +36,6 @@ tr:hover {
 }
 th,
 td {
-  min-width: 120px;
   padding: 10px;
   text-align: center;
 }
