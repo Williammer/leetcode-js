@@ -23,38 +23,29 @@
  * Solution 1:
  *
  * "N" is
- * Time complexity: O()
- * Space complexity: O()
+ * Time complexity: O(N)
+ * Space complexity: O(1)
  */
 export function expandLargerArray(nums1, nums2) {
   const bigArr = nums1.length >= nums2.length ? nums1 : nums2;
   const smallArr = nums1.length < nums2.length ? nums1 : nums2;
-
   let i = bigArr.length - 1;
   let j = smallArr.length - 1;
-  let k = bigArr.length + smallArr.length - 1;
+  let k = i + j + 1;
+
   while (k >= 0) {
-    if (j < 0) {
-      break;
+    if (j < 0) break;
+    if (bigArr[i] >= smallArr[j]) {
+      bigArr[k] = bigArr[i];
+      i -= 1;
+      k -= 1;
     }
-    if (bigArr[i] > smallArr[j]) {
-      bigArr[k] = bigArr[i];
-      i -= 1;
-      k -= 1;
-    } else if (bigArr[i] < smallArr[j]) {
-      bigArr[k] = smallArr[j];
-      j -= 1;
-      k -= 1;
-    } else if (bigArr[i] === smallArr[j]) {
-      bigArr[k] = bigArr[i];
-      i -= 1;
-      k -= 1;
+    if (bigArr[i] <= smallArr[j]) {
       bigArr[k] = smallArr[j];
       j -= 1;
       k -= 1;
     }
   }
-
   return bigArr;
 }
 
