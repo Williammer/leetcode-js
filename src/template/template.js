@@ -2,7 +2,7 @@
  * Problem: [leetcode link]
     [problem description]
 
- * Example 1:
+ * Example:
 
  * @param {}
  * @param {}
@@ -12,7 +12,7 @@
  */
 
 /**
- * Solution 1:
+ * Solution:
  *
  * "N" is
  * Time complexity: O()
@@ -22,5 +22,4 @@ export function normal() {}
 
 /**
  * Lessons:
-   1.
  */
