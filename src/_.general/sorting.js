@@ -240,7 +240,7 @@ export function mergeSort(array) {
         i += 1;
       }
     }
-    return result.concat(a.slice(i)).concat(b.slice(j));
+    return result.concat(a.slice(i), b.slice(j));
   };
   const mid = Math.floor(arr.length / 2);
   return merge(mergeSort(arr.slice(0, mid)), mergeSort(arr.slice(mid)));
