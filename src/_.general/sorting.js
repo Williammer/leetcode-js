@@ -218,30 +218,25 @@ export function quickSort(array, lo, hi) {
 export function mergeSort(array) {
   const arr = array.slice();
   checkArray(arr);
-  if (arr.length < 2) {
-    return arr;
-  }
-  const merge = (a, b) => {
+  if (arr.length < 2) return arr;
+
+  const merge = (left, right) => {
     const result = [];
-    const lenA = a.length;
-    const lenB = b.length;
     let i = 0;
     let j = 0;
-    while (i < lenA && j < lenB) {
-      if (a[i] === b[j]) {
-        result.push(a[i], b[j]);
-        i += 1;
-        j += 1;
-      } else if (a[i] > b[j]) {
-        result.push(b[j]);
-        j += 1;
-      } else {
-        result.push(a[i]);
+    while (i < left.length && j < right.length) {
+      if (left[i] <= right[j]) {
+        result.push(left[i]);
         i += 1;
       }
+      if (left[i] >= right[j]) {
+        result.push(right[j]);
+        j += 1;
+      }
     }
-    return result.concat(a.slice(i), b.slice(j));
+    return result.concat(left.slice(i), right.slice(j));
   };
+
   const mid = Math.floor(arr.length / 2);
   return merge(mergeSort(arr.slice(0, mid)), mergeSort(arr.slice(mid)));
 }
@@ -264,9 +259,8 @@ export function mergeSort(array) {
 export function heapSort(array) {
   const arr = array.slice();
   checkArray(arr);
-  if (arr.length < 2) {
-    return arr;
-  }
+  if (arr.length < 2) return arr;
+
   const heapify = (list, index, end = list.length - 1) => {
     const parentIndex = Math.ceil(index / 2) - 1;
     if (index < 0 || parentIndex < 0) {
