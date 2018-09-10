@@ -176,29 +176,26 @@ export function quickSortWithArray(array) {
  * @return {Array}
  *
  */
-export function quickSort(array, lo, hi) {
+export function quickSort(array, lo = 0, hi = array.length) {
   checkArray(array);
-  lo = typeof lo === "number" ? lo : 0;
-  hi = typeof hi === "number" ? hi : array.length;
-  if (hi <= lo) return array;
+  if (array.length <= 1 || hi <= lo) return array;
 
   const partition = (arr, left, right) => {
-    let start = left;
-    let end = right;
+    let i = left;
+    let j = right;
     const pivot = arr[left];
 
-    while (start < end) {
-      while (arr[++start] <= pivot) if (start === right) break; // eslint-disable-line no-plusplus
-      while (arr[--end] >= pivot) if (end === left) break; // eslint-disable-line no-plusplus
-      if (start >= end) break;
-      swap(arr, start, end);
+    while (i < j) {
+      while (arr[++i] <= pivot) if (i === right) break; // eslint-disable-line no-plusplus
+      while (arr[--j] >= pivot) if (j === left) break; // eslint-disable-line no-plusplus
+      if (i < j) swap(arr, i, j);
     }
-    swap(arr, left, end);
-    return end;
+    swap(arr, left, j);
+    return j;
   };
-  const pivot = partition(array, lo, hi);
-  quickSort(array, lo, pivot);
-  quickSort(array, pivot + 1, hi);
+  const pivotIndex = partition(array, lo, hi);
+  quickSort(array, lo, pivotIndex);
+  quickSort(array, pivotIndex + 1, hi);
 
   return array;
 }
