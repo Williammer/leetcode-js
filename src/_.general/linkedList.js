@@ -143,10 +143,9 @@ export const prepend = (val, lList) => {
  */
 export const reverse = (head) => {
   let newHead = null;
-  let next = null;
 
   while (head) {
-    next = head.next;
+    const { next } = head;
     head.next = newHead;
     newHead = head;
     head = next;
