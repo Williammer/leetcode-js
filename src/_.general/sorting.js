@@ -29,17 +29,17 @@ function checkArray(arr) {
 export function bubbleSort(array) {
   const arr = array.slice();
   checkArray(arr);
-  let hasSwap = false;
+  if (arr.length < 2) return arr;
+
   for (let i = arr.length - 1; i > 0; i--) {
+    let swapped = false;
     for (let j = 0; j < i; j++) {
       if (arr[j] > arr[j + 1]) {
         swap(arr, j, j + 1);
-        hasSwap = true;
+        swapped = true;
       }
     }
-    if (!hasSwap) {
-      return arr;
-    }
+    if (!swapped) return arr;
   }
   return arr;
 }
@@ -58,10 +58,12 @@ export function bubbleSort(array) {
 export function selectionSort(array) {
   const arr = array.slice();
   checkArray(arr);
+  if (arr.length < 2) return arr;
+
   for (let i = 0; i < arr.length - 1; i++) {
     let min = i;
     for (let j = i + 1; j < arr.length; j++) {
-      if (arr[min] >= arr[j]) {
+      if (arr[min] > arr[j]) {
         min = j;
       }
     }
@@ -87,14 +89,17 @@ export function selectionSort(array) {
 export function insertionSort(array) {
   const arr = array.slice();
   checkArray(arr);
+  if (arr.length < 2) return arr;
+
   for (let i = 1; i < arr.length; i++) {
-    let cur = i;
-    const curVal = arr[cur];
-    while (cur > 0 && arr[cur - 1] > curVal) {
-      arr[cur] = arr[cur - 1];
-      cur -= 1;
+    let j = i;
+    const toInsert = arr[j];
+    while (j > 0 && arr[j - 1] > toInsert) {
+      // compare all prev items with the one to insert until find the position to insert
+      arr[j] = arr[j - 1];
+      j -= 1;
     }
-    arr[cur] = curVal;
+    arr[j] = toInsert;
   }
   return arr;
 }
@@ -114,6 +119,9 @@ export function insertionSort(array) {
  */
 export function shellSort(array, base = 3) {
   const arr = array.slice();
+  checkArray(arr);
+  if (arr.length < 2) return arr;
+
   const len = arr.length;
   let gap = 1;
 
@@ -153,12 +161,11 @@ export function shellSort(array, base = 3) {
 export function quickSortWithArray(array) {
   const arr = array.slice();
   checkArray(arr);
-  if (arr.length < 2) {
-    return arr;
-  }
+  if (arr.length < 2) return arr;
+
   const [pivot, ...rest] = arr;
   const larger = rest.filter((item) => item > pivot);
-  const smaller = rest.filter((item) => item <= pivot);
+  const smaller = rest.filter((item) => item <= pivot); // includes items equal to pivot
 
   return [...quickSortWithArray(smaller), pivot, ...quickSortWithArray(larger)];
 }
@@ -178,7 +185,7 @@ export function quickSortWithArray(array) {
  */
 export function quickSort(array, lo = 0, hi = array.length) {
   checkArray(array);
-  if (array.length <= 1 || hi <= lo) return array;
+  if (array.length < 2 || hi - 1 <= lo) return array;
 
   const partition = (arr, left, right) => {
     let i = left;
@@ -234,7 +241,7 @@ export function mergeSort(array) {
     return result.concat(left.slice(i), right.slice(j));
   };
 
-  const mid = Math.floor(arr.length / 2);
+  const mid = Math.floor(arr.length / 2); // be aware that it's not `arr.length - 1`
   return merge(mergeSort(arr.slice(0, mid)), mergeSort(arr.slice(mid)));
 }
 
