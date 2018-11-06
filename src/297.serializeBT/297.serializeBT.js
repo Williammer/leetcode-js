@@ -17,7 +17,7 @@
 
  */
 
-import { TreeNode, binaryTreeToString, arrayToBinaryTree } from "../_.general/binaryTree";
+import { binaryTreeToString, arrayToBinaryTree } from "../_.general/binaryTree";
 
 export const serializeBT = {};
 

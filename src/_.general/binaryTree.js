@@ -95,7 +95,7 @@ export const binaryTreeToArray = (root) => {
 
   const nodeQueue = [root];
   let bTreeArray = [root.val];
-  let nullChainCount = 0;
+  let nullTailsCount = 0;
 
   while (nodeQueue.length > 0) {
     const curNode = nodeQueue.shift();
@@ -103,24 +103,24 @@ export const binaryTreeToArray = (root) => {
     if (isTreeNode(curNode.left)) {
       bTreeArray.push(curNode.left.val);
       nodeQueue.push(curNode.left);
-      nullChainCount = 0;
+      nullTailsCount = 0;
     } else {
       bTreeArray.push(null);
-      nullChainCount += 1;
+      nullTailsCount += 1;
     }
 
     if (isTreeNode(curNode.right)) {
       bTreeArray.push(curNode.right.val);
       nodeQueue.push(curNode.right);
-      nullChainCount = 0;
+      nullTailsCount = 0;
     } else {
       bTreeArray.push(null);
-      nullChainCount += 1;
+      nullTailsCount += 1;
     }
   }
 
-  if (nullChainCount > 0) {
-    bTreeArray = bTreeArray.slice(0, -nullChainCount);
+  if (nullTailsCount > 0) {
+    bTreeArray = bTreeArray.slice(0, -nullTailsCount);
     // any ways to optimize this? O(n) time complexity here
   }
   return bTreeArray;
@@ -146,7 +146,7 @@ export const binaryTreeToString = (root) => {
 
   const nodeQueue = [root];
   let bTreeStr = `${root.val}`;
-  let nullChainCount = 0;
+  let nullTailsCount = 0;
 
   while (nodeQueue.length > 0) {
     const curNode = nodeQueue.shift();
@@ -154,24 +154,24 @@ export const binaryTreeToString = (root) => {
     if (isTreeNode(curNode.left)) {
       bTreeStr += `,${curNode.left.val}`;
       nodeQueue.push(curNode.left);
-      nullChainCount = 0;
+      nullTailsCount = 0;
     } else {
       bTreeStr += ",";
-      nullChainCount += 1;
+      nullTailsCount += 1;
     }
 
     if (isTreeNode(curNode.right)) {
       bTreeStr += `,${curNode.right.val}`;
       nodeQueue.push(curNode.right);
-      nullChainCount = 0;
+      nullTailsCount = 0;
     } else {
       bTreeStr += ",";
-      nullChainCount += 1;
+      nullTailsCount += 1;
     }
   }
 
-  if (nullChainCount > 0) {
-    bTreeStr = bTreeStr.slice(0, -nullChainCount);
+  if (nullTailsCount > 0) {
+    bTreeStr = bTreeStr.slice(0, -nullTailsCount);
   }
   return bTreeStr;
 };
