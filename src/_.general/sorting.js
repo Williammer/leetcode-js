@@ -14,37 +14,6 @@ function checkArray(arr) {
 }
 
 /**
- * Bubble sort, sorted by swapping item pairs(if needed) from the start postion to the end of the
- * array.
- * First round will have a largest item swapped to the array end, and second round will have the
- * second largest item swapped to array end - 1 position, and so on until all items are sorted.
- *
- * Time complexity: O(N, N^2)
- * Space complexity: O(1)
- *
- * @param {Array} array
- * @return {Array}
- *
- */
-export function bubbleSort(array) {
-  const arr = array.slice();
-  checkArray(arr);
-  if (arr.length < 2) return arr;
-
-  for (let i = arr.length - 1; i > 0; i--) {
-    let swapped = false;
-    for (let j = 0; j < i; j++) {
-      if (arr[j] > arr[j + 1]) {
-        swap(arr, j, j + 1);
-        swapped = true;
-      }
-    }
-    if (!swapped) return arr;
-  }
-  return arr;
-}
-
-/**
  * Selection sort, sorted by selecting min to max items for the start to the end position of the
  * array.
  *
@@ -73,13 +42,44 @@ export function selectionSort(array) {
 }
 
 /**
+ * Bubble sort, sorted by swapping item pairs(if needed) from the start postion to the end of the
+ * array.
+ * First round will have a largest item swapped to the array end, and second round will have the
+ * second largest item swapped to array end - 1 position, and so on until all items are sorted.
+ *
+ * Time complexity: O(N^2)
+ * Space complexity: O(1)
+ *
+ * @param {Array} array
+ * @return {Array}
+ *
+ */
+export function bubbleSort(array) {
+  const arr = array.slice();
+  checkArray(arr);
+  if (arr.length < 2) return arr;
+
+  for (let i = arr.length - 1; i > 0; i--) {
+    let swapped = false;
+    for (let j = 0; j < i; j++) {
+      if (arr[j] > arr[j + 1]) {
+        swap(arr, j, j + 1);
+        swapped = true;
+      }
+    }
+    if (!swapped) return arr;
+  }
+  return arr;
+}
+
+/**
  * Insertion sort, sorted by inserting each item into a proper position of the sorted part of the
  * array before it.
  * The second item is the first one to insert, this carries on until the last item is inserted into
  * the sorted part of the array before it.
- * Insertion sort is extra fast when the array to sort is small, or is partially sorted.
+ * Insertion sort is extra fast when the array to sort is `small`, or is `partially sorted`.
  *
- * Time complexity: O(N, N^2)
+ * Time complexity: O(N) ~ O(N^2)
  * Space complexity: O(1)
  *
  * @param {Array} array
@@ -110,7 +110,7 @@ export function insertionSort(array) {
  * The gap number is determined by a base number, for example, if the base number is 2, then for an
  * array of 16 items, its gap range will be 7, 3, 1.
  *
- * Time complexity: O(NlogN, N(logN)^2)
+ * Time complexity: O(NlogN)
  * Space complexity: O(1)
  *
  * @param {Array} array
@@ -176,7 +176,7 @@ export function quickSortWithArray(array) {
  * The partition process will swap pairs of items until the left part are all smaller than pivot,
  * and right part are all larger.
  *
- * Time complexity: O(NlogN, N^2)
+ * Time complexity: O(NlogN)
  * Space complexity: O(logN)
  *
  * @param {Array} array
