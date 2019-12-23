@@ -144,7 +144,7 @@ export function shellSort(array, base = 3) {
 }
 
 /**
- * Quick sort, sorted by performing a partition process for a chosen pivot item, and the same is
+ * Quick sort, sorted by performing a "partition" process for a chosen pivot item, and the same is
  * done for the left/right partitioned parts, and so on.
  * The partition process will swap pairs of items until the left part are all smaller than pivot,
  * and right part are all larger.
@@ -171,10 +171,10 @@ export function quickSortWithArray(array) {
 }
 
 /**
- * Quick sort, sorted by performing a partition process for a chosen pivot item, and the same is
+ * Quick sort, sorted by performing a "partition" process for a chosen pivot item, and the same is
  * done for the left/right partitioned parts, and so on.
- * The partition process will swap pairs of items until the left part are all smaller than pivot,
- * and right part are all larger.
+ * The partition process will swap pairs of items until the left part are "all smaller than pivot",
+ * and right part are "all larger".
  *
  * Time complexity: O(NlogN)
  * Space complexity: O(logN)
@@ -208,7 +208,7 @@ export function quickSort(array, lo = 0, hi = array.length) {
 }
 
 /**
- * Merge sort, sorted by recursively dividing the array into two sub-arrays and merging
+ * Merge sort, sorted by recursively dividing the array into two sub-arrays and "merging"
  * corresponding sub-arrays back into a sorted array. The merge process ensures that the merged
  * array is sorted.
  *
@@ -271,11 +271,13 @@ export function heapSort(array) {
       return;
     }
     const isLeft = index % 2 === 1;
-    const peerIndex = isLeft ? index + 1 : index - 1;
+    const firstGenerationIndex = isLeft ? index + 1 : index - 1;
 
     let largest = parentIndex;
     if (list[index] > list[largest]) largest = index;
-    if (peerIndex <= end && list[peerIndex] > list[largest]) largest = peerIndex;
+    if (firstGenerationIndex <= end && list[firstGenerationIndex] > list[largest]) {
+      largest = firstGenerationIndex;
+    }
     if (largest !== parentIndex) swap(list, largest, parentIndex);
 
     heapify(list, index - 2, end);
