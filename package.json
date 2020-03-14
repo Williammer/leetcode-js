@@ -30,7 +30,7 @@
   "devDependencies": {
     "babel-preset-env": "^1.7.0",
     "benchmark": "^2.1.4",
-    "codecov": "^3.1.0",
+    "codecov": "^3.6.5",
     "eslint": "^5.12.1",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^4.0.0",
